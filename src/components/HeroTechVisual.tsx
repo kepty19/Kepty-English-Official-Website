@@ -1,82 +1,106 @@
 import React from 'react';
 import {motion} from 'motion/react';
-import heroTechVisual from '../hero-tech-visual.png';
+import heroBall from '../hero-ball.png';
 
 interface HeroTechVisualProps {
   isMobile: boolean;
 }
 
+const floatTransition = {
+  duration: 6.5,
+  repeat: Infinity,
+  ease: 'easeInOut' as const,
+};
+
 export const HeroTechVisual: React.FC<HeroTechVisualProps> = ({isMobile}) => {
+  const scale = isMobile ? 0.78 : 1.05;
+  const left = isMobile ? '62%' : '80%';
+  const height = isMobile ? '48%' : '72%';
+  const bottom = isMobile ? '64px' : '80px';
+
   return (
     <div
       id="hero-tech-visual"
-      className="absolute inset-0 flex items-end justify-center sm:justify-end sm:items-center pointer-events-none select-none overflow-visible"
+      className="absolute inset-0 pointer-events-none select-none overflow-visible"
       style={{zIndex: 3}}
+      aria-hidden
     >
-      {/* Ambient tech glow */}
-      <div
-        className="absolute right-[8%] sm:right-[12%] bottom-[18%] sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 w-[min(92vw,520px)] aspect-square"
-        aria-hidden
-      >
-        <motion.div
-          className="absolute inset-0 rounded-full bg-[#FF6331]/25 blur-[80px]"
-          animate={{opacity: [0.35, 0.55, 0.4, 0.35], scale: [0.92, 1.05, 0.98, 0.92]}}
-          transition={{duration: 5.5, repeat: Infinity, ease: 'easeInOut'}}
-        />
-        <motion.div
-          className="absolute inset-[12%] rounded-full border border-white/15"
-          animate={{rotate: 360}}
-          transition={{duration: 28, repeat: Infinity, ease: 'linear'}}
-        />
-        <motion.div
-          className="absolute inset-[22%] rounded-full border border-[#FF6331]/30 border-dashed"
-          animate={{rotate: -360}}
-          transition={{duration: 18, repeat: Infinity, ease: 'linear'}}
-        />
-      </div>
-
-      {/* Main hero asset — subtle float / sway */}
       <motion.div
-        className="relative z-10 w-[min(88vw,440px)] sm:w-[min(48vw,560px)] lg:w-[min(52vw,620px)]"
-        style={{marginBottom: isMobile ? '72px' : 0, marginRight: isMobile ? 0 : '4%'}}
+        className="absolute flex items-end justify-center origin-bottom"
+        style={{
+          left,
+          bottom,
+          height,
+          width: isMobile ? 'min(88vw, 340px)' : 'min(42vw, 480px)',
+          transform: 'translateX(-50%)',
+        }}
         animate={{
-          y: [0, -10, 6, -4, 0],
-          x: [0, 4, -3, 2, 0],
-          rotate: [0, 0.6, -0.5, 0.35, 0],
+          y: [0, -12, 5, -6, 0],
+          x: [0, 5, -4, 3, 0],
+          rotate: [0, 0.5, -0.4, 0.25, 0],
         }}
-        transition={{
-          duration: 7,
-          repeat: Infinity,
-          ease: 'easeInOut',
-        }}
+        transition={floatTransition}
       >
-        <motion.img
-          src={heroTechVisual}
-          alt="Kepty — スマートフォンとサッカーボール"
-          draggable={false}
-          className="w-full h-auto object-contain drop-shadow-[0_24px_80px_rgba(0,0,0,0.45)]"
-          style={{
-            mixBlendMode: 'screen',
-            filter: 'saturate(1.08) contrast(1.05)',
-          }}
-          animate={{
-            scale: [1, 1.02, 0.99, 1.01, 1],
-          }}
-          transition={{
-            duration: 7,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        />
-      </motion.div>
+        {/* Soft glow — no box, only light */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-[70%] h-[55%] rounded-full bg-[#FF6331]/20 blur-[70px]" />
+        </div>
 
-      {/* Scan line accent */}
-      <motion.div
-        className="absolute right-[10%] sm:right-[14%] bottom-[22%] sm:bottom-auto sm:top-[42%] h-px w-[min(70vw,380px)] bg-gradient-to-r from-transparent via-white/40 to-transparent"
-        animate={{opacity: [0.2, 0.7, 0.2], scaleX: [0.85, 1, 0.9, 1]}}
-        transition={{duration: 4, repeat: Infinity, ease: 'easeInOut'}}
-        aria-hidden
-      />
+        <div
+          className="relative w-full h-full flex items-end justify-center"
+          style={{transform: `scale(${scale})`}}
+        >
+          {/* Smartphone — pure CSS, embedded in UI */}
+          <motion.div
+            className="relative z-20 w-[42%] max-w-[200px] shrink-0"
+            animate={{y: [0, -4, 2, 0]}}
+            transition={{...floatTransition, duration: 5}}
+          >
+            <div className="relative rounded-[2rem] border-[3px] border-white/25 bg-gradient-to-b from-neutral-800 to-neutral-950 p-[7px] shadow-[0_30px_60px_rgba(0,0,0,0.35)]">
+              <div className="absolute top-[10px] left-1/2 -translate-x-1/2 w-[28%] h-[3px] rounded-full bg-white/20" />
+              <div className="rounded-[1.4rem] overflow-hidden bg-neutral-950 aspect-[9/19] w-full">
+                <div className="h-full w-full bg-gradient-to-b from-neutral-900 via-neutral-950 to-black p-3 flex flex-col gap-2">
+                  <div className="flex items-center justify-between">
+                    <div className="h-1.5 w-8 rounded-full bg-[#FF6331]/80" />
+                    <div className="h-1 w-1 rounded-full bg-white/40" />
+                  </div>
+                  <div className="mt-1 h-2 w-[70%] rounded-full bg-white/15" />
+                  <div className="h-2 w-[55%] rounded-full bg-white/10" />
+                  <div className="mt-2 flex-1 rounded-xl border border-[#FF6331]/30 bg-[#FF6331]/10 p-2 flex flex-col gap-1.5">
+                    <div className="h-1.5 w-full rounded bg-[#FF6331]/50" />
+                    <div className="h-1 w-[80%] rounded bg-white/20" />
+                    <div className="h-1 w-[60%] rounded bg-white/15" />
+                    <div className="mt-auto flex gap-1">
+                      <div className="h-4 flex-1 rounded-md bg-[#FF6331]/40" />
+                      <div className="h-4 flex-1 rounded-md bg-white/10" />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-3 gap-1">
+                    <div className="h-5 rounded-md bg-white/8" />
+                    <div className="h-5 rounded-md bg-[#FF6331]/25" />
+                    <div className="h-5 rounded-md bg-white/8" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute -inset-4 rounded-[2.5rem] border border-white/5 pointer-events-none" />
+          </motion.div>
+
+          {/* Soccer ball — cutout asset */}
+          <motion.img
+            src={heroBall}
+            alt=""
+            draggable={false}
+            className="relative z-30 w-[58%] max-w-[280px] -ml-[8%] mb-[2%] object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.35)]"
+            style={{mixBlendMode: 'screen'}}
+            animate={{
+              y: [0, 6, -5, 0],
+              rotate: [0, -2, 1.5, 0],
+            }}
+            transition={{...floatTransition, duration: 7.5}}
+          />
+        </div>
+      </motion.div>
     </div>
   );
 };

@@ -378,10 +378,10 @@ export default function App() {
         <div
           id="ghost-background-text"
           className="absolute left-4 sm:left-24 pointer-events-none select-none top-[26%] sm:top-[28%]"
-          style={{ zIndex: 2 }}
+          style={{ zIndex: 5 }}
         >
           <span
-            className="font-anton text-white select-none whitespace-nowrap text-left"
+            className="font-anton text-white select-none whitespace-nowrap text-left relative z-10"
             style={{
               fontSize: 'clamp(38px, 9.5vw, 145px)',
               fontWeight: 900,
