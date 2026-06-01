@@ -393,7 +393,7 @@ export default function App() {
           </span>
         </div>
 
-        {/* Hero: smartphone + soccer ball — single tech visual with float animation */}
+        {/* Hero: 3D tech visual (phone + ball) — floats like original figurine */}
         <HeroTechVisual isMobile={isMobile} />
 
         {/* Bottom-left metadata description + Autoplay Pulse Display */}
