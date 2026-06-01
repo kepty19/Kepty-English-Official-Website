@@ -1,36 +1,40 @@
 import { FigurineItem } from './types';
+import player1 from './characters/player-1.png';
+import player2 from './characters/player-2.png';
+import player3 from './characters/player-3.png';
+import player4 from './characters/player-4.png';
 
 export const FIGURINES: FigurineItem[] = [
   {
-    src: 'https://fifth-gentle-45902158.figma.site/_components/v2/4de492f6d9cf8244ad5293233e5c6f52407d42fc/1.02464a56.png',
-    bg: '#F4845F',
+    src: player1,
+    bg: '#E55C29',
     panel: '#F79B7F',
-    name: 'FOXY CHIP',
-    tagline: 'Mischievous forest guide with double magnetic action.'
+    name: 'Player 01',
+    tagline: 'Kepty English coaching athlete',
   },
   {
-    src: 'https://fifth-gentle-45902158.figma.site/_components/v2/4de492f6d9cf8244ad5293233e5c6f52407d42fc/2.b977faab.png',
-    bg: '#6BBF7A',
-    panel: '#85CC92',
-    name: 'MINTY BREEZE',
-    tagline: 'Relaxed garden defender featuring super-glossy custom finish.'
+    src: player2,
+    bg: '#C44315',
+    panel: '#E55C29',
+    name: 'Player 02',
+    tagline: 'Kepty English coaching athlete',
   },
   {
-    src: 'https://fifth-gentle-45902158.figma.site/_components/v2/4de492f6d9cf8244ad5293233e5c6f52407d42fc/3.4df853b4.png',
-    bg: '#E882B4',
-    panel: '#ED9DC4',
-    name: 'PINKY PUFF',
-    tagline: 'Sweet cosmic wanderer with bubblegum scent and vinyl coating.'
+    src: player3,
+    bg: '#922704',
+    panel: '#C44315',
+    name: 'Player 03',
+    tagline: 'Kepty English coaching athlete',
   },
   {
-    src: 'https://fifth-gentle-45902158.figma.site/_components/v2/4de492f6d9cf8244ad5293233e5c6f52407d42fc/4.4457fbce.png',
-    bg: '#6EB5FF',
-    panel: '#8DC4FF',
-    name: 'NEO WING',
-    tagline: 'Cybernetic explorer armed with heavy-duty dynamic packaging.'
-  }
+    src: player4,
+    bg: '#FF6331',
+    panel: '#F4845F',
+    name: 'Player 04',
+    tagline: 'Kepty English coaching athlete',
+  },
 ];
 
 // SVG Grain Overlay URL
-export const GRAIN_SVG_DATA_URI = 
+export const GRAIN_SVG_DATA_URI =
   `data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' opacity='0.08' filter='url(%23noiseFilter)'/%3E%3C/svg%3E`;

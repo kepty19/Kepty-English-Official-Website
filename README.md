@@ -25,6 +25,23 @@ npm run dev          # http://localhost:3000 （開発用）
 npm run preview:pages  # 本番と同じ base パスでビルド＋プレビュー
 ```
 
+### HOME キャラクター画像（4名）
+
+`src/characters/` に次の4ファイルを配置してください（2秒ごとに切り替わります）。
+
+- `player-1.png`
+- `player-2.png`
+- `player-3.png`
+- `player-4.png`
+
+※ 背景透過 PNG 推奨。既存ファイルを上書きしてコミットしてください。
+
+### お問い合わせフォーム（contact@kepty.co）
+
+フォーム送信は [FormSubmit](https://formsubmit.co) 経由で `contact@kepty.co` に届きます。
+
+**初回のみ:** テスト送信後、`contact@kepty.co` に届く FormSubmit の確認メール内リンクを開き、有効化してください。
+
 ## Run Locally（AI Studio）
 
 **Prerequisites:** Node.js
