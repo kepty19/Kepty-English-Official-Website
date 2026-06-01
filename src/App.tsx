@@ -373,12 +373,10 @@ export default function App() {
           </span>
         </div>
 
-        {/* Giant ghost display text "Kepty English" (zIndex 2)
-            Shifted to match the left highlighted red oval from the screenshot with elegant, snug tracking */}
+        {/* Giant ghost display text "Kepty English" — above hero visual */}
         <div
           id="ghost-background-text"
-          className="absolute left-4 sm:left-24 pointer-events-none select-none top-[26%] sm:top-[28%]"
-          style={{ zIndex: 5 }}
+          className="absolute left-4 sm:left-24 pointer-events-none select-none top-[26%] sm:top-[28%] z-[4]"
         >
           <span
             className="font-anton text-white select-none whitespace-nowrap text-left relative z-10"
