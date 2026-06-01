@@ -1,0 +1,6 @@
+{
+  "name": "KEPTY English",
+  "description": "サッカー特化型の英語コーチングサービス。プロサッカー選手が世界で闘うための圧倒的な英語力と主導権をその手に。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
