@@ -9,12 +9,4 @@ declare global {
   }
 }
 
-if (window.__keptyBootTimer) {
-  clearTimeout(window.__keptyBootTimer);
-}
-
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-);
+i
