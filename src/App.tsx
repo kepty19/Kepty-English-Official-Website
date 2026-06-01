@@ -2691,7 +2691,7 @@ CEOである僕自身も、ありたき姿を実現するために、毎日欠�
         style={{
           background: 'radial-gradient(ellipse at center, #E55C29 0%, #C44315 55%, #922704 100%)'
         }}
-        className="pb-28 pt-10 px-4 sm:px-6 text-white relative z-40"
+        className="pb-0 pt-10 px-4 sm:px-6 text-white relative z-40"
       >
         <div className="max-w-[840px] mx-auto w-full">
           {/* Header */}
@@ -2796,24 +2796,24 @@ CEOである僕自身も、ありたき姿を実現するために、毎日欠�
             </div>
           </div>
         </div>
-      </section>
 
-      {/* FOOTER */}
-      <footer className="bg-neutral-950 text-neutral-500 text-xs py-12 px-6 border-t border-white/5 text-center relative z-40">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-2">
-            <span className="font-anton text-sm tracking-widest text-white uppercase">TOONHUB</span>
-            <span className="text-[10px] bg-neutral-900 px-2 py-0.5 rounded border border-white/5">v1.2</span>
+        {/* FOOTER */}
+        <footer className="text-white/50 text-xs pt-16 pb-12 px-6 text-center">
+          <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-2">
+              <span className="font-anton text-sm tracking-widest text-white uppercase">TOONHUB</span>
+              <span className="text-[10px] bg-black/20 px-2 py-0.5 rounded border border-white/10">v1.2</span>
+            </div>
+            <p className="text-[11px] text-white/50 font-sans">
+              &copy; 2026 TOONHUB Collectibles Inc. All rights reserved. Sculpted in Tokyo.
+            </p>
+            <div className="flex gap-4 font-sans">
+              <a href="#terms" className="text-white/60 hover:text-white transition-colors">Terms</a>
+              <a href="#privacy" className="text-white/60 hover:text-white transition-colors">Privacy</a>
+            </div>
           </div>
-          <p className="text-[11px] text-neutral-500 font-sans">
-            &copy; 2026 TOONHUB Collectibles Inc. All rights reserved. Sculpted in Tokyo.
-          </p>
-          <div className="flex gap-4 font-sans">
-            <a href="#terms" className="hover:text-white transition-colors">Terms</a>
-            <a href="#privacy" className="hover:text-white transition-colors">Privacy</a>
-          </div>
-        </div>
-      </footer>
+        </footer>
+      </section>
     </div>
   );
 }
