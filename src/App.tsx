@@ -408,7 +408,7 @@ export default function App() {
         {/* Figurine figurines carousel sitting lower down, containing characters only (zIndex 3) */}
         <div 
           id="carousel-cards-viewport"
-          className="absolute inset-0 select-none overflow-hidden" 
+          className="absolute inset-0 select-none overflow-hidden bg-transparent isolate" 
           style={{ zIndex: 3 }}
         >
           {FIGURINES.map((item, index) => {

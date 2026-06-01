@@ -37,7 +37,7 @@ export const CarouselItem: React.FC<CarouselItemProps> = ({ item, role, isMobile
   return (
     <div
       id={`carousel-item-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
-      className="absolute aspect-[0.6/1] flex flex-col items-center justify-end select-none cursor-pointer overflow-visible origin-bottom"
+      className="absolute aspect-[0.6/1] flex flex-col items-center justify-end select-none cursor-pointer overflow-visible origin-bottom bg-transparent"
       style={{
         transform,
         filter,
@@ -50,12 +50,12 @@ export const CarouselItem: React.FC<CarouselItemProps> = ({ item, role, isMobile
         willChange: 'transform, filter, opacity, left, bottom, height',
       }}
     >
-      {/* Main Figurine Image without frames */}
+      {/* mix-blend-multiply: 白背景の画像をヒーローのオレンジ上で透過表示 */}
       <img
         src={item.src}
         alt={item.name}
         draggable={false}
-        className="w-full h-full object-contain object-bottom select-none z-10 transition-all duration-500 hover:scale-105 pointer-events-none"
+        className="w-full h-full object-contain object-bottom select-none z-10 transition-all duration-500 hover:scale-105 pointer-events-none bg-transparent mix-blend-multiply"
         referrerPolicy="no-referrer"
       />
     </div>
