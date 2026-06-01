@@ -79,15 +79,10 @@ function unfilter(raw, width, height, bpp) {
 function filterScanlines(rgba, width, height) {
   const stride = width * 4;
   const raw = [];
-  const prev = Buffer.alloc(stride);
   for (let y = 0; y < height; y++) {
-    raw.push(1); // Sub filter
+    raw.push(0); // None — safest PNG encode
     const row = rgba.subarray(y * stride, (y + 1) * stride);
-    for (let x = 0; x < stride; x++) {
-      const val = (row[x] - (x >= 4 ? row[x - 4] : 0)) & 0xff;
-      raw.push(val);
-      prev[x] = row[x];
-    }
+    for (let x = 0; x < stride; x++) raw.push(row[x]);
   }
   return Buffer.from(raw);
 }

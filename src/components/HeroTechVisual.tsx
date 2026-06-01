@@ -1,6 +1,6 @@
 import React from 'react';
 import {motion} from 'motion/react';
-import heroTechArt from '../hero-tech-visual-cutout.png';
+import heroTechArt from '../hero-tech-visual.png';
 
 interface HeroTechVisualProps {
   isMobile: boolean;
@@ -12,6 +12,11 @@ const floatTransition = {
   ease: 'easeInOut' as const,
 };
 
+/**
+ * Layout matches CarouselItem (figurine).
+ * IMPORTANT: centering transform lives on a non-motion wrapper — motion `animate={{y}}`
+ * replaces the whole transform and previously pushed the asset off-screen.
+ */
 export const HeroTechVisual: React.FC<HeroTechVisualProps> = ({isMobile}) => {
   const left = isMobile ? '50%' : '80%';
   const bottom = isMobile ? '56px' : '72px';
@@ -24,32 +29,33 @@ export const HeroTechVisual: React.FC<HeroTechVisualProps> = ({isMobile}) => {
       className="absolute inset-0 pointer-events-none select-none overflow-visible"
       aria-hidden
     >
-      <motion.div
-        id="hero-tech-visual-stage"
-        className="absolute flex items-end justify-center overflow-visible origin-bottom"
+      <div
+        id="hero-tech-visual-anchor"
+        className="absolute origin-bottom"
         style={{
           left,
           bottom,
           height,
-          width: isMobile ? 'min(100vw, 520px)' : 'min(58vw, 720px)',
+          aspectRatio: '3 / 2',
           zIndex: 20,
           transform: `translateX(-50%) scale(${scale})`,
-          willChange: 'transform',
         }}
-        animate={{y: [0, -10, 4, -6, 0]}}
-        transition={floatTransition}
       >
-        <img
-          src={heroTechArt}
-          alt=""
-          draggable={false}
-          className="w-full h-full object-contain object-bottom pointer-events-none"
-          style={{
-            filter: 'drop-shadow(0 24px 48px rgba(35,10,4,0.4))',
-          }}
-          referrerPolicy="no-referrer"
-        />
-      </motion.div>
+        <motion.div
+          id="hero-tech-visual-stage"
+          className="w-full h-full"
+          animate={{y: [0, -10, 4, -6, 0]}}
+          transition={floatTransition}
+        >
+          <img
+            src={heroTechArt}
+            alt=""
+            draggable={false}
+            className="w-full h-full object-contain object-bottom pointer-events-none mix-blend-screen"
+            referrerPolicy="no-referrer"
+          />
+        </motion.div>
+      </div>
     </div>
   );
 };
