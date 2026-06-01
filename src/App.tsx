@@ -28,8 +28,7 @@ import {
   Speech
 } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'motion/react';
-import { FIGURINES } from './data';
-import { CarouselItem } from './components/CarouselItem';
+import { HeroTechVisual } from './components/HeroTechVisual';
 import { GrainOverlay } from './components/GrainOverlay';
 import bgDarkSpace from './image_dark_space.jpg';
 import ceoProfileImg from './ceo-profile.png';
@@ -122,10 +121,6 @@ export default function App() {
   const bgRotate = useTransform(scrollYProgress, [0, 1], [-4, 4]);
   const bgScale = useTransform(scrollYProgress, [0, 1], [0.85, 1.02]);
 
-  // Carousel active main center index
-  const [activeIndex, setActiveIndex] = useState<number>(0);
-  // Transition safety-lock
-  const [isAnimating, setIsAnimating] = useState<boolean>(false);
   // Viewport-size detection
   const [isMobile, setIsMobile] = useState<boolean>(false);
   // Active navigation tab tracker
@@ -192,14 +187,6 @@ export default function App() {
     }
   };
 
-  // Preload all 4 figurines on mount
-  useEffect(() => {
-    FIGURINES.forEach((figurine) => {
-      const img = new Image();
-      img.src = figurine.src;
-    });
-  }, []);
-
   // Responsive boundary listener
   useEffect(() => {
     const handleResize = () => {
@@ -208,14 +195,6 @@ export default function App() {
     handleResize(); // Initial call
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  // Autoplay figurine rotator - swaps characters automatically every 2 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % 4);
-    }, 2000);
-    return () => clearInterval(interval);
   }, []);
 
   // Scroll spy to dynamically highlight top navigation tabs based on user position (Swapped Order with SERVICE)
@@ -265,8 +244,6 @@ export default function App() {
       setActiveTab(tabName);
     }
   };
-
-  const currentFigurine = FIGURINES[activeIndex];
 
   return (
     <div
@@ -418,27 +395,8 @@ export default function App() {
           </span>
         </div>
 
-        {/* Figurine figurines carousel sitting lower down, containing characters only (zIndex 3) */}
-        <div 
-          id="carousel-cards-viewport"
-          className="absolute inset-0 select-none overflow-hidden bg-transparent isolate" 
-          style={{ zIndex: 3 }}
-        >
-          {FIGURINES.map((item, index) => {
-            const role = index === activeIndex ? 'center' :
-                         index === (activeIndex + 3) % 4 ? 'left' :
-                         index === (activeIndex + 1) % 4 ? 'right' : 'back';
-            return (
-              <CarouselItem
-                key={item.src}
-                item={item}
-                role={role}
-                isMobile={isMobile}
-                isActive={index === activeIndex}
-              />
-            );
-          })}
-        </div>
+        {/* Hero: smartphone + soccer ball — single tech visual with float animation */}
+        <HeroTechVisual isMobile={isMobile} />
 
         {/* Bottom-left metadata description + Autoplay Pulse Display */}
         <div
