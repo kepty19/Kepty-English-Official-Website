@@ -33,6 +33,7 @@ import { CarouselItem } from './components/CarouselItem';
 import { GrainOverlay } from './components/GrainOverlay';
 import bgDarkSpace from './image_dark_space.jpg';
 import ceoProfileImg from './ceo-profile.png';
+import ceoSignatureImg from './ceo-signature.png';
 
 const SUPPORTING_PLAYERS = [
   {
@@ -538,13 +539,20 @@ CEOである僕自身も、ありたき姿を実現するために、毎日欠�
           </div>
 
           {/* Signature Block with high-end typography */}
-          <div className="mt-12 pt-8 border-t border-white/10 select-none flex flex-col gap-1.5 text-left">
-            <p className="text-[15px] sm:text-[17px] font-bold text-white/80 font-sans tracking-wide leading-relaxed">
-              Kepty Co., Ltd.
-            </p>
-            <p className="text-[15px] sm:text-[17px] font-bold text-white/80 font-sans tracking-wide leading-relaxed">
-              Founder & CEO：Tomohiro Kajiyama | 梶山 知裕
-            </p>
+          <div className="mt-12 pt-8 border-t border-white/10 select-none flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 text-left">
+            <div className="flex flex-col gap-1.5">
+              <p className="text-[15px] sm:text-[17px] font-bold text-white/80 font-sans tracking-wide leading-relaxed">
+                Kepty Co., Ltd.
+              </p>
+              <p className="text-[15px] sm:text-[17px] font-bold text-white/80 font-sans tracking-wide leading-relaxed">
+                Founder & CEO：Tomohiro Kajiyama | 梶山 知裕
+              </p>
+            </div>
+            <img
+              src={ceoSignatureImg}
+              alt="Tomohiro Kajiyama signature"
+              className="w-[200px] sm:w-[260px] h-auto object-contain object-right ml-auto sm:ml-0 shrink-0 pointer-events-none brightness-0 invert opacity-95"
+            />
           </div>
         </div>
       </section>
