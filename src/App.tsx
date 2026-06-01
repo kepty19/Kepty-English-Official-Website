@@ -32,7 +32,7 @@ import { FIGURINES } from './data';
 import { CarouselItem } from './components/CarouselItem';
 import { GrainOverlay } from './components/GrainOverlay';
 import bgDarkSpace from './image_dark_space.jpg';
-import signatureImg from './signature.png';
+import ceoProfileImg from './ceo-profile.png';
 
 const SUPPORTING_PLAYERS = [
   {
@@ -2582,7 +2582,7 @@ CEOである僕自身も、ありたき姿を実現するために、毎日欠�
               </div>
               <div className="w-[105%] max-w-[420px] md:max-w-[520px] lg:w-[145%] lg:max-w-none mx-auto lg:mx-0 mt-4 lg:-mt-[55px] lg:-ml-14 xl:-ml-20 select-none animate-fade-in">
                 <img 
-                  src={signatureImg} 
+                  src={ceoProfileImg} 
                   alt="Tomohiro Kajiyama" 
                   className="w-full h-auto object-contain select-none pointer-events-none"
                 />
