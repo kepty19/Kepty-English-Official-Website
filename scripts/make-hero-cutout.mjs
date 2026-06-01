@@ -116,12 +116,14 @@ function readPng(file) {
   return { width, height, colorType, rgb, bpp };
 }
 
+/** Only remove near-pure black matte; keep dark phone/ball surfaces */
 function keyAlpha(r, g, b) {
-  const lum = Math.max(r, g, b);
-  if (lum <= 24) return 0;
-  if (lum >= 90) return 255;
-  const t = (lum - 24) / 66;
-  return Math.round(255 * t * t);
+  if (r <= 10 && g <= 10 && b <= 10) return 0;
+  if (r <= 22 && g <= 22 && b <= 22) {
+    const t = Math.max(r, g, b) / 22;
+    return Math.round(255 * t * t * t);
+  }
+  return 255;
 }
 
 function writeRgbaPng(width, height, rgba, dest) {

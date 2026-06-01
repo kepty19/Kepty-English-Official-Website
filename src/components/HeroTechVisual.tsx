@@ -12,13 +12,10 @@ const floatTransition = {
   ease: 'easeInOut' as const,
 };
 
-/** Same layout as CarouselItem figurine — correct position on the orange hero */
 export const HeroTechVisual: React.FC<HeroTechVisualProps> = ({isMobile}) => {
   const left = isMobile ? '50%' : '80%';
   const bottom = isMobile ? '56px' : '72px';
-  /** Landscape art: slightly shorter than figurine height so width stays in the right column */
-  const height = isMobile ? '46%' : '62%';
-  const maxWidth = isMobile ? 'min(92vw, 400px)' : 'min(46vw, 560px)';
+  const height = isMobile ? '50%' : '75%';
   const scale = isMobile ? 0.92 : 1.25;
 
   return (
@@ -29,13 +26,12 @@ export const HeroTechVisual: React.FC<HeroTechVisualProps> = ({isMobile}) => {
     >
       <motion.div
         id="hero-tech-visual-stage"
-        className="absolute flex flex-col items-center justify-end overflow-visible origin-bottom bg-transparent"
+        className="absolute flex items-end justify-center overflow-visible origin-bottom"
         style={{
           left,
           bottom,
           height,
-          maxWidth,
-          width: 'auto',
+          width: isMobile ? 'min(100vw, 520px)' : 'min(58vw, 720px)',
           zIndex: 20,
           transform: `translateX(-50%) scale(${scale})`,
           willChange: 'transform',
@@ -47,9 +43,9 @@ export const HeroTechVisual: React.FC<HeroTechVisualProps> = ({isMobile}) => {
           src={heroTechArt}
           alt=""
           draggable={false}
-          className="h-full w-auto max-w-full object-contain object-bottom pointer-events-none bg-transparent"
+          className="w-full h-full object-contain object-bottom pointer-events-none"
           style={{
-            filter: 'drop-shadow(0 20px 40px rgba(40,12,4,0.35))',
+            filter: 'drop-shadow(0 24px 48px rgba(35,10,4,0.4))',
           }}
           referrerPolicy="no-referrer"
         />
