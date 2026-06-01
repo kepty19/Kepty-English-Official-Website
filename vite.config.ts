@@ -3,8 +3,12 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
 
-export default defineConfig(() => {
+// GitHub Pages project site: https://kepty19.github.io/Kepty-English-Official-Website/
+const githubPagesBase = '/Kepty-English-Official-Website/';
+
+export default defineConfig(({mode}) => {
   return {
+    base: mode === 'production' ? githubPagesBase : '/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {

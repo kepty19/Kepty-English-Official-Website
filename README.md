@@ -1,20 +1,34 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Kepty English Official Website
 
-# Run and deploy your AI Studio app
+## 開発サイクル（Cursor → GitHub Desktop → 本番）
 
-This contains everything you need to run your app locally.
+1. **Cursor** でコードを編集する
+2. **GitHub Desktop** でコミットし、`main` ブランチへ push する
+3. GitHub Actions が自動で `npm run build` し、[本番サイト](https://kepty19.github.io/Kepty-English-Official-Website/) を更新する（通常 1〜3 分）
 
-View your app in AI Studio: https://ai.studio/apps/aab85188-5d4c-4bc3-b0d7-829516b2604c
+### 初回だけ：GitHub Pages の設定
 
-## Run Locally
+リポジトリ [Settings → Pages](https://github.com/kepty19/Kepty-English-Official-Website/settings/pages) で次を選ぶ。
 
-**Prerequisites:**  Node.js
+- **Build and deployment → Source:** `GitHub Actions`（ブランチ直下のファイルを公開する設定は使わない）
 
+### デプロイ状況の確認
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- [Actions タブ](https://github.com/kepty19/Kepty-English-Official-Website/actions) でワークフロー `Deploy to GitHub Pages` が緑になれば完了
+- 完了後、上記 URL を開いて表示を確認
+
+### ローカル確認
+
+```bash
+npm install
+npm run dev          # http://localhost:3000 （開発用）
+npm run preview:pages  # 本番と同じ base パスでビルド＋プレビュー
+```
+
+## Run Locally（AI Studio）
+
+**Prerequisites:** Node.js
+
+1. `npm install`
+2. 必要なら `.env.local` に `GEMINI_API_KEY` を設定（[.env.example](.env.example) 参照）
+3. `npm run dev`
