@@ -147,33 +147,46 @@ export default function App() {
     const userEmail = formData.get('userEmail') as string;
     const userMessage = formData.get('userMessage') as string;
 
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+    if (!accessKey) {
+      setInquiryError(
+        '送信設定が未完了です。お手数ですが contact@kepty.co へ直接メールをお送りください。'
+      );
+      return;
+    }
+
+    const payload = new FormData();
+    payload.append('access_key', accessKey);
+    payload.append('subject', '【Keptyホームページ】お問い合わせ');
+    payload.append('from_name', userName);
+    payload.append('name', userName);
+    payload.append('email', userEmail);
+    payload.append('replyto', userEmail);
+    payload.append(
+      'message',
+      `お名前: ${userName}\nメールアドレス: ${userEmail}\n\nお問い合わせ内容:\n${userMessage}`
+    );
+
     setInquirySubmitting(true);
     try {
-      const response = await fetch('https://formsubmit.co/ajax/contact@kepty.co', {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify({
-          name: userName,
-          email: userEmail,
-          message: userMessage,
-          _subject: '【Keptyホームページ】お問い合わせ',
-          _template: 'table',
-          _captcha: 'false',
-        }),
+        body: payload,
       });
-      const result = (await response.json()) as { success?: string };
+      const result = (await response.json()) as { success?: boolean; message?: string };
 
       if (response.ok && result.success) {
         setInquirySubmitted(true);
         e.currentTarget.reset();
       } else {
-        setInquiryError('送信に失敗しました。しばらくしてから再度お試しください。');
+        setInquiryError(
+          result.message ?? '送信に失敗しました。しばらくしてから再度お試しください。'
+        );
       }
     } catch {
-      setInquiryError('送信に失敗しました。ネットワーク接続を確認してください。');
+      setInquiryError(
+        '送信に失敗しました。通信環境をご確認のうえ、contact@kepty.co へ直接メールでもお問い合わせください。'
+      );
     } finally {
       setInquirySubmitting(false);
     }
