@@ -1808,8 +1808,8 @@ export default function App() {
                   
                   {/* Phase Banners Row Grid */}
                   <div className="flex w-full border-b border-neutral-200 items-stretch bg-white">
-                    {/* Leftspacer, match category style */}
-                    <div className="w-[185px] shrink-0 border-r border-neutral-100/50 bg-neutral-50/10"></div>
+                    {/* Leftspacer, match category style (sticky for horizontal scroll) */}
+                    <div className="w-[185px] shrink-0 border-r border-neutral-100/50 bg-[#fffdfb] sticky left-0 z-20"></div>
                     
                     {/* Right Timeline Area */}
                     <div className="flex-1 grid grid-cols-6 gap-0.5 px-1 bg-neutral-100/10">
@@ -1850,7 +1850,7 @@ export default function App() {
 
                   {/* Horizontal Month labels Timeline connector */}
                   <div className="bg-white py-4 border-b border-neutral-100 flex items-center justify-between gap-1">
-                    <div className="w-[185px] shrink-0"></div> {/* Match category width spacer */}
+                    <div className="w-[185px] shrink-0 bg-[#fffdfb] sticky left-0 z-20"></div> {/* Match category width spacer */}
                     
                     {/* Visual Month Connector Line */}
                     <div className="flex-1 flex items-center relative select-none px-1">
@@ -1891,7 +1891,7 @@ export default function App() {
                     
                     {/* Vertical Gridlines across the rows container to represent month sections */}
                     <div className="absolute inset-0 flex pointer-events-none">
-                      <div className="w-[186px] shrink-0 border-r border-[#FFEBE0]/40"></div>
+                      <div className="w-[186px] shrink-0 border-r border-[#FFEBE0]/40 bg-[#fffdfb] sticky left-0 z-10"></div>
                       <div className="flex-1 grid grid-cols-6 h-full px-1">
                         {[...Array(6)].map((_, idx) => (
                           <div key={idx} className="border-r border-neutral-100/50 h-full w-full"></div>
@@ -1917,7 +1917,7 @@ export default function App() {
                         <div key={i} className="flex items-center relative z-10 min-h-[28px]">
                           
                         {/* Left label: Badge + Name */}
-                        <div className="w-[185px] shrink-0 pl-3.5 flex items-center justify-start gap-2.5 text-left pr-2">
+                        <div className="w-[185px] shrink-0 pl-3.5 flex items-center justify-start gap-2.5 text-left pr-2 bg-[#fffdfb] sticky left-0 z-20">
                           <span className={`w-14 shrink-0 text-center text-[9px] font-black tracking-tighter uppercase py-0.5 rounded border ${row.bg}`}>
                             {row.badge}
                           </span>
@@ -2052,7 +2052,7 @@ export default function App() {
                 <div className="min-w-[890px] max-w-[940px] mx-auto flex items-stretch gap-2 px-1 pt-4 pb-4">
                   
                   {/* Column 1: Labels (左端の項目名) */}
-                  <div className="w-[110px] sm:w-[130px] shrink-0 flex flex-col gap-3">
+                  <div className="w-[110px] sm:w-[130px] shrink-0 flex flex-col gap-3 sticky left-0 z-20 bg-[#FCFBEC] pr-2">
                     {/* Spacer matching Header height */}
                     <div className="h-[74px] sm:h-[84px]" />
                     
