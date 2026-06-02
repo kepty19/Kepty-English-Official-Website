@@ -1802,125 +1802,94 @@ export default function App() {
                 </span>
               </div>
 
-              {/* Bottom Column: Gantt Chart with horizontal scrolling on mobile */}
-              <div className="relative w-full overflow-x-auto overflow-y-hidden pb-4 scrollbar-thin">
-                <div className="min-w-[700px] border border-neutral-100 rounded-2xl bg-[#fffdfb]">
+              {/* Gantt: fixed left column + scrollable timeline (avoids sticky/month layering bugs on iOS) */}
+              <div className="w-full overflow-x-auto overflow-y-hidden pb-4 scrollbar-thin">
+                <div className="inline-grid min-w-[700px] grid-cols-[140px_560px] border border-neutral-100 rounded-2xl bg-[#fffdfb] overflow-hidden">
                   
-                  {/* Phase Banners Row Grid */}
-                  <div className="flex w-full border-b border-neutral-200 items-stretch bg-white">
-                    {/* Leftspacer, match category style (sticky for horizontal scroll) */}
-                    <div className="w-[150px] shrink-0 border-r border-neutral-100/50 bg-[#fffdfb] sticky left-0 z-50"></div>
-                    
-                    {/* Right Timeline Area */}
-                    <div className="flex-1 grid grid-cols-6 gap-0.5 px-1 bg-neutral-100/10">
-                      {/* Phase 1 */}
-                      <div className="col-span-2 flex flex-col justify-between border-r border-[#E5E7EB]">
-                        <div className="bg-[#FCA271] text-white font-extrabold text-xs sm:text-[13px] text-center py-2 tracking-wider font-sans">
-                          Phase 1
-                        </div>
-                        <div className="p-3 bg-white text-center flex flex-col justify-center min-h-[68px]">
-                          <span className="text-[12.5px] font-black text-neutral-850">“基礎”の再強化</span>
-                          <span className="text-[9.5px] font-bold text-neutral-500 mt-1 whitespace-pre-line leading-tight">徹底的に強固な土台を構築する</span>
-                        </div>
+                  {/* Phase row — left rail (fixed in viewport) | timeline (scrolls) */}
+                  <div className="sticky left-0 z-30 bg-[#fffdfb] border-r border-b border-neutral-200 min-h-[136px]" aria-hidden />
+                  <div className="border-b border-neutral-200 bg-white grid grid-cols-6 gap-0.5 px-1 bg-neutral-100/10">
+                    <div className="col-span-2 flex flex-col justify-between border-r border-[#E5E7EB]">
+                      <div className="bg-[#FCA271] text-white font-extrabold text-xs sm:text-[13px] text-center py-2 tracking-wider font-sans">
+                        Phase 1
                       </div>
-
-                      {/* Phase 2 */}
-                      <div className="col-span-2 flex flex-col justify-between border-r border-[#E5E7EB]">
-                        <div className="bg-[#E67E51] text-white font-extrabold text-xs sm:text-[13px] text-center py-2 tracking-wider font-sans">
-                          Phase 2
-                        </div>
-                        <div className="p-3 bg-white text-center flex flex-col justify-center min-h-[68px]">
-                          <span className="text-[12.5px] font-black text-neutral-850">“武器”の磨き上げ</span>
-                          <span className="text-[9.5px] font-bold text-neutral-500 mt-1 whitespace-pre-line leading-tight">入念に技術を積み上げる</span>
-                        </div>
+                      <div className="p-3 bg-white text-center flex flex-col justify-center min-h-[68px]">
+                        <span className="text-[12.5px] font-black text-neutral-850">“基礎”の再強化</span>
+                        <span className="text-[9.5px] font-bold text-neutral-500 mt-1 whitespace-pre-line leading-tight">徹底的に強固な土台を構築する</span>
                       </div>
-
-                      {/* Phase 3 */}
-                      <div className="col-span-2 flex flex-col justify-between">
-                        <div className="bg-[#CD5126] text-white font-extrabold text-xs sm:text-[13px] text-center py-2 tracking-wider font-sans">
-                          Phase 3
-                        </div>
-                        <div className="p-3 bg-white text-center flex flex-col justify-center min-h-[68px]">
-                          <span className="text-[12.5px] font-black text-neutral-850">“型”の確立</span>
-                          <span className="text-[9.5px] font-bold text-neutral-500 mt-1 whitespace-pre-line leading-tight">自身の勝ちパターンを確立する</span>
-                        </div>
+                    </div>
+                    <div className="col-span-2 flex flex-col justify-between border-r border-[#E5E7EB]">
+                      <div className="bg-[#E67E51] text-white font-extrabold text-xs sm:text-[13px] text-center py-2 tracking-wider font-sans">
+                        Phase 2
+                      </div>
+                      <div className="p-3 bg-white text-center flex flex-col justify-center min-h-[68px]">
+                        <span className="text-[12.5px] font-black text-neutral-850">“武器”の磨き上げ</span>
+                        <span className="text-[9.5px] font-bold text-neutral-500 mt-1 whitespace-pre-line leading-tight">入念に技術を積み上げる</span>
+                      </div>
+                    </div>
+                    <div className="col-span-2 flex flex-col justify-between">
+                      <div className="bg-[#CD5126] text-white font-extrabold text-xs sm:text-[13px] text-center py-2 tracking-wider font-sans">
+                        Phase 3
+                      </div>
+                      <div className="p-3 bg-white text-center flex flex-col justify-center min-h-[68px]">
+                        <span className="text-[12.5px] font-black text-neutral-850">“型”の確立</span>
+                        <span className="text-[9.5px] font-bold text-neutral-500 mt-1 whitespace-pre-line leading-tight">自身の勝ちパターンを確立する</span>
                       </div>
                     </div>
                   </div>
 
-                  {/* Horizontal Month labels Timeline connector */}
-                  <div className="bg-white py-4 border-b border-neutral-100 flex items-center justify-start relative">
-                    {/* Safety mask: prevent month labels from appearing over sticky column on iOS */}
-                    <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-[140px] bg-white z-40 border-r border-neutral-100/50" />
-                    {/* Sticky left spacer should behave like other rows */}
-                    <div className="w-[140px] shrink-0 bg-white sticky left-0 z-50 border-r border-neutral-100/50"></div> {/* Match category width spacer */}
-                    
-                    {/* Visual Month Connector Line */}
-                    <div className="flex-1 min-w-0 flex items-center relative select-none px-1 z-0">
-                      <div className="absolute left-0 right-0 h-[1.5px] bg-neutral-200 z-0"></div>
-                      
-                      <div className="w-full grid grid-cols-6 relative z-0 text-center font-bold text-neutral-600 text-[11px] sm:text-[12px] font-mono">
-                        <div className="flex items-center justify-center relative font-sans">
-                          <div className="absolute left-[5%] w-2.5 h-2.5 rounded-full bg-neutral-300 border-2 border-white shadow-xs"></div>
-                          <span className="bg-white px-2.5 relative font-sans font-extrabold text-neutral-800">April</span>
-                          <div className="absolute right-0 w-2 h-2 bg-neutral-300 rounded-full border border-white"></div>
-                        </div>
-                        <div className="flex items-center justify-center relative font-sans">
-                          <span className="bg-white px-2.5 relative font-sans font-extrabold text-[#1a1a1a]">May</span>
-                          <div className="absolute right-0 w-2 h-2 bg-[#E1E5F2] rounded-full border border-white"></div>
-                        </div>
-                        <div className="flex items-center justify-center relative font-sans">
-                          <span className="bg-white px-2.5 relative font-sans font-extrabold text-[#1a1a1a]">June</span>
-                          <div className="absolute right-0 w-2 h-2 bg-neutral-300 rounded-full border border-white"></div>
-                        </div>
-                        <div className="flex items-center justify-center relative font-sans font-bold">
-                          <span className="bg-white px-2.5 relative font-sans font-extrabold text-[#1a1a1a]">July</span>
-                          <div className="absolute right-0 w-2 h-2 bg-neutral-300 rounded-full border border-white"></div>
-                        </div>
-                        <div className="flex items-center justify-center relative font-sans font-bold">
-                          <span className="bg-white px-2.5 relative font-sans font-extrabold text-[#1a1a1a]">August</span>
-                          <div className="absolute right-0 w-2 h-2 bg-neutral-300 rounded-full border border-white"></div>
-                        </div>
-                        <div className="flex items-center justify-center relative font-sans font-bold">
-                          <span className="bg-white px-2.5 relative font-sans font-extrabold text-[#1a1a1a]">September</span>
-                          <div className="absolute right-[5%] w-2.5 h-2.5 rounded-full bg-neutral-300 border-2 border-white shadow-xs"></div>
-                        </div>
+                  {/* Month row — labels live ONLY in the right column (never overlap left rail) */}
+                  <div className="sticky left-0 z-30 bg-white border-r border-b border-neutral-100 py-4" aria-hidden />
+                  <div className="bg-white py-4 border-b border-neutral-100 flex items-center relative select-none px-1">
+                    <div className="absolute left-0 right-0 h-[1.5px] bg-neutral-200" />
+                    <div className="w-full grid grid-cols-6 text-center font-bold text-neutral-600 text-[11px] sm:text-[12px] font-mono">
+                      <div className="flex items-center justify-center relative font-sans">
+                        <div className="absolute left-[5%] w-2.5 h-2.5 rounded-full bg-neutral-300 border-2 border-white shadow-xs" />
+                        <span className="bg-white px-2.5 relative font-sans font-extrabold text-neutral-800">April</span>
+                        <div className="absolute right-0 w-2 h-2 bg-neutral-300 rounded-full border border-white" />
+                      </div>
+                      <div className="flex items-center justify-center relative font-sans">
+                        <span className="bg-white px-2.5 relative font-sans font-extrabold text-[#1a1a1a]">May</span>
+                        <div className="absolute right-0 w-2 h-2 bg-[#E1E5F2] rounded-full border border-white" />
+                      </div>
+                      <div className="flex items-center justify-center relative font-sans">
+                        <span className="bg-white px-2.5 relative font-sans font-extrabold text-[#1a1a1a]">June</span>
+                        <div className="absolute right-0 w-2 h-2 bg-neutral-300 rounded-full border border-white" />
+                      </div>
+                      <div className="flex items-center justify-center relative font-sans font-bold">
+                        <span className="bg-white px-2.5 relative font-sans font-extrabold text-[#1a1a1a]">July</span>
+                        <div className="absolute right-0 w-2 h-2 bg-neutral-300 rounded-full border border-white" />
+                      </div>
+                      <div className="flex items-center justify-center relative font-sans font-bold">
+                        <span className="bg-white px-2.5 relative font-sans font-extrabold text-[#1a1a1a]">August</span>
+                        <div className="absolute right-0 w-2 h-2 bg-neutral-300 rounded-full border border-white" />
+                      </div>
+                      <div className="flex items-center justify-center relative font-sans font-bold">
+                        <span className="bg-white px-2.5 relative font-sans font-extrabold text-[#1a1a1a]">September</span>
+                        <div className="absolute right-[5%] w-2.5 h-2.5 rounded-full bg-neutral-300 border-2 border-white shadow-xs" />
                       </div>
                     </div>
                   </div>
 
-                  {/* Gantt Rows Space */}
-                  <div className="bg-white py-4 flex flex-col gap-3.5 relative">
-                    
-                    {/* Vertical Gridlines across the rows container to represent month sections */}
-                    <div className="absolute inset-0 flex pointer-events-none">
-                      <div className="w-[140px] shrink-0 border-r border-[#FFEBE0]/40 bg-white sticky left-0 z-10"></div>
-                      <div className="flex-1 grid grid-cols-6 h-full px-1">
-                        {[...Array(6)].map((_, idx) => (
-                          <div key={idx} className="border-r border-neutral-100/50 h-full w-full"></div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Gantt categories rows mapping */}
-                    {[
-                      { badge: "知識DB", bg: "bg-[#FFF2D4] text-[#A67512] border-[#F2E0BC]", name: "Vocabulary", start: 0, end: 6, barColor: "from-neutral-900 via-[#AE663B] to-[#F1AA6E]" },
-                      { badge: "知識DB", bg: "bg-[#FFF2D4] text-[#A67512] border-[#F2E0BC]", name: "Pronunciation", start: 0, end: 0.6, barColor: "from-neutral-900 to-[#925C37]" },
-                      { badge: "知識DB", bg: "bg-[#FFF2D4] text-[#A67512] border-[#F2E0BC]", name: "Grammar", start: 0, end: 1.3, barColor: "from-neutral-900 to-[#B46736]" },
-                      { badge: "音声知覚", bg: "bg-[#F3E0F7] text-[#713980] border-[#E5C9EC]", name: "Shadowing", start: 0, end: 6, barColor: "from-neutral-900 via-[#9955A1] to-[#E976E5]" },
-                      { badge: "意味理解", bg: "bg-[#E2F7E4] text-[#297C3A] border-[#CEECD3]", name: "Reading", start: 3.5, end: 6, barColor: "from-neutral-900 via-[#347F46] to-[#59B569]" },
-                      { badge: "概念化", bg: "bg-[#E3EDFA] text-[#285A9A] border-[#D1E0F3]", name: "Topic Talk", start: 2.2, end: 6, barColor: "from-neutral-900 via-[#3A6B9C] to-[#7EA9EE]" },
-                      { badge: "文章化", bg: "bg-[#FFDFDF] text-[#A53434] border-[#F4CDCD]", name: "Speaking Form", start: 1.3, end: 2.5, barColor: "from-neutral-900 to-[#C64141]" },
-                      { badge: "文章化", bg: "bg-[#FFDFDF] text-[#A53434] border-[#F4CDCD]", name: "Sentence Building", start: 0.7, end: 4.2, barColor: "from-neutral-900 via-[#A43B3B] to-[#EF7878]" }
-                    ].map((row, i) => {
-                      const totalC = 6;
-                      const leftPercent = (row.start / totalC) * 100;
-                      const widthPercent = ((row.end - row.start) / totalC) * 100;
-                      return (
-                        <div key={i} className="flex items-center relative z-10 min-h-[28px]">
-                          
-                        {/* Left label: Badge + Name */}
-                        <div className="w-[140px] shrink-0 pl-1 flex items-center justify-start gap-1 text-left pr-1 bg-white sticky left-0 z-50 border-r border-neutral-100/50">
+                  {/* Program rows */}
+                  {[
+                    { badge: "知識DB", bg: "bg-[#FFF2D4] text-[#A67512] border-[#F2E0BC]", name: "Vocabulary", start: 0, end: 6, barColor: "from-neutral-900 via-[#AE663B] to-[#F1AA6E]" },
+                    { badge: "知識DB", bg: "bg-[#FFF2D4] text-[#A67512] border-[#F2E0BC]", name: "Pronunciation", start: 0, end: 0.6, barColor: "from-neutral-900 to-[#925C37]" },
+                    { badge: "知識DB", bg: "bg-[#FFF2D4] text-[#A67512] border-[#F2E0BC]", name: "Grammar", start: 0, end: 1.3, barColor: "from-neutral-900 to-[#B46736]" },
+                    { badge: "音声知覚", bg: "bg-[#F3E0F7] text-[#713980] border-[#E5C9EC]", name: "Shadowing", start: 0, end: 6, barColor: "from-neutral-900 via-[#9955A1] to-[#E976E5]" },
+                    { badge: "意味理解", bg: "bg-[#E2F7E4] text-[#297C3A] border-[#CEECD3]", name: "Reading", start: 3.5, end: 6, barColor: "from-neutral-900 via-[#347F46] to-[#59B569]" },
+                    { badge: "概念化", bg: "bg-[#E3EDFA] text-[#285A9A] border-[#D1E0F3]", name: "Topic Talk", start: 2.2, end: 6, barColor: "from-neutral-900 via-[#3A6B9C] to-[#7EA9EE]" },
+                    { badge: "文章化", bg: "bg-[#FFDFDF] text-[#A53434] border-[#F4CDCD]", name: "Speaking Form", start: 1.3, end: 2.5, barColor: "from-neutral-900 to-[#C64141]" },
+                    { badge: "文章化", bg: "bg-[#FFDFDF] text-[#A53434] border-[#F4CDCD]", name: "Sentence Building", start: 0.7, end: 4.2, barColor: "from-neutral-900 via-[#A43B3B] to-[#EF7878]" }
+                  ].map((row, i, arr) => {
+                    const totalC = 6;
+                    const leftPercent = (row.start / totalC) * 100;
+                    const widthPercent = ((row.end - row.start) / totalC) * 100;
+                    const rowPad = i === 0 ? 'pt-4' : i === arr.length - 1 ? 'pb-4' : '';
+                    const rowGap = i < arr.length - 1 ? 'pb-3.5' : '';
+                    return (
+                      <React.Fragment key={row.name}>
+                        <div className={`sticky left-0 z-30 pl-1 pr-1 flex items-center justify-start gap-1 text-left bg-white border-r min-h-[28px] ${rowPad} ${rowGap}`}>
                           <span className={`w-9 shrink-0 text-center text-[8px] font-black tracking-tighter uppercase py-0.5 rounded border leading-[1.05] whitespace-normal ${row.bg}`}>
                             {row.badge.length === 4 ? (
                               <>
@@ -1932,24 +1901,24 @@ export default function App() {
                               row.badge
                             )}
                           </span>
-                          <span className="text-[12px] font-extrabold text-neutral-850 font-sans tracking-wide truncate">
+                          <span className="text-[12px] font-extrabold text-neutral-850 font-sans tracking-wide truncate min-w-0">
                             {row.name}
                           </span>
                         </div>
-
-                          {/* Right bar wrapper */}
-                          <div className="flex-1 px-1 h-3.5 relative flex items-center">
-                            <div 
-                              style={{ left: `${leftPercent}%`, width: `${widthPercent}%` }}
-                              className={`absolute h-[11.5px] rounded-full bg-gradient-to-r ${row.barColor} shadow-inner transition-all duration-300 hover:scale-y-110 cursor-pointer`}
-                            />
+                        <div className={`relative min-h-[28px] flex items-center px-1 bg-white ${rowPad} ${rowGap}`}>
+                          <div className="absolute inset-0 grid grid-cols-6 pointer-events-none px-1">
+                            {[...Array(6)].map((_, idx) => (
+                              <div key={idx} className="border-r border-neutral-100/50 h-full w-full last:border-r-0" />
+                            ))}
                           </div>
-
+                          <div
+                            style={{ left: `${leftPercent}%`, width: `${widthPercent}%` }}
+                            className={`absolute h-[11.5px] rounded-full bg-gradient-to-r ${row.barColor} shadow-inner`}
+                          />
                         </div>
-                      );
-                    })}
-
-                  </div>
+                      </React.Fragment>
+                    );
+                  })}
 
                 </div>
               </div>
