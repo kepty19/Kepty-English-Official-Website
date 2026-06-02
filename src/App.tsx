@@ -1807,9 +1807,9 @@ export default function App() {
                 <div className="inline-grid min-w-[700px] grid-cols-[140px_560px] border border-neutral-100 rounded-2xl bg-[#fffdfb]">
                   
                   {/* Phase row — left rail (fixed in viewport) | timeline (scrolls) */}
-                  <div className="sticky left-0 z-30 bg-[#fffdfb] border-r border-b border-neutral-200 min-h-[136px]" aria-hidden />
+                  <div className="sticky left-0 z-30 bg-[#fffdfb] border-r border-b border-neutral-200" aria-hidden />
                   <div className="border-b border-neutral-200 bg-white grid grid-cols-6 gap-0.5 px-1 bg-neutral-100/10">
-                    <div className="col-span-2 flex flex-col justify-between border-r border-[#E5E7EB]">
+                    <div className="col-span-2 flex flex-col border-r border-[#E5E7EB]">
                       <div className="bg-[#FCA271] text-white font-extrabold text-xs sm:text-[13px] text-center py-2 tracking-wider font-sans">
                         Phase 1
                       </div>
@@ -1818,7 +1818,7 @@ export default function App() {
                         <span className="text-[9.5px] font-bold text-neutral-500 mt-1 whitespace-pre-line leading-tight">徹底的に強固な土台を構築する</span>
                       </div>
                     </div>
-                    <div className="col-span-2 flex flex-col justify-between border-r border-[#E5E7EB]">
+                    <div className="col-span-2 flex flex-col border-r border-[#E5E7EB]">
                       <div className="bg-[#E67E51] text-white font-extrabold text-xs sm:text-[13px] text-center py-2 tracking-wider font-sans">
                         Phase 2
                       </div>
@@ -1827,7 +1827,7 @@ export default function App() {
                         <span className="text-[9.5px] font-bold text-neutral-500 mt-1 whitespace-pre-line leading-tight">入念に技術を積み上げる</span>
                       </div>
                     </div>
-                    <div className="col-span-2 flex flex-col justify-between">
+                    <div className="col-span-2 flex flex-col">
                       <div className="bg-[#CD5126] text-white font-extrabold text-xs sm:text-[13px] text-center py-2 tracking-wider font-sans">
                         Phase 3
                       </div>
@@ -2158,11 +2158,19 @@ export default function App() {
             </p>
 
             {/* Price Table Desktop/Mobile scroll wrapper */}
-            <div className="w-full overflow-x-auto pb-2 scrollbar-thin">
+            {/* Mobile-only horizontal scroll hint (match comparison table) */}
+            <div className="md:hidden flex justify-start -mb-1 mt-2 pl-1 pointer-events-none select-none">
+              <span className="inline-flex items-center gap-2 text-[12px] font-black tracking-[0.22em] text-[#E55C29] drop-shadow-[0_2px_10px_rgba(229,92,41,0.35)]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#E55C29] animate-pulse" />
+                scroll→
+              </span>
+            </div>
+
+            <div className="relative w-full overflow-x-auto pb-2 scrollbar-thin">
               <div className="min-w-[660px] max-w-[860px] mx-auto flex gap-3 p-1">
                 
                 {/* Column 1: Prices / Labels */}
-                <div className="w-[150px] sm:w-[180px] shrink-0 flex flex-col gap-3">
+                <div className="sticky left-0 z-20 w-[150px] sm:w-[180px] shrink-0 flex flex-col gap-3 bg-white pr-3 border-r border-[#DFEC9F]">
                   {/* Header/Spacer cell */}
                   <div className="h-[58px] sm:h-[68px] rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] p-2 flex items-center justify-center shadow-xs" />
                   
@@ -2187,7 +2195,7 @@ export default function App() {
                 </div>
 
                 {/* Column 2: Men's Category */}
-                <div className="flex-1 w-[240px] sm:w-[280px] shrink-0 flex flex-col gap-3">
+                <div className="flex-1 w-[240px] sm:w-[280px] shrink-0 flex flex-col gap-3 pl-1">
                   {/* Header */}
                   <div className="h-[58px] sm:h-[68px] rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] p-2 flex items-center justify-center shadow-xs">
                     <span className="text-[14px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans">
