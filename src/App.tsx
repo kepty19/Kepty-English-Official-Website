@@ -1849,12 +1849,12 @@ export default function App() {
                   </div>
 
                   {/* Horizontal Month labels Timeline connector */}
-                  <div className="bg-white py-4 border-b border-neutral-100 flex items-center justify-between gap-1 relative">
+                  <div className="bg-white py-4 border-b border-neutral-100 flex items-center justify-start relative">
                     {/* Sticky left spacer should behave like other rows */}
-                    <div className="w-[150px] shrink-0 bg-white sticky left-0 z-50 border-r border-neutral-100/50"></div> {/* Match category width spacer */}
+                    <div className="w-[140px] shrink-0 bg-white sticky left-0 z-50 border-r border-neutral-100/50"></div> {/* Match category width spacer */}
                     
                     {/* Visual Month Connector Line */}
-                    <div className="flex-1 flex items-center relative select-none px-1 z-0">
+                    <div className="flex-1 min-w-0 flex items-center relative select-none px-1 z-0">
                       <div className="absolute left-0 right-0 h-[1.5px] bg-neutral-200 z-0"></div>
                       
                       <div className="w-full grid grid-cols-6 relative z-0 text-center font-bold text-neutral-600 text-[11px] sm:text-[12px] font-mono">
@@ -1892,7 +1892,7 @@ export default function App() {
                     
                     {/* Vertical Gridlines across the rows container to represent month sections */}
                     <div className="absolute inset-0 flex pointer-events-none">
-                      <div className="w-[150px] shrink-0 border-r border-[#FFEBE0]/40 bg-white sticky left-0 z-10"></div>
+                      <div className="w-[140px] shrink-0 border-r border-[#FFEBE0]/40 bg-white sticky left-0 z-10"></div>
                       <div className="flex-1 grid grid-cols-6 h-full px-1">
                         {[...Array(6)].map((_, idx) => (
                           <div key={idx} className="border-r border-neutral-100/50 h-full w-full"></div>
@@ -1918,8 +1918,8 @@ export default function App() {
                         <div key={i} className="flex items-center relative z-10 min-h-[28px]">
                           
                         {/* Left label: Badge + Name */}
-                        <div className="w-[150px] shrink-0 pl-1 flex items-center justify-start gap-1.5 text-left pr-1 bg-white sticky left-0 z-50 border-r border-neutral-100/50">
-                          <span className={`w-10 shrink-0 text-center text-[8px] font-black tracking-tighter uppercase py-0.5 rounded border leading-[1.05] whitespace-normal ${row.bg}`}>
+                        <div className="w-[140px] shrink-0 pl-1 flex items-center justify-start gap-1 text-left pr-1 bg-white sticky left-0 z-50 border-r border-neutral-100/50">
+                          <span className={`w-9 shrink-0 text-center text-[8px] font-black tracking-tighter uppercase py-0.5 rounded border leading-[1.05] whitespace-normal ${row.bg}`}>
                             {row.badge.length === 4 ? (
                               <>
                                 {row.badge.slice(0, 2)}
@@ -1930,7 +1930,7 @@ export default function App() {
                               row.badge
                             )}
                           </span>
-                          <span className="text-[12.5px] font-extrabold text-neutral-850 font-sans tracking-wide truncate">
+                          <span className="text-[12px] font-extrabold text-neutral-850 font-sans tracking-wide truncate">
                             {row.name}
                           </span>
                         </div>
