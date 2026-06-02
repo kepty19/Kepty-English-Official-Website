@@ -373,7 +373,10 @@ export default function App() {
           </span>
         </div>
 
-        {/* Giant ghost display text "Kepty English" — above hero visual */}
+        {/* Hero: 3D tech visual — behind ghost text (z-2 vs z-4) */}
+        <HeroTechVisual isMobile={isMobile} />
+
+        {/* Giant ghost display text "Kepty English" */}
         <div
           id="ghost-background-text"
           className="absolute left-4 sm:left-24 pointer-events-none select-none top-[26%] sm:top-[28%] z-[4]"
@@ -392,9 +395,6 @@ export default function App() {
             Kepty English
           </span>
         </div>
-
-        {/* Hero: 3D tech visual (phone + ball) — floats like original figurine */}
-        <HeroTechVisual isMobile={isMobile} />
 
         {/* Bottom-left metadata description + Autoplay Pulse Display */}
         <div

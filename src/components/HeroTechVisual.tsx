@@ -1,6 +1,6 @@
 import React from 'react';
 import {motion} from 'motion/react';
-import heroTechArt from '../hero-tech-visual.png';
+import heroTechArt from '../hero-tech-visual-cutout.png';
 
 interface HeroTechVisualProps {
   isMobile: boolean;
@@ -13,9 +13,9 @@ const floatTransition = {
 };
 
 /**
- * Layout matches CarouselItem (figurine).
- * IMPORTANT: centering transform lives on a non-motion wrapper — motion `animate={{y}}`
- * replaces the whole transform and previously pushed the asset off-screen.
+ * Transparent PNG (no black matte) + figurine layout.
+ * z-index 2: sits behind "Kepty English" (z-4), overlaps orange hero only.
+ * Static anchor holds translateX/scale — motion only animates y.
  */
 export const HeroTechVisual: React.FC<HeroTechVisualProps> = ({isMobile}) => {
   const left = isMobile ? '50%' : '80%';
@@ -27,6 +27,7 @@ export const HeroTechVisual: React.FC<HeroTechVisualProps> = ({isMobile}) => {
     <div
       id="hero-tech-visual"
       className="absolute inset-0 pointer-events-none select-none overflow-visible"
+      style={{zIndex: 2}}
       aria-hidden
     >
       <div
@@ -37,7 +38,6 @@ export const HeroTechVisual: React.FC<HeroTechVisualProps> = ({isMobile}) => {
           bottom,
           height,
           aspectRatio: '3 / 2',
-          zIndex: 20,
           transform: `translateX(-50%) scale(${scale})`,
         }}
       >
@@ -51,7 +51,10 @@ export const HeroTechVisual: React.FC<HeroTechVisualProps> = ({isMobile}) => {
             src={heroTechArt}
             alt=""
             draggable={false}
-            className="w-full h-full object-contain object-bottom pointer-events-none mix-blend-screen"
+            className="w-full h-full object-contain object-bottom pointer-events-none"
+            style={{
+              filter: 'drop-shadow(0 24px 48px rgba(35,10,4,0.35))',
+            }}
             referrerPolicy="no-referrer"
           />
         </motion.div>

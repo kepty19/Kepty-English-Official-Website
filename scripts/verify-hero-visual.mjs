@@ -1,5 +1,5 @@
 /**
- * Sanity-check hero anchor math (catches motion transform regressions).
+ * Sanity-check hero visual layout (prevents repeat regressions).
  * Run: node scripts/verify-hero-visual.mjs
  */
 import fs from 'fs';
@@ -12,14 +12,19 @@ const component = fs.readFileSync(
   'utf8',
 );
 
+const cutout = path.join(root, 'src/hero-tech-visual-cutout.png');
 const errors = [];
 
-if (component.includes('hero-tech-visual-cutout')) {
-  errors.push('Component must not import cutout PNG (use hero-tech-visual.png + mix-blend-screen).');
+if (!fs.existsSync(cutout)) {
+  errors.push('Missing src/hero-tech-visual-cutout.png — run: node scripts/make-hero-cutout.mjs');
 }
 
-if (!component.includes('hero-tech-visual.png')) {
-  errors.push('Component must import hero-tech-visual.png.');
+if (!component.includes('hero-tech-visual-cutout.png')) {
+  errors.push('Component must import hero-tech-visual-cutout.png (transparent, no black box).');
+}
+
+if (component.includes('mix-blend-screen') || component.includes('hero-tech-visual.png')) {
+  errors.push('Do not use black-bg PNG or mix-blend-screen (causes solid black panel).');
 }
 
 if (!component.includes('hero-tech-visual-anchor')) {
@@ -30,8 +35,8 @@ if (/motion\.div[^]*style=\{[^]*transform:\s*`translateX/.test(component)) {
   errors.push('Do not put translateX/scale on motion.div — animate{{y}} overwrites transform.');
 }
 
-if (!component.includes('mix-blend-screen')) {
-  errors.push('Image must use mix-blend-screen on orange hero.');
+if (!/zIndex:\s*2/.test(component)) {
+  errors.push('Hero visual must use zIndex 2 (behind ghost text z-4).');
 }
 
 if (errors.length) {
