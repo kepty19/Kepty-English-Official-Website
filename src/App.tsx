@@ -624,7 +624,7 @@ export default function App() {
               </span>
               <div className="flex-1">
                 <p className="text-[19px] sm:text-[23px] font-sans font-bold leading-relaxed text-neutral-900 tracking-wide text-left">
-                  英会話(*試合)ではなく、“トレーニング(*日々の練習)に着目し、効率的に英会話スキルの向上を図ることができます。
+                  英会話(*試合)だけではなく、“トレーニング(*日々の練習)に着目し、効率的に英会話スキルの向上を図ることができます。
                 </p>
               </div>
             </div>
