@@ -1755,29 +1755,41 @@ export default function App() {
             {/* Layout: Top horizontal Specs + Bottom Gantt Timeline */}
             <div className="flex flex-col gap-6 mt-10 select-none max-w-[940px] mx-auto w-full">
               
-              {/* Top Row: Horizontal Metadata Specs - White BG */}
-              <div className="bg-white border border-neutral-200/60 p-4 sm:p-5 rounded-2xl shadow-xs grid grid-cols-3 gap-3 sm:gap-6 items-center text-left">
-                <div className="flex items-center gap-2 sm:gap-3">
-                  <span className="text-[#E55C29] font-black text-[18px] sm:text-xl">•</span>
-                  <div>
-                    <div className="text-[9px] sm:text-[10.5px] uppercase tracking-wider text-neutral-400 font-extrabold font-sans whitespace-nowrap">Training Term</div>
-                    <div className="text-[12px] sm:text-[16px] font-black text-neutral-850 font-sans whitespace-nowrap">6 months</div>
+              {/* Top Row: Horizontal Metadata Specs - White BG (never overflow on mobile) */}
+              <div className="bg-white border border-neutral-200/60 p-4 sm:p-5 rounded-2xl shadow-xs grid grid-cols-3 gap-2 sm:gap-6 items-stretch text-center divide-x divide-neutral-100">
+                <div className="min-w-0 flex items-center justify-center gap-2 px-1 sm:px-0">
+                  <span className="text-[#E55C29] font-black text-[16px] sm:text-xl leading-none">•</span>
+                  <div className="min-w-0">
+                    <div className="text-[8px] sm:text-[10.5px] uppercase tracking-wider text-neutral-400 font-extrabold font-sans leading-tight">
+                      Training Term
+                    </div>
+                    <div className="text-[11px] sm:text-[16px] font-black text-neutral-850 font-sans leading-tight break-words">
+                      6 months
+                    </div>
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-2 sm:gap-3 border-l border-neutral-100 pl-3 sm:pl-8">
-                  <span className="text-[#E55C29] font-black text-[18px] sm:text-xl">•</span>
-                  <div>
-                    <div className="text-[9px] sm:text-[10.5px] uppercase tracking-wider text-neutral-400 font-extrabold font-sans whitespace-nowrap">Training Time</div>
-                    <div className="text-[12px] sm:text-[16px] font-black text-neutral-850 font-sans whitespace-nowrap">2 hours / day</div>
+                <div className="min-w-0 flex items-center justify-center gap-2 px-1 sm:px-0">
+                  <span className="text-[#E55C29] font-black text-[16px] sm:text-xl leading-none">•</span>
+                  <div className="min-w-0">
+                    <div className="text-[8px] sm:text-[10.5px] uppercase tracking-wider text-neutral-400 font-extrabold font-sans leading-tight">
+                      Training Time
+                    </div>
+                    <div className="text-[11px] sm:text-[16px] font-black text-neutral-850 font-sans leading-tight break-words">
+                      2 hours / day
+                    </div>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2 sm:gap-3 border-l border-neutral-100 pl-3 sm:pl-8">
-                  <span className="text-[#E55C29] font-black text-[18px] sm:text-xl">•</span>
-                  <div>
-                    <div className="text-[9px] sm:text-[10.5px] uppercase tracking-wider text-neutral-400 font-extrabold font-sans whitespace-nowrap">Training Menu</div>
-                    <div className="text-[12px] sm:text-[16px] font-black text-neutral-850 font-sans whitespace-nowrap">4 menus / day</div>
+                <div className="min-w-0 flex items-center justify-center gap-2 px-1 sm:px-0">
+                  <span className="text-[#E55C29] font-black text-[16px] sm:text-xl leading-none">•</span>
+                  <div className="min-w-0">
+                    <div className="text-[8px] sm:text-[10.5px] uppercase tracking-wider text-neutral-400 font-extrabold font-sans leading-tight">
+                      Training Menu
+                    </div>
+                    <div className="text-[11px] sm:text-[16px] font-black text-neutral-850 font-sans leading-tight break-words">
+                      4 menus / day
+                    </div>
                   </div>
                 </div>
               </div>
