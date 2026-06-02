@@ -28,12 +28,87 @@ import {
   Speech
 } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'motion/react';
-import { HeroTechVisual } from './components/HeroTechVisual';
+import { HeroTechVisual, HeroTechVisualMobile } from './components/HeroTechVisual';
 import { SiteNavigation } from './components/SiteNavigation';
 import { GrainOverlay } from './components/GrainOverlay';
 import bgDarkSpace from './image_dark_space.jpg';
 import ceoProfileImg from './ceo-profile.png';
 import ceoSignatureImg from './ceo-signature.png';
+
+/** CEO MESSAGE body — PC版は意図的な改行あり（段落区切り `\n\n` は維持） */
+const CEO_MESSAGE = `静かに、しかし確実に、サッカー選手を取り巻くルールは変わりつつある。
+
+「サッカーさえ上手ければ、道は開ける」
+
+それは果たして、持続可能な真実なのだろうか。現代のサッカー選手にとって、
+その言葉はキャリアを縛る、あまりに危うい賭けかもしれない。
+
+現実は小難しい。ピッチの上でどれだけ輝いても、一歩外に出れば、自分の表現を持たない者は「透明な存在」として扱われてしまう。
+本来築けたはずの深い絆も、言葉を持たなければ「ただの通りすがり」で終わってしまう。
+あなたの輪郭が誰の記憶にも残らぬまま、時間は淡々と過ぎていく。
+
+また、競技人生の終わりは、唐突にやってくる。
+プロの世界で証明し続けてきた比類なき価値が、引退した途端に「サッカーという頂を極めた代償に、それ以外の術を持たない者」という偏見で片付けられる。
+そんな不条理な現実に、僕はどうしても抗いたい。
+
+
+この現実を自らの力で払拭し、人生の主導権を書き換える権利。
+その未来を切り拓く、最も強力な鍵の一つが「英語力」であると、僕は信じている。
+
+なぜなら、この世界共通の言語を自在に操れるようになることは、あなたの表現の幅、
+そしてスキルの幅を、いかようにも広げてくれるからだ。
+それは、これまで無意識に受け入れてきた「サッカー選手の限界」という定説を、
+根底から覆していく力になる。
+
+
+ただ、忘れないでほしい。その「新たな未来を切り拓く鍵」を掴み取れるかどうかの勝負は、すでに始まっている。
+
+これから海外へ挑戦されるのであれば、ぜひ、今この瞬間から、英語を学び始めてほしい。
+行ってからでは、あまりに時間が足りない。準備を怠れば、最初の1シーズンを棒に振り、
+戦う場所すら失いかねない。
+
+既に海外でプレーされているのであれば、今こそが、最もレバレッジが効く英語学習の黄金期だ。日々リアルな英語に触れられる環境があるからこそ、それ以外の時間での学習の質が、
+理想を現実にするスピードを決定づける。
+この貴重なチャンスを、決して無駄にしてほしくない。
+
+そして、引退後のキャリアへの不安は、今を全力で生きる者なら、誰もが心のどこかに抱く影かもしれない。けれど、ピッチを離れてから準備を始めるのでは、自らの手で選べる未来は、あまりに少なくなってしまう。
+
+
+英語は、“勉強”そのものではない。理想を実現するための“最高の投資”だ。
+
+また、「3ヶ月でペラペラ」なんていう手品のような魔法は、一切この世に存在しない。
+短期間で取り繕った知識や技術は、簡単に崩れ落ちる。時間をかけて積み上げた本質的なモノだけが、本物の武器となる。
+
+
+この積み上げの果てに、我々は、単なる“英語力”以上のものを手にする。
+それは、繰り返しになるが、人生のハンドルを握り続けるための“権利“だ。
+
+外国人の監督やチームメイトと深い関係性を構築し、様々な“機会”を自ら掴み取る”権利”。
+
+競技以外の活動を、日本国内に留まらず、“海外のグローバルな場”で実施する“権利”。
+
+引退後に、英語という武器を活用しながら、現役時代に積み上げた資産を何倍にも膨らませた“新しい闘い”に挑む“権利”。
+
+
+プロサッカー選手が英語を通して、人生をより豊かにする権利を獲得する。
+そんな世界を、一部の選手だけの特権ではなく、すべての選手が実現できるように。
+僕は、プロサッカー選手のための英語学習サービスを作った。
+
+「プロサッカー選手に最適化した学習体験」と「長期間の学習を支える価格設計」。
+それらを実現するために、プロダクトの細部に至るまで、徹底的に磨き上げた。
+
+もちろん、ユーザーがプロフェッショナルなのだから、我々のサービス水準もプロフェッショナルだ。
+
+
+プロサッカー選手の英語学習に、本気で向き合う。
+CEOである僕自身も、ありたき姿を実現するために、毎日欠かさず英語を学び続けています。
+
+`;
+
+/** スマホ：段落内の PC 用改行のみ除去（段落 `\n\n` は維持） */
+function ceoMessageForMobile(text: string) {
+  return text.replace(/([^\n])\n(?!\n)/g, '$1');
+}
 
 const SUPPORTING_PLAYERS = [
   {
@@ -260,13 +335,12 @@ export default function App() {
         {/* Grain overlay (zIndex 50) */}
         <GrainOverlay />
 
-        {/* Brand label top left - Aligned with floating tabs coordinates */}
+        {/* Brand label — vertical center aligned with mobile menu (top-4, h-11) */}
         <div 
           id="toonhub-logo-header"
-          className="absolute top-[4.5rem] left-4 md:top-8 md:left-8 z-60 pointer-events-none select-none flex items-center h-12 md:h-[68px] keep-original-font"
+          className="absolute top-4 left-4 md:top-8 md:left-8 z-60 pointer-events-none select-none flex items-center h-11 md:h-[68px] keep-original-font"
         >
-          {/* Exact transparent background Kepty logo + text from screenshot - Scaled 2x as requested */}
-          <svg viewBox="0 0 160 50" className="h-11 md:h-16 w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 160 50" className="h-10 md:h-16 w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12.5 13.5C9.5 13.5 7.5 15.5 7.5 19.5V28.5C7.5 32.5 9.5 34.5 12.5 34.5C13.8 34.5 14.8 32.2 14.8 28.5V19.5C14.8 15.5 13.8 13.5 12.5 13.5Z" fill="#FF6331" />
             <path d="M22.5 11.5C17.8 11.5 16.2 13.8 16.2 18.5V29.5C16.2 34.2 17.8 36.5 22.5 36.5C28.2 36.5 30.8 32.2 30.8 24C30.8 15.8 28.2 11.5 22.5 11.5Z" fill="#E55C29" />
             <text x="36" y="31" fontFamily="'Inter', sans-serif" fontWeight="700" fontSize="20" fill="#FFFFFF" letterSpacing="-0.03em">Kepty</text>
@@ -283,13 +357,46 @@ export default function App() {
         {/* Hero: 3D tech visual — behind ghost text (z-2 vs z-4) */}
         <HeroTechVisual />
 
-        {/* Giant ghost display text "Kepty English" */}
+        {/* —— Mobile HOME stack: title → tagline → photo → badge —— */}
+        <div className="md:hidden relative z-10 flex flex-col flex-1 min-h-0 pt-[4.25rem] px-4 pb-24">
+          <h1
+            className="font-anton text-white font-black leading-[0.95] mb-3"
+            style={{
+              fontSize: 'clamp(36px, 11vw, 56px)',
+              letterSpacing: '-0.02em',
+              textShadow: '0 8px 80px rgba(0,0,0,0.08)',
+            }}
+          >
+            Kepty English
+          </h1>
+
+          <p className="font-sans font-bold uppercase tracking-wide text-[17px] leading-snug text-white opacity-95 mb-4">
+            プロサッカー選手の英会話力を引き伸ばす 英語コーチングサービス
+          </p>
+
+          <div className="flex-1 flex items-center justify-center min-h-0">
+            <HeroTechVisualMobile />
+          </div>
+
+          <div className="mt-2 mb-2">
+            <div className="inline-flex items-center gap-2.5 bg-black/35 backdrop-blur-md px-4 py-2.5 rounded-full border border-white/10 shadow-lg">
+              <span className="relative flex h-[10px] w-[10px] font-sans">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF6331] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-full w-full bg-[#FF6331]"></span>
+              </span>
+              <span className="text-[13px] font-sans tracking-wide text-white font-bold">Total Users</span>
+              <span className="text-[13px] text-white font-mono font-black">7</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Giant ghost display text "Kepty English" — desktop only */}
         <div
           id="ghost-background-text"
-          className="absolute left-4 md:left-24 pointer-events-none select-none top-[14%] md:top-[28%] z-[4] pr-16 md:pr-0"
+          className="hidden md:block absolute left-24 pointer-events-none select-none top-[28%] z-[4]"
         >
           <span
-            className="font-anton text-white select-none text-left relative z-10 leading-[0.95] md:leading-none md:whitespace-nowrap"
+            className="font-anton text-white select-none whitespace-nowrap text-left relative z-10"
             style={{
               fontSize: 'clamp(36px, 11vw, 145px)',
               fontWeight: 900,
@@ -303,29 +410,28 @@ export default function App() {
           </span>
         </div>
 
-        {/* Bottom-left metadata description + Autoplay Pulse Display */}
+        {/* Bottom-left metadata — desktop only */}
         <div
           id="bottom-navigation-details"
-          className="absolute bottom-[4.5rem] left-4 md:bottom-36 md:left-24 max-w-[720px] select-none text-white z-60 pr-2"
+          className="hidden md:block absolute bottom-36 left-24 max-w-[720px] select-none text-white z-60"
         >
           <div className="transition-all duration-300">
-            <p className="font-sans font-bold uppercase tracking-wide md:tracking-widest mb-3 md:mb-5 text-[17px] leading-snug md:text-[33px] md:leading-normal opacity-95">
+            <p className="font-sans font-bold uppercase tracking-widest mb-5 text-[33px] opacity-95">
               プロサッカー選手の英会話力を引き伸ばす
               <br />
               英語コーチングサービス
             </p>
           </div>
 
-          {/* Cumulative Users Highlight Panel */}
-          <div className="inline-flex items-center gap-2.5 md:gap-3.5 bg-black/35 backdrop-blur-md px-4 py-2.5 md:px-5 md:py-3 rounded-full border border-white/10 shadow-lg">
-            <span className="relative flex h-[10px] w-[10px] md:h-[11px] md:w-[11px] font-sans">
+          <div className="inline-flex items-center gap-3.5 bg-black/35 backdrop-blur-md px-5 py-3 rounded-full border border-white/10 shadow-lg">
+            <span className="relative flex h-[11px] w-[11px] font-sans">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF6331] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-full w-full bg-[#FF6331]"></span>
+              <span className="relative inline-flex rounded-full h-[11px] w-[11px] bg-[#FF6331]"></span>
             </span>
-            <span className="text-[13px] md:text-[16px] font-sans tracking-wide text-white font-bold">
+            <span className="text-[16px] font-sans tracking-wide text-white font-bold">
               Total Users
             </span>
-            <span className="text-[13px] md:text-[16px] text-white font-mono font-black">
+            <span className="text-[16px] text-white font-mono font-black">
               7
             </span>
           </div>
@@ -368,75 +474,9 @@ export default function App() {
 
         <div className="max-w-[760px] mx-auto w-full py-12 relative z-10">
           {/* Plain white reading paragraphs with preserved spacing and layout elements */}
-          <div className="text-white text-[15px] sm:text-[17px] leading-[1.9] whitespace-pre-wrap font-sans text-left tracking-wider opacity-90 select-text">
-{`静かに、しかし確実に、サッカー選手を取り巻くルールは変わりつつある。
-
-「サッカーさえ上手ければ、道は開ける」
-
-それは果たして、持続可能な真実なのだろうか。現代のサッカー選手にとって、
-その言葉はキャリアを縛る、あまりに危うい賭けかもしれない。
-
-現実は小難しい。ピッチの上でどれだけ輝いても、一歩外に出れば、自分の表現を持たない者は「透明な存在」として扱われてしまう。
-本来築けたはずの深い絆も、言葉を持たなければ「ただの通りすがり」で終わってしまう。
-あなたの輪郭が誰の記憶にも残らぬまま、時間は淡々と過ぎていく。
-
-また、競技人生の終わりは、唐突にやってくる。
-プロの世界で証明し続けてきた比類なき価値が、引退した途端に「サッカーという頂を極めた代償に、それ以外の術を持たない者」という偏見で片付けられる。
-そんな不条理な現実に、僕はどうしても抗いたい。
-
-
-この現実を自らの力で払拭し、人生の主導権を書き換える権利。
-その未来を切り拓く、最も強力な鍵の一つが「英語力」であると、僕は信じている。
-
-なぜなら、この世界共通の言語を自在に操れるようになることは、あなたの表現の幅、
-そしてスキルの幅を、いかようにも広げてくれるからだ。
-それは、これまで無意識に受け入れてきた「サッカー選手の限界」という定説を、
-根底から覆していく力になる。
-
-
-ただ、忘れないでほしい。その「新たな未来を切り拓く鍵」を掴み取れるかどうかの勝負は、すでに始まっている。
-
-これから海外へ挑戦されるのであれば、ぜひ、今この瞬間から、英語を学び始めてほしい。
-行ってからでは、あまりに時間が足りない。準備を怠れば、最初の1シーズンを棒に振り、
-戦う場所すら失いかねない。
-
-既に海外でプレーされているのであれば、今こそが、最もレバレッジが効く英語学習の黄金期だ。日々リアルな英語に触れられる環境があるからこそ、それ以外の時間での学習の質が、
-理想を現実にするスピードを決定づける。
-この貴重なチャンスを、決して無駄にしてほしくない。
-
-そして、引退後のキャリアへの不安は、今を全力で生きる者なら、誰もが心のどこかに抱く影かもしれない。けれど、ピッチを離れてから準備を始めるのでは、自らの手で選べる未来は、あまりに少なくなってしまう。
-
-
-英語は、“勉強”そのものではない。理想を実現するための“最高の投資”だ。
-
-また、「3ヶ月でペラペラ」なんていう手品のような魔法は、一切この世に存在しない。
-短期間で取り繕った知識や技術は、簡単に崩れ落ちる。時間をかけて積み上げた本質的なモノだけが、本物の武器となる。
-
-
-この積み上げの果てに、我々は、単なる“英語力”以上のものを手にする。
-それは、繰り返しになるが、人生のハンドルを握り続けるための“権利“だ。
-
-外国人の監督やチームメイトと深い関係性を構築し、様々な“機会”を自ら掴み取る”権利”。
-
-競技以外の活動を、日本国内に留まらず、“海外のグローバルな場”で実施する“権利”。
-
-引退後に、英語という武器を活用しながら、現役時代に積み上げた資産を何倍にも膨らませた“新しい闘い”に挑む“権利”。
-
-
-プロサッカー選手が英語を通して、人生をより豊かにする権利を獲得する。
-そんな世界を、一部の選手だけの特権ではなく、すべての選手が実現できるように。
-僕は、プロサッカー選手のための英語学習サービスを作った。
-
-「プロサッカー選手に最適化した学習体験」と「長期間の学習を支える価格設計」。
-それらを実現するために、プロダクトの細部に至るまで、徹底的に磨き上げた。
-
-もちろん、ユーザーがプロフェッショナルなのだから、我々のサービス水準もプロフェッショナルだ。
-
-
-プロサッカー選手の英語学習に、本気で向き合う。
-CEOである僕自身も、ありたき姿を実現するために、毎日欠かさず英語を学び続けています。
-
-`}
+          <div className="text-white text-[15px] sm:text-[17px] leading-[1.9] font-sans text-left tracking-wider opacity-90 select-text">
+            <div className="md:hidden whitespace-pre-wrap">{ceoMessageForMobile(CEO_MESSAGE)}</div>
+            <div className="hidden md:block whitespace-pre-wrap">{CEO_MESSAGE}</div>
           </div>
 
           {/* Signature Block with high-end typography */}
