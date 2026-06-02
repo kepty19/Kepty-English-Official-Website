@@ -35,3 +35,22 @@
   animation: hero-visual-float 7s ease-in-out infinite;
   will-change: transform;
 }
+
+/* Fixed PC canvas (1440px) — identical layout on phone, tablet, and monitor */
+html {
+  overflow-x: auto;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 1440px;
+  background: #922704;
+}
+
+#root {
+  width: 1440px;
+  min-width: 1440px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
