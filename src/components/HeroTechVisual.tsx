@@ -21,12 +21,12 @@ export const HeroTechVisual: React.FC = () => (
 
 /** Mobile: in-flow, larger centered image */
 export const HeroTechVisualMobile: React.FC = () => (
-  <div className="md:hidden w-full flex justify-center items-center py-1" aria-hidden>
+  <div className="md:hidden w-full flex justify-center items-end pb-1" aria-hidden>
     <img
       src={heroVisual}
       alt=""
       draggable={false}
-      className="hero-tech-visual-img w-[min(96vw,440px)] max-h-[52vh] object-contain object-bottom"
+      className="hero-tech-visual-img w-[min(98vw,480px)] max-h-[58vh] object-contain object-bottom"
       referrerPolicy="no-referrer"
     />
   </div>
