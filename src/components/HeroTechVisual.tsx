@@ -12,7 +12,7 @@ interface HeroTechVisualProps {
  */
 export const HeroTechVisual: React.FC<HeroTechVisualProps> = ({isMobile}) => {
   const left = isMobile ? '50%' : '80%';
-  const bottom = isMobile ? '56px' : '72px';
+  const bottom = isMobile ? '40px' : '48px';
   const height = isMobile ? '50%' : '75%';
   const scale = isMobile ? 0.92 : 1.25;
 
