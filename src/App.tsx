@@ -380,7 +380,7 @@ export default function App() {
             英語コーチングサービス
           </p>
 
-          <div className="flex-1 flex items-end justify-center min-h-0 mt-8">
+          <div className="flex-1 flex items-end justify-center min-h-0 mt-8 translate-y-10">
             <HeroTechVisualMobile />
           </div>
 
@@ -487,21 +487,21 @@ export default function App() {
 
           {/* Signature Block with high-end typography */}
           <div className="mt-12 pt-8 border-t border-white/10 select-none text-left">
-            {/* Mobile: signature top-right (above CEO name), not beside it */}
-            <div className="md:hidden">
-              <div className="flex items-start justify-between gap-3 mb-3">
+            {/* Mobile: signature beside name block (fills vertical gap) */}
+            <div className="md:hidden flex flex-row items-center justify-between gap-4">
+              <div className="flex flex-col gap-1.5 min-w-0">
                 <p className="text-[15px] font-bold text-white/80 font-sans tracking-wide leading-relaxed">
                   Kepty Co., Ltd.
                 </p>
-                <img
-                  src={ceoSignatureImg}
-                  alt="Tomohiro Kajiyama signature"
-                  className="w-[120px] h-auto object-contain object-right shrink-0 pointer-events-none brightness-0 invert opacity-95"
-                />
+                <p className="text-[15px] font-bold text-white/80 font-sans tracking-wide leading-relaxed">
+                  Founder & CEO：Tomohiro Kajiyama | 梶山 知裕
+                </p>
               </div>
-              <p className="text-[15px] font-bold text-white/80 font-sans tracking-wide leading-relaxed">
-                Founder & CEO：Tomohiro Kajiyama | 梶山 知裕
-              </p>
+              <img
+                src={ceoSignatureImg}
+                alt="Tomohiro Kajiyama signature"
+                className="w-[108px] h-auto object-contain object-right shrink-0 pointer-events-none brightness-0 invert opacity-95"
+              />
             </div>
 
             {/* Desktop: unchanged side-by-side layout */}
