@@ -884,7 +884,7 @@ export default function App() {
                 "引退後のキャリアを見据え、現役中に競技以外の語学スキルを高めたいと考える選手"
               ].map((text, idx) => (
                 <div key={idx} className="flex items-start gap-4 sm:gap-5 group">
-                  <div className="mt-1.5 w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 rounded-full bg-[#E55C29] border-2 border-[#E55C29]/30 shadow-sm flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
+                  <div className="mt-[0.52em] sm:mt-[0.5em] w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 rounded-full bg-[#E55C29] border-2 border-[#E55C29]/30 shadow-sm flex-shrink-0 group-hover:scale-125 transition-transform duration-300" />
                   <p className="text-[15px] sm:text-[18px] leading-[1.8] font-sans font-semibold text-neutral-800 tracking-wide text-left group-hover:text-black transition-colors">
                     {text}
                   </p>
@@ -935,9 +935,9 @@ export default function App() {
               
               <div className="w-full flex flex-col items-center">
                 {/* 1. Circle Row with perfectly aligned centers */}
-                <div className="flex items-center justify-between w-full max-w-[390px] sm:max-w-[590px] mx-auto px-2 sm:px-4 select-none">
+                <div className="flex items-center justify-between w-full max-w-none sm:max-w-[590px] mx-auto px-1 sm:px-4 select-none">
                   {/* Quality circle */}
-                  <div className="w-[96px] h-[96px] sm:w-[130px] sm:h-[130px] rounded-full bg-neutral-800 text-white flex items-center justify-center shadow-md hover:scale-105 transition-transform duration-300">
+                  <div className="w-[28vw] max-w-[110px] sm:max-w-none aspect-square sm:w-[130px] rounded-full bg-neutral-800 text-white flex items-center justify-center shadow-md hover:scale-105 transition-transform duration-300 shrink-0">
                     <span className="text-3xl sm:text-4xl font-extrabold font-serif">質</span>
                   </div>
 
@@ -945,7 +945,7 @@ export default function App() {
                   <span className="text-2xl sm:text-4xl text-neutral-400 font-extrabold font-sans">×</span>
 
                   {/* Quantity circle */}
-                  <div className="w-[96px] h-[96px] sm:w-[130px] sm:h-[130px] rounded-full bg-neutral-800 text-white flex items-center justify-center shadow-md hover:scale-105 transition-transform duration-300">
+                  <div className="w-[28vw] max-w-[110px] sm:max-w-none aspect-square sm:w-[130px] rounded-full bg-neutral-800 text-white flex items-center justify-center shadow-md hover:scale-105 transition-transform duration-300 shrink-0">
                     <span className="text-3xl sm:text-4xl font-extrabold font-serif">量</span>
                   </div>
 
@@ -953,13 +953,13 @@ export default function App() {
                   <span className="text-2xl sm:text-4xl text-neutral-400 font-extrabold font-sans">×</span>
 
                   {/* Consistency circle */}
-                  <div className="w-[96px] h-[96px] sm:w-[130px] sm:h-[130px] rounded-full bg-neutral-800 text-white flex items-center justify-center shadow-md hover:scale-105 transition-transform duration-300">
+                  <div className="w-[28vw] max-w-[110px] sm:max-w-none aspect-square sm:w-[130px] rounded-full bg-neutral-800 text-white flex items-center justify-center shadow-md hover:scale-105 transition-transform duration-300 shrink-0">
                     <span className="text-3xl sm:text-4xl font-extrabold font-serif">継続</span>
                   </div>
                 </div>
 
                 {/* 2. Label Row with aligned text below circles */}
-                <div className="grid grid-cols-3 w-full max-w-[390px] sm:max-w-[590px] mx-auto mt-6 text-center select-none gap-x-2 sm:gap-x-4">
+                <div className="grid grid-cols-3 w-full max-w-none sm:max-w-[590px] mx-auto mt-6 text-center select-none gap-x-2 sm:gap-x-4 px-1 sm:px-0">
                   <div className="flex flex-col items-center justify-start">
                     <span className="text-[13px] sm:text-[16px] font-extrabold text-neutral-800 leading-snug">
                       個々の課題に即した<br />
