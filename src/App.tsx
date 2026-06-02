@@ -1804,7 +1804,7 @@ export default function App() {
 
               {/* Gantt: fixed left column + scrollable timeline (avoids sticky/month layering bugs on iOS) */}
               <div className="w-full overflow-x-auto overflow-y-hidden pb-4 scrollbar-thin">
-                <div className="inline-grid min-w-[700px] grid-cols-[140px_560px] border border-neutral-100 rounded-2xl bg-[#fffdfb] overflow-hidden">
+                <div className="inline-grid min-w-[700px] grid-cols-[140px_560px] border border-neutral-100 rounded-2xl bg-[#fffdfb]">
                   
                   {/* Phase row — left rail (fixed in viewport) | timeline (scrolls) */}
                   <div className="sticky left-0 z-30 bg-[#fffdfb] border-r border-b border-neutral-200 min-h-[136px]" aria-hidden />
