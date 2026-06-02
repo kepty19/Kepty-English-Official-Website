@@ -1537,8 +1537,8 @@ export default function App() {
                 </p>
                 
                 <p className="text-[14px] sm:text-[16px] font-bold text-neutral-900 leading-relaxed font-sans mt-5 bg-neutral-50 px-4 py-3 rounded-xl text-center">
-                  ピッチ内外でのコミュニケーションや試合前後の<br/>
-                  インタビューなど、様々な状況に対応可能です。
+                  試合前後のインタビューなど、<br/>
+                  様々なサッカーシーンを想定した学習が可能です。
                 </p>
               </div>
 
@@ -2142,8 +2142,7 @@ export default function App() {
 
           {/* Under annotations */}
           <div className="mt-2 text-left max-w-[940px] mx-auto text-[11px] sm:text-[12.5px] font-bold text-neutral-500 leading-relaxed font-sans pl-1 select-none">
-            <p className="before:content-['']">※上記、あくまで参考の比較表になります。</p>
-            <p className="mt-1">※上記、2026年6月時点での実態です。今後変更する可能性がございます。</p>
+            <p className="before:content-['']">※上記、あくまで参考の実態・比較表になります。（2026年6月時点）</p>
           </div>
 
         </div>
