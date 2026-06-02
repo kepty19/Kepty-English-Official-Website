@@ -2568,12 +2568,10 @@ export default function App() {
                 </h3>
               </div>
               <div className="relative w-[105%] max-w-[420px] md:max-w-[520px] lg:w-[145%] lg:max-w-none mx-auto lg:mx-0 mt-4 lg:-mt-[55px] lg:-ml-14 xl:-ml-20 select-none animate-fade-in">
-                {/* Circular backdrop behind face (match Company section background) */}
+                {/* Circular backdrop: same material as 会社概要 card (glass on section gradient), not a mini gradient */}
                 <div
-                  className="absolute left-1/2 top-[46%] -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] rounded-full opacity-95 blur-[0.2px] z-0"
-                  style={{
-                    background: 'radial-gradient(ellipse at center, #E55C29 0%, #C44315 55%, #922704 100%)'
-                  }}
+                  className="absolute left-1/2 top-[46%] -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] sm:w-[400px] sm:h-[400px] rounded-full bg-black/20 backdrop-blur-md border border-white/10 z-0"
+                  aria-hidden
                 />
                 <img 
                   src={ceoProfileImg} 
