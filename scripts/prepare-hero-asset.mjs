@@ -1,16 +1,17 @@
 /**
- * Black-background key for hero-tech-visual.png → RGBA cutout (no blend tint).
- * Run: node scripts/make-hero-cutout.mjs
+ * ONE-TIME / manual: convert black-bg master → transparent hero asset.
+ * Prefer replacing src/hero-tech-visual.png with a true transparent PNG from your image tool.
+ *
+ * Run: node scripts/prepare-hero-asset.mjs
  */
 import fs from 'fs';
 import zlib from 'zlib';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const root = path.join(__dirname, '..');
-const src = path.join(root, 'src/hero-tech-visual.png');
-const out = path.join(root, 'src/hero-tech-visual-cutout.png');
+const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
+const master = path.join(root, 'src/hero-tech-visual-source.png');
+const out = path.join(root, 'src/hero-tech-visual.png');
 
 function crc32(buf) {
   let c = 0xffffffff;
@@ -38,28 +39,23 @@ function chunk(type, data) {
 
 function paeth(a, b, c) {
   const p = a + b - c;
-  const pa = Math.abs(p - a);
-  const pb = Math.abs(p - b);
-  const pc = Math.abs(p - c);
-  if (pa <= pb && pa <= pc) return a;
-  if (pb <= pc) return b;
-  return c;
+  const pa = Math.abs(p - a), pb = Math.abs(p - b), pc = Math.abs(p - c);
+  return pa <= pb && pa <= pc ? a : pb <= pc ? b : c;
 }
 
 function unfilter(raw, width, height, bpp) {
   const stride = width * bpp;
   const out = Buffer.alloc(height * stride);
-  let rawOff = 0;
-  let outOff = 0;
+  let rawOff = 0, outOff = 0;
   const prev = Buffer.alloc(stride);
   for (let y = 0; y < height; y++) {
     const filter = raw[rawOff++];
     for (let x = 0; x < stride; x++) {
       const cur = raw[rawOff++];
-      let val;
       const a = x >= bpp ? out[outOff + x - bpp] : 0;
       const b = prev[x];
       const c = x >= bpp ? prev[x - bpp] : 0;
+      let val;
       switch (filter) {
         case 0: val = cur; break;
         case 1: val = (cur + a) & 0xff; break;
@@ -76,23 +72,9 @@ function unfilter(raw, width, height, bpp) {
   return out;
 }
 
-function filterScanlines(rgba, width, height) {
-  const stride = width * 4;
-  const raw = [];
-  for (let y = 0; y < height; y++) {
-    raw.push(0); // None — safest PNG encode
-    const row = rgba.subarray(y * stride, (y + 1) * stride);
-    for (let x = 0; x < stride; x++) raw.push(row[x]);
-  }
-  return Buffer.from(raw);
-}
-
 function readPng(file) {
   const buf = fs.readFileSync(file);
-  if (buf.toString('hex', 0, 8) !== '89504e470d0a1a0a') throw new Error('Not PNG');
-  let pos = 8;
-  let width, height, colorType;
-  const idats = [];
+  let pos = 8, width, height, colorType, idats = [];
   while (pos < buf.length) {
     const len = buf.readUInt32BE(pos);
     const type = buf.toString('ascii', pos + 4, pos + 8);
@@ -101,24 +83,17 @@ function readPng(file) {
       width = data.readUInt32BE(0);
       height = data.readUInt32BE(4);
       colorType = data[9];
-      if (colorType !== 2 && colorType !== 6) throw new Error(`Unsupported color type ${colorType}`);
     } else if (type === 'IDAT') idats.push(data);
     pos += 12 + len;
   }
-  const raw = zlib.inflateSync(Buffer.concat(idats));
   const bpp = colorType === 6 ? 4 : 3;
-  const rgb = unfilter(raw, width, height, bpp);
-  return { width, height, colorType, rgb, bpp };
+  const raw = zlib.inflateSync(Buffer.concat(idats));
+  return { width, height, bpp, rgb: unfilter(raw, width, height, bpp) };
 }
 
-/** Only remove near-pure black matte; keep dark phone/ball surfaces */
+/** Hard binary alpha — no semi-transparent fringe (avoids glitch stripes) */
 function keyAlpha(r, g, b) {
-  if (r <= 10 && g <= 10 && b <= 10) return 0;
-  if (r <= 22 && g <= 22 && b <= 22) {
-    const t = Math.max(r, g, b) / 22;
-    return Math.round(255 * t * t * t);
-  }
-  return 255;
+  return r <= 14 && g <= 14 && b <= 14 ? 0 : 255;
 }
 
 function writeRgbaPng(width, height, rgba, dest) {
@@ -130,31 +105,42 @@ function writeRgbaPng(width, height, rgba, dest) {
   ihdr[10] = 0;
   ihdr[11] = 0;
   ihdr[12] = 0;
-  const filtered = filterScanlines(rgba, width, height);
-  const idat = zlib.deflateSync(filtered, { level: 9 });
-  const png = Buffer.concat([
-    Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]),
-    chunk('IHDR', ihdr),
-    chunk('IDAT', idat),
-    chunk('IEND', Buffer.alloc(0)),
-  ]);
-  fs.writeFileSync(dest, png);
+  const stride = width * 4;
+  const raw = [];
+  for (let y = 0; y < height; y++) {
+    raw.push(0);
+    const row = rgba.subarray(y * stride, (y + 1) * stride);
+    for (let x = 0; x < stride; x++) raw.push(row[x]);
+  }
+  const idat = zlib.deflateSync(Buffer.from(raw), { level: 9 });
+  fs.writeFileSync(
+    dest,
+    Buffer.concat([
+      Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]),
+      chunk('IHDR', ihdr),
+      chunk('IDAT', idat),
+      chunk('IEND', Buffer.alloc(0)),
+    ]),
+  );
 }
 
-const { width, height, rgb, bpp } = readPng(src);
+if (!fs.existsSync(master)) {
+  console.error(`Missing master: ${master}`);
+  console.error('Place black-background art as hero-tech-visual-source.png, or drop a transparent PNG as hero-tech-visual.png');
+  process.exit(1);
+}
+
+const { width, height, rgb, bpp } = readPng(master);
 const rgba = Buffer.alloc(width * height * 4);
 for (let y = 0; y < height; y++) {
   for (let x = 0; x < width; x++) {
     const si = (y * width + x) * bpp;
     const di = (y * width + x) * 4;
-    const r = rgb[si];
-    const g = rgb[si + 1];
-    const b = rgb[si + 2];
-    rgba[di] = r;
-    rgba[di + 1] = g;
-    rgba[di + 2] = b;
-    rgba[di + 3] = keyAlpha(r, g, b);
+    rgba[di] = rgb[si];
+    rgba[di + 1] = rgb[si + 1];
+    rgba[di + 2] = rgb[si + 2];
+    rgba[di + 3] = keyAlpha(rgb[si], rgb[si + 1], rgb[si + 2]);
   }
 }
 writeRgbaPng(width, height, rgba, out);
-console.log(`Wrote ${out} (${width}x${height})`);
+console.log(`Wrote ${out} (${width}x${height}, hard alpha)`);

@@ -1,6 +1,5 @@
 /**
- * Sanity-check hero visual layout (prevents repeat regressions).
- * Run: node scripts/verify-hero-visual.mjs
+ * Validates hero visual setup — run via npm run lint
  */
 import fs from 'fs';
 import path from 'path';
@@ -11,32 +10,37 @@ const component = fs.readFileSync(
   path.join(root, 'src/components/HeroTechVisual.tsx'),
   'utf8',
 );
-
-const cutout = path.join(root, 'src/hero-tech-visual-cutout.png');
+const asset = path.join(root, 'src/hero-tech-visual.png');
 const errors = [];
 
-if (!fs.existsSync(cutout)) {
-  errors.push('Missing src/hero-tech-visual-cutout.png — run: node scripts/make-hero-cutout.mjs');
+if (!fs.existsSync(asset)) {
+  errors.push('Missing src/hero-tech-visual.png');
+} else {
+  const buf = fs.readFileSync(asset);
+  if (buf.length >= 26) {
+    const colorType = buf[25];
+    if (colorType !== 6) {
+      errors.push(
+        'hero-tech-visual.png must be RGBA (colorType 6). Replace with a transparent PNG — see docs/HERO_VISUAL.md',
+      );
+    }
+  }
 }
 
-if (!component.includes('hero-tech-visual-cutout.png')) {
-  errors.push('Component must import hero-tech-visual-cutout.png (transparent, no black box).');
+if (/from ['"].*cutout|mix-blend/.test(component)) {
+  errors.push('Hero must not use cutout files or CSS blend modes.');
 }
 
-if (component.includes('mix-blend-screen') || component.includes('hero-tech-visual.png')) {
-  errors.push('Do not use black-bg PNG or mix-blend-screen (causes solid black panel).');
+if (component.includes('motion/') || component.includes('motion/react')) {
+  errors.push('Hero must not use Framer Motion on the positioned node.');
 }
 
-if (!component.includes('hero-tech-visual-anchor')) {
-  errors.push('Missing static anchor wrapper for translateX(-50%) scale().');
-}
-
-if (/motion\.div[^]*style=\{[^]*transform:\s*`translateX/.test(component)) {
-  errors.push('Do not put translateX/scale on motion.div — animate{{y}} overwrites transform.');
+if (!component.includes('hero-tech-visual.png')) {
+  errors.push('Import src/hero-tech-visual.png only.');
 }
 
 if (!/zIndex:\s*2/.test(component)) {
-  errors.push('Hero visual must use zIndex 2 (behind ghost text z-4).');
+  errors.push('Hero visual zIndex must be 2 (behind ghost text).');
 }
 
 if (errors.length) {

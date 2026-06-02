@@ -1,21 +1,14 @@
 import React from 'react';
-import {motion} from 'motion/react';
-import heroTechArt from '../hero-tech-visual-cutout.png';
+import heroVisual from '../hero-tech-visual.png';
 
 interface HeroTechVisualProps {
   isMobile: boolean;
 }
 
-const floatTransition = {
-  duration: 7,
-  repeat: Infinity,
-  ease: 'easeInOut' as const,
-};
-
 /**
- * Transparent PNG (no black matte) + figurine layout.
- * z-index 2: sits behind "Kepty English" (z-4), overlaps orange hero only.
- * Static anchor holds translateX/scale — motion only animates y.
+ * Hero figurine slot — same geometry as CarouselItem.
+ * Asset MUST be a true transparent PNG (src/hero-tech-visual.png).
+ * No blend modes, no runtime cutout, no motion on the positioned node.
  */
 export const HeroTechVisual: React.FC<HeroTechVisualProps> = ({isMobile}) => {
   const left = isMobile ? '50%' : '80%';
@@ -26,39 +19,24 @@ export const HeroTechVisual: React.FC<HeroTechVisualProps> = ({isMobile}) => {
   return (
     <div
       id="hero-tech-visual"
-      className="absolute inset-0 pointer-events-none select-none overflow-visible"
-      style={{zIndex: 2}}
+      className="absolute flex items-end justify-center origin-bottom pointer-events-none select-none overflow-visible"
+      style={{
+        left,
+        bottom,
+        height,
+        width: isMobile ? 'min(92vw, 420px)' : 'min(50vw, 600px)',
+        zIndex: 2,
+        transform: `translateX(-50%) scale(${scale})`,
+      }}
       aria-hidden
     >
-      <div
-        id="hero-tech-visual-anchor"
-        className="absolute origin-bottom"
-        style={{
-          left,
-          bottom,
-          height,
-          aspectRatio: '3 / 2',
-          transform: `translateX(-50%) scale(${scale})`,
-        }}
-      >
-        <motion.div
-          id="hero-tech-visual-stage"
-          className="w-full h-full"
-          animate={{y: [0, -10, 4, -6, 0]}}
-          transition={floatTransition}
-        >
-          <img
-            src={heroTechArt}
-            alt=""
-            draggable={false}
-            className="w-full h-full object-contain object-bottom pointer-events-none"
-            style={{
-              filter: 'drop-shadow(0 24px 48px rgba(35,10,4,0.35))',
-            }}
-            referrerPolicy="no-referrer"
-          />
-        </motion.div>
-      </div>
+      <img
+        src={heroVisual}
+        alt=""
+        draggable={false}
+        className="hero-tech-visual-img max-h-full max-w-full w-auto h-auto object-contain object-bottom"
+        referrerPolicy="no-referrer"
+      />
     </div>
   );
 };

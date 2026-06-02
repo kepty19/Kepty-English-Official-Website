@@ -24,3 +24,14 @@
   transform: scale(1.08);
   background-color: rgba(255, 255, 255, 0.12);
 }
+
+@keyframes hero-visual-float {
+  0%, 100% { transform: translateY(0); }
+  35% { transform: translateY(-10px); }
+  65% { transform: translateY(4px); }
+}
+
+.hero-tech-visual-img {
+  animation: hero-visual-float 7s ease-in-out infinite;
+  will-change: transform;
+}
