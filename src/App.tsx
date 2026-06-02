@@ -933,50 +933,44 @@ export default function App() {
             {/* Quality x Quantity x Consistency diagram */}
             <div className="flex flex-col items-center justify-center my-12 bg-white/40 p-6 sm:p-10 rounded-3xl border border-yellow-100/40 w-full max-w-[860px] mx-auto">
               
-              <div className="w-full flex flex-col items-center">
-                {/* 1. Circle Row with perfectly aligned centers */}
-                <div className="flex items-center justify-center gap-2 sm:gap-4 w-full max-w-none sm:max-w-[590px] mx-auto px-1 sm:px-4 select-none">
-                  {/* Quality circle */}
+              {/* Circles + labels share one grid so mobile text aligns under each circle */}
+              <div className="grid grid-cols-[1fr_auto_1fr_auto_1fr] gap-x-1.5 sm:gap-x-4 w-full max-w-[340px] sm:max-w-[590px] mx-auto select-none">
+                {/* Row 1: circles */}
+                <div className="col-start-1 row-start-1 flex justify-center">
                   <div className="w-[92px] h-[92px] sm:w-[130px] sm:h-[130px] rounded-full bg-neutral-800 text-white flex items-center justify-center shadow-md hover:scale-105 transition-transform duration-300 shrink-0">
                     <span className="text-3xl sm:text-4xl font-extrabold font-serif">質</span>
                   </div>
-
-                  {/* Multiply */}
-                  <span className="text-[22px] sm:text-4xl leading-none text-neutral-400 font-extrabold font-sans">×</span>
-
-                  {/* Quantity circle */}
+                </div>
+                <span className="col-start-2 row-start-1 self-center text-[22px] sm:text-4xl leading-none text-neutral-400 font-extrabold font-sans">×</span>
+                <div className="col-start-3 row-start-1 flex justify-center">
                   <div className="w-[92px] h-[92px] sm:w-[130px] sm:h-[130px] rounded-full bg-neutral-800 text-white flex items-center justify-center shadow-md hover:scale-105 transition-transform duration-300 shrink-0">
                     <span className="text-3xl sm:text-4xl font-extrabold font-serif">量</span>
                   </div>
-
-                  {/* Multiply */}
-                  <span className="text-[22px] sm:text-4xl leading-none text-neutral-400 font-extrabold font-sans">×</span>
-
-                  {/* Consistency circle */}
+                </div>
+                <span className="col-start-4 row-start-1 self-center text-[22px] sm:text-4xl leading-none text-neutral-400 font-extrabold font-sans">×</span>
+                <div className="col-start-5 row-start-1 flex justify-center">
                   <div className="w-[92px] h-[92px] sm:w-[130px] sm:h-[130px] rounded-full bg-neutral-800 text-white flex items-center justify-center shadow-md hover:scale-105 transition-transform duration-300 shrink-0">
                     <span className="text-3xl sm:text-4xl font-extrabold font-serif">継続</span>
                   </div>
                 </div>
 
-                {/* 2. Label Row with aligned text below circles */}
-                <div className="grid grid-cols-3 w-full max-w-[320px] sm:max-w-[590px] mx-auto mt-6 text-center select-none gap-x-2 sm:gap-x-4 px-1 sm:px-0">
-                  <div className="flex flex-col items-center justify-start">
-                    <span className="text-[12px] sm:text-[16px] font-extrabold text-neutral-800 leading-snug">
-                      個々の課題に即した<br />
-                      学習計画
-                    </span>
-                  </div>
-                  <div className="flex flex-col items-center justify-start">
-                    <span className="text-[12px] sm:text-[16px] font-extrabold text-[#111111] leading-snug">
-                      膨大なインプット/<br />
-                      アウトプット
-                    </span>
-                  </div>
-                  <div className="flex flex-col items-center justify-start">
-                    <span className="text-[12px] sm:text-[16px] font-extrabold text-neutral-800 leading-snug">
-                      中長期間の学習
-                    </span>
-                  </div>
+                {/* Row 2: labels (PCと同じ改行位置) */}
+                <div className="col-start-1 row-start-2 mt-6 text-center">
+                  <p className="text-[11px] sm:text-[16px] font-extrabold text-neutral-800 leading-snug">
+                    <span className="block whitespace-nowrap">個々の課題に即した</span>
+                    <span className="block whitespace-nowrap">学習計画</span>
+                  </p>
+                </div>
+                <div className="col-start-3 row-start-2 mt-6 text-center">
+                  <p className="text-[11px] sm:text-[16px] font-extrabold text-[#111111] leading-snug">
+                    <span className="block whitespace-nowrap">膨大なインプット/</span>
+                    <span className="block whitespace-nowrap">アウトプット</span>
+                  </p>
+                </div>
+                <div className="col-start-5 row-start-2 mt-6 text-center">
+                  <p className="text-[11px] sm:text-[16px] font-extrabold text-neutral-800 leading-snug">
+                    <span className="block whitespace-nowrap">中長期間の学習</span>
+                  </p>
                 </div>
               </div>
 
@@ -1016,11 +1010,11 @@ export default function App() {
               </div>
             </div>
 
-            {/* Grid of 4 support cards conforming strictly to mock */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch mt-12">
+            {/* Grid of 4 support cards — mobile: 2×2, lg: 4 columns */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-stretch mt-12">
               
               {/* Card 1 - 1on1 */}
-              <div className="rounded-2xl p-5 sm:p-6 flex flex-col items-center bg-white shadow-md hover:shadow-lg transition-all duration-300 group relative min-h-[300px] border border-orange-100/30">
+              <div className="rounded-2xl p-4 sm:p-6 flex flex-col items-center bg-white shadow-md hover:shadow-lg transition-all duration-300 group relative min-h-[260px] sm:min-h-[300px] border border-orange-100/30">
                 <div className="w-12 h-12 rounded-full bg-neutral-100 flex items-center justify-center mb-3 text-neutral-900 group-hover:scale-110 transition-transform select-none">
                   <Users className="w-6 h-6" />
                 </div>
@@ -1036,7 +1030,7 @@ export default function App() {
               </div>
 
               {/* Card 2 - Program design */}
-              <div className="rounded-2xl p-5 sm:p-6 flex flex-col items-center bg-white shadow-md hover:shadow-lg transition-all duration-300 group relative min-h-[300px] border border-orange-100/30">
+              <div className="rounded-2xl p-4 sm:p-6 flex flex-col items-center bg-white shadow-md hover:shadow-lg transition-all duration-300 group relative min-h-[260px] sm:min-h-[300px] border border-orange-100/30">
                 <div className="w-12 h-12 rounded-full bg-neutral-100 flex items-center justify-center mb-3 text-neutral-900 group-hover:scale-110 transition-transform select-none">
                   <BookOpen className="w-6 h-6" />
                 </div>
@@ -1051,7 +1045,7 @@ export default function App() {
               </div>
 
               {/* Card 3 - Daily correction */}
-              <div className="rounded-2xl p-5 sm:p-6 flex flex-col items-center bg-white shadow-md hover:shadow-lg transition-all duration-300 group relative min-h-[300px] border border-orange-100/30">
+              <div className="rounded-2xl p-4 sm:p-6 flex flex-col items-center bg-white shadow-md hover:shadow-lg transition-all duration-300 group relative min-h-[260px] sm:min-h-[300px] border border-orange-100/30">
                 <div className="w-12 h-12 rounded-full bg-neutral-100 flex items-center justify-center mb-3 text-neutral-900 group-hover:scale-110 transition-transform select-none">
                   <PenTool className="w-6 h-6" />
                 </div>
@@ -1067,7 +1061,7 @@ export default function App() {
               </div>
 
               {/* Card 4 - Support */}
-              <div className="rounded-2xl p-5 sm:p-6 flex flex-col items-center bg-white shadow-md hover:shadow-lg transition-all duration-300 group relative min-h-[300px] border border-orange-100/30">
+              <div className="rounded-2xl p-4 sm:p-6 flex flex-col items-center bg-white shadow-md hover:shadow-lg transition-all duration-300 group relative min-h-[260px] sm:min-h-[300px] border border-orange-100/30">
                 <div className="w-12 h-12 rounded-full bg-neutral-100 flex items-center justify-center mb-3 text-neutral-900 group-hover:scale-110 transition-transform select-none">
                   <HeartHandshake className="w-6 h-6" />
                 </div>
