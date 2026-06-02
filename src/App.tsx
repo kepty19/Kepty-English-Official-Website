@@ -1756,28 +1756,28 @@ export default function App() {
             <div className="flex flex-col gap-6 mt-10 select-none max-w-[940px] mx-auto w-full">
               
               {/* Top Row: Horizontal Metadata Specs - White BG */}
-              <div className="bg-white border border-neutral-200/60 p-5 rounded-2xl shadow-xs grid grid-cols-1 md:grid-cols-3 gap-6 items-center text-left">
-                <div className="flex items-center gap-3 pl-4">
-                  <span className="text-[#E55C29] font-black text-xl">•</span>
+              <div className="bg-white border border-neutral-200/60 p-4 sm:p-5 rounded-2xl shadow-xs grid grid-cols-3 gap-3 sm:gap-6 items-center text-left">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <span className="text-[#E55C29] font-black text-[18px] sm:text-xl">•</span>
                   <div>
-                    <div className="text-[10.5px] uppercase tracking-wider text-neutral-400 font-extrabold font-sans">Training Term</div>
-                    <div className="text-[16px] font-black text-neutral-850 font-sans">6 months</div>
+                    <div className="text-[9px] sm:text-[10.5px] uppercase tracking-wider text-neutral-400 font-extrabold font-sans whitespace-nowrap">Training Term</div>
+                    <div className="text-[12px] sm:text-[16px] font-black text-neutral-850 font-sans whitespace-nowrap">6 months</div>
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-3 md:border-l md:border-neutral-100 md:pl-8 pl-4">
-                  <span className="text-[#E55C29] font-black text-xl">•</span>
+                <div className="flex items-center gap-2 sm:gap-3 border-l border-neutral-100 pl-3 sm:pl-8">
+                  <span className="text-[#E55C29] font-black text-[18px] sm:text-xl">•</span>
                   <div>
-                    <div className="text-[10.5px] uppercase tracking-wider text-neutral-400 font-extrabold font-sans">Training Time</div>
-                    <div className="text-[16px] font-black text-neutral-850 font-sans">2 hours / day</div>
+                    <div className="text-[9px] sm:text-[10.5px] uppercase tracking-wider text-neutral-400 font-extrabold font-sans whitespace-nowrap">Training Time</div>
+                    <div className="text-[12px] sm:text-[16px] font-black text-neutral-850 font-sans whitespace-nowrap">2 hours / day</div>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3 md:border-l md:border-neutral-100 md:pl-8 pl-4">
-                  <span className="text-[#E55C29] font-black text-xl">•</span>
+                <div className="flex items-center gap-2 sm:gap-3 border-l border-neutral-100 pl-3 sm:pl-8">
+                  <span className="text-[#E55C29] font-black text-[18px] sm:text-xl">•</span>
                   <div>
-                    <div className="text-[10.5px] uppercase tracking-wider text-neutral-400 font-extrabold font-sans">Training Menu</div>
-                    <div className="text-[16px] font-black text-neutral-850 font-sans">4 menus / day</div>
+                    <div className="text-[9px] sm:text-[10.5px] uppercase tracking-wider text-neutral-400 font-extrabold font-sans whitespace-nowrap">Training Menu</div>
+                    <div className="text-[12px] sm:text-[16px] font-black text-neutral-850 font-sans whitespace-nowrap">4 menus / day</div>
                   </div>
                 </div>
               </div>
