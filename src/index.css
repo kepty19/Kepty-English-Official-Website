@@ -35,14 +35,3 @@
   animation: hero-visual-float 7s ease-in-out infinite;
   will-change: transform;
 }
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-
-#root {
-  width: 100%;
-  min-height: 100vh;
-}
