@@ -1249,15 +1249,15 @@ export default function App() {
               </p>
             </div>
 
+            {/* Mobile-only horizontal scroll hint (top-left, not overlapping the figure) */}
+            <div className="md:hidden flex justify-start -mb-1 mt-2 pl-1 pointer-events-none select-none">
+              <span className="text-[12px] font-black tracking-[0.22em] text-[#E55C29] animate-pulse drop-shadow-[0_2px_10px_rgba(229,92,41,0.35)]">
+                scroll→
+              </span>
+            </div>
+
             {/* Steps Timeline Visual */}
             <div className="relative w-full overflow-x-auto overflow-y-hidden pb-6 pt-4 select-none">
-              {/* Mobile-only horizontal scroll hint (top-left inside figure) */}
-              <div className="md:hidden absolute left-3 top-2 z-20 pointer-events-none">
-                <div className="inline-flex items-center gap-1.5 rounded-full bg-white/85 backdrop-blur px-3 py-1 border border-neutral-200 shadow-sm">
-                  <span className="text-[10px] font-black tracking-widest text-neutral-600">scroll</span>
-                  <span className="text-[12px] font-black text-neutral-600 -mt-[1px]">→</span>
-                </div>
-              </div>
               <div className="min-w-[800px] w-[800px] mx-auto relative px-4">
                 
                 {/* Category Overlays listening / speaking */}
@@ -1781,15 +1781,15 @@ export default function App() {
                 </div>
               </div>
 
+              {/* Mobile-only horizontal scroll hint (top-left, not overlapping the figure) */}
+              <div className="md:hidden flex justify-start -mb-1 pt-1 pl-1 pointer-events-none select-none">
+                <span className="text-[12px] font-black tracking-[0.22em] text-[#E55C29] animate-pulse drop-shadow-[0_2px_10px_rgba(229,92,41,0.35)]">
+                  scroll→
+                </span>
+              </div>
+
               {/* Bottom Column: Gantt Chart with horizontal scrolling on mobile */}
               <div className="relative w-full overflow-x-auto pb-4 scrollbar-thin">
-                {/* Mobile-only horizontal scroll hint (top-left inside figure) */}
-                <div className="md:hidden absolute left-3 top-2 z-20 pointer-events-none">
-                  <div className="inline-flex items-center gap-1.5 rounded-full bg-white/85 backdrop-blur px-3 py-1 border border-neutral-200 shadow-sm">
-                    <span className="text-[10px] font-black tracking-widest text-neutral-600">scroll</span>
-                    <span className="text-[12px] font-black text-neutral-600 -mt-[1px]">→</span>
-                  </div>
-                </div>
                 <div className="min-w-[700px] border border-neutral-100 rounded-2xl bg-[#fffdfb] overflow-hidden">
                   
                   {/* Phase Banners Row Grid */}
@@ -1950,15 +1950,15 @@ export default function App() {
             <div className="w-16 h-1.5 bg-[#E55C29] mx-auto rounded-full"></div>
           </div>
 
+          {/* Mobile-only horizontal scroll hint (top-left, not overlapping the table) */}
+          <div className="md:hidden flex justify-start -mb-1 mt-2 pl-1 pointer-events-none select-none">
+            <span className="text-[12px] font-black tracking-[0.22em] text-[#E55C29] animate-pulse drop-shadow-[0_2px_10px_rgba(229,92,41,0.35)]">
+              scroll→
+            </span>
+          </div>
+
           {/* Comparison Table Grid Wrapper (Horizontal Scroll on Mobile) */}
           <div className="relative w-full overflow-x-auto pb-6 scrollbar-thin select-none">
-            {/* Mobile-only horizontal scroll hint (top-left inside table) */}
-            <div className="md:hidden absolute left-3 top-2 z-20 pointer-events-none">
-              <div className="inline-flex items-center gap-1.5 rounded-full bg-white/85 backdrop-blur px-3 py-1 border border-neutral-200 shadow-sm">
-                <span className="text-[10px] font-black tracking-widest text-neutral-600">scroll</span>
-                <span className="text-[12px] font-black text-neutral-600 -mt-[1px]">→</span>
-              </div>
-            </div>
             {(() => {
               const comparisonRows = [
                 {
