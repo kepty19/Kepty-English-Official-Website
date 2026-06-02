@@ -934,7 +934,7 @@ export default function App() {
             <div className="flex flex-col items-center justify-center my-12 bg-white/40 p-6 sm:p-10 rounded-3xl border border-yellow-100/40 w-full max-w-[860px] mx-auto">
               
               {/* Circles + labels share one grid so mobile text aligns under each circle */}
-              <div className="grid grid-cols-[92px_auto_92px_auto_92px] sm:grid-cols-[130px_auto_130px_auto_130px] gap-x-1.5 sm:gap-x-4 w-fit mx-auto select-none">
+              <div className="grid grid-cols-[92px_auto_92px_auto_92px] sm:grid-cols-[130px_auto_130px_auto_130px] gap-x-1.5 sm:gap-x-4 w-full justify-center select-none">
                 {/* Row 1: circles */}
                 <div className="col-start-1 row-start-1 flex justify-center">
                   <div className="w-[92px] h-[92px] sm:w-[130px] sm:h-[130px] rounded-full bg-neutral-800 text-white flex items-center justify-center shadow-md hover:scale-105 transition-transform duration-300 shrink-0">
@@ -2167,28 +2167,28 @@ export default function App() {
             </div>
 
             <div className="relative w-full overflow-x-auto pb-2 scrollbar-thin">
-              <div className="min-w-[660px] max-w-[860px] mx-auto flex gap-3 p-1">
+              <div className="min-w-[660px] max-w-[860px] mx-auto flex gap-2 sm:gap-3 py-1">
                 
                 {/* Column 1: Prices / Labels */}
-                <div className="sticky left-0 z-20 w-[150px] sm:w-[180px] shrink-0 flex flex-col gap-3 bg-white pr-3 border-r border-[#DFEC9F]">
+                <div className="sticky left-0 z-20 w-[124px] sm:w-[180px] shrink-0 flex flex-col gap-3 bg-white pr-2 sm:pr-3 border-r border-[#DFEC9F]">
                   {/* Header/Spacer cell */}
                   <div className="h-[58px] sm:h-[68px] rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] p-2 flex items-center justify-center shadow-xs" />
                   
                   {/* Price Cells */}
                   <div className="h-[58px] sm:h-[68px] rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] p-2 flex items-center justify-center shadow-xs">
-                    <span className="text-[13.5px] sm:text-[15.5px] font-extrabold text-[#1a1a1a] font-sans">
+                    <span className="text-[12.5px] sm:text-[15.5px] font-extrabold text-[#1a1a1a] font-sans">
                       月額 39,800円
                     </span>
                   </div>
 
                   <div className="h-[58px] sm:h-[68px] rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] p-2 flex items-center justify-center shadow-xs">
-                    <span className="text-[13.5px] sm:text-[15.5px] font-extrabold text-[#1a1a1a] font-sans">
+                    <span className="text-[12.5px] sm:text-[15.5px] font-extrabold text-[#1a1a1a] font-sans">
                       月額 29,800円
                     </span>
                   </div>
 
                   <div className="h-[58px] sm:h-[68px] rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] p-2 flex items-center justify-center shadow-xs">
-                    <span className="text-[13.5px] sm:text-[15.5px] font-extrabold text-[#1a1a1a] font-sans">
+                    <span className="text-[12.5px] sm:text-[15.5px] font-extrabold text-[#1a1a1a] font-sans">
                       月額 19,800円
                     </span>
                   </div>
@@ -2568,8 +2568,13 @@ export default function App() {
                 </h3>
               </div>
               <div className="relative w-[105%] max-w-[420px] md:max-w-[520px] lg:w-[145%] lg:max-w-none mx-auto lg:mx-0 mt-4 lg:-mt-[55px] lg:-ml-14 xl:-ml-20 select-none animate-fade-in">
-                {/* Circular backdrop behind face (match Company section dark orange) */}
-                <div className="absolute left-1/2 top-[46%] -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] rounded-full bg-[#C44315] opacity-95 blur-[0.2px] z-0" />
+                {/* Circular backdrop behind face (match Company section background) */}
+                <div
+                  className="absolute left-1/2 top-[46%] -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] rounded-full opacity-95 blur-[0.2px] z-0"
+                  style={{
+                    background: 'radial-gradient(ellipse at center, #E55C29 0%, #C44315 55%, #922704 100%)'
+                  }}
+                />
                 <img 
                   src={ceoProfileImg} 
                   alt="Tomohiro Kajiyama" 
@@ -2796,7 +2801,7 @@ export default function App() {
         <footer className="text-white/50 text-xs pt-16 pb-12 px-6 text-center">
           <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-2">
-              <span className="font-anton text-sm tracking-widest text-white uppercase">Kepty Co., LTD.</span>
+              <span className="font-anton text-sm tracking-widest text-white">Kepty Co., Ltd.</span>
             </div>
             <p className="text-[11px] text-white/50 font-sans">
               &copy; 2026 Kepty Co., Ltd. All rights reserved.
