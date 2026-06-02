@@ -92,8 +92,18 @@ function readPng(file) {
 }
 
 /** Hard binary alpha — no semi-transparent fringe (avoids glitch stripes) */
+function isBackgroundPixel(r, g, b) {
+  if (r <= 14 && g <= 14 && b <= 14) return true;
+  const spread = Math.max(r, g, b) - Math.min(r, g, b);
+  if (spread > 10) return false;
+  const avg = (r + g + b) / 3;
+  // Photoshop / export "transparency" checkerboard baked into pixels
+  if (avg >= 186 && avg <= 255) return true;
+  return false;
+}
+
 function keyAlpha(r, g, b) {
-  return r <= 14 && g <= 14 && b <= 14 ? 0 : 255;
+  return isBackgroundPixel(r, g, b) ? 0 : 255;
 }
 
 function writeRgbaPng(width, height, rgba, dest) {
