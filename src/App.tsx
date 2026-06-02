@@ -2598,9 +2598,9 @@ export default function App() {
                 </h3>
               </div>
               <div className="relative w-[105%] max-w-[420px] md:max-w-[520px] lg:w-[145%] lg:max-w-none mx-auto lg:mx-0 mt-4 lg:-mt-[55px] lg:-ml-14 xl:-ml-20 select-none animate-fade-in">
-                {/* Circular backdrop: same material as 会社概要 card (glass on section gradient), not a mini gradient */}
+                {/* Circular backdrop — mobile only (PC: photo on section gradient, no circle) */}
                 <div
-                  className="absolute left-1/2 top-[46%] -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] sm:w-[400px] sm:h-[400px] rounded-full bg-black/20 backdrop-blur-md border border-white/10 z-0"
+                  className="md:hidden absolute left-1/2 top-[46%] -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] sm:w-[400px] sm:h-[400px] rounded-full bg-black/20 backdrop-blur-md border border-white/10 z-0"
                   aria-hidden
                 />
                 <img 
