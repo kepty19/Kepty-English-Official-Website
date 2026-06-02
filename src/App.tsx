@@ -1583,17 +1583,17 @@ export default function App() {
                       <div className="flex items-center justify-between border-b border-neutral-100 pb-2 mb-2">
                         <div className="flex flex-col text-left">
                           <span className="text-sm font-black text-neutral-950 tracking-tight font-serif uppercase">Topic Talk</span>
-                          <span className="text-[7.5px] text-neutral-400 font-bold tracking-tight">Soccer Specialized Content Stream</span>
+                          <span className="text-[7.5px] text-neutral-400 font-bold tracking-tight">Football Specialized Content</span>
                         </div>
                         <span className="text-[8px] tracking-wider font-extrabold bg-red-50 text-red-600 px-2 py-0.5 rounded-full border border-red-100/55 font-mono">
-                          PRE-MATCH PRACTICE
+                          Speaking Practice
                         </span>
                       </div>
 
                       {/* Explanation subtitle block */}
                       <div className="text-left bg-neutral-50 rounded-xl p-1.5 border border-neutral-100 mb-2">
                         <p className="text-[8px] sm:text-[8.5px] leading-relaxed font-bold text-neutral-500">
-                          特定のテーマについて自分の意見を論理的に展開し、会話を継続させる力がつきます。事前の準備と、本番での粘り強さが鍵となります。
+                          特定のテーマについて自分の意見を論理的に展開し、会話を継続させる力がつきます。
                         </p>
                       </div>
 
@@ -1622,7 +1622,7 @@ export default function App() {
                         </span>
                         
                         <div>
-                          <div className="text-[7px] font-extrabold text-neutral-400 font-mono tracking-wider mb-1">ACTIVE QUESTION</div>
+                          <div className="text-[7px] font-extrabold text-neutral-400 font-mono tracking-wider mb-1">QUESTION</div>
                           <p className="text-[10px] sm:text-[11.5px] font-black tracking-tight text-neutral-950 leading-snug">
                             "What is your favorite position to play?"
                           </p>
