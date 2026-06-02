@@ -1249,6 +1249,11 @@ export default function App() {
               </p>
             </div>
 
+            {/* Mobile-only horizontal scroll hint */}
+            <div className="md:hidden flex justify-end -mt-4 mb-2 text-[11px] font-extrabold text-neutral-400 tracking-widest select-none">
+              scroll →
+            </div>
+
             {/* Steps Timeline Visual */}
             <div className="relative w-full overflow-x-auto overflow-y-hidden pb-6 pt-4 select-none">
               <div className="min-w-[800px] w-[800px] mx-auto relative px-4">
@@ -1742,6 +1747,11 @@ export default function App() {
                   ※短期での「詰め込み学習」や「小手先の技」は、提供しておりません。
                 </p>
               </div>
+            </div>
+
+            {/* Mobile-only horizontal scroll hint */}
+            <div className="md:hidden flex justify-end -mt-4 mb-2 text-[11px] font-extrabold text-neutral-400 tracking-widest select-none">
+              scroll →
             </div>
 
             {/* Layout: Top horizontal Specs + Bottom Gantt Timeline */}
