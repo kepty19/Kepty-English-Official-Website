@@ -935,45 +935,45 @@ export default function App() {
               
               <div className="w-full flex flex-col items-center">
                 {/* 1. Circle Row with perfectly aligned centers */}
-                <div className="flex items-center justify-between w-full max-w-none sm:max-w-[590px] mx-auto px-1 sm:px-4 select-none">
+                <div className="flex items-center justify-center gap-2 sm:gap-4 w-full max-w-none sm:max-w-[590px] mx-auto px-1 sm:px-4 select-none">
                   {/* Quality circle */}
-                  <div className="w-[28vw] max-w-[110px] sm:max-w-none aspect-square sm:w-[130px] rounded-full bg-neutral-800 text-white flex items-center justify-center shadow-md hover:scale-105 transition-transform duration-300 shrink-0">
+                  <div className="w-[92px] h-[92px] sm:w-[130px] sm:h-[130px] rounded-full bg-neutral-800 text-white flex items-center justify-center shadow-md hover:scale-105 transition-transform duration-300 shrink-0">
                     <span className="text-3xl sm:text-4xl font-extrabold font-serif">質</span>
                   </div>
 
                   {/* Multiply */}
-                  <span className="text-2xl sm:text-4xl text-neutral-400 font-extrabold font-sans">×</span>
+                  <span className="text-[22px] sm:text-4xl leading-none text-neutral-400 font-extrabold font-sans">×</span>
 
                   {/* Quantity circle */}
-                  <div className="w-[28vw] max-w-[110px] sm:max-w-none aspect-square sm:w-[130px] rounded-full bg-neutral-800 text-white flex items-center justify-center shadow-md hover:scale-105 transition-transform duration-300 shrink-0">
+                  <div className="w-[92px] h-[92px] sm:w-[130px] sm:h-[130px] rounded-full bg-neutral-800 text-white flex items-center justify-center shadow-md hover:scale-105 transition-transform duration-300 shrink-0">
                     <span className="text-3xl sm:text-4xl font-extrabold font-serif">量</span>
                   </div>
 
                   {/* Multiply */}
-                  <span className="text-2xl sm:text-4xl text-neutral-400 font-extrabold font-sans">×</span>
+                  <span className="text-[22px] sm:text-4xl leading-none text-neutral-400 font-extrabold font-sans">×</span>
 
                   {/* Consistency circle */}
-                  <div className="w-[28vw] max-w-[110px] sm:max-w-none aspect-square sm:w-[130px] rounded-full bg-neutral-800 text-white flex items-center justify-center shadow-md hover:scale-105 transition-transform duration-300 shrink-0">
+                  <div className="w-[92px] h-[92px] sm:w-[130px] sm:h-[130px] rounded-full bg-neutral-800 text-white flex items-center justify-center shadow-md hover:scale-105 transition-transform duration-300 shrink-0">
                     <span className="text-3xl sm:text-4xl font-extrabold font-serif">継続</span>
                   </div>
                 </div>
 
                 {/* 2. Label Row with aligned text below circles */}
-                <div className="grid grid-cols-3 w-full max-w-none sm:max-w-[590px] mx-auto mt-6 text-center select-none gap-x-2 sm:gap-x-4 px-1 sm:px-0">
+                <div className="grid grid-cols-3 w-full max-w-[320px] sm:max-w-[590px] mx-auto mt-6 text-center select-none gap-x-2 sm:gap-x-4 px-1 sm:px-0">
                   <div className="flex flex-col items-center justify-start">
-                    <span className="text-[13px] sm:text-[16px] font-extrabold text-neutral-800 leading-snug">
+                    <span className="text-[12px] sm:text-[16px] font-extrabold text-neutral-800 leading-snug">
                       個々の課題に即した<br />
                       学習計画
                     </span>
                   </div>
                   <div className="flex flex-col items-center justify-start">
-                    <span className="text-[13px] sm:text-[16px] font-extrabold text-[#111111] leading-snug">
+                    <span className="text-[12px] sm:text-[16px] font-extrabold text-[#111111] leading-snug">
                       膨大なインプット/<br />
                       アウトプット
                     </span>
                   </div>
                   <div className="flex flex-col items-center justify-start">
-                    <span className="text-[13px] sm:text-[16px] font-extrabold text-neutral-800 leading-snug">
+                    <span className="text-[12px] sm:text-[16px] font-extrabold text-neutral-800 leading-snug">
                       中長期間の学習
                     </span>
                   </div>
