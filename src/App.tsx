@@ -762,7 +762,7 @@ export default function App() {
               <div className="md:col-start-1 md:row-start-1 flex items-center gap-3 justify-center py-2.5 select-none">
                 <BookOpen className="w-5 h-5 sm:w-6 sm:h-6 text-neutral-500" />
                 <h3 className="text-lg sm:text-xl font-bold font-serif text-neutral-700 tracking-wider">
-                  独学
+                  独学の場合
                 </h3>
               </div>
 
@@ -797,7 +797,7 @@ export default function App() {
               <div className="md:col-start-3 md:row-start-1 flex items-center gap-3 justify-center py-2.5 select-none">
                 <Users className="w-5 h-5 sm:w-6 sm:h-6 text-[#E55C29] animate-pulse" />
                 <h3 className="text-lg sm:text-xl font-black font-serif text-[#E55C29] tracking-wider">
-                  英語コーチング
+                  英語コーチングの場合
                 </h3>
               </div>
 
