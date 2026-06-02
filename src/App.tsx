@@ -636,7 +636,7 @@ export default function App() {
             </div>
 
             {/* Loop diagram with two columns/circles */}
-            <div className="flex flex-row items-center justify-between gap-3 sm:gap-6 my-10 relative">
+            <div className="flex flex-row items-start justify-between gap-3 sm:gap-6 my-10 relative">
               
               {/* Left Circle - Training */}
               <div className="flex flex-col items-center text-center">
@@ -664,7 +664,8 @@ export default function App() {
               </div>
 
               {/* Feed-back Loop arrow in between - Minimal rotating arrow only */}
-              <div className="flex flex-col items-center justify-center select-none relative z-10">
+              {/* Align arrow to circle centers (not captions) */}
+              <div className="flex flex-col items-center select-none relative z-10 mt-[57px] sm:mt-[89px]">
                 <RefreshCw className="w-[36px] h-[36px] sm:w-[52px] sm:h-[52px] text-[#E55C29] animate-spin" style={{ animationDuration: '6s' }} />
               </div>
 
