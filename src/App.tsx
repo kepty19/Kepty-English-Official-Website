@@ -1251,7 +1251,8 @@ export default function App() {
 
             {/* Mobile-only horizontal scroll hint (top-left, not overlapping the figure) */}
             <div className="md:hidden flex justify-start -mb-1 mt-2 pl-1 pointer-events-none select-none">
-              <span className="text-[12px] font-black tracking-[0.22em] text-[#E55C29] animate-pulse drop-shadow-[0_2px_10px_rgba(229,92,41,0.35)]">
+              <span className="inline-flex items-center gap-2 text-[12px] font-black tracking-[0.22em] text-[#E55C29] drop-shadow-[0_2px_10px_rgba(229,92,41,0.35)]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#E55C29] animate-pulse" />
                 scroll→
               </span>
             </div>
@@ -1783,7 +1784,8 @@ export default function App() {
 
               {/* Mobile-only horizontal scroll hint (top-left, not overlapping the figure) */}
               <div className="md:hidden flex justify-start -mb-1 pt-1 pl-1 pointer-events-none select-none">
-                <span className="text-[12px] font-black tracking-[0.22em] text-[#E55C29] animate-pulse drop-shadow-[0_2px_10px_rgba(229,92,41,0.35)]">
+                <span className="inline-flex items-center gap-2 text-[12px] font-black tracking-[0.22em] text-[#E55C29] drop-shadow-[0_2px_10px_rgba(229,92,41,0.35)]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#E55C29] animate-pulse" />
                   scroll→
                 </span>
               </div>
@@ -1952,7 +1954,8 @@ export default function App() {
 
           {/* Mobile-only horizontal scroll hint (top-left, not overlapping the table) */}
           <div className="md:hidden flex justify-start -mb-1 mt-2 pl-1 pointer-events-none select-none">
-            <span className="text-[12px] font-black tracking-[0.22em] text-[#E55C29] animate-pulse drop-shadow-[0_2px_10px_rgba(229,92,41,0.35)]">
+            <span className="inline-flex items-center gap-2 text-[12px] font-black tracking-[0.22em] text-[#E55C29] drop-shadow-[0_2px_10px_rgba(229,92,41,0.35)]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#E55C29] animate-pulse" />
               scroll→
             </span>
           </div>
