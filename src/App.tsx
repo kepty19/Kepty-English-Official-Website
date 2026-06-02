@@ -362,9 +362,9 @@ export default function App() {
         <HeroTechVisual />
 
         {/* —— Mobile HOME stack: title → tagline → photo → badge —— */}
-        <div className="md:hidden relative z-10 flex flex-col flex-1 min-h-0 pt-[5.75rem] px-4 pb-24">
+        <div className="md:hidden relative z-10 flex flex-col flex-1 min-h-0 pt-[7rem] px-4 pb-24">
           <h1
-            className="font-anton text-white font-black leading-[0.95] mb-3"
+            className="font-anton text-white font-black leading-[0.95] mb-6"
             style={{
               fontSize: 'clamp(36px, 11vw, 56px)',
               letterSpacing: '-0.02em',
@@ -374,17 +374,17 @@ export default function App() {
             Kepty English
           </h1>
 
-          <p className="font-sans font-bold uppercase tracking-wide text-[17px] leading-snug text-white opacity-95 mb-5">
+          <p className="font-sans font-bold uppercase tracking-wide text-[17px] leading-snug text-white opacity-95">
             プロサッカー選手の英会話力を引き伸ばす
             <br />
             英語コーチングサービス
           </p>
 
-          <div className="flex-1 flex items-end justify-center min-h-0 pt-2 pb-1">
+          <div className="flex-1 flex items-end justify-center min-h-0 mt-8">
             <HeroTechVisualMobile />
           </div>
 
-          <div className="mt-2 mb-2">
+          <div className="mt-3 mb-2">
             <div className="inline-flex items-center gap-2.5 bg-black/35 backdrop-blur-md px-4 py-2.5 rounded-full border border-white/10 shadow-lg">
               <span className="relative flex h-[10px] w-[10px] font-sans">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF6331] opacity-75"></span>
@@ -486,20 +486,40 @@ export default function App() {
           </div>
 
           {/* Signature Block with high-end typography */}
-          <div className="mt-12 pt-8 border-t border-white/10 select-none flex flex-row items-center justify-start gap-6 sm:gap-8 text-left">
-            <div className="flex flex-col gap-1.5 min-w-0 shrink-0">
-              <p className="text-[15px] sm:text-[17px] font-bold text-white/80 font-sans tracking-wide leading-relaxed">
-                Kepty Co., Ltd.
-              </p>
-              <p className="text-[15px] sm:text-[17px] font-bold text-white/80 font-sans tracking-wide leading-relaxed">
+          <div className="mt-12 pt-8 border-t border-white/10 select-none text-left">
+            {/* Mobile: signature top-right (above CEO name), not beside it */}
+            <div className="md:hidden">
+              <div className="flex items-start justify-between gap-3 mb-3">
+                <p className="text-[15px] font-bold text-white/80 font-sans tracking-wide leading-relaxed">
+                  Kepty Co., Ltd.
+                </p>
+                <img
+                  src={ceoSignatureImg}
+                  alt="Tomohiro Kajiyama signature"
+                  className="w-[120px] h-auto object-contain object-right shrink-0 pointer-events-none brightness-0 invert opacity-95"
+                />
+              </div>
+              <p className="text-[15px] font-bold text-white/80 font-sans tracking-wide leading-relaxed">
                 Founder & CEO：Tomohiro Kajiyama | 梶山 知裕
               </p>
             </div>
-            <img
-              src={ceoSignatureImg}
-              alt="Tomohiro Kajiyama signature"
-              className="w-[148px] sm:w-[172px] h-auto object-contain object-right shrink-0 pointer-events-none brightness-0 invert opacity-95"
-            />
+
+            {/* Desktop: unchanged side-by-side layout */}
+            <div className="hidden md:flex flex-row items-center justify-start gap-6 sm:gap-8">
+              <div className="flex flex-col gap-1.5 min-w-0 shrink-0">
+                <p className="text-[15px] sm:text-[17px] font-bold text-white/80 font-sans tracking-wide leading-relaxed">
+                  Kepty Co., Ltd.
+                </p>
+                <p className="text-[15px] sm:text-[17px] font-bold text-white/80 font-sans tracking-wide leading-relaxed">
+                  Founder & CEO：Tomohiro Kajiyama | 梶山 知裕
+                </p>
+              </div>
+              <img
+                src={ceoSignatureImg}
+                alt="Tomohiro Kajiyama signature"
+                className="w-[148px] sm:w-[172px] h-auto object-contain object-right shrink-0 pointer-events-none brightness-0 invert opacity-95"
+              />
+            </div>
           </div>
         </div>
       </section>
