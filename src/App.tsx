@@ -29,6 +29,7 @@ import {
 } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { HeroTechVisual } from './components/HeroTechVisual';
+import { SiteNavigation } from './components/SiteNavigation';
 import { GrainOverlay } from './components/GrainOverlay';
 import bgDarkSpace from './image_dark_space.jpg';
 import ceoProfileImg from './ceo-profile.png';
@@ -242,89 +243,7 @@ export default function App() {
       }}
       className="relative w-full min-h-screen overflow-y-auto overflow-x-hidden scroll-smooth transition-colors selection:bg-white/20 selection:text-white"
     >
-      {/* 1. ELEVATED FLOATING TAB NAVIGATION BAR
-          Aligned perfectly with the vertical center height of the right SERIAL box (fixed top-8)
-          Enhanced color harmony with the premium matte orange background */}
-      <nav 
-        id="toonhub-floating-navigation" 
-        className="fixed top-8 inset-x-0 z-100 flex justify-center px-4 transition-all duration-300 pointer-events-none"
-      >
-        <div className="bg-black/25 backdrop-blur-xl border border-white/15 px-3 py-1.5 rounded-full flex items-center gap-1 shadow-2xl pointer-events-auto">
-
-          {/* Dynamic Interactive Tabs - English only & Swapped Sequence (HOME -> CEO MESSAGE -> MODELS) */}
-          <button
-            onClick={() => scrollToSection('hero-section', 'hero')}
-            type="button"
-            className={`px-3 py-1 rounded-full text-[10.5px] font-bold tracking-wider uppercase transition-all duration-300 pointer-events-auto ${
-              activeTab === 'hero'
-                ? 'bg-white text-neutral-900 shadow'
-                : 'text-white/80 hover:text-white hover:bg-white/10'
-            }`}
-          >
-            HOME
-          </button>
-          
-          <button
-            onClick={() => scrollToSection('ceo-message-section', 'ceo-message')}
-            type="button"
-            className={`px-3 py-1 rounded-full text-[10.5px] font-bold tracking-wider uppercase transition-all duration-300 pointer-events-auto ${
-              activeTab === 'ceo-message'
-                ? 'bg-white text-neutral-900 shadow'
-                : 'text-white/80 hover:text-white hover:bg-white/10'
-            }`}
-          >
-            MESSAGE
-          </button>
-
-          <button
-            onClick={() => scrollToSection('why-effort-necessary-section', 'service')}
-            type="button"
-            className={`px-3 py-1 rounded-full text-[10.5px] font-bold tracking-wider uppercase transition-all duration-300 pointer-events-auto ${
-              activeTab === 'service'
-                ? 'bg-white text-neutral-900 shadow'
-                : 'text-white/80 hover:text-white hover:bg-white/10'
-            }`}
-          >
-            SERVICE
-          </button>
-
-          <button
-            onClick={() => scrollToSection('collection-section', 'collection')}
-            type="button"
-            className={`px-3 py-1 rounded-full text-[10.5px] font-bold tracking-wider uppercase transition-all duration-300 pointer-events-auto ${
-              activeTab === 'collection'
-                ? 'bg-white text-neutral-900 shadow'
-                : 'text-white/80 hover:text-white hover:bg-white/10'
-            }`}
-          >
-            USER VOICE
-          </button>
-
-          <button
-            onClick={() => scrollToSection('ceo-profile-section', 'ceo-profile')}
-            type="button"
-            className={`px-3 py-1 rounded-full text-[10.5px] font-bold tracking-wider uppercase transition-all duration-300 pointer-events-auto ${
-              activeTab === 'ceo-profile'
-                ? 'bg-white text-neutral-900 shadow'
-                : 'text-white/80 hover:text-white hover:bg-white/10'
-            }`}
-          >
-            CEO
-          </button>
-
-          <button
-            onClick={() => scrollToSection('company-section', 'company')}
-            type="button"
-            className={`px-3 py-1 rounded-full text-[10.5px] font-bold tracking-wider uppercase transition-all duration-300 pointer-events-auto ${
-              activeTab === 'company'
-                ? 'bg-white text-neutral-900 shadow'
-                : 'text-white/80 hover:text-white hover:bg-white/10'
-            }`}
-          >
-            COMPANY
-          </button>
-        </div>
-      </nav>
+      <SiteNavigation activeTab={activeTab} onNavigate={scrollToSection} />
 
       {/* SECTION A: HERO LANDING VIEWPORT (h-screen)
           Styled with high-end premium matte orange linear/radial dynamic gradient layout */}
@@ -333,7 +252,7 @@ export default function App() {
         style={{
           background: 'radial-gradient(ellipse at center, #E55C29 0%, #C44315 55%, #922704 100%)'
         }}
-        className="relative w-full h-screen overflow-hidden flex flex-col justify-between"
+        className="relative w-full min-h-[100dvh] h-[100dvh] md:h-screen overflow-hidden flex flex-col justify-between"
       >
         {/* Particle/Lustrous Ambient Backlight */}
         <div className="absolute inset-x-0 top-0 h-[60%] bg-gradient-to-b from-white/10 to-transparent pointer-events-none mix-blend-overlay" />
@@ -344,10 +263,10 @@ export default function App() {
         {/* Brand label top left - Aligned with floating tabs coordinates */}
         <div 
           id="toonhub-logo-header"
-          className="absolute top-8 left-8 z-60 pointer-events-none select-none flex items-center h-[68px] keep-original-font"
+          className="absolute top-[4.5rem] left-4 md:top-8 md:left-8 z-60 pointer-events-none select-none flex items-center h-12 md:h-[68px] keep-original-font"
         >
           {/* Exact transparent background Kepty logo + text from screenshot - Scaled 2x as requested */}
-          <svg viewBox="0 0 160 50" className="h-16 w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 160 50" className="h-11 md:h-16 w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12.5 13.5C9.5 13.5 7.5 15.5 7.5 19.5V28.5C7.5 32.5 9.5 34.5 12.5 34.5C13.8 34.5 14.8 32.2 14.8 28.5V19.5C14.8 15.5 13.8 13.5 12.5 13.5Z" fill="#FF6331" />
             <path d="M22.5 11.5C17.8 11.5 16.2 13.8 16.2 18.5V29.5C16.2 34.2 17.8 36.5 22.5 36.5C28.2 36.5 30.8 32.2 30.8 24C30.8 15.8 28.2 11.5 22.5 11.5Z" fill="#E55C29" />
             <text x="36" y="31" fontFamily="'Inter', sans-serif" fontWeight="700" fontSize="20" fill="#FFFFFF" letterSpacing="-0.03em">Kepty</text>
@@ -355,7 +274,7 @@ export default function App() {
         </div>
 
         {/* Right Info Controls */}
-        <div className="absolute top-8 right-8 z-60 flex items-center select-none pointer-events-none">
+        <div className="absolute top-8 right-8 z-60 hidden md:flex items-center select-none pointer-events-none">
           <span className="text-[25px] font-sans font-bold tracking-wider text-white select-none leading-none">
             Kepty Co. LTD.
           </span>
@@ -367,12 +286,12 @@ export default function App() {
         {/* Giant ghost display text "Kepty English" */}
         <div
           id="ghost-background-text"
-          className="absolute left-24 pointer-events-none select-none top-[28%] z-[4]"
+          className="absolute left-4 md:left-24 pointer-events-none select-none top-[14%] md:top-[28%] z-[4] pr-16 md:pr-0"
         >
           <span
-            className="font-anton text-white select-none whitespace-nowrap text-left relative z-10"
+            className="font-anton text-white select-none text-left relative z-10 leading-[0.95] md:leading-none md:whitespace-nowrap"
             style={{
-              fontSize: 'clamp(38px, 9.5vw, 145px)',
+              fontSize: 'clamp(36px, 11vw, 145px)',
               fontWeight: 900,
               lineHeight: 1,
               opacity: 0.95,
@@ -387,10 +306,10 @@ export default function App() {
         {/* Bottom-left metadata description + Autoplay Pulse Display */}
         <div
           id="bottom-navigation-details"
-          className="absolute bottom-36 left-24 max-w-[720px] select-none text-white z-60"
+          className="absolute bottom-[4.5rem] left-4 md:bottom-36 md:left-24 max-w-[720px] select-none text-white z-60 pr-2"
         >
           <div className="transition-all duration-300">
-            <p className="font-sans font-bold uppercase tracking-widest mb-5 text-[33px] opacity-95">
+            <p className="font-sans font-bold uppercase tracking-wide md:tracking-widest mb-3 md:mb-5 text-[17px] leading-snug md:text-[33px] md:leading-normal opacity-95">
               プロサッカー選手の英会話力を引き伸ばす
               <br />
               英語コーチングサービス
@@ -398,15 +317,15 @@ export default function App() {
           </div>
 
           {/* Cumulative Users Highlight Panel */}
-          <div className="inline-flex items-center gap-3.5 bg-black/35 backdrop-blur-md px-5 py-3 rounded-full border border-white/10 shadow-lg">
-            <span className="relative flex h-[11px] w-[11px] font-sans">
+          <div className="inline-flex items-center gap-2.5 md:gap-3.5 bg-black/35 backdrop-blur-md px-4 py-2.5 md:px-5 md:py-3 rounded-full border border-white/10 shadow-lg">
+            <span className="relative flex h-[10px] w-[10px] md:h-[11px] md:w-[11px] font-sans">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF6331] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-[11px] w-[11px] bg-[#FF6331]"></span>
+              <span className="relative inline-flex rounded-full h-full w-full bg-[#FF6331]"></span>
             </span>
-            <span className="text-[16px] font-sans tracking-wide text-white font-bold">
+            <span className="text-[13px] md:text-[16px] font-sans tracking-wide text-white font-bold">
               Total Users
             </span>
-            <span className="text-[16px] text-white font-mono font-black">
+            <span className="text-[13px] md:text-[16px] text-white font-mono font-black">
               7
             </span>
           </div>

@@ -113,7 +113,7 @@ if (!component.includes('hero-tech-visual.png')) {
   errors.push('Import src/hero-tech-visual.png only.');
 }
 
-if (!/zIndex:\s*2/.test(component)) {
+if (!/zIndex:\s*2|z-\[2\]/.test(component)) {
   errors.push('Hero visual zIndex must be 2 (behind ghost text).');
 }
 

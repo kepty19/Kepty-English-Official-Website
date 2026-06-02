@@ -2,22 +2,16 @@ import React from 'react';
 import heroVisual from '../hero-tech-visual.png';
 
 /**
- * Hero figurine slot — desktop layout on all viewports.
- * Asset MUST be a true transparent PNG (src/hero-tech-visual.png).
+ * Hero 3D visual — desktop: right column; mobile: centered above fold bottom.
  */
 export const HeroTechVisual: React.FC = () => {
   return (
     <div
       id="hero-tech-visual"
-      className="absolute flex items-end justify-center origin-bottom pointer-events-none select-none overflow-visible"
-      style={{
-        left: '80%',
-        bottom: '28px',
-        height: '75%',
-        width: 'min(50vw, 600px)',
-        zIndex: 2,
-        transform: 'translateX(-50%) scale(1.25)',
-      }}
+      className="absolute z-[2] pointer-events-none select-none overflow-visible origin-bottom flex items-end justify-center
+        left-1/2 -translate-x-1/2
+        bottom-[5.5rem] h-[38%] w-[min(94vw,360px)] scale-[0.82]
+        md:left-[80%] md:bottom-7 md:h-[75%] md:w-[min(50vw,600px)] md:scale-125 md:-translate-x-1/2"
       aria-hidden
     >
       <img
