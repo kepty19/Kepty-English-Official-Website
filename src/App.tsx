@@ -1850,6 +1850,8 @@ export default function App() {
 
                   {/* Horizontal Month labels Timeline connector */}
                   <div className="bg-white py-4 border-b border-neutral-100 flex items-center justify-start relative">
+                    {/* Safety mask: prevent month labels from appearing over sticky column on iOS */}
+                    <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-[140px] bg-white z-40 border-r border-neutral-100/50" />
                     {/* Sticky left spacer should behave like other rows */}
                     <div className="w-[140px] shrink-0 bg-white sticky left-0 z-50 border-r border-neutral-100/50"></div> {/* Match category width spacer */}
                     
