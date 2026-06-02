@@ -380,7 +380,7 @@ export default function App() {
             英語コーチングサービス
           </p>
 
-          <div className="flex-1 flex items-end justify-center min-h-0 mt-8 translate-y-10">
+          <div className="flex-1 flex items-end justify-center min-h-0 mt-8 translate-y-12">
             <HeroTechVisualMobile />
           </div>
 
@@ -487,20 +487,18 @@ export default function App() {
 
           {/* Signature Block with high-end typography */}
           <div className="mt-12 pt-8 border-t border-white/10 select-none text-left">
-            {/* Mobile: signature beside name block (fills vertical gap) */}
-            <div className="md:hidden flex flex-row items-center justify-between gap-4">
-              <div className="flex flex-col gap-1.5 min-w-0">
-                <p className="text-[15px] font-bold text-white/80 font-sans tracking-wide leading-relaxed">
-                  Kepty Co., Ltd.
-                </p>
-                <p className="text-[15px] font-bold text-white/80 font-sans tracking-wide leading-relaxed">
-                  Founder & CEO：Tomohiro Kajiyama | 梶山 知裕
-                </p>
-              </div>
+            {/* Mobile: two-line text unchanged; signature in gap on the right */}
+            <div className="md:hidden grid grid-cols-[1fr_auto] gap-x-3 gap-y-1.5 items-center">
+              <p className="col-start-1 row-start-1 text-[15px] font-bold text-white/80 font-sans tracking-wide leading-relaxed">
+                Kepty Co., Ltd.
+              </p>
+              <p className="col-start-1 row-start-2 text-[15px] font-bold text-white/80 font-sans tracking-wide leading-relaxed">
+                Founder & CEO：Tomohiro Kajiyama | 梶山 知裕
+              </p>
               <img
                 src={ceoSignatureImg}
                 alt="Tomohiro Kajiyama signature"
-                className="w-[108px] h-auto object-contain object-right shrink-0 pointer-events-none brightness-0 invert opacity-95"
+                className="col-start-2 row-start-1 row-span-2 self-center w-[108px] h-auto object-contain object-right shrink-0 pointer-events-none brightness-0 invert opacity-95"
               />
             </div>
 
