@@ -1249,13 +1249,15 @@ export default function App() {
               </p>
             </div>
 
-            {/* Mobile-only horizontal scroll hint */}
-            <div className="md:hidden flex justify-end -mt-4 mb-2 text-[11px] font-extrabold text-neutral-400 tracking-widest select-none">
-              scroll →
-            </div>
-
             {/* Steps Timeline Visual */}
             <div className="relative w-full overflow-x-auto overflow-y-hidden pb-6 pt-4 select-none">
+              {/* Mobile-only horizontal scroll hint (top-left inside figure) */}
+              <div className="md:hidden absolute left-3 top-2 z-20 pointer-events-none">
+                <div className="inline-flex items-center gap-1.5 rounded-full bg-white/85 backdrop-blur px-3 py-1 border border-neutral-200 shadow-sm">
+                  <span className="text-[10px] font-black tracking-widest text-neutral-600">scroll</span>
+                  <span className="text-[12px] font-black text-neutral-600 -mt-[1px]">→</span>
+                </div>
+              </div>
               <div className="min-w-[800px] w-[800px] mx-auto relative px-4">
                 
                 {/* Category Overlays listening / speaking */}
@@ -1749,11 +1751,6 @@ export default function App() {
               </div>
             </div>
 
-            {/* Mobile-only horizontal scroll hint */}
-            <div className="md:hidden flex justify-end -mt-4 mb-2 text-[11px] font-extrabold text-neutral-400 tracking-widest select-none">
-              scroll →
-            </div>
-
             {/* Layout: Top horizontal Specs + Bottom Gantt Timeline */}
             <div className="flex flex-col gap-6 mt-10 select-none max-w-[940px] mx-auto w-full">
               
@@ -1785,7 +1782,14 @@ export default function App() {
               </div>
 
               {/* Bottom Column: Gantt Chart with horizontal scrolling on mobile */}
-              <div className="w-full overflow-x-auto pb-4 scrollbar-thin">
+              <div className="relative w-full overflow-x-auto pb-4 scrollbar-thin">
+                {/* Mobile-only horizontal scroll hint (top-left inside figure) */}
+                <div className="md:hidden absolute left-3 top-2 z-20 pointer-events-none">
+                  <div className="inline-flex items-center gap-1.5 rounded-full bg-white/85 backdrop-blur px-3 py-1 border border-neutral-200 shadow-sm">
+                    <span className="text-[10px] font-black tracking-widest text-neutral-600">scroll</span>
+                    <span className="text-[12px] font-black text-neutral-600 -mt-[1px]">→</span>
+                  </div>
+                </div>
                 <div className="min-w-[700px] border border-neutral-100 rounded-2xl bg-[#fffdfb] overflow-hidden">
                   
                   {/* Phase Banners Row Grid */}
@@ -1947,7 +1951,14 @@ export default function App() {
           </div>
 
           {/* Comparison Table Grid Wrapper (Horizontal Scroll on Mobile) */}
-          <div className="w-full overflow-x-auto pb-6 scrollbar-thin select-none">
+          <div className="relative w-full overflow-x-auto pb-6 scrollbar-thin select-none">
+            {/* Mobile-only horizontal scroll hint (top-left inside table) */}
+            <div className="md:hidden absolute left-3 top-2 z-20 pointer-events-none">
+              <div className="inline-flex items-center gap-1.5 rounded-full bg-white/85 backdrop-blur px-3 py-1 border border-neutral-200 shadow-sm">
+                <span className="text-[10px] font-black tracking-widest text-neutral-600">scroll</span>
+                <span className="text-[12px] font-black text-neutral-600 -mt-[1px]">→</span>
+              </div>
+            </div>
             {(() => {
               const comparisonRows = [
                 {
