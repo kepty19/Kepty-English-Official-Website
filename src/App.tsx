@@ -1097,7 +1097,7 @@ export default function App() {
           {/* Main Title */}
           <div className="text-center mb-16 sm:mb-20">
             <h2 className="text-3xl sm:text-5xl font-extrabold tracking-wide text-neutral-950 font-serif mb-4 leading-tight">
-              Kepty Englishの特徴/拘り
+              Kepty Englishの特徴
             </h2>
             <div className="w-16 h-1.5 bg-[#E55C29] mx-auto rounded-full"></div>
             
