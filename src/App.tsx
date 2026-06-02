@@ -789,6 +789,9 @@ export default function App() {
                 </p>
               </div>
 
+              {/* Mobile-only divider: separate Self-Study and Coaching */}
+              <div className="md:hidden h-px bg-neutral-200/70 my-3" />
+
               {/* === RIGHT COLUMN CONTENT === */}
               {/* Right Column Header (Coaching 英語コーチング) */}
               <div className="md:col-start-3 md:row-start-1 flex items-center gap-3 justify-center py-2.5 select-none">
