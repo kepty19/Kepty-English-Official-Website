@@ -2166,36 +2166,36 @@ export default function App() {
               </span>
             </div>
 
-            <div className="relative w-full overflow-x-auto pb-2 scrollbar-thin">
-              <div className="min-w-[660px] max-w-[860px] mx-auto flex gap-2 sm:gap-3 py-1">
+            <div className="relative w-full overflow-x-auto pb-2 scrollbar-thin max-md:-mx-3 max-md:w-[calc(100%+1.5rem)]">
+              <div className="min-w-[636px] max-w-[860px] md:mx-auto flex gap-1.5 sm:gap-3 py-1">
                 
-                {/* Column 1: Prices / Labels */}
-                <div className="sticky left-0 z-20 w-[124px] sm:w-[180px] shrink-0 flex flex-col gap-3 bg-white pr-2 sm:pr-3 border-r border-[#DFEC9F]">
+                {/* Column 1: Prices / Labels — narrow on mobile for more scroll viewport */}
+                <div className="sticky left-0 z-20 w-[100px] sm:w-[180px] shrink-0 flex flex-col gap-2.5 sm:gap-3 bg-white pr-1 sm:pr-3 border-r border-[#DFEC9F]">
                   {/* Header/Spacer cell */}
-                  <div className="h-[58px] sm:h-[68px] rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] p-2 flex items-center justify-center shadow-xs" />
+                  <div className="h-[58px] sm:h-[68px] rounded-xl sm:rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] px-1 py-1.5 sm:p-2 flex items-center justify-center shadow-xs" />
                   
                   {/* Price Cells */}
-                  <div className="h-[58px] sm:h-[68px] rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] p-2 flex items-center justify-center shadow-xs">
-                    <span className="text-[12.5px] sm:text-[15.5px] font-extrabold text-[#1a1a1a] font-sans">
+                  <div className="h-[58px] sm:h-[68px] rounded-xl sm:rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] px-1 py-1.5 sm:p-2 flex items-center justify-center shadow-xs">
+                    <span className="text-[10.5px] sm:text-[15.5px] font-extrabold text-[#1a1a1a] font-sans leading-tight text-center">
                       月額 39,800円
                     </span>
                   </div>
 
-                  <div className="h-[58px] sm:h-[68px] rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] p-2 flex items-center justify-center shadow-xs">
-                    <span className="text-[12.5px] sm:text-[15.5px] font-extrabold text-[#1a1a1a] font-sans">
+                  <div className="h-[58px] sm:h-[68px] rounded-xl sm:rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] px-1 py-1.5 sm:p-2 flex items-center justify-center shadow-xs">
+                    <span className="text-[10.5px] sm:text-[15.5px] font-extrabold text-[#1a1a1a] font-sans leading-tight text-center">
                       月額 29,800円
                     </span>
                   </div>
 
-                  <div className="h-[58px] sm:h-[68px] rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] p-2 flex items-center justify-center shadow-xs">
-                    <span className="text-[12.5px] sm:text-[15.5px] font-extrabold text-[#1a1a1a] font-sans">
+                  <div className="h-[58px] sm:h-[68px] rounded-xl sm:rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] px-1 py-1.5 sm:p-2 flex items-center justify-center shadow-xs">
+                    <span className="text-[10.5px] sm:text-[15.5px] font-extrabold text-[#1a1a1a] font-sans leading-tight text-center">
                       月額 19,800円
                     </span>
                   </div>
                 </div>
 
                 {/* Column 2: Men's Category */}
-                <div className="flex-1 w-[240px] sm:w-[280px] shrink-0 flex flex-col gap-3 pl-1">
+                <div className="flex-1 w-[240px] sm:w-[280px] shrink-0 flex flex-col gap-2.5 sm:gap-3">
                   {/* Header */}
                   <div className="h-[58px] sm:h-[68px] rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] p-2 flex items-center justify-center shadow-xs">
                     <span className="text-[14px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans">
