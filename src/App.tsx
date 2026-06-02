@@ -1097,7 +1097,7 @@ export default function App() {
           {/* Main Title */}
           <div className="text-center mb-16 sm:mb-20">
             <h2 className="text-3xl sm:text-5xl font-extrabold tracking-wide text-neutral-950 font-serif mb-4 leading-tight">
-              Kepty English の特徴/拘り
+              Kepty Englishの特徴/拘り
             </h2>
             <div className="w-16 h-1.5 bg-[#E55C29] mx-auto rounded-full"></div>
             
@@ -1239,7 +1239,7 @@ export default function App() {
                   03
                 </span>
                 <h4 className="text-[18px] sm:text-[22px] font-extrabold text-neutral-950 font-serif tracking-tight leading-tight">
-                  学習理論に立脚したサービス設計
+                  学習理論に立脚した学習設計
                 </h4>
               </div>
 
@@ -1648,7 +1648,7 @@ export default function App() {
                       <div className="flex items-center justify-between border-b border-black/10 pb-2 mb-2">
                         <div className="flex items-center gap-1.5 text-left">
                           <div className="w-1.5 h-1.5 rounded-full bg-[#17C142] animate-pulse"></div>
-                          <span className="text-[10px] font-black tracking-normal uppercase text-neutral-900">KEPTY AI Coach</span>
+                          <span className="text-[10px] font-black tracking-normal uppercase text-neutral-900">Kepty English | Topic Talk</span>
                         </div>
                         <span className="text-[8px] font-bold text-neutral-700 font-mono">11:54 PM</span>
                       </div>
@@ -1659,7 +1659,7 @@ export default function App() {
                         {/* Outgoing speech trigger bubble (user's input or status) - LINE green balloon */}
                         <div className="flex justify-end">
                           <div className="bg-[#85E249] text-neutral-900 rounded-2xl rounded-tr-xs px-2.5 py-1.5 max-w-[85%] text-[7.5px] font-bold leading-relaxed shadow-sm">
-                            🎤 音声提出完了 (Kobe to Osaka / Australia)
+                            🎤 音声提出完了
                           </div>
                         </div>
 
@@ -2247,7 +2247,7 @@ export default function App() {
             {/* Title Block */}
             <div className="max-w-4xl mx-auto text-center mb-16 sm:mb-20 select-none">
               <h2 className="text-3xl sm:text-5xl font-extrabold tracking-wide text-white font-serif mb-4 leading-tight">
-                英語コーチング利用者の声
+                サービス利用者の声
               </h2>
               <div className="w-16 h-1.5 bg-[#E55C29] mx-auto rounded-full mb-6"></div>
               <p className="text-white/70 text-[14.5px] sm:text-[17px] font-bold tracking-wider leading-relaxed max-w-2xl mx-auto font-sans whitespace-pre-line">
