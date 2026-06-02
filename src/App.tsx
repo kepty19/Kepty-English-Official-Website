@@ -1131,8 +1131,8 @@ export default function App() {
                     </h4>
                   </div>
                   <p className="text-[14px] sm:text-[15.5px] font-bold text-neutral-600 leading-relaxed text-center">
-                    「練習の合間や移動中の隙間時間」を、<br />
-                    最高効率の学習時間へ変化させます。
+                    「移動中の時間」や「治療/ケアの時間」を、<br />
+                    効率的な英語学習時間へ変化させます。
                   </p>
                 </div>
               </div>
