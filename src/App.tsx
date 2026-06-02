@@ -540,7 +540,7 @@ export default function App() {
 
           <p className="text-center text-[17px] sm:text-[20px] leading-relaxed font-semibold max-w-[720px] mx-auto mb-16 font-sans text-neutral-700">
             「英語の言語特性」や「プロサッカー選手の傾向」を踏まえると、<br className="hidden sm:inline" />
-            成人後に英語力を飛躍的に伸ばすためには、膨大な努力が必要となります。
+            成人後に英語力を飛躍的に伸ばすためには、膨大な努力が必要です。
           </p>
 
           {/* Grid Layout for the 4 Cards */}
@@ -595,8 +595,8 @@ export default function App() {
                 </h4>
               </div>
               <p className="text-sm sm:text-[15px] font-semibold text-neutral-600 leading-relaxed font-sans px-4">
-                日々の生活だけでは、第二言語習得に必要となる<br />
-                言語接点/活用量の担保が困難
+                日常生活だけでは、第二言語習得に必要な<br />
+                言語接点量/活用量の担保が困難
               </p>
             </div>
           </div>
@@ -624,14 +624,14 @@ export default function App() {
               </span>
               <div className="flex-1">
                 <p className="text-[19px] sm:text-[23px] font-sans font-bold leading-relaxed text-neutral-900 tracking-wide text-left">
-                  英会話(*試合)で活躍するための“トレーニング(*日々の練習)に着目し、効率的に英会話のスキル向上を図ることができます。
+                  英会話(*試合)ではなく、“トレーニング(*日々の練習)に着目し、効率的に英会話スキルの向上を図ることができます。
                 </p>
               </div>
             </div>
 
             {/* Accent statement */}
             <div className="text-center text-neutral-900 font-sans font-extrabold text-[16px] sm:text-[19px] tracking-wide leading-relaxed mb-10 py-2">
-              効率的に英会話力を伸ばすには、サッカーと同様に「日々の練習」と「試合」の両輪が重要です。
+              効率的に英会話力を伸ばすには、サッカー同様「日々の練習」と「試合」の両輪が重要です。
             </div>
 
             {/* Loop diagram with two columns/circles */}
@@ -1007,7 +1007,7 @@ export default function App() {
               </span>
               <div className="flex-1">
                 <p className="text-[19px] sm:text-[23px] font-sans font-bold leading-relaxed text-neutral-900 tracking-wide text-left">
-                  定期的なミーティングや日々のパーソナルサポートを通して、<br className="hidden sm:inline" />“英語での会話/コミュニケーション力”の最大化を図ります。
+                  定期的なミーティングや日々の伴走サポートなどを通して、<br className="hidden sm:inline" />「英会話力を伸ばすための効率的な学習」を支援します。
                 </p>
               </div>
             </div>
