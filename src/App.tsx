@@ -114,6 +114,28 @@ function ceoMessageForMobile(text: string) {
     .replace('それ以外の時間での学習の質が、\n理想', 'それ以外の時間での学習の質が、理想');
 }
 
+/** Mobile-only double-chevron (matches Section 02 flow indicator) */
+function StageFlowArrow() {
+  return (
+    <div className="md:hidden flex justify-center py-2 select-none" aria-hidden>
+      <div className="animate-bounce flex flex-col items-center justify-center">
+        <svg
+          className="w-14 h-14 text-[#E55C29]"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="3.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M6 6l6 6 6-6" className="opacity-35" />
+          <path d="M6 13l6 6 6-6" />
+        </svg>
+      </div>
+    </div>
+  );
+}
+
 const SUPPORTING_PLAYERS = [
   {
     name: 'FOXY CHIP',
@@ -1455,6 +1477,8 @@ export default function App() {
                   </div>
                 </div>
 
+                <StageFlowArrow />
+
                 {/* Mid Stage 中盤 */}
                 <div className="flex flex-col items-center bg-neutral-50/50 rounded-2xl p-6 border border-neutral-100/70 hover:shadow-md transition-all">
                   <div className="flex items-center gap-2 mb-2 w-full justify-center">
@@ -1482,6 +1506,8 @@ export default function App() {
                     </div>
                   </div>
                 </div>
+
+                <StageFlowArrow />
 
                 {/* Late Stage 終盤 */}
                 <div className="flex flex-col items-center bg-neutral-50/50 rounded-2xl p-6 border border-neutral-100/70 hover:shadow-md transition-all">
