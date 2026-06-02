@@ -1452,7 +1452,7 @@ export default function App() {
                 {/* Early Stage 序盤 */}
                 <div className="flex flex-col items-center bg-neutral-50/50 rounded-2xl p-6 border border-neutral-100/70 hover:shadow-md transition-all">
                   <div className="flex items-center gap-2 mb-2 w-full justify-center">
-                    <span className="text-[15px] sm:text-[16.5px] font-black text-neutral-950 tracking-wider">序盤</span>
+                    <span className="text-[15px] sm:text-[16.5px] font-black text-neutral-950 tracking-wider">- 序盤 -</span>
                   </div>
                   <span className="text-[13.5px] sm:text-[14.5px] font-black text-[#E55C29] tracking-wider mb-6">強固な基礎固め</span>
                   
@@ -1482,7 +1482,7 @@ export default function App() {
                 {/* Mid Stage 中盤 */}
                 <div className="flex flex-col items-center bg-neutral-50/50 rounded-2xl p-6 border border-neutral-100/70 hover:shadow-md transition-all">
                   <div className="flex items-center gap-2 mb-2 w-full justify-center">
-                    <span className="text-[15px] sm:text-[16.5px] font-black text-neutral-950 tracking-wider">中盤</span>
+                    <span className="text-[15px] sm:text-[16.5px] font-black text-neutral-950 tracking-wider">- 中盤 -</span>
                   </div>
                   <span className="text-[13.5px] sm:text-[14.5px] font-black text-[#E55C29] tracking-wider mb-6">武器の磨き込み</span>
                   
@@ -1512,7 +1512,7 @@ export default function App() {
                 {/* Late Stage 終盤 */}
                 <div className="flex flex-col items-center bg-neutral-50/50 rounded-2xl p-6 border border-neutral-100/70 hover:shadow-md transition-all">
                   <div className="flex items-center gap-2 mb-2 w-full justify-center">
-                    <span className="text-[15px] sm:text-[16.5px] font-black text-neutral-950 tracking-wider">終盤</span>
+                    <span className="text-[15px] sm:text-[16.5px] font-black text-neutral-950 tracking-wider">- 終盤 -</span>
                   </div>
                   <span className="text-[13.5px] sm:text-[14.5px] font-black text-[#E55C29] tracking-wider mb-6">型の確立</span>
                   
