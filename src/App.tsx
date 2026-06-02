@@ -934,7 +934,7 @@ export default function App() {
             <div className="flex flex-col items-center justify-center my-12 bg-white/40 p-6 sm:p-10 rounded-3xl border border-yellow-100/40 w-full max-w-[860px] mx-auto">
               
               {/* Circles + labels share one grid so mobile text aligns under each circle */}
-              <div className="grid grid-cols-[1fr_auto_1fr_auto_1fr] gap-x-1.5 sm:gap-x-4 w-full max-w-[340px] sm:max-w-[590px] mx-auto select-none">
+              <div className="grid grid-cols-[92px_auto_92px_auto_92px] sm:grid-cols-[130px_auto_130px_auto_130px] gap-x-1.5 sm:gap-x-4 w-fit mx-auto select-none">
                 {/* Row 1: circles */}
                 <div className="col-start-1 row-start-1 flex justify-center">
                   <div className="w-[92px] h-[92px] sm:w-[130px] sm:h-[130px] rounded-full bg-neutral-800 text-white flex items-center justify-center shadow-md hover:scale-105 transition-transform duration-300 shrink-0">
@@ -2151,7 +2151,7 @@ export default function App() {
 
             {/* Description text block */}
             <p className="text-center text-neutral-600 text-[14.5px] sm:text-[16.5px] font-bold leading-relaxed max-w-[800px] mx-auto mb-10 whitespace-pre-line font-sans">
-              提供するサービスは、全ての選手に対して<span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">一律のプロフェッショナルクオリティ</span>であり、{"\n"}
+              提供するサービスは、全ての選手に対して<span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">一律のプロフェッショナルクオリティ</span>であり、<br className="hidden sm:block" />
               その内容に一切の差分はありません。{"\n"}
               この価格体系は、自らの英語学習に投資し、<span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">人生を前進させるきっかけ</span>を掴む、{"\n"}
               その権利を<span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">全カテゴリーのサッカー選手に届けたい。</span>という我々の思想の形です。
@@ -2159,7 +2159,7 @@ export default function App() {
 
             {/* Price Table Desktop/Mobile scroll wrapper */}
             {/* Mobile-only horizontal scroll hint (match comparison table) */}
-            <div className="md:hidden flex justify-start -mb-1 mt-2 pl-1 pointer-events-none select-none">
+            <div className="md:hidden flex justify-start mb-2 mt-4 pl-1 pointer-events-none select-none">
               <span className="inline-flex items-center gap-2 text-[12px] font-black tracking-[0.22em] text-[#E55C29] drop-shadow-[0_2px_10px_rgba(229,92,41,0.35)]">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#E55C29] animate-pulse" />
                 scroll→
@@ -2567,11 +2567,13 @@ export default function App() {
                   梶山 知裕
                 </h3>
               </div>
-              <div className="w-[105%] max-w-[420px] md:max-w-[520px] lg:w-[145%] lg:max-w-none mx-auto lg:mx-0 mt-4 lg:-mt-[55px] lg:-ml-14 xl:-ml-20 select-none animate-fade-in">
+              <div className="relative w-[105%] max-w-[420px] md:max-w-[520px] lg:w-[145%] lg:max-w-none mx-auto lg:mx-0 mt-4 lg:-mt-[55px] lg:-ml-14 xl:-ml-20 select-none animate-fade-in">
+                {/* Circular backdrop behind face (match Company section dark orange) */}
+                <div className="absolute left-1/2 top-[46%] -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] rounded-full bg-[#C44315] opacity-95 blur-[0.2px] z-0" />
                 <img 
                   src={ceoProfileImg} 
                   alt="Tomohiro Kajiyama" 
-                  className="w-full h-auto object-contain select-none pointer-events-none"
+                  className="relative z-10 w-full h-auto object-contain select-none pointer-events-none"
                 />
               </div>
             </div>
