@@ -1803,8 +1803,8 @@ export default function App() {
               </div>
 
               {/* Bottom Column: Gantt Chart with horizontal scrolling on mobile */}
-              <div className="relative w-full overflow-x-auto pb-4 scrollbar-thin">
-                <div className="min-w-[700px] border border-neutral-100 rounded-2xl bg-[#fffdfb] overflow-hidden">
+              <div className="relative w-full overflow-x-auto overflow-y-hidden pb-4 scrollbar-thin">
+                <div className="min-w-[700px] border border-neutral-100 rounded-2xl bg-[#fffdfb]">
                   
                   {/* Phase Banners Row Grid */}
                   <div className="flex w-full border-b border-neutral-200 items-stretch bg-white">
