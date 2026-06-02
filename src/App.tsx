@@ -613,7 +613,8 @@ export default function App() {
           {/* Main Title */}
           <div className="text-center mb-16 sm:mb-20">
             <h2 className="text-3xl sm:text-5xl font-extrabold tracking-wide text-neutral-950 font-serif mb-4 leading-tight">
-              なぜ、"英語コーチング"が有効か？
+              <span className="block sm:inline">なぜ、"英語コーチング"</span>
+              <span className="block sm:inline">が有効か？</span>
             </h2>
             <div className="w-16 h-1.5 bg-[#E55C29] mx-auto rounded-full"></div>
           </div>
@@ -635,21 +636,21 @@ export default function App() {
             </div>
 
             {/* Loop diagram with two columns/circles */}
-            <div className="flex flex-col md:flex-row items-center justify-around gap-8 md:gap-4 my-10 relative">
+            <div className="flex flex-row items-center justify-between gap-3 sm:gap-6 my-10 relative">
               
               {/* Left Circle - Training */}
               <div className="flex flex-col items-center text-center">
-                <div className="w-[200px] h-[200px] sm:w-[230px] sm:h-[230px] rounded-full bg-white border-2 border-white p-6 sm:p-8 flex flex-col justify-start items-center shadow-md relative group hover:scale-[1.02] transition-transform duration-300 pt-8 sm:pt-10">
-                  <div className="h-14 flex flex-col justify-center items-center mb-4 border-b border-[#E55C29]/35 pb-2 w-full select-none">
-                    <h4 className="text-lg sm:text-xl font-black text-neutral-950 tracking-wide">
+                <div className="w-[150px] h-[150px] sm:w-[230px] sm:h-[230px] rounded-full bg-white border-2 border-white p-4 sm:p-8 flex flex-col justify-start items-center shadow-md relative group hover:scale-[1.02] transition-transform duration-300 pt-6 sm:pt-10">
+                  <div className="h-12 sm:h-14 flex flex-col justify-center items-center mb-3 sm:mb-4 border-b border-[#E55C29]/35 pb-2 w-full select-none">
+                    <h4 className="text-[16px] sm:text-xl font-black text-neutral-950 tracking-wide">
                       トレーニング
                     </h4>
-                    <span className="text-[14.3px] text-neutral-800 font-bold mt-0.5">
+                    <span className="text-[11.5px] sm:text-[14.3px] text-neutral-800 font-bold mt-0.5">
                       (*日々の練習)
                     </span>
                   </div>
-                  <div className="h-20 flex flex-col justify-start">
-                    <ul className="text-[13.5px] sm:text-[14.5px] font-extrabold text-[#111111] space-y-1 text-left list-disc list-inside">
+                  <div className="h-16 sm:h-20 flex flex-col justify-start">
+                    <ul className="text-[10.5px] sm:text-[14.5px] font-extrabold text-[#111111] space-y-1 text-left list-disc list-inside">
                       <li>スキルAの強化</li>
                       <li>スキルBの強化</li>
                       <li>スキルCの強化</li>
@@ -658,36 +659,36 @@ export default function App() {
                   </div>
                 </div>
                 {/* Clean, backgroundless text as requested */}
-                <div className="mt-4 text-[#E55C29] text-[15px] sm:text-[17px] font-bold tracking-wide select-none">
+                <div className="mt-3 sm:mt-4 text-[#E55C29] text-[12px] sm:text-[17px] font-bold tracking-wide select-none">
                   *英語コーチングで強化
                 </div>
               </div>
 
               {/* Feed-back Loop arrow in between - Minimal rotating arrow only */}
-              <div className="flex flex-col items-center justify-center py-6 md:py-0 select-none relative z-10">
-                <RefreshCw className="w-[52px] h-[52px] text-[#E55C29] animate-spin" style={{ animationDuration: '6s' }} />
+              <div className="flex flex-col items-center justify-center select-none relative z-10">
+                <RefreshCw className="w-[36px] h-[36px] sm:w-[52px] sm:h-[52px] text-[#E55C29] animate-spin" style={{ animationDuration: '6s' }} />
               </div>
 
               {/* Right Circle - Matches */}
               <div className="flex flex-col items-center text-center">
-                <div className="w-[200px] h-[200px] sm:w-[230px] sm:h-[230px] rounded-full bg-white border-2 border-white p-6 sm:p-8 flex flex-col justify-start items-center shadow-md relative group hover:scale-[1.02] transition-transform duration-300 pt-8 sm:pt-10">
-                  <div className="h-14 flex flex-col justify-center items-center mb-4 border-b border-[#E55C29]/35 pb-2 w-full select-none">
-                    <h4 className="text-lg sm:text-xl font-black text-neutral-950 tracking-wide">
+                <div className="w-[150px] h-[150px] sm:w-[230px] sm:h-[230px] rounded-full bg-white border-2 border-white p-4 sm:p-8 flex flex-col justify-start items-center shadow-md relative group hover:scale-[1.02] transition-transform duration-300 pt-6 sm:pt-10">
+                  <div className="h-12 sm:h-14 flex flex-col justify-center items-center mb-3 sm:mb-4 border-b border-[#E55C29]/35 pb-2 w-full select-none">
+                    <h4 className="text-[16px] sm:text-xl font-black text-neutral-950 tracking-wide">
                       英会話
                     </h4>
-                    <span className="text-[14.3px] text-neutral-800 font-bold mt-0.5">
+                    <span className="text-[11.5px] sm:text-[14.3px] text-neutral-800 font-bold mt-0.5">
                       (*試合)
                     </span>
                   </div>
-                  <div className="h-20 flex flex-col justify-start">
-                    <ul className="text-[13.5px] sm:text-[14.5px] font-extrabold text-[#111111] space-y-2 text-left list-disc list-inside">
+                  <div className="h-16 sm:h-20 flex flex-col justify-start">
+                    <ul className="text-[10.5px] sm:text-[14.5px] font-extrabold text-[#111111] space-y-1.5 sm:space-y-2 text-left list-disc list-inside">
                       <li>磨いたスキルの活用</li>
                       <li>磨いたスキルを表現</li>
                     </ul>
                   </div>
                 </div>
                 {/* Clean, backgroundless text as requested */}
-                <div className="mt-4 text-[#E55C29] text-[15px] sm:text-[17px] font-bold tracking-wide select-none">
+                <div className="mt-3 sm:mt-4 text-[#E55C29] text-[12px] sm:text-[17px] font-bold tracking-wide select-none">
                   *日々の生活・英会話で強化
                 </div>
               </div>
