@@ -121,8 +121,6 @@ export default function App() {
   const bgRotate = useTransform(scrollYProgress, [0, 1], [-4, 4]);
   const bgScale = useTransform(scrollYProgress, [0, 1], [0.85, 1.02]);
 
-  // Viewport-size detection
-  const [isMobile, setIsMobile] = useState<boolean>(false);
   // Active navigation tab tracker
   const [activeTab, setActiveTab] = useState<string>('hero');
   // Interactive spec viewer active model in collection section
@@ -186,16 +184,6 @@ export default function App() {
       setInquirySubmitting(false);
     }
   };
-
-  // Responsive boundary listener
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 640);
-    };
-    handleResize(); // Initial call
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   // Scroll spy to dynamically highlight top navigation tabs based on user position (Swapped Order with SERVICE)
   useEffect(() => {
@@ -261,13 +249,13 @@ export default function App() {
         id="toonhub-floating-navigation" 
         className="fixed top-8 inset-x-0 z-100 flex justify-center px-4 transition-all duration-300 pointer-events-none"
       >
-        <div className="bg-black/25 backdrop-blur-xl border border-white/15 px-2 sm:px-3 py-1.5 rounded-full flex items-center gap-1 shadow-2xl pointer-events-auto">
+        <div className="bg-black/25 backdrop-blur-xl border border-white/15 px-3 py-1.5 rounded-full flex items-center gap-1 shadow-2xl pointer-events-auto">
 
           {/* Dynamic Interactive Tabs - English only & Swapped Sequence (HOME -> CEO MESSAGE -> MODELS) */}
           <button
             onClick={() => scrollToSection('hero-section', 'hero')}
             type="button"
-            className={`px-3 py-1 rounded-full text-[9px] sm:text-[10.5px] font-bold tracking-wider uppercase transition-all duration-300 pointer-events-auto ${
+            className={`px-3 py-1 rounded-full text-[10.5px] font-bold tracking-wider uppercase transition-all duration-300 pointer-events-auto ${
               activeTab === 'hero'
                 ? 'bg-white text-neutral-900 shadow'
                 : 'text-white/80 hover:text-white hover:bg-white/10'
@@ -279,7 +267,7 @@ export default function App() {
           <button
             onClick={() => scrollToSection('ceo-message-section', 'ceo-message')}
             type="button"
-            className={`px-3 py-1 rounded-full text-[9px] sm:text-[10.5px] font-bold tracking-wider uppercase transition-all duration-300 pointer-events-auto ${
+            className={`px-3 py-1 rounded-full text-[10.5px] font-bold tracking-wider uppercase transition-all duration-300 pointer-events-auto ${
               activeTab === 'ceo-message'
                 ? 'bg-white text-neutral-900 shadow'
                 : 'text-white/80 hover:text-white hover:bg-white/10'
@@ -291,7 +279,7 @@ export default function App() {
           <button
             onClick={() => scrollToSection('why-effort-necessary-section', 'service')}
             type="button"
-            className={`px-3 py-1 rounded-full text-[9px] sm:text-[10.5px] font-bold tracking-wider uppercase transition-all duration-300 pointer-events-auto ${
+            className={`px-3 py-1 rounded-full text-[10.5px] font-bold tracking-wider uppercase transition-all duration-300 pointer-events-auto ${
               activeTab === 'service'
                 ? 'bg-white text-neutral-900 shadow'
                 : 'text-white/80 hover:text-white hover:bg-white/10'
@@ -303,7 +291,7 @@ export default function App() {
           <button
             onClick={() => scrollToSection('collection-section', 'collection')}
             type="button"
-            className={`px-3 py-1 rounded-full text-[9px] sm:text-[10.5px] font-bold tracking-wider uppercase transition-all duration-300 pointer-events-auto ${
+            className={`px-3 py-1 rounded-full text-[10.5px] font-bold tracking-wider uppercase transition-all duration-300 pointer-events-auto ${
               activeTab === 'collection'
                 ? 'bg-white text-neutral-900 shadow'
                 : 'text-white/80 hover:text-white hover:bg-white/10'
@@ -315,7 +303,7 @@ export default function App() {
           <button
             onClick={() => scrollToSection('ceo-profile-section', 'ceo-profile')}
             type="button"
-            className={`px-3 py-1 rounded-full text-[9px] sm:text-[10.5px] font-bold tracking-wider uppercase transition-all duration-300 pointer-events-auto ${
+            className={`px-3 py-1 rounded-full text-[10.5px] font-bold tracking-wider uppercase transition-all duration-300 pointer-events-auto ${
               activeTab === 'ceo-profile'
                 ? 'bg-white text-neutral-900 shadow'
                 : 'text-white/80 hover:text-white hover:bg-white/10'
@@ -327,7 +315,7 @@ export default function App() {
           <button
             onClick={() => scrollToSection('company-section', 'company')}
             type="button"
-            className={`px-3 py-1 rounded-full text-[9px] sm:text-[10.5px] font-bold tracking-wider uppercase transition-all duration-300 pointer-events-auto ${
+            className={`px-3 py-1 rounded-full text-[10.5px] font-bold tracking-wider uppercase transition-all duration-300 pointer-events-auto ${
               activeTab === 'company'
                 ? 'bg-white text-neutral-900 shadow'
                 : 'text-white/80 hover:text-white hover:bg-white/10'
@@ -356,7 +344,7 @@ export default function App() {
         {/* Brand label top left - Aligned with floating tabs coordinates */}
         <div 
           id="toonhub-logo-header"
-          className="absolute top-8 left-4 sm:left-8 z-60 pointer-events-none select-none flex items-center h-[68px] keep-original-font"
+          className="absolute top-8 left-8 z-60 pointer-events-none select-none flex items-center h-[68px] keep-original-font"
         >
           {/* Exact transparent background Kepty logo + text from screenshot - Scaled 2x as requested */}
           <svg viewBox="0 0 160 50" className="h-16 w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -367,19 +355,19 @@ export default function App() {
         </div>
 
         {/* Right Info Controls */}
-        <div className="absolute top-8 right-4 sm:right-8 z-60 flex items-center select-none pointer-events-none">
-          <span className="text-[20px] sm:text-[25px] font-sans font-bold tracking-wider text-white select-none leading-none">
+        <div className="absolute top-8 right-8 z-60 flex items-center select-none pointer-events-none">
+          <span className="text-[25px] font-sans font-bold tracking-wider text-white select-none leading-none">
             Kepty Co. LTD.
           </span>
         </div>
 
         {/* Hero: 3D tech visual — behind ghost text (z-2 vs z-4) */}
-        <HeroTechVisual isMobile={isMobile} />
+        <HeroTechVisual />
 
         {/* Giant ghost display text "Kepty English" */}
         <div
           id="ghost-background-text"
-          className="absolute left-4 sm:left-24 pointer-events-none select-none top-[26%] sm:top-[28%] z-[4]"
+          className="absolute left-24 pointer-events-none select-none top-[28%] z-[4]"
         >
           <span
             className="font-anton text-white select-none whitespace-nowrap text-left relative z-10"
@@ -399,10 +387,10 @@ export default function App() {
         {/* Bottom-left metadata description + Autoplay Pulse Display */}
         <div
           id="bottom-navigation-details"
-          className="absolute bottom-28 left-4 sm:bottom-36 sm:left-24 max-w-[720px] select-none text-white z-60"
+          className="absolute bottom-36 left-24 max-w-[720px] select-none text-white z-60"
         >
           <div className="transition-all duration-300">
-            <p className="font-sans font-bold uppercase tracking-widest mb-4 sm:mb-5 text-[24px] sm:text-[33px] opacity-95">
+            <p className="font-sans font-bold uppercase tracking-widest mb-5 text-[33px] opacity-95">
               プロサッカー選手の英会話力を引き伸ばす
               <br />
               英語コーチングサービス
@@ -415,10 +403,10 @@ export default function App() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF6331] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-[11px] w-[11px] bg-[#FF6331]"></span>
             </span>
-            <span className="text-[14px] sm:text-[16px] font-sans tracking-wide text-white font-bold">
+            <span className="text-[16px] font-sans tracking-wide text-white font-bold">
               Total Users
             </span>
-            <span className="text-[14.5px] sm:text-[16px] text-white font-mono font-black">
+            <span className="text-[16px] text-white font-mono font-black">
               7
             </span>
           </div>
