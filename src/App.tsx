@@ -2295,7 +2295,7 @@ export default function App() {
               </h2>
               <div className="w-16 h-1.5 bg-[#E55C29] mx-auto rounded-full mb-6"></div>
               <p className="text-white/70 text-[14.5px] sm:text-[17px] font-bold tracking-wider leading-relaxed max-w-2xl mx-auto font-sans whitespace-pre-line">
-                「英語の学習目的」や「過去の英語学習経験」などに関わらず、{"\n"}ご利用頂けるサービスです。
+                「目的」や「経験」は人それぞれ。皆様にご利用いただけるサービスです。
               </p>
             </div>
 
