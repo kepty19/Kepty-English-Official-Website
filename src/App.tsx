@@ -654,7 +654,6 @@ export default function App() {
                       <li>スキルAの強化</li>
                       <li>スキルBの強化</li>
                       <li>スキルCの強化</li>
-                      <li className="list-none ml-2 text-[#444444] font-bold">etc.</li>
                     </ul>
                   </div>
                 </div>
@@ -683,13 +682,13 @@ export default function App() {
                   <div className="h-16 sm:h-20 flex flex-col justify-start">
                     <ul className="text-[10.5px] sm:text-[14.5px] font-extrabold text-[#111111] space-y-1.5 sm:space-y-2 text-left list-disc list-inside">
                       <li>磨いたスキルの活用</li>
-                      <li>磨いたスキルを表現</li>
+                      <li>伸ばすスキルの発見</li>
                     </ul>
                   </div>
                 </div>
                 {/* Clean, backgroundless text as requested */}
                 <div className="mt-3 sm:mt-4 text-[#E55C29] text-[12px] sm:text-[17px] font-bold tracking-wide select-none">
-                  *日々の生活・英会話で強化
+                  *日常生活・英会話で強化
                 </div>
               </div>
 
