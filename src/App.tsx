@@ -487,18 +487,20 @@ export default function App() {
 
           {/* Signature Block with high-end typography */}
           <div className="mt-12 pt-8 border-t border-white/10 select-none text-left">
-            {/* Mobile: two-line text unchanged; signature in gap on the right */}
-            <div className="md:hidden grid grid-cols-[1fr_auto] gap-x-3 gap-y-1.5 items-center">
-              <p className="col-start-1 row-start-1 text-[15px] font-bold text-white/80 font-sans tracking-wide leading-relaxed">
-                Kepty Co., Ltd.
-              </p>
-              <p className="col-start-1 row-start-2 text-[15px] font-bold text-white/80 font-sans tracking-wide leading-relaxed">
-                Founder & CEO：Tomohiro Kajiyama | 梶山 知裕
-              </p>
+            {/* Mobile: 2行テキスト（折り返しなし）＋署名は行間の右（赤枠位置） */}
+            <div className="md:hidden relative w-full">
+              <div className="flex flex-col gap-1.5">
+                <p className="text-[15px] font-bold text-white/80 font-sans tracking-wide leading-relaxed">
+                  Kepty Co., Ltd.
+                </p>
+                <p className="text-[13px] font-bold text-white/80 font-sans tracking-wide leading-relaxed whitespace-nowrap">
+                  Founder & CEO：Tomohiro Kajiyama | 梶山 知裕
+                </p>
+              </div>
               <img
                 src={ceoSignatureImg}
                 alt="Tomohiro Kajiyama signature"
-                className="col-start-2 row-start-1 row-span-2 self-center w-[108px] h-auto object-contain object-right shrink-0 pointer-events-none brightness-0 invert opacity-95"
+                className="absolute right-0 top-[1.05rem] -translate-y-1/2 w-[100px] h-auto object-contain object-right pointer-events-none brightness-0 invert opacity-95"
               />
             </div>
 
