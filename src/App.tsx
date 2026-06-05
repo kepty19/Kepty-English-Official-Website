@@ -397,9 +397,9 @@ export default function App() {
           </h1>
 
           <p className="font-sans font-bold uppercase tracking-wide text-[17px] leading-snug text-white opacity-95">
-            プロサッカー選手の英会話力を引き伸ばす
+            プロサッカー選手の人生に、
             <br />
-            英語コーチングサービス
+            もう一つの確固たる武器を。
           </p>
 
           <div className="flex-1 flex items-end justify-center min-h-0 mt-8 translate-y-12">
