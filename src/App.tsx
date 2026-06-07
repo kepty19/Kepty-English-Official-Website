@@ -2300,7 +2300,7 @@ export default function App() {
             </div>
 
             <p className="mt-4 text-left text-[11px] sm:text-[12.5px] font-bold text-neutral-500 leading-relaxed font-sans select-none">
-              ※一部、サッカー選手以外の方にも提供しております。（一般の方々：月額39,800円）
+              ※一部、サッカー選手以外の方にも提供しております。（一般の方々：月額49,800円）
             </p>
 
           </div>
