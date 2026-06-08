@@ -2015,7 +2015,7 @@ export default function App() {
                   online: "約1万〜2万/月",
                   influencer: "不明",
                   bigCoaching: "約10万/月〜\n20万/月",
-                  kepty: "19,800円/月〜\n49,800円/月",
+                  kepty: "19,800円/月〜\n39,800円/月",
                 },
                 {
                   label: "コーチ",
@@ -2282,7 +2282,7 @@ export default function App() {
             </div>
 
             <p className="mt-4 text-left text-[11px] sm:text-[12.5px] font-bold text-neutral-500 leading-relaxed font-sans select-none">
-              ※一部、サッカー選手以外の方にも提供しております。（一般の方々：月額49,800円）
+              ※一部、サッカー選手以外の方にも提供しております。（一般の方々：月額39,800円）
             </p>
 
           </div>
