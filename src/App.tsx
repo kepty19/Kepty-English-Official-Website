@@ -2015,7 +2015,7 @@ export default function App() {
                   online: "約1万〜2万/月",
                   influencer: "不明",
                   bigCoaching: "約10万/月〜\n20万/月",
-                  kepty: "19,800円/月〜\n39,800円/月",
+                  kepty: "19,800円/月〜\n49,800円/月",
                 },
                 {
                   label: "コーチ",
