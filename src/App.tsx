@@ -2203,12 +2203,6 @@ export default function App() {
                   {/* Price Cells */}
                   <div className="h-[58px] sm:h-[68px] rounded-xl sm:rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] px-1 py-1.5 sm:p-2 flex items-center justify-center shadow-xs">
                     <span className="text-[10.5px] sm:text-[15.5px] font-extrabold text-[#1a1a1a] font-sans leading-tight text-center">
-                      月額 49,800円
-                    </span>
-                  </div>
-
-                  <div className="h-[58px] sm:h-[68px] rounded-xl sm:rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] px-1 py-1.5 sm:p-2 flex items-center justify-center shadow-xs">
-                    <span className="text-[10.5px] sm:text-[15.5px] font-extrabold text-[#1a1a1a] font-sans leading-tight text-center">
                       月額 39,800円
                     </span>
                   </div>
@@ -2238,13 +2232,7 @@ export default function App() {
                   {/* Category info Cells */}
                   <div className="h-[58px] sm:h-[68px] rounded-2xl bg-white border border-[#DFEC9F] p-2 flex items-center justify-center shadow-xs">
                     <span className="text-[13px] sm:text-[14.5px] font-extrabold text-[#1a1a1a] font-sans text-center">
-                      海外主要リーグ
-                    </span>
-                  </div>
-
-                  <div className="h-[58px] sm:h-[68px] rounded-2xl bg-white border border-[#DFEC9F] p-2 flex items-center justify-center shadow-xs">
-                    <span className="text-[13px] sm:text-[14.5px] font-extrabold text-[#1a1a1a] font-sans text-center">
-                      J1リーグ
+                      海外主要リーグ、J1リーグ
                     </span>
                   </div>
 
@@ -2271,12 +2259,6 @@ export default function App() {
                   </div>
 
                   {/* Category info Cells */}
-                  <div className="h-[58px] sm:h-[68px] rounded-2xl bg-white border border-[#DFEC9F] p-2 flex items-center justify-center shadow-xs">
-                    <span className="text-[13.5px] sm:text-[15.5px] font-extrabold text-[#1a1a1a] font-sans text-center">
-                      -
-                    </span>
-                  </div>
-
                   <div className="h-[58px] sm:h-[68px] rounded-2xl bg-white border border-[#DFEC9F] p-2 flex items-center justify-center shadow-xs">
                     <span className="text-[13.5px] sm:text-[15.5px] font-extrabold text-[#1a1a1a] font-sans text-center">
                       -
