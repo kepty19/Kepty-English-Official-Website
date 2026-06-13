@@ -1045,7 +1045,7 @@ export default function App() {
                 </h4>
                 <div className="w-full border-t border-neutral-200 my-3"></div>
                 <ul className="text-xs sm:text-[13px] font-bold text-neutral-600 space-y-2 text-left list-disc pl-4 leading-relaxed">
-                  <li>毎週or2週間に一度、日々の進捗確認や、計画の修正を実施</li>
+                  <li>2週間に一度、日々の進捗確認や計画の修正を実施</li>
                 </ul>
                 {/* Thick accent line at the bottom */}
                 <div className="w-8 h-1 bg-[#E55C29] rounded-full mt-auto pt-0.5"></div>
