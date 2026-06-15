@@ -2282,7 +2282,7 @@ export default function App() {
             </div>
 
             <p className="mt-4 text-left text-[11px] sm:text-[12.5px] font-bold text-neutral-500 leading-relaxed font-sans select-none">
-              ※一部、サッカー選手以外の方にも提供しております。
+              ※一部、サッカー選手以外の一般の方にも提供しております。(月額 39,800円)  
             </p>
 
           </div>
