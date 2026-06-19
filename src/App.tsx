@@ -2183,6 +2183,7 @@ export default function App() {
               その権利を<span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">全カテゴリーのサッカー選手に届けたい。</span>という我々の思想の形です。
             </p>
 
+<<<<<<< HEAD
             {/* ── Price details: Men's & Women's ── */}
             <div className="space-y-10 sm:space-y-14">
 
@@ -2421,12 +2422,114 @@ export default function App() {
                 </div>
               </div>
 
+=======
+            {/* Price Table Desktop/Mobile scroll wrapper */}
+            {/* Mobile-only horizontal scroll hint (match comparison table) */}
+            <div className="md:hidden flex justify-start mb-2 mt-4 pl-1 pointer-events-none select-none">
+              <span className="inline-flex items-center gap-2 text-[12px] font-black tracking-[0.22em] text-[#E55C29] drop-shadow-[0_2px_10px_rgba(229,92,41,0.35)]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#E55C29] animate-pulse" />
+                scroll→
+              </span>
+>>>>>>> parent of ff9cf15 (Update App.tsx)
             </div>
 =======
             <p className="mt-4 text-left text-[11px] sm:text-[12.5px] font-bold text-neutral-500 leading-relaxed font-sans select-none">
               ※一部、サッカー選手以外の一般の方にも提供しております。(月額 39,800円)  
             </p>
 >>>>>>> 51f5596671c358fa6417834799aeeed9b77176e2
+
+            <div className="relative w-full overflow-x-auto pb-2 scrollbar-thin max-md:-mx-3 max-md:w-[calc(100%+1.5rem)]">
+              <div className="min-w-[636px] max-w-[860px] md:mx-auto flex gap-1.5 sm:gap-3 py-1">
+                
+                {/* Column 1: Prices / Labels — narrow on mobile for more scroll viewport */}
+                <div className="sticky left-0 z-20 w-[100px] sm:w-[180px] shrink-0 flex flex-col gap-2.5 sm:gap-3 bg-white pr-1 sm:pr-3 border-r border-[#DFEC9F]">
+                  {/* Header/Spacer cell */}
+                  <div className="h-[58px] sm:h-[68px] rounded-xl sm:rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] px-1 py-1.5 sm:p-2 flex items-center justify-center shadow-xs" />
+                  
+                  {/* Price Cells */}
+                  <div className="h-[58px] sm:h-[68px] rounded-xl sm:rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] px-1 py-1.5 sm:p-2 flex items-center justify-center shadow-xs">
+                    <span className="text-[10.5px] sm:text-[15.5px] font-extrabold text-[#1a1a1a] font-sans leading-tight text-center">
+                      月額 39,800円
+                    </span>
+                  </div>
+
+                  <div className="h-[58px] sm:h-[68px] rounded-xl sm:rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] px-1 py-1.5 sm:p-2 flex items-center justify-center shadow-xs">
+                    <span className="text-[10.5px] sm:text-[15.5px] font-extrabold text-[#1a1a1a] font-sans leading-tight text-center">
+                      月額 29,800円
+                    </span>
+                  </div>
+
+                  <div className="h-[58px] sm:h-[68px] rounded-xl sm:rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] px-1 py-1.5 sm:p-2 flex items-center justify-center shadow-xs">
+                    <span className="text-[10.5px] sm:text-[15.5px] font-extrabold text-[#1a1a1a] font-sans leading-tight text-center">
+                      月額 19,800円
+                    </span>
+                  </div>
+                </div>
+
+                {/* Column 2: Men's Category */}
+                <div className="flex-1 w-[240px] sm:w-[280px] shrink-0 flex flex-col gap-2.5 sm:gap-3">
+                  {/* Header */}
+                  <div className="h-[58px] sm:h-[68px] rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] p-2 flex items-center justify-center shadow-xs">
+                    <span className="text-[14px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans">
+                      Men's Category
+                    </span>
+                  </div>
+                  
+                  {/* Category info Cells */}
+                  <div className="h-[58px] sm:h-[68px] rounded-2xl bg-white border border-[#DFEC9F] p-2 flex items-center justify-center shadow-xs">
+                    <span className="text-[13px] sm:text-[14.5px] font-extrabold text-[#1a1a1a] font-sans text-center">
+                      海外主要リーグ、J1リーグ
+                    </span>
+                  </div>
+
+                  <div className="h-[58px] sm:h-[68px] rounded-2xl bg-white border border-[#DFEC9F] p-2 flex items-center justify-center shadow-xs">
+                    <span className="text-[13px] sm:text-[14.5px] font-extrabold text-[#1a1a1a] font-sans text-center">
+                      J2リーグ
+                    </span>
+                  </div>
+
+                  <div className="h-[58px] sm:h-[68px] rounded-2xl bg-white border border-[#DFEC9F] p-2 flex items-center justify-center shadow-xs">
+                    <span className="text-[13px] sm:text-[14.5px] font-extrabold text-[#1a1a1a] font-sans text-center">
+                      J3リーグ、その他リーグ
+                    </span>
+                  </div>
+                </div>
+
+                {/* Column 3: Women's Category */}
+                <div className="flex-1 w-[240px] sm:w-[280px] shrink-0 flex flex-col gap-3">
+                  {/* Header */}
+                  <div className="h-[58px] sm:h-[68px] rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] p-2 flex items-center justify-center shadow-xs">
+                    <span className="text-[14px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans">
+                      Women's Category
+                    </span>
+                  </div>
+
+                  {/* Category info Cells */}
+                  <div className="h-[58px] sm:h-[68px] rounded-2xl bg-white border border-[#DFEC9F] p-2 flex items-center justify-center shadow-xs">
+                    <span className="text-[13.5px] sm:text-[15.5px] font-extrabold text-[#1a1a1a] font-sans text-center">
+                      -
+                    </span>
+                  </div>
+
+                  <div className="h-[58px] sm:h-[68px] rounded-2xl bg-white border border-[#DFEC9F] p-2 flex items-center justify-center shadow-xs">
+                    <span className="text-[13px] sm:text-[14.5px] font-extrabold text-[#1a1a1a] font-sans text-center">
+                      海外主要リーグ
+                    </span>
+                  </div>
+
+                  <div className="h-[58px] sm:h-[68px] rounded-2xl bg-white border border-[#DFEC9F] p-2 flex items-center justify-center shadow-xs">
+                    <span className="text-[13px] sm:text-[14.5px] font-extrabold text-[#1a1a1a] font-sans text-center">
+                      WEリーグ、その他リーグ
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <p className="mt-4 text-left text-[11px] sm:text-[12.5px] font-bold text-neutral-500 leading-relaxed font-sans select-none">
+              ※一部、サッカー選手以外の方にも提供しております。（一般の方々：月額49,800円）
+            </p>
 
           </div>
         </div>
