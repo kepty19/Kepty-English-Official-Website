@@ -1045,7 +1045,7 @@ export default function App() {
                 </h4>
                 <div className="w-full border-t border-neutral-200 my-3"></div>
                 <ul className="text-xs sm:text-[13px] font-bold text-neutral-600 space-y-2 text-left list-disc pl-4 leading-relaxed">
-                  <li>毎週or2週間に一度、日々の進捗確認や、計画の修正を実施</li>
+                  <li>2週間に一度、日々の進捗確認や計画の修正を実施</li>
                 </ul>
                 {/* Thick accent line at the bottom */}
                 <div className="w-8 h-1 bg-[#E55C29] rounded-full mt-auto pt-0.5"></div>
@@ -2015,7 +2015,7 @@ export default function App() {
                   online: "約1万〜2万/月",
                   influencer: "不明",
                   bigCoaching: "約10万/月〜\n20万/月",
-                  kepty: "19,800円/月〜\n49,800円/月",
+                  kepty: "19,800円/月〜\n39,800円/月",
                 },
                 {
                   label: "コーチ",
@@ -2320,6 +2320,7 @@ export default function App() {
                 </div>
               </div>
 
+<<<<<<< HEAD
               {/* ── 女子 ── */}
               <div>
                 <div className="flex items-center gap-3 mb-4">
@@ -2421,6 +2422,11 @@ export default function App() {
               </div>
 
             </div>
+=======
+            <p className="mt-4 text-left text-[11px] sm:text-[12.5px] font-bold text-neutral-500 leading-relaxed font-sans select-none">
+              ※一部、サッカー選手以外の一般の方にも提供しております。(月額 39,800円)  
+            </p>
+>>>>>>> 51f5596671c358fa6417834799aeeed9b77176e2
 
           </div>
         </div>
