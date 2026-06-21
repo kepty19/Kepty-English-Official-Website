@@ -665,10 +665,10 @@ export default function App() {
                 <div className="w-[150px] h-[150px] sm:w-[230px] sm:h-[230px] rounded-full bg-white border-2 border-white p-4 sm:p-8 flex flex-col justify-start items-center shadow-md relative group hover:scale-[1.02] transition-transform duration-300 pt-6 sm:pt-10">
                   <div className="h-12 sm:h-14 flex flex-col justify-center items-center mb-3 sm:mb-4 border-b border-[#E55C29]/35 pb-2 w-full select-none">
                     <h4 className="text-[16px] sm:text-xl font-black text-neutral-950 tracking-wide">
-                      トレーニング
+                      スキル別の練習
                     </h4>
                     <span className="text-[11.5px] sm:text-[14.3px] text-neutral-800 font-bold mt-0.5">
-                      (*日々の練習)
+                      (*毎日の練習)
                     </span>
                   </div>
                   <div className="h-16 sm:h-20 flex flex-col justify-start">
