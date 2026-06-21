@@ -826,7 +826,7 @@ export default function App() {
               {/* Card 1 R */}
               <div className="md:col-start-3 md:row-start-2 bg-white border border-[#E55C29]/25 p-6 rounded-2xl shadow-sm text-center flex items-center justify-center min-h-[120px] hover:shadow-md transition-shadow relative overflow-hidden group">
                 <p className="text-[15px] sm:text-[16px] font-bold text-neutral-800 leading-relaxed z-10 text-left sm:text-center">
-                  汎用的な学習理論を活用するため、「課題と打ち手の明確化」を実現できる！
+                  第二言語の学習理論を活用するため、「課題と打ち手の明確化」を実現できる！
                 </p>
               </div>
 
