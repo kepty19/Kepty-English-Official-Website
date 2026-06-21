@@ -647,14 +647,14 @@ export default function App() {
               </span>
               <div className="flex-1">
                 <p className="text-[19px] sm:text-[23px] font-sans font-bold leading-relaxed text-neutral-900 tracking-wide text-left">
-                  英会話(*試合)ではなく、“トレーニング(*日々の練習)に着目し、効率的に英会話スキルの向上を図ることができます。
+                  英語コーチングでは、英会話(*試合)ではなく、スキル別の学習(*毎日の練習)に着目し、効率的に英会話向上を図ります。
                 </p>
               </div>
             </div>
 
             {/* Accent statement */}
             <div className="text-center text-neutral-900 font-sans font-extrabold text-[16px] sm:text-[19px] tracking-wide leading-relaxed mb-10 py-2">
-              効率的に英会話力を伸ばすには、サッカー同様「日々の練習」と「試合」の両輪が重要です。
+              成人後の英会話力向上には、サッカーと同様に「毎日の練習」と「試合」の両輪が重要です。
             </div>
 
             {/* Loop diagram with two columns/circles */}
@@ -665,10 +665,10 @@ export default function App() {
                 <div className="w-[150px] h-[150px] sm:w-[230px] sm:h-[230px] rounded-full bg-white border-2 border-white p-4 sm:p-8 flex flex-col justify-start items-center shadow-md relative group hover:scale-[1.02] transition-transform duration-300 pt-6 sm:pt-10">
                   <div className="h-12 sm:h-14 flex flex-col justify-center items-center mb-3 sm:mb-4 border-b border-[#E55C29]/35 pb-2 w-full select-none">
                     <h4 className="text-[16px] sm:text-xl font-black text-neutral-950 tracking-wide">
-                      トレーニング
+                      スキル別の学習
                     </h4>
                     <span className="text-[11.5px] sm:text-[14.3px] text-neutral-800 font-bold mt-0.5">
-                      (*日々の練習)
+                      (*毎日の練習)
                     </span>
                   </div>
                   <div className="h-16 sm:h-20 flex flex-col justify-start">
@@ -722,7 +722,7 @@ export default function App() {
               <div className="flex items-center gap-3 mb-8 border-b border-[#E55C29]/15 pb-4">
                 <div className="w-1.5 h-6 bg-[#E55C29] rounded-full"></div>
                 <h3 className="text-xl sm:text-2xl font-sans font-extrabold text-neutral-950 tracking-wide text-left">
-                  サッカーも英語も、成長へのアプローチは全く同じ。
+                  サッカーも英語も、上達へのアプローチは全く同じ。
                 </h3>
               </div>
 
@@ -736,9 +736,9 @@ export default function App() {
                     </h4>
                   </div>
                   <p className="text-[14.5px] sm:text-[15.5px] leading-[1.8] text-neutral-700 font-medium text-left">
-                    サッカーでは、実践的な11対11の形式で公式戦や練習を実施すると同時に、そこで発見した課題を日々のトレーニングに落とし込み、課題克服のための練習を実施します。<br />
+                    サッカーでは、実践的な11対11の試合を通して発見した各課題に対して、最適なトレーニングを実施し、課題克服のための練習を毎日実施します。<br />
                     <span className="text-[13px] text-neutral-500 font-bold mt-2 block">
-                      （シュート、ドリブル、パス、クロスなど、スキルを細分化した課題特定と打ち手のトレーニングを実施します。）
+                      ※シュート、ドリブル、パス、クロスなど、スキルを細分化し、課題特定と打ち手のトレーニングを実施します。
                     </span>
                   </p>
                 </div>
@@ -752,9 +752,9 @@ export default function App() {
                     </h4>
                   </div>
                   <p className="text-[14.5px] sm:text-[15.5px] leading-[1.8] text-neutral-700 font-medium text-left">
-                    英語もサッカーと同じです。ただ英会話を実施するだけ、ただ英語圏で生活するだけでは、実践経験は積むことができるものの、成長速度の観点では、少し効率が悪い傾向にあります。<br />
+                    英語もサッカーと同じです。ただ英会話を実施するだけ、ただ英語圏で生活するだけでは、実践経験は積むことができるものの、課題の特定や最適な学習は不十分になりがち。<br />
                     <span className="text-[13px] text-[#E55C29] font-bold mt-2 block">
-                      サッカー同様に、実践（英会話）で見つけた課題を日々のトレーニング（学習）を通して改善することが重要です。
+                      サッカー同様に、効率的な上達には、実践（*英会話）で見つけた課題に対して、改善を図るトレーニング（*学習）の実施が重要です。
                     </span>
                   </p>
                 </div>
@@ -826,14 +826,14 @@ export default function App() {
               {/* Card 1 R */}
               <div className="md:col-start-3 md:row-start-2 bg-white border border-[#E55C29]/25 p-6 rounded-2xl shadow-sm text-center flex items-center justify-center min-h-[120px] hover:shadow-md transition-shadow relative overflow-hidden group">
                 <p className="text-[15px] sm:text-[16px] font-bold text-neutral-800 leading-relaxed z-10 text-left sm:text-center">
-                  学習理論を活用するため、「課題の具体化」と「打ち手の明確化」を実現できる！
+                  汎用的な学習理論を活用するため、「課題と打ち手の明確化」を実現できる！
                 </p>
               </div>
 
               {/* Card 2 R */}
               <div className="md:col-start-3 md:row-start-3 bg-white border border-[#E55C29]/25 p-6 rounded-2xl shadow-sm text-center flex items-center justify-center min-h-[120px] hover:shadow-md transition-shadow relative overflow-hidden group">
                 <p className="text-[15px] sm:text-[16px] font-bold text-neutral-800 leading-relaxed z-10 text-left sm:text-center">
-                  中長期プログラムの構築により、「体系的な学習」を「段階的に進める」ことができる！
+                  中長期プログラムの構築により、「体系的に学習を進める」ことができる！
                 </p>
               </div>
 
