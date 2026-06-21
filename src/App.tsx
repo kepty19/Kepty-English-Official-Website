@@ -647,14 +647,14 @@ export default function App() {
               </span>
               <div className="flex-1">
                 <p className="text-[19px] sm:text-[23px] font-sans font-bold leading-relaxed text-neutral-900 tracking-wide text-left">
-                  英語コーチングでは、英会話(*試合)ではなく、“スキル別の練習(*毎日の練習)に着目し、効率的な英会話力向上を図ります。
+                  英会話(*試合)ではなく、“トレーニング(*日々の練習)に着目し、効率的に英会話スキルの向上を図ることができます。
                 </p>
               </div>
             </div>
 
             {/* Accent statement */}
             <div className="text-center text-neutral-900 font-sans font-extrabold text-[16px] sm:text-[19px] tracking-wide leading-relaxed mb-10 py-2">
-              成人後の英会話力向上には、サッカー同様「細分化されたスキルや課題に対して、毎日練習すること」が重要。
+              効率的に英会話力を伸ばすには、サッカー同様「日々の練習」と「試合」の両輪が重要です。
             </div>
 
             {/* Loop diagram with two columns/circles */}
@@ -665,10 +665,10 @@ export default function App() {
                 <div className="w-[150px] h-[150px] sm:w-[230px] sm:h-[230px] rounded-full bg-white border-2 border-white p-4 sm:p-8 flex flex-col justify-start items-center shadow-md relative group hover:scale-[1.02] transition-transform duration-300 pt-6 sm:pt-10">
                   <div className="h-12 sm:h-14 flex flex-col justify-center items-center mb-3 sm:mb-4 border-b border-[#E55C29]/35 pb-2 w-full select-none">
                     <h4 className="text-[16px] sm:text-xl font-black text-neutral-950 tracking-wide">
-                      スキル別の練習
+                      トレーニング
                     </h4>
                     <span className="text-[11.5px] sm:text-[14.3px] text-neutral-800 font-bold mt-0.5">
-                      (*毎日の練習)
+                      (*日々の練習)
                     </span>
                   </div>
                   <div className="h-16 sm:h-20 flex flex-col justify-start">
@@ -736,9 +736,9 @@ export default function App() {
                     </h4>
                   </div>
                   <p className="text-[14.5px] sm:text-[15.5px] leading-[1.8] text-neutral-700 font-medium text-left">
-                    サッカーでは、実践的な11対11形式の試合を通して発見した様々な課題を日々のトレーニングに落とし込み、各課題別に最適な練習を毎日実施します。<br />
+                    サッカーでは、実践的な11対11の形式で公式戦や練習を実施すると同時に、そこで発見した課題を日々のトレーニングに落とし込み、課題克服のための練習を実施します。<br />
                     <span className="text-[13px] text-neutral-500 font-bold mt-2 block">
-                      ※シュート、ドリブル、パス、クロスなど、スキルを細分化し、課題特定と打ち手のトレーニングを実施します。
+                      （シュート、ドリブル、パス、クロスなど、スキルを細分化した課題特定と打ち手のトレーニングを実施します。）
                     </span>
                   </p>
                 </div>
@@ -752,9 +752,9 @@ export default function App() {
                     </h4>
                   </div>
                   <p className="text-[14.5px] sm:text-[15.5px] leading-[1.8] text-neutral-700 font-medium text-left">
-                    英語もサッカーと同じです。ただ英会話を実施するだけ、ただ英語圏で生活するだけでは、実践経験は積むことができるものの、各課題に対する最適なアプローチは実施困難。<br />
+                    英語もサッカーと同じです。ただ英会話を実施するだけ、ただ英語圏で生活するだけでは、実践経験は積むことができるものの、成長速度の観点では、少し効率が悪い傾向にあります。<br />
                     <span className="text-[13px] text-[#E55C29] font-bold mt-2 block">
-                      ※サッカー同様に、実践（*英会話）で見つけた課題を毎日のトレーニング（*学習）を通して改善することが重要です。
+                      サッカー同様に、実践（英会話）で見つけた課題を日々のトレーニング（学習）を通して改善することが重要です。
                     </span>
                   </p>
                 </div>
@@ -2183,246 +2183,6 @@ export default function App() {
               その権利を<span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">全カテゴリーのサッカー選手に届けたい。</span>という我々の思想の形です。
             </p>
 
-<<<<<<< HEAD
-            {/* ── Price details: Men's & Women's ── */}
-            <div className="space-y-10 sm:space-y-14">
-
-              {/* ── 男子 ── */}
-              <div>
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-1.5 h-8 bg-[#E55C29] rounded-full shrink-0" />
-                  <h3 className="text-xl sm:text-2xl font-extrabold text-neutral-950 font-serif tracking-wide">
-                    男子
-                  </h3>
-                </div>
-
-                <div className="space-y-5 sm:space-y-6">
-                  {/* 初回申込時（6ヶ月） */}
-                  <div className="rounded-2xl border border-[#DFEC9F] overflow-hidden shadow-xs">
-                    <div className="bg-gradient-to-r from-[#EFF7CE] to-[#DFEC9F] border-b border-[#CDDF85] px-4 sm:px-6 py-3.5">
-                      <h4 className="text-[14px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans">
-                        初回申込時（6ヶ月）
-                      </h4>
-                    </div>
-                    <div className="p-4 sm:p-6 bg-white">
-                      <p className="text-[11.5px] sm:text-[13px] font-bold text-[#E55C29] mb-4 font-sans leading-relaxed">
-                        費用：※Jリーグの就学支援金(20万円分)活用頂けます。
-                      </p>
-                      <div className="md:hidden flex justify-start mb-2 pl-0.5 pointer-events-none">
-                        <span className="inline-flex items-center gap-2 text-[11px] font-black tracking-[0.22em] text-[#E55C29]">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#E55C29] animate-pulse" />
-                          scroll→
-                        </span>
-                      </div>
-                      <div className="overflow-x-auto scrollbar-thin -mx-1 px-1">
-                        <table className="w-full min-w-[420px] border-collapse font-sans text-[13px] sm:text-[14.5px]">
-                          <thead>
-                            <tr>
-                              <th className="w-[38%] p-2.5 sm:p-3 text-left font-extrabold text-neutral-500 text-[11px] sm:text-[12px] border-b border-[#DFEC9F]" />
-                              <th className="p-2.5 sm:p-3 text-center font-extrabold text-[#1a1a1a] border-b border-[#DFEC9F] bg-[#FCFBEC]/60">J1</th>
-                              <th className="p-2.5 sm:p-3 text-center font-extrabold text-[#1a1a1a] border-b border-[#DFEC9F] bg-[#FCFBEC]/60">J2</th>
-                              <th className="p-2.5 sm:p-3 text-center font-extrabold text-[#1a1a1a] border-b border-[#DFEC9F] bg-[#FCFBEC]/60">J3</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr className="border-b border-[#F1E8C9]/80">
-                              <td className="p-2.5 sm:p-3 font-extrabold text-neutral-600 text-[12px] sm:text-[13px]">費用</td>
-                              <td className="p-2.5 sm:p-3 text-center font-extrabold text-[#1a1a1a]">396,800円</td>
-                              <td className="p-2.5 sm:p-3 text-center font-extrabold text-[#1a1a1a]">336,800円</td>
-                              <td className="p-2.5 sm:p-3 text-center font-extrabold text-[#1a1a1a]">276,800円</td>
-                            </tr>
-                            <tr className="border-b border-[#F1E8C9]/80 bg-[#FFF9F5]">
-                              <td className="p-2.5 sm:p-3 font-extrabold text-[#E55C29] text-[12px] sm:text-[13px]">実質負担金額</td>
-                              <td className="p-2.5 sm:p-3 text-center font-extrabold text-[#E55C29]">196,800円</td>
-                              <td className="p-2.5 sm:p-3 text-center font-extrabold text-[#E55C29]">136,800円</td>
-                              <td className="p-2.5 sm:p-3 text-center font-extrabold text-[#E55C29]">76,800円</td>
-                            </tr>
-                            <tr>
-                              <td className="p-2.5 sm:p-3 font-extrabold text-neutral-600 text-[12px] sm:text-[13px]">月額</td>
-                              <td className="p-2.5 sm:p-3 text-center font-extrabold text-[#1a1a1a]">32,800円</td>
-                              <td className="p-2.5 sm:p-3 text-center font-extrabold text-[#1a1a1a]">22,800円</td>
-                              <td className="p-2.5 sm:p-3 text-center font-extrabold text-[#1a1a1a]">12,800円</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* 継続利用 */}
-                  <div className="rounded-2xl border border-[#DFEC9F] overflow-hidden shadow-xs">
-                    <div className="bg-gradient-to-r from-[#EFF7CE] to-[#DFEC9F] border-b border-[#CDDF85] px-4 sm:px-6 py-3.5">
-                      <h4 className="text-[14px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans leading-snug">
-                        継続利用（7ヶ月目以降 - 3ヶ月毎のプログラム更新）
-                      </h4>
-                    </div>
-                    <div className="p-4 sm:p-6 bg-white">
-                      <p className="text-[12px] sm:text-[13.5px] font-extrabold text-neutral-600 mb-3 font-sans">月額費用：</p>
-                      <div className="overflow-x-auto scrollbar-thin -mx-1 px-1">
-                        <table className="w-full min-w-[320px] border-collapse font-sans text-[13px] sm:text-[14.5px]">
-                          <thead>
-                            <tr>
-                              <th className="p-2.5 sm:p-3 text-center font-extrabold text-[#1a1a1a] border-b border-[#DFEC9F] bg-[#FCFBEC]/60">J1</th>
-                              <th className="p-2.5 sm:p-3 text-center font-extrabold text-[#1a1a1a] border-b border-[#DFEC9F] bg-[#FCFBEC]/60">J2</th>
-                              <th className="p-2.5 sm:p-3 text-center font-extrabold text-[#1a1a1a] border-b border-[#DFEC9F] bg-[#FCFBEC]/60">J3</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td className="p-2.5 sm:p-3 text-center font-extrabold text-[#1a1a1a]">32,800円</td>
-                              <td className="p-2.5 sm:p-3 text-center font-extrabold text-[#1a1a1a]">22,800円</td>
-                              <td className="p-2.5 sm:p-3 text-center font-extrabold text-[#1a1a1a]">12,800円</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* 年間（12ヶ月） */}
-                  <div className="rounded-2xl border border-[#DFEC9F] overflow-hidden shadow-xs">
-                    <div className="bg-gradient-to-r from-[#EFF7CE] to-[#DFEC9F] border-b border-[#CDDF85] px-4 sm:px-6 py-3.5">
-                      <h4 className="text-[14px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans">
-                        年間（12ヶ月）
-                      </h4>
-                    </div>
-                    <div className="p-4 sm:p-6 bg-white">
-                      <p className="text-[11.5px] sm:text-[13px] font-bold text-[#E55C29] mb-4 font-sans leading-relaxed">
-                        費用：※Jリーグの就学支援金(20万円分)活用頂けます。
-                      </p>
-                      <div className="overflow-x-auto scrollbar-thin -mx-1 px-1">
-                        <table className="w-full min-w-[420px] border-collapse font-sans text-[13px] sm:text-[14.5px]">
-                          <thead>
-                            <tr>
-                              <th className="w-[38%] p-2.5 sm:p-3 text-left font-extrabold text-neutral-500 text-[11px] sm:text-[12px] border-b border-[#DFEC9F]" />
-                              <th className="p-2.5 sm:p-3 text-center font-extrabold text-[#1a1a1a] border-b border-[#DFEC9F] bg-[#FCFBEC]/60">J1</th>
-                              <th className="p-2.5 sm:p-3 text-center font-extrabold text-[#1a1a1a] border-b border-[#DFEC9F] bg-[#FCFBEC]/60">J2</th>
-                              <th className="p-2.5 sm:p-3 text-center font-extrabold text-[#1a1a1a] border-b border-[#DFEC9F] bg-[#FCFBEC]/60">J3</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr className="border-b border-[#F1E8C9]/80">
-                              <td className="p-2.5 sm:p-3 font-extrabold text-neutral-600 text-[12px] sm:text-[13px]">費用</td>
-                              <td className="p-2.5 sm:p-3 text-center font-extrabold text-[#1a1a1a]">593,600円</td>
-                              <td className="p-2.5 sm:p-3 text-center font-extrabold text-[#1a1a1a]">473,600円</td>
-                              <td className="p-2.5 sm:p-3 text-center font-extrabold text-[#1a1a1a]">353,600円</td>
-                            </tr>
-                            <tr className="bg-[#FFF9F5]">
-                              <td className="p-2.5 sm:p-3 font-extrabold text-[#E55C29] text-[12px] sm:text-[13px]">実質負担金額</td>
-                              <td className="p-2.5 sm:p-3 text-center font-extrabold text-[#E55C29]">393,600円</td>
-                              <td className="p-2.5 sm:p-3 text-center font-extrabold text-[#E55C29]">273,600円</td>
-                              <td className="p-2.5 sm:p-3 text-center font-extrabold text-[#E55C29]">153,600円</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-<<<<<<< HEAD
-              {/* ── 女子 ── */}
-              <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-1.5 h-8 bg-[#E55C29] rounded-full shrink-0" />
-                  <h3 className="text-xl sm:text-2xl font-extrabold text-neutral-950 font-serif tracking-wide">
-                    女子
-                  </h3>
-                </div>
-                <div className="mb-6 inline-flex items-center rounded-full bg-gradient-to-r from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] px-4 py-2">
-                  <span className="text-[11.5px] sm:text-[13px] font-extrabold text-[#1a1a1a] font-sans leading-snug">
-                    女子フットボーラー・キャリア支援基金（自社スポンサー枠）適応
-                  </span>
-                </div>
-
-                <div className="space-y-5 sm:space-y-6">
-                  {/* 初回申込時（6ヶ月） */}
-                  <div className="rounded-2xl border border-[#DFEC9F] overflow-hidden shadow-xs">
-                    <div className="bg-gradient-to-r from-[#EFF7CE] to-[#DFEC9F] border-b border-[#CDDF85] px-4 sm:px-6 py-3.5">
-                      <h4 className="text-[14px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans">
-                        初回申込時（6ヶ月）
-                      </h4>
-                    </div>
-                    <div className="p-4 sm:p-6 bg-white">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                        <div className="rounded-xl bg-[#FFF9F5] border border-[#F1E8C9]/60 p-4 text-center">
-                          <p className="text-[11.5px] sm:text-[12.5px] font-extrabold text-[#E55C29] mb-1.5 font-sans">実質負担金額</p>
-                          <p className="text-[20px] sm:text-[24px] font-black text-[#E55C29] font-sans tracking-tight">76,800円</p>
-                        </div>
-                        <div className="rounded-xl bg-[#FCFBEC] border border-[#DFEC9F] p-4 text-center">
-                          <p className="text-[11.5px] sm:text-[12.5px] font-extrabold text-neutral-600 mb-1.5 font-sans">月額</p>
-                          <p className="text-[20px] sm:text-[24px] font-black text-[#1a1a1a] font-sans tracking-tight">12,800円</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* 継続利用 */}
-                  <div className="rounded-2xl border border-[#DFEC9F] overflow-hidden shadow-xs">
-                    <div className="bg-gradient-to-r from-[#EFF7CE] to-[#DFEC9F] border-b border-[#CDDF85] px-4 sm:px-6 py-3.5">
-                      <h4 className="text-[14px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans leading-snug">
-                        継続利用（7ヶ月目以降 - 3ヶ月毎のプログラム更新）
-                      </h4>
-                    </div>
-                    <div className="p-4 sm:p-6 bg-white">
-                      <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-                        <span className="text-[12px] sm:text-[13.5px] font-extrabold text-neutral-600 font-sans shrink-0">月額費用：</span>
-                        <span className="text-[18px] sm:text-[22px] font-black text-[#1a1a1a] font-sans">12,800円</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* 年間（12ヶ月） */}
-                  <div className="rounded-2xl border border-[#DFEC9F] overflow-hidden shadow-xs">
-                    <div className="bg-gradient-to-r from-[#EFF7CE] to-[#DFEC9F] border-b border-[#CDDF85] px-4 sm:px-6 py-3.5">
-                      <h4 className="text-[14px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans">
-                        年間（12ヶ月）
-                      </h4>
-                    </div>
-                    <div className="p-4 sm:p-6 bg-white">
-                      <div className="rounded-xl bg-[#FCFBEC] border border-[#DFEC9F] p-4 sm:p-5 text-center max-w-xs mx-auto">
-                        <p className="text-[11.5px] sm:text-[12.5px] font-extrabold text-neutral-600 mb-1.5 font-sans">費用</p>
-                        <p className="text-[20px] sm:text-[24px] font-black text-[#1a1a1a] font-sans tracking-tight">153,600円</p>
-                      </div>
-                      <p className="mt-4 text-[11px] sm:text-[12.5px] font-bold text-neutral-500 leading-relaxed font-sans text-center">
-                        ※プログラム終了時のSNS投稿や友人の選手紹介を依頼しているため、この価格。
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* ── 補足説明 ── */}
-              <div className="space-y-4 sm:space-y-5 pt-2 border-t border-[#F1E8C9]/50">
-                <div className="rounded-2xl bg-[#FCFBEC] border border-[#DFEC9F]/80 p-5 sm:p-6">
-                  <p className="text-[13px] sm:text-[15px] font-bold text-neutral-800 leading-relaxed font-sans">
-                    <span className="text-[#E55C29] font-black mr-1">🔹 男子選手（J1/J2/J3）</span>
-                    <br className="sm:hidden" />
-                    <span className="sm:ml-0">
-                      本プログラムは、日本プロサッカー選手会（JPFA）の「就学支援金（最大20万円）」をご活用頂くことができます。申請手続きを行うことで、6ヶ月プログラムの総額272,000円(J3)〜396,800円(J1)のうち最大20万円が支援金として補填されるため、受講生の
-                      <span className="text-[#E55C29] font-black">実際の自己負担額は「総額72,000円（月額12,000円(J3)〜月額32,800円(J1)）」</span>
-                      となります。
-                    </span>
-                  </p>
-                </div>
-                <div className="rounded-2xl bg-[#FCFBEC] border border-[#DFEC9F]/80 p-5 sm:p-6">
-                  <p className="text-[13px] sm:text-[15px] font-bold text-neutral-800 leading-relaxed font-sans">
-                    <span className="text-[#E55C29] font-black mr-1">🔸 女子選手（WEリーグ）</span>
-                    <br className="sm:hidden" />
-                    <span>
-                      現在、女子サッカー界には男子のような選手会からの就学支援金制度が整備されていません。
-                      そのため、当スクールが独自に
-                      <span className="text-[#E55C29] font-black">【女子サッカー選手・就学支援金（自社スポンサー枠）】</span>
-                      を設立しました。WEリーグ所属の現役選手に限り、男子の支援金と同等の「20万円」を弊社が全額免除します。よって、女子選手の自己負担額も男子と全く同じ
-                      <span className="text-[#E55C29] font-black">「総額72,000円（月額12,000円）」</span>
-                      で受講いただけます。
-                    </span>
-                  </p>
-                </div>
-              </div>
-
-=======
             {/* Price Table Desktop/Mobile scroll wrapper */}
             {/* Mobile-only horizontal scroll hint (match comparison table) */}
             <div className="md:hidden flex justify-start mb-2 mt-4 pl-1 pointer-events-none select-none">
@@ -2430,13 +2190,7 @@ export default function App() {
                 <span className="w-1.5 h-1.5 rounded-full bg-[#E55C29] animate-pulse" />
                 scroll→
               </span>
->>>>>>> parent of ff9cf15 (Update App.tsx)
             </div>
-=======
-            <p className="mt-4 text-left text-[11px] sm:text-[12.5px] font-bold text-neutral-500 leading-relaxed font-sans select-none">
-              ※一部、サッカー選手以外の一般の方にも提供しております。(月額 39,800円)  
-            </p>
->>>>>>> 51f5596671c358fa6417834799aeeed9b77176e2
 
             <div className="relative w-full overflow-x-auto pb-2 scrollbar-thin max-md:-mx-3 max-md:w-[calc(100%+1.5rem)]">
               <div className="min-w-[636px] max-w-[860px] md:mx-auto flex gap-1.5 sm:gap-3 py-1">
@@ -2528,7 +2282,7 @@ export default function App() {
             </div>
 
             <p className="mt-4 text-left text-[11px] sm:text-[12.5px] font-bold text-neutral-500 leading-relaxed font-sans select-none">
-              ※一部、サッカー選手以外の方にも提供しております。（一般の方々：月額49,800円）
+              ※一部、サッカー選手以外の一般の方にも提供しております。(月額 39,800円)  
             </p>
 
           </div>
