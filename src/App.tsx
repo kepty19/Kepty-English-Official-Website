@@ -647,14 +647,14 @@ export default function App() {
               </span>
               <div className="flex-1">
                 <p className="text-[19px] sm:text-[23px] font-sans font-bold leading-relaxed text-neutral-900 tracking-wide text-left">
-                  英会話(*試合)ではなく、“トレーニング(*日々の練習)に着目し、効率的に英会話スキルの向上を図ることができます。
+                  英語コーチングでは、英会話(*試合)ではなく、“スキル別の練習(*毎日の練習)に着目し、効率的な英会話力向上を図ります。
                 </p>
               </div>
             </div>
 
             {/* Accent statement */}
             <div className="text-center text-neutral-900 font-sans font-extrabold text-[16px] sm:text-[19px] tracking-wide leading-relaxed mb-10 py-2">
-              効率的に英会話力を伸ばすには、サッカー同様「日々の練習」と「試合」の両輪が重要です。
+              成人後の英会話力向上には、サッカー同様「細分化されたスキルや課題に対して、毎日練習すること」が重要。
             </div>
 
             {/* Loop diagram with two columns/circles */}
@@ -736,9 +736,9 @@ export default function App() {
                     </h4>
                   </div>
                   <p className="text-[14.5px] sm:text-[15.5px] leading-[1.8] text-neutral-700 font-medium text-left">
-                    サッカーでは、実践的な11対11の形式で公式戦や練習を実施すると同時に、そこで発見した課題を日々のトレーニングに落とし込み、課題克服のための練習を実施します。<br />
+                    サッカーでは、実践的な11対11形式の試合を通して発見した様々な課題を日々のトレーニングに落とし込み、各課題別に最適な練習を毎日実施します。<br />
                     <span className="text-[13px] text-neutral-500 font-bold mt-2 block">
-                      （シュート、ドリブル、パス、クロスなど、スキルを細分化した課題特定と打ち手のトレーニングを実施します。）
+                      ※シュート、ドリブル、パス、クロスなど、スキルを細分化し、課題特定と打ち手のトレーニングを実施します。
                     </span>
                   </p>
                 </div>
@@ -752,9 +752,9 @@ export default function App() {
                     </h4>
                   </div>
                   <p className="text-[14.5px] sm:text-[15.5px] leading-[1.8] text-neutral-700 font-medium text-left">
-                    英語もサッカーと同じです。ただ英会話を実施するだけ、ただ英語圏で生活するだけでは、実践経験は積むことができるものの、成長速度の観点では、少し効率が悪い傾向にあります。<br />
+                    英語もサッカーと同じです。ただ英会話を実施するだけ、ただ英語圏で生活するだけでは、実践経験は積むことができるものの、各課題に対する最適なアプローチは実施困難。<br />
                     <span className="text-[13px] text-[#E55C29] font-bold mt-2 block">
-                      サッカー同様に、実践（英会話）で見つけた課題を日々のトレーニング（学習）を通して改善することが重要です。
+                      ※サッカー同様に、実践（*英会話）で見つけた課題を毎日のトレーニング（*学習）を通して改善することが重要です。
                     </span>
                   </p>
                 </div>
