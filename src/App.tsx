@@ -647,14 +647,14 @@ export default function App() {
               </span>
               <div className="flex-1">
                 <p className="text-[19px] sm:text-[23px] font-sans font-bold leading-relaxed text-neutral-900 tracking-wide text-left">
-                  英語コーチングでは、英会話(*試合)ではなく、スキル別の学習(*毎日の練習)に着目し、効率的に英会話向上を図ります。
+                  英語コーチングでは、英会話(*試合)ではなく、スキル別学習(*毎日の練習)に着目し、効率的に英会話向上を図ります。
                 </p>
               </div>
             </div>
 
             {/* Accent statement */}
             <div className="text-center text-neutral-900 font-sans font-extrabold text-[16px] sm:text-[19px] tracking-wide leading-relaxed mb-10 py-2">
-              成人後の英会話力向上には、サッカーと同様に「毎日の練習」と「試合」の両輪が重要です。
+              "成人後の英会話力向上"には、サッカーと同様に「毎日の練習」と「試合」の両輪が重要です。
             </div>
 
             {/* Loop diagram with two columns/circles */}
@@ -665,7 +665,7 @@ export default function App() {
                 <div className="w-[150px] h-[150px] sm:w-[230px] sm:h-[230px] rounded-full bg-white border-2 border-white p-4 sm:p-8 flex flex-col justify-start items-center shadow-md relative group hover:scale-[1.02] transition-transform duration-300 pt-6 sm:pt-10">
                   <div className="h-12 sm:h-14 flex flex-col justify-center items-center mb-3 sm:mb-4 border-b border-[#E55C29]/35 pb-2 w-full select-none">
                     <h4 className="text-[16px] sm:text-xl font-black text-neutral-950 tracking-wide">
-                      スキル別の学習
+                      スキル別学習
                     </h4>
                     <span className="text-[11.5px] sm:text-[14.3px] text-neutral-800 font-bold mt-0.5">
                       (*毎日の練習)
