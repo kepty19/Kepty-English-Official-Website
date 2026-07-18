@@ -2170,21 +2170,12 @@ export default function App() {
           {/* Price details main card */}
           <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-md border border-[#F1E8C9]/30 w-full select-none">
             {/* Lead quote */}
-            <p className="text-center text-neutral-800 text-[14px] sm:text-[17px] font-bold tracking-wider leading-relaxed mb-6 font-serif">
+            <p className="text-center text-neutral-800 text-[14px] sm:text-[17px] font-bold tracking-wider leading-relaxed mb-10 font-serif">
               「一部の選手だけでなく、全ての選手へ、プロフェッショナルな品質を。」
             </p>
 
-            {/* Description text block */}
-            <p className="text-center text-neutral-600 text-[14.5px] sm:text-[16.5px] font-bold leading-relaxed max-w-[800px] mx-auto mb-10 whitespace-pre-line font-sans">
-              提供するサービスは、全ての選手に対して<span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">一律のプロフェッショナルクオリティ</span>であり、<br className="hidden sm:block" />
-              その内容に一切の差分はありません。{"\n"}
-              この価格体系は、自らの英語学習に投資し、<span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">人生を前進させるきっかけ</span>を掴む、{"\n"}
-              その権利を<span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">全カテゴリーのサッカー選手に届けたい。</span>という我々の思想の形です。
-            </p>
-
-            {/* Price Table Desktop/Mobile scroll wrapper */}
-            {/* Mobile-only horizontal scroll hint (match comparison table) */}
-            <div className="md:hidden flex justify-start mb-2 mt-4 pl-1 pointer-events-none select-none">
+            {/* Mobile-only horizontal scroll hint */}
+            <div className="md:hidden flex justify-start mb-2 pl-1 pointer-events-none select-none">
               <span className="inline-flex items-center gap-2 text-[12px] font-black tracking-[0.22em] text-[#E55C29] drop-shadow-[0_2px_10px_rgba(229,92,41,0.35)]">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#E55C29] animate-pulse" />
                 scroll→
@@ -2192,96 +2183,191 @@ export default function App() {
             </div>
 
             <div className="relative w-full overflow-x-auto pb-2 scrollbar-thin max-md:-mx-3 max-md:w-[calc(100%+1.5rem)]">
-              <div className="min-w-[636px] max-w-[860px] md:mx-auto flex gap-1.5 sm:gap-3 py-1">
-                
-                {/* Column 1: Prices / Labels — narrow on mobile for more scroll viewport */}
-                <div className="sticky left-0 z-20 w-[100px] sm:w-[180px] shrink-0 flex flex-col gap-2.5 sm:gap-3 bg-white pr-1 sm:pr-3 border-r border-[#DFEC9F]">
-                  {/* Header/Spacer cell */}
-                  <div className="h-[58px] sm:h-[68px] rounded-xl sm:rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] px-1 py-1.5 sm:p-2 flex items-center justify-center shadow-xs" />
-                  
-                  {/* Price Cells */}
-                  <div className="h-[58px] sm:h-[68px] rounded-xl sm:rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] px-1 py-1.5 sm:p-2 flex items-center justify-center shadow-xs">
-                    <span className="text-[10.5px] sm:text-[15.5px] font-extrabold text-[#1a1a1a] font-sans leading-tight text-center">
-                      月額 39,800円
-                    </span>
-                  </div>
+              {(() => {
+                const plans = [
+                  {
+                    name: '(1) Standard',
+                    status: '英語コーチング',
+                    contentsIntro: '(0)に加えて、下記が存在',
+                    contents: ['中長期プログラム', '各種フィードバック', '定期ミーティング'],
+                    contentsNote: null as string | null,
+                    malePrice6m: '258,800',
+                    maleMonthly: '43,133',
+                    femalePrice6m: '58,800',
+                    femaleMonthly: '9,800',
+                  },
+                  {
+                    name: '(2) Premium',
+                    status: '英語コーチング +\nオンライン英会話',
+                    contentsIntro: '(1)に加えて、下記が存在',
+                    contents: ['フィリピン人のオンライン英会話'],
+                    contentsNote: null as string | null,
+                    malePrice6m: '298,800',
+                    maleMonthly: '49,800',
+                    femalePrice6m: '98,800',
+                    femaleMonthly: '16,467',
+                  },
+                  {
+                    name: '(3) Luxuary',
+                    status: '英語コーチング +\nオンライン英会話',
+                    contentsIntro: '(2)に加えて、下記が存在',
+                    contents: ['ICT教材 (abceed)'],
+                    contentsNote: '＊コンテンツ拡充',
+                    malePrice6m: '348,800',
+                    maleMonthly: '58,133',
+                    femalePrice6m: '148,800',
+                    femaleMonthly: '24,800',
+                  },
+                ] as const;
 
-                  <div className="h-[58px] sm:h-[68px] rounded-xl sm:rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] px-1 py-1.5 sm:p-2 flex items-center justify-center shadow-xs">
-                    <span className="text-[10.5px] sm:text-[15.5px] font-extrabold text-[#1a1a1a] font-sans leading-tight text-center">
-                      月額 29,800円
-                    </span>
-                  </div>
+                const headerCell =
+                  'rounded-xl sm:rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] px-1.5 py-1.5 sm:p-2 flex items-center justify-center shadow-xs';
+                const labelCell =
+                  'rounded-xl sm:rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] px-1.5 py-1.5 sm:p-2 flex items-center justify-center shadow-xs';
+                const valueCell =
+                  'rounded-xl sm:rounded-2xl bg-white border border-[#DFEC9F] px-1.5 py-2 sm:p-2.5 flex items-center justify-center shadow-xs';
+                const sectionCell =
+                  'rounded-xl sm:rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] px-1.5 py-1.5 sm:p-2 flex items-center justify-center shadow-xs';
 
-                  <div className="h-[58px] sm:h-[68px] rounded-xl sm:rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] px-1 py-1.5 sm:p-2 flex items-center justify-center shadow-xs">
-                    <span className="text-[10.5px] sm:text-[15.5px] font-extrabold text-[#1a1a1a] font-sans leading-tight text-center">
-                      月額 19,800円
+                const renderContents = (plan: (typeof plans)[number]) => (
+                  <div className="flex flex-col items-start justify-center gap-1 w-full text-left px-0.5">
+                    <span className="text-[10px] sm:text-[12px] font-extrabold text-[#1a1a1a] font-sans leading-snug">
+                      {plan.contentsIntro}
                     </span>
+                    <ul className="flex flex-col gap-0.5 w-full">
+                      {plan.contents.map((item) => (
+                        <li
+                          key={item}
+                          className="text-[10.5px] sm:text-[13px] font-extrabold text-[#1a1a1a] font-sans leading-snug pl-0.5"
+                        >
+                          ・{item}
+                        </li>
+                      ))}
+                    </ul>
+                    {plan.contentsNote ? (
+                      <span className="text-[10px] sm:text-[12px] font-bold text-[#E55C29] font-sans leading-snug pl-0.5">
+                        {plan.contentsNote}
+                      </span>
+                    ) : null}
                   </div>
-                </div>
+                );
 
-                {/* Column 2: Men's Category */}
-                <div className="flex-1 w-[240px] sm:w-[280px] shrink-0 flex flex-col gap-2.5 sm:gap-3">
-                  {/* Header */}
-                  <div className="h-[58px] sm:h-[68px] rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] p-2 flex items-center justify-center shadow-xs">
-                    <span className="text-[14px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans">
-                      Men's Category
-                    </span>
-                  </div>
-                  
-                  {/* Category info Cells */}
-                  <div className="h-[58px] sm:h-[68px] rounded-2xl bg-white border border-[#DFEC9F] p-2 flex items-center justify-center shadow-xs">
-                    <span className="text-[13px] sm:text-[14.5px] font-extrabold text-[#1a1a1a] font-sans text-center">
-                      海外主要リーグ、J1リーグ
-                    </span>
-                  </div>
+                return (
+                  <div className="min-w-[720px] max-w-[900px] md:mx-auto flex gap-1.5 sm:gap-3 py-1">
+                    {/* Sticky labels */}
+                    <div className="sticky left-0 z-20 w-[108px] sm:w-[150px] shrink-0 flex flex-col gap-2.5 sm:gap-3 bg-white pr-1 sm:pr-3 border-r border-[#DFEC9F]">
+                      <div className={`h-[58px] sm:h-[68px] ${headerCell}`} />
+                      <div className={`h-[40px] sm:h-[44px] ${sectionCell}`}>
+                        <span className="text-[12px] sm:text-[14px] font-extrabold text-[#1a1a1a] font-sans text-center">
+                          男子選手
+                        </span>
+                      </div>
+                      <div className={`min-h-[72px] sm:min-h-[80px] ${labelCell}`}>
+                        <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
+                          実態
+                        </span>
+                      </div>
+                      <div className={`min-h-[132px] sm:min-h-[148px] ${labelCell}`}>
+                        <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
+                          コンテンツ
+                        </span>
+                      </div>
+                      <div className={`h-[58px] sm:h-[68px] ${labelCell}`}>
+                        <span className="text-[10px] sm:text-[12.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
+                          価格(円) / 6ヶ月
+                        </span>
+                      </div>
+                      <div className={`h-[58px] sm:h-[68px] ${labelCell}`}>
+                        <span className="text-[10px] sm:text-[12.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
+                          ＊1ヶ月換算
+                        </span>
+                      </div>
+                      <div className={`h-[40px] sm:h-[44px] ${sectionCell}`}>
+                        <span className="text-[12px] sm:text-[14px] font-extrabold text-[#1a1a1a] font-sans text-center">
+                          女子選手
+                        </span>
+                      </div>
+                      <div className={`min-h-[72px] sm:min-h-[80px] ${labelCell}`}>
+                        <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
+                          実態
+                        </span>
+                      </div>
+                      <div className={`min-h-[132px] sm:min-h-[148px] ${labelCell}`}>
+                        <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
+                          コンテンツ
+                        </span>
+                      </div>
+                      <div className={`h-[58px] sm:h-[68px] ${labelCell}`}>
+                        <span className="text-[10px] sm:text-[12.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
+                          価格(円) / 6ヶ月
+                        </span>
+                      </div>
+                      <div className={`h-[58px] sm:h-[68px] ${labelCell}`}>
+                        <span className="text-[10px] sm:text-[12.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
+                          ＊1ヶ月換算
+                        </span>
+                      </div>
+                    </div>
 
-                  <div className="h-[58px] sm:h-[68px] rounded-2xl bg-white border border-[#DFEC9F] p-2 flex items-center justify-center shadow-xs">
-                    <span className="text-[13px] sm:text-[14.5px] font-extrabold text-[#1a1a1a] font-sans text-center">
-                      J2リーグ
-                    </span>
+                    {/* Plan columns */}
+                    {plans.map((plan) => (
+                      <div key={plan.name} className="flex-1 w-[180px] sm:w-[220px] shrink-0 flex flex-col gap-2.5 sm:gap-3">
+                        <div className={`h-[58px] sm:h-[68px] ${headerCell}`}>
+                          <span className="text-[12px] sm:text-[15px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
+                            {plan.name}
+                          </span>
+                        </div>
+                        <div className={`h-[40px] sm:h-[44px] ${sectionCell}`}>
+                          <span className="text-[11px] sm:text-[13px] font-extrabold text-[#1a1a1a]/50 font-sans">—</span>
+                        </div>
+                        <div className={`min-h-[72px] sm:min-h-[80px] ${valueCell}`}>
+                          <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-snug whitespace-pre-line">
+                            {plan.status}
+                          </span>
+                        </div>
+                        <div className={`min-h-[132px] sm:min-h-[148px] ${valueCell}`}>
+                          {renderContents(plan)}
+                        </div>
+                        <div className={`h-[58px] sm:h-[68px] ${valueCell}`}>
+                          <span className="text-[13px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans text-center">
+                            {plan.malePrice6m}
+                          </span>
+                        </div>
+                        <div className={`h-[58px] sm:h-[68px] ${valueCell}`}>
+                          <span className="text-[13px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans text-center">
+                            {plan.maleMonthly}
+                          </span>
+                        </div>
+                        <div className={`h-[40px] sm:h-[44px] ${sectionCell}`}>
+                          <span className="text-[11px] sm:text-[13px] font-extrabold text-[#1a1a1a]/50 font-sans">—</span>
+                        </div>
+                        <div className={`min-h-[72px] sm:min-h-[80px] ${valueCell}`}>
+                          <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-snug whitespace-pre-line">
+                            {plan.status}
+                          </span>
+                        </div>
+                        <div className={`min-h-[132px] sm:min-h-[148px] ${valueCell}`}>
+                          {renderContents(plan)}
+                        </div>
+                        <div className={`h-[58px] sm:h-[68px] ${valueCell}`}>
+                          <span className="text-[13px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans text-center">
+                            {plan.femalePrice6m}
+                          </span>
+                        </div>
+                        <div className={`h-[58px] sm:h-[68px] ${valueCell}`}>
+                          <span className="text-[13px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans text-center">
+                            {plan.femaleMonthly}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
                   </div>
-
-                  <div className="h-[58px] sm:h-[68px] rounded-2xl bg-white border border-[#DFEC9F] p-2 flex items-center justify-center shadow-xs">
-                    <span className="text-[13px] sm:text-[14.5px] font-extrabold text-[#1a1a1a] font-sans text-center">
-                      J3リーグ、その他リーグ
-                    </span>
-                  </div>
-                </div>
-
-                {/* Column 3: Women's Category */}
-                <div className="flex-1 w-[240px] sm:w-[280px] shrink-0 flex flex-col gap-3">
-                  {/* Header */}
-                  <div className="h-[58px] sm:h-[68px] rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] p-2 flex items-center justify-center shadow-xs">
-                    <span className="text-[14px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans">
-                      Women's Category
-                    </span>
-                  </div>
-
-                  {/* Category info Cells */}
-                  <div className="h-[58px] sm:h-[68px] rounded-2xl bg-white border border-[#DFEC9F] p-2 flex items-center justify-center shadow-xs">
-                    <span className="text-[13.5px] sm:text-[15.5px] font-extrabold text-[#1a1a1a] font-sans text-center">
-                      -
-                    </span>
-                  </div>
-
-                  <div className="h-[58px] sm:h-[68px] rounded-2xl bg-white border border-[#DFEC9F] p-2 flex items-center justify-center shadow-xs">
-                    <span className="text-[13px] sm:text-[14.5px] font-extrabold text-[#1a1a1a] font-sans text-center">
-                      海外主要リーグ
-                    </span>
-                  </div>
-
-                  <div className="h-[58px] sm:h-[68px] rounded-2xl bg-white border border-[#DFEC9F] p-2 flex items-center justify-center shadow-xs">
-                    <span className="text-[13px] sm:text-[14.5px] font-extrabold text-[#1a1a1a] font-sans text-center">
-                      WEリーグ、その他リーグ
-                    </span>
-                  </div>
-                </div>
-
-              </div>
+                );
+              })()}
             </div>
 
             <p className="mt-4 text-left text-[11px] sm:text-[12.5px] font-bold text-neutral-500 leading-relaxed font-sans select-none">
-              ※一部、サッカー選手以外の一般の方にも提供しております。(月額 39,800円)  
+              ※女子選手は「選手会の就学支援金制度」が存在しないため、最大20万円を弊社負担で支援
             </p>
 
           </div>
