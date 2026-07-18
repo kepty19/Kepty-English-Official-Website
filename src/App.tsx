@@ -826,22 +826,21 @@ export default function App() {
               {/* Card 1 R */}
               <div className="md:col-start-3 md:row-start-2 bg-white border border-[#E55C29]/25 p-6 rounded-2xl shadow-sm text-center flex items-center justify-center min-h-[120px] hover:shadow-md transition-shadow relative overflow-hidden group">
                 <p className="text-[15px] sm:text-[16px] font-bold text-neutral-800 leading-relaxed z-10 text-left sm:text-center">
-                  第二言語の学習理論を活用するため、「課題と打ち手の明確化」を実現できる！
+                  学習理論の活用により、「自分の課題は何か」「今、何をすべきか」がわかる！
                 </p>
               </div>
 
               {/* Card 2 R */}
               <div className="md:col-start-3 md:row-start-3 bg-white border border-[#E55C29]/25 p-6 rounded-2xl shadow-sm text-center flex items-center justify-center min-h-[120px] hover:shadow-md transition-shadow relative overflow-hidden group">
                 <p className="text-[15px] sm:text-[16px] font-bold text-neutral-800 leading-relaxed z-10 text-left sm:text-center">
-                  中長期プログラムの構築により、「体系的に学習を進める」ことができる！
+                  中長期プログラムの構築により、「順序立てた学習を迷いなく」進められる！
                 </p>
               </div>
 
               {/* Card 3 R */}
               <div className="md:col-start-3 md:row-start-4 bg-white border border-[#E55C29]/25 p-6 rounded-2xl shadow-sm text-center flex items-center justify-center min-h-[120px] hover:shadow-md transition-shadow relative overflow-hidden group">
                 <p className="text-[15px] sm:text-[16px] font-bold text-neutral-800 leading-relaxed z-10 text-left sm:text-center">
-                  緻密なサービス設計により、<br />
-                  「根性に頼らない継続」を実施できる！
+                  緻密なサービス設計により、「根性に頼らない継続」を実施できる！
                 </p>
               </div>
 
