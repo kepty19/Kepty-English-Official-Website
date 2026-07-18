@@ -2186,37 +2186,22 @@ export default function App() {
               {(() => {
                 const plans = [
                   {
-                    name: '(1) Standard',
-                    status: '英語コーチング',
-                    contentsIntro: '(0)に加えて、下記が存在',
-                    contents: ['中長期プログラム', '各種フィードバック', '定期ミーティング'],
-                    contentsNote: null as string | null,
-                    malePrice6m: '258,800',
-                    maleMonthly: '43,133',
-                    femalePrice6m: '58,800',
-                    femaleMonthly: '9,800',
+                    name: 'Standard',
+                    content: '英語コーチング',
+                    price6m: '258,800',
+                    monthly: '43,133',
                   },
                   {
-                    name: '(2) Premium',
-                    status: '英語コーチング +\nオンライン英会話',
-                    contentsIntro: '(1)に加えて、下記が存在',
-                    contents: ['フィリピン人のオンライン英会話'],
-                    contentsNote: null as string | null,
-                    malePrice6m: '298,800',
-                    maleMonthly: '49,800',
-                    femalePrice6m: '98,800',
-                    femaleMonthly: '16,467',
+                    name: 'Premium',
+                    content: '英語コーチング +\nオンライン英会話',
+                    price6m: '298,800',
+                    monthly: '49,800',
                   },
                   {
-                    name: '(3) Luxuary',
-                    status: '英語コーチング +\nオンライン英会話',
-                    contentsIntro: '(2)に加えて、下記が存在',
-                    contents: ['ICT教材 (abceed)'],
-                    contentsNote: '＊コンテンツ拡充',
-                    malePrice6m: '348,800',
-                    maleMonthly: '58,133',
-                    femalePrice6m: '148,800',
-                    femaleMonthly: '24,800',
+                    name: 'Luxuary',
+                    content: '英語コーチング +\nオンライン英会話',
+                    price6m: '348,800',
+                    monthly: '58,133',
                   },
                 ] as const;
 
@@ -2226,73 +2211,13 @@ export default function App() {
                   'rounded-xl sm:rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] px-1.5 py-1.5 sm:p-2 flex items-center justify-center shadow-xs';
                 const valueCell =
                   'rounded-xl sm:rounded-2xl bg-white border border-[#DFEC9F] px-1.5 py-2 sm:p-2.5 flex items-center justify-center shadow-xs';
-                const sectionCell =
-                  'rounded-xl sm:rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] px-1.5 py-1.5 sm:p-2 flex items-center justify-center shadow-xs';
-
-                const renderContents = (plan: (typeof plans)[number]) => (
-                  <div className="flex flex-col items-start justify-center gap-1 w-full text-left px-0.5">
-                    <span className="text-[10px] sm:text-[12px] font-extrabold text-[#1a1a1a] font-sans leading-snug">
-                      {plan.contentsIntro}
-                    </span>
-                    <ul className="flex flex-col gap-0.5 w-full">
-                      {plan.contents.map((item) => (
-                        <li
-                          key={item}
-                          className="text-[10.5px] sm:text-[13px] font-extrabold text-[#1a1a1a] font-sans leading-snug pl-0.5"
-                        >
-                          ・{item}
-                        </li>
-                      ))}
-                    </ul>
-                    {plan.contentsNote ? (
-                      <span className="text-[10px] sm:text-[12px] font-bold text-[#E55C29] font-sans leading-snug pl-0.5">
-                        {plan.contentsNote}
-                      </span>
-                    ) : null}
-                  </div>
-                );
 
                 return (
-                  <div className="min-w-[720px] max-w-[900px] md:mx-auto flex gap-1.5 sm:gap-3 py-1">
+                  <div className="min-w-[636px] max-w-[860px] md:mx-auto flex gap-1.5 sm:gap-3 py-1">
                     {/* Sticky labels */}
-                    <div className="sticky left-0 z-20 w-[108px] sm:w-[150px] shrink-0 flex flex-col gap-2.5 sm:gap-3 bg-white pr-1 sm:pr-3 border-r border-[#DFEC9F]">
+                    <div className="sticky left-0 z-20 w-[108px] sm:w-[160px] shrink-0 flex flex-col gap-2.5 sm:gap-3 bg-white pr-1 sm:pr-3 border-r border-[#DFEC9F]">
                       <div className={`h-[58px] sm:h-[68px] ${headerCell}`} />
-                      <div className={`h-[40px] sm:h-[44px] ${sectionCell}`}>
-                        <span className="text-[12px] sm:text-[14px] font-extrabold text-[#1a1a1a] font-sans text-center">
-                          男子選手
-                        </span>
-                      </div>
                       <div className={`min-h-[72px] sm:min-h-[80px] ${labelCell}`}>
-                        <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
-                          実態
-                        </span>
-                      </div>
-                      <div className={`min-h-[132px] sm:min-h-[148px] ${labelCell}`}>
-                        <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
-                          コンテンツ
-                        </span>
-                      </div>
-                      <div className={`h-[58px] sm:h-[68px] ${labelCell}`}>
-                        <span className="text-[10px] sm:text-[12.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
-                          価格(円) / 6ヶ月
-                        </span>
-                      </div>
-                      <div className={`h-[58px] sm:h-[68px] ${labelCell}`}>
-                        <span className="text-[10px] sm:text-[12.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
-                          ＊1ヶ月換算
-                        </span>
-                      </div>
-                      <div className={`h-[40px] sm:h-[44px] ${sectionCell}`}>
-                        <span className="text-[12px] sm:text-[14px] font-extrabold text-[#1a1a1a] font-sans text-center">
-                          女子選手
-                        </span>
-                      </div>
-                      <div className={`min-h-[72px] sm:min-h-[80px] ${labelCell}`}>
-                        <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
-                          実態
-                        </span>
-                      </div>
-                      <div className={`min-h-[132px] sm:min-h-[148px] ${labelCell}`}>
                         <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
                           コンテンツ
                         </span>
@@ -2311,52 +2236,25 @@ export default function App() {
 
                     {/* Plan columns */}
                     {plans.map((plan) => (
-                      <div key={plan.name} className="flex-1 w-[180px] sm:w-[220px] shrink-0 flex flex-col gap-2.5 sm:gap-3">
+                      <div key={plan.name} className="flex-1 w-[160px] sm:w-[200px] shrink-0 flex flex-col gap-2.5 sm:gap-3">
                         <div className={`h-[58px] sm:h-[68px] ${headerCell}`}>
-                          <span className="text-[12px] sm:text-[15px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
+                          <span className="text-[13px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
                             {plan.name}
                           </span>
                         </div>
-                        <div className={`h-[40px] sm:h-[44px] ${sectionCell}`}>
-                          <span className="text-[11px] sm:text-[13px] font-extrabold text-[#1a1a1a]/50 font-sans">—</span>
-                        </div>
                         <div className={`min-h-[72px] sm:min-h-[80px] ${valueCell}`}>
                           <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-snug whitespace-pre-line">
-                            {plan.status}
-                          </span>
-                        </div>
-                        <div className={`min-h-[132px] sm:min-h-[148px] ${valueCell}`}>
-                          {renderContents(plan)}
-                        </div>
-                        <div className={`h-[58px] sm:h-[68px] ${valueCell}`}>
-                          <span className="text-[13px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans text-center">
-                            {plan.malePrice6m}
+                            {plan.content}
                           </span>
                         </div>
                         <div className={`h-[58px] sm:h-[68px] ${valueCell}`}>
                           <span className="text-[13px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans text-center">
-                            {plan.maleMonthly}
-                          </span>
-                        </div>
-                        <div className={`h-[40px] sm:h-[44px] ${sectionCell}`}>
-                          <span className="text-[11px] sm:text-[13px] font-extrabold text-[#1a1a1a]/50 font-sans">—</span>
-                        </div>
-                        <div className={`min-h-[72px] sm:min-h-[80px] ${valueCell}`}>
-                          <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-snug whitespace-pre-line">
-                            {plan.status}
-                          </span>
-                        </div>
-                        <div className={`min-h-[132px] sm:min-h-[148px] ${valueCell}`}>
-                          {renderContents(plan)}
-                        </div>
-                        <div className={`h-[58px] sm:h-[68px] ${valueCell}`}>
-                          <span className="text-[13px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans text-center">
-                            {plan.femalePrice6m}
+                            {plan.price6m}
                           </span>
                         </div>
                         <div className={`h-[58px] sm:h-[68px] ${valueCell}`}>
                           <span className="text-[13px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans text-center">
-                            {plan.femaleMonthly}
+                            {plan.monthly}
                           </span>
                         </div>
                       </div>
@@ -2366,9 +2264,10 @@ export default function App() {
               })()}
             </div>
 
-            <p className="mt-4 text-left text-[11px] sm:text-[12.5px] font-bold text-neutral-500 leading-relaxed font-sans select-none">
-              ※女子選手は「選手会の就学支援金制度」が存在しないため、最大20万円を弊社負担で支援
-            </p>
+            <div className="mt-4 text-left text-[11px] sm:text-[12.5px] font-bold text-neutral-500 leading-relaxed font-sans select-none space-y-1">
+              <p>※Jリーグ所属選手は、選手会の就学支援金制度の活用を推奨</p>
+              <p>※女子選手は「選手会の就学支援金制度」が存在しないため、最大20万円を弊社負担で支援</p>
+            </div>
 
           </div>
         </div>
