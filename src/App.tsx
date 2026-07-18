@@ -654,7 +654,7 @@ export default function App() {
 
             {/* Accent statement */}
             <div className="text-center text-neutral-900 font-sans font-extrabold text-[16px] sm:text-[19px] tracking-wide leading-relaxed mb-10 py-2">
-              具体的には、学習理論に則った「スキル別の自学習」に焦点を当てて学習を実施します。
+              具体的には、学習理論に則り、「細分化したスキル別の自学習」に焦点を当てた学習を実施します。
             </div>
 
             {/* Loop diagram with two columns/circles */}
@@ -771,7 +771,7 @@ export default function App() {
               </span>
               <div className="flex-1">
                 <p className="text-[19px] sm:text-[23px] font-sans font-bold leading-relaxed text-neutral-900 tracking-wide text-left">
-                  その結果、「より効率的かつ体系的な学習」を確立できます。
+                  科学的なアプローチの実現により、より「効率的かつ体系的」な学習を確立できます。
                 </p>
               </div>
             </div>
@@ -2140,7 +2140,7 @@ export default function App() {
 
           {/* Under annotations */}
           <div className="mt-2 text-left max-w-[940px] mx-auto text-[11px] sm:text-[12.5px] font-bold text-neutral-500 leading-relaxed font-sans pl-1 select-none">
-            <p className="before:content-['']">※上記、あくまで参考の実態・比較表になります。</p>
+            <p className="before:content-['']">※上記、あくまで参考の実態・比較表になります</p>
           </div>
 
         </div>
