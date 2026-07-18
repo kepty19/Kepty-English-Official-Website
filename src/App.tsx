@@ -771,7 +771,7 @@ export default function App() {
               </span>
               <div className="flex-1">
                 <p className="text-[19px] sm:text-[23px] font-sans font-bold leading-relaxed text-neutral-900 tracking-wide text-left">
-                  その結果、より効率的かつ体系的な学習を確立できます。
+                  その結果、「より効率的かつ体系的な学習」を確立できます。
                 </p>
               </div>
             </div>
