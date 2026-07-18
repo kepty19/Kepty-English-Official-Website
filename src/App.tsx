@@ -2022,13 +2022,6 @@ export default function App() {
                   influencer: "インフルエンサー/\n委託講師",
                   bigCoaching: "一般の社員/\n委託講師",
                   kepty: "CEO",
-                },
-                {
-                  label: "特徴",
-                  online: "保持している\n基礎や武器の活用",
-                  influencer: "インフルエンサーの\n思想やスタイルを取得",
-                  bigCoaching: ["・内容：高品質", "・料金：高価格"],
-                  kepty: ["・内容：大手同様", "・料金：低価格"],
                 }
               ];
 
