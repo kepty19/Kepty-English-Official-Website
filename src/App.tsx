@@ -647,14 +647,14 @@ export default function App() {
               </span>
               <div className="flex-1">
                 <p className="text-[19px] sm:text-[23px] font-sans font-bold leading-relaxed text-neutral-900 tracking-wide text-left">
-                  英語コーチングは、第二言語習得論に基づいた学習であるため、「成人後の脳」に最適な科学的なアプローチが実現できる。
+                  第二言語習得論に基づいて学習を進めるため、「成人後の脳」に最適な科学的なアプローチが実現できる。
                 </p>
               </div>
             </div>
 
             {/* Accent statement */}
             <div className="text-center text-neutral-900 font-sans font-extrabold text-[16px] sm:text-[19px] tracking-wide leading-relaxed mb-10 py-2">
-              "具体的には、学習理論に則った「スキル別の自学習」に焦点を当てて学習を進めていきます。
+              "具体的には、学習理論に則った「スキル別の自学習」に焦点を当てて学習を実施します。
             </div>
 
             {/* Loop diagram with two columns/circles */}
