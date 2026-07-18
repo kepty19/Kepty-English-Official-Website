@@ -562,7 +562,7 @@ export default function App() {
 
           <p className="text-center text-[17px] sm:text-[20px] leading-relaxed font-semibold max-w-[720px] mx-auto mb-16 font-sans text-neutral-700">
             「英語の言語特性」や「プロサッカー選手の傾向」を踏まえると、<br className="hidden sm:inline" />
-            成人後に英語力を飛躍的に伸ばすためには、膨大な努力が必要です。
+            <span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">成人後</span>に英語力を飛躍的に伸ばすためには、膨大な努力が必要です。
           </p>
 
           {/* Grid Layout for the 4 Cards */}
@@ -647,14 +647,14 @@ export default function App() {
               </span>
               <div className="flex-1">
                 <p className="text-[19px] sm:text-[23px] font-sans font-bold leading-relaxed text-neutral-900 tracking-wide text-left">
-                  英語コーチングでは、英会話(*試合)ではなく、スキル別の学習(*毎日の練習)に着目し、効率的に英会話向上を図ります。
+                  英語コーチングは、第二言語習得論に基づいた学習であるため、「成人後の脳」に最適な科学的なアプローチが実現できる。
                 </p>
               </div>
             </div>
 
             {/* Accent statement */}
             <div className="text-center text-neutral-900 font-sans font-extrabold text-[16px] sm:text-[19px] tracking-wide leading-relaxed mb-10 py-2">
-              "成人後の英会話力向上"には、サッカーと同様に「毎日の練習」と「試合」の両輪が重要です。
+              "具体的には、学習理論に則った「スキル別の自学習」に焦点を当てて学習を進めていきます。
             </div>
 
             {/* Loop diagram with two columns/circles */}
@@ -771,7 +771,7 @@ export default function App() {
               </span>
               <div className="flex-1">
                 <p className="text-[19px] sm:text-[23px] font-sans font-bold leading-relaxed text-neutral-900 tracking-wide text-left">
-                  英語コーチングを有効活用することで、「課題・打ち手の明確化」と「体系的な学習」を実施できます。
+                  その結果、より効率的かつ体系的な学習を確立できます。
                 </p>
               </div>
             </div>
