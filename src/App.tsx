@@ -1992,8 +1992,8 @@ export default function App() {
                   label: "学習内容",
                   online: "スピーキング中心",
                   influencer: "不明",
-                  bigCoaching: ["・日常会話", "・ビジネス特化"],
-                  kepty: ["・日常会話", "・サッカー特化"],
+                  bigCoaching: ["・日常会話", "・ビジネス英語"],
+                  kepty: ["・日常会話", "・サッカー英語"],
                 },
                 {
                   label: "メソッド",
