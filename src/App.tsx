@@ -2187,21 +2187,18 @@ export default function App() {
                 const plans = [
                   {
                     name: 'Standard',
-                    content: '英語コーチング',
-                    price6m: '258,800',
-                    monthly: '43,133',
+                    contents: ['英語コーチング'],
+                    price6m: '258,800円',
                   },
                   {
                     name: 'Premium',
-                    content: '英語コーチング +\nオンライン英会話',
-                    price6m: '298,800',
-                    monthly: '49,800',
+                    contents: ['英語コーチング', 'オンライン英会話'],
+                    price6m: '298,800円',
                   },
                   {
                     name: 'Luxuary',
-                    content: '英語コーチング +\nオンライン英会話',
-                    price6m: '348,800',
-                    monthly: '58,133',
+                    contents: ['英語コーチング', 'オンライン英会話', '外部のICT教材'],
+                    price6m: '348,800円',
                   },
                 ] as const;
 
@@ -2217,19 +2214,14 @@ export default function App() {
                     {/* Sticky labels */}
                     <div className="sticky left-0 z-20 w-[108px] sm:w-[160px] shrink-0 flex flex-col gap-2.5 sm:gap-3 bg-white pr-1 sm:pr-3 border-r border-[#DFEC9F]">
                       <div className={`h-[58px] sm:h-[68px] ${headerCell}`} />
-                      <div className={`min-h-[72px] sm:min-h-[80px] ${labelCell}`}>
+                      <div className={`min-h-[100px] sm:min-h-[112px] ${labelCell}`}>
                         <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
                           コンテンツ
                         </span>
                       </div>
                       <div className={`h-[58px] sm:h-[68px] ${labelCell}`}>
-                        <span className="text-[10px] sm:text-[12.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
-                          価格(円) / 6ヶ月
-                        </span>
-                      </div>
-                      <div className={`h-[58px] sm:h-[68px] ${labelCell}`}>
-                        <span className="text-[10px] sm:text-[12.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
-                          ＊1ヶ月換算
+                        <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
+                          価格/6ヶ月
                         </span>
                       </div>
                     </div>
@@ -2242,19 +2234,21 @@ export default function App() {
                             {plan.name}
                           </span>
                         </div>
-                        <div className={`min-h-[72px] sm:min-h-[80px] ${valueCell}`}>
-                          <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-snug whitespace-pre-line">
-                            {plan.content}
-                          </span>
+                        <div className={`min-h-[100px] sm:min-h-[112px] ${valueCell}`}>
+                          <ul className="flex flex-col items-start justify-center gap-0.5 w-full text-left px-1">
+                            {plan.contents.map((item) => (
+                              <li
+                                key={item}
+                                className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans leading-snug"
+                              >
+                                ・{item}
+                              </li>
+                            ))}
+                          </ul>
                         </div>
                         <div className={`h-[58px] sm:h-[68px] ${valueCell}`}>
                           <span className="text-[13px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans text-center">
                             {plan.price6m}
-                          </span>
-                        </div>
-                        <div className={`h-[58px] sm:h-[68px] ${valueCell}`}>
-                          <span className="text-[13px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans text-center">
-                            {plan.monthly}
                           </span>
                         </div>
                       </div>
