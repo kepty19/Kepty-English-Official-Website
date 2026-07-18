@@ -1983,14 +1983,14 @@ export default function App() {
               const comparisonRows = [
                 {
                   label: "場の本質",
-                  online: "アウトプットの場",
-                  influencer: "コアファンの場",
-                  bigCoaching: "建設的なスキル構築の場",
-                  kepty: "建設的なスキル構築の場",
+                  online: "スキルを表現する場",
+                  influencer: "コアファンが集う場",
+                  bigCoaching: "スキルを高める場",
+                  kepty: "スキルを高める場",
                 },
                 {
                   label: "学習内容",
-                  online: "スピーキング中心",
+                  online: "スピーキング",
                   influencer: "不明",
                   bigCoaching: ["・日常会話", "・ビジネス英語"],
                   kepty: ["・日常会話", "・サッカー英語"],
@@ -2010,11 +2010,11 @@ export default function App() {
                   kepty: "中長期\n(約6ヶ月)",
                 },
                 {
-                  label: "価格",
-                  online: "約1万〜2万/月",
+                  label: "価格(6ヶ月)",
+                  online: "約6~12万円",
                   influencer: "不明",
-                  bigCoaching: "約10万/月〜\n20万/月",
-                  kepty: "19,800円/月〜\n39,800円/月",
+                  bigCoaching: "約80~120万円",
+                  kepty: "約26~35万円",
                 },
                 {
                   label: "コーチ",
@@ -2026,7 +2026,7 @@ export default function App() {
                 {
                   label: "特徴",
                   online: "保持している\n基礎や武器の活用",
-                  influencer: "インフルエンサーの\n思想やスタイルを取得",
+                  influencer: "インフルエンサーの\n思想/スタイルの習得",
                   bigCoaching: ["・内容：高品質", "・料金：高価格"],
                   kepty: ["・内容：大手同様", "・料金：低価格"],
                 }
@@ -2147,7 +2147,7 @@ export default function App() {
 
           {/* Under annotations */}
           <div className="mt-2 text-left max-w-[940px] mx-auto text-[11px] sm:text-[12.5px] font-bold text-neutral-500 leading-relaxed font-sans pl-1 select-none">
-            <p className="before:content-['']">※上記、あくまで参考の実態・比較表になります。（2026年6月時点）</p>
+            <p className="before:content-['']">※上記、あくまで参考の実態・比較表になります。</p>
           </div>
 
         </div>
@@ -2171,7 +2171,7 @@ export default function App() {
           <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-md border border-[#F1E8C9]/30 w-full select-none">
             {/* Lead quote */}
             <p className="text-center text-neutral-800 text-[14px] sm:text-[17px] font-bold tracking-wider leading-relaxed mb-10 font-serif">
-              「一部の選手だけでなく、全ての選手へ、プロフェッショナルな品質を。」
+              一部の選手だけでなく、全ての選手へ、プロフェッショナルな品質を。
             </p>
 
             {/* Mobile-only horizontal scroll hint */}
@@ -2216,12 +2216,12 @@ export default function App() {
                       <div className={`h-[58px] sm:h-[68px] ${headerCell}`} />
                       <div className={`min-h-[100px] sm:min-h-[112px] ${labelCell}`}>
                         <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
-                          コンテンツ
+                          提供内容
                         </span>
                       </div>
                       <div className={`h-[58px] sm:h-[68px] ${labelCell}`}>
                         <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
-                          価格/6ヶ月
+                          価格（6ヶ月）
                         </span>
                       </div>
                     </div>
@@ -2259,8 +2259,8 @@ export default function App() {
             </div>
 
             <div className="mt-4 text-left text-[11px] sm:text-[12.5px] font-bold text-neutral-500 leading-relaxed font-sans select-none space-y-1">
-              <p>※Jリーグ所属選手は、選手会の就学支援金制度の活用を推奨</p>
-              <p>※女子選手は「選手会の就学支援金制度」が存在しないため、最大20万円を弊社負担で支援</p>
+              <p>※Jリーグに所属する選手は、選手会の就学支援金制度の活用を推奨</p>
+              <p>※その他のリーグに所属する選手は、選手会の就学支援金制度が存在しないため、最大20万円を弊社負担で支援</p>
             </div>
 
           </div>
