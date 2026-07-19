@@ -412,7 +412,7 @@ export default function App() {
                 <span className="relative inline-flex rounded-full h-full w-full bg-[#FF6331]"></span>
               </span>
               <span className="text-[13px] font-sans tracking-wide text-white font-bold">Total Users</span>
-              <span className="text-[13px] text-white font-mono font-black">7</span>
+              <span className="text-[13px] text-white font-mono font-black">9</span>
             </div>
           </div>
         </div>
