@@ -459,7 +459,7 @@ export default function App() {
               Total Users
             </span>
             <span className="text-[16px] text-white font-mono font-black">
-              7
+              9
             </span>
           </div>
         </div>
