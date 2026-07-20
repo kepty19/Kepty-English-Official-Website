@@ -2014,13 +2014,6 @@ export default function App() {
                   influencer: "不明",
                   bigCoaching: "約80~120万円",
                   kepty: "約26~35万円",
-                },
-                {
-                  label: "コーチ",
-                  online: "フィリピン人の\n講師等",
-                  influencer: "インフルエンサー/\n委託講師",
-                  bigCoaching: "一般の社員/\n委託講師",
-                  kepty: "弊社代表",
                 }
               ];
 
