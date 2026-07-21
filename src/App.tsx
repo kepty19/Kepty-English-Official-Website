@@ -2244,7 +2244,7 @@ export default function App() {
             </div>
 
             <div className="mt-4 text-left text-[11px] sm:text-[12.5px] font-bold text-neutral-500 leading-relaxed font-sans select-none space-y-1">
-              <p>※Jリーグ所属選手は、選手会の就学支援金制度（年間最大20万円の補助金）の活用を推奨</p>
+              <p>※Jリーグ所属選手は、選手会の就学支援金制度の活用を推奨</p>
               <p>※その他のリーグ所属選手は、選手会の就学支援金制度が存在しないため、最大20万円を弊社負担で支援可能</p>
               <p>※オンライン英会話は、日々の学習内容と連動した内容で、弊社専属のフィリピン人講師が実施</p>
               <p>※プロサッカー選手以外の一般の方にも提供可能</p>
