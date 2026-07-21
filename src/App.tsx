@@ -2156,7 +2156,7 @@ export default function App() {
           <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-md border border-[#F1E8C9]/30 w-full select-none">
             {/* Lead quote */}
             <p className="text-center text-neutral-800 text-[14px] sm:text-[17px] font-bold tracking-wider leading-relaxed mb-10 font-serif">
-              一部の選手だけでなく、全ての選手へ、プロフェッショナルな品質を。
+              「一部の限られた選手だけでなく、全てのプロ選手へ。プロフェッショナルな英語コーチングを。」という思想を実現するために、我々は高品質かつ圧倒的な低価格でのサービス提供にこだわっております。
             </p>
 
             {/* Mobile-only horizontal scroll hint */}
