@@ -135,6 +135,9 @@ function StageFlowArrow() {
   );
 }
 
+/** Set to true to show the 「応援している選手」 subsection again. */
+const SHOW_SUPPORTING_PLAYERS = false;
+
 const SUPPORTING_PLAYERS = [
   {
     name: 'FOXY CHIP',
@@ -2470,7 +2473,8 @@ export default function App() {
           </div>
         </div>
 
-        {/* SUBSECTION 2: SUPPORTING PLAYERS (応援している選手) */}
+        {/* SUBSECTION 2: SUPPORTING PLAYERS (応援している選手) — hidden until SHOW_SUPPORTING_PLAYERS is true */}
+        {SHOW_SUPPORTING_PLAYERS && (
         <div className="bg-neutral-950 text-white px-4 py-20 sm:py-24 w-full border-t border-white/[0.08]">
           <div className="max-w-7xl mx-auto">
             {/* Title Block */}
@@ -2534,7 +2538,8 @@ export default function App() {
             </div>
 
           </div>
-        </div> {/* Close Subsection 2 wrapper */}
+        </div>
+        )}
       </section>
 
       {/* SECTION: FOUNDER & CEO PROFILE */}
