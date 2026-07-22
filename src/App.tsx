@@ -898,9 +898,9 @@ export default function App() {
               {[
                 "すでに海外でプレーされており、更なる英会話力向上に向き合う選手",
                 "将来の海外移籍を見据え、日本でゼロから英語学習を始める選手",
-                "外国人の監督や選手と、もっと密なコミュニケーションを取るために、英語でのコミュニケーション力を高めたいと考える選手",
-                "これまで独学で突き進んできたが、伸び悩みを感じている選手",
-                "オンライン英会話を実施してきたが、あまり効果を得られなかった選手",
+                "外国人の監督や選手と密なコミュニケーションを取るために、英語力を高めたいと考える選手",
+                "これまでずっと独学で突き進んできたが、伸び悩みを感じている選手",
+                "数年間オンライン英会話を実施してきたが、あまり効果を得られなかった選手",
                 "引退後のキャリアを見据え、現役中に競技以外の語学スキルを高めたいと考える選手"
               ].map((text, idx) => (
                 <div key={idx} className="flex items-start gap-4 sm:gap-5 group">
@@ -2156,7 +2156,7 @@ export default function App() {
           <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-md border border-[#F1E8C9]/30 w-full select-none">
             {/* Lead quote */}
             <p className="text-center text-neutral-800 text-[14px] sm:text-[17px] font-bold tracking-wider leading-relaxed mb-10 font-serif">
-              一部の選手だけでなく、全ての選手へ、プロフェッショナルな品質を。
+              「一部の限られた選手だけでなく、全ての選手へ、プロフェッショナルな英語コーチングを。」<br />この思想を実現するために、我々は「高品質」かつ「相場よりも圧倒的に低価格」でのサービス提供にこだわっております。
             </p>
 
             {/* Mobile-only horizontal scroll hint */}
