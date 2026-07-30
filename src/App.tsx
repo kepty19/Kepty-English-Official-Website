@@ -2130,17 +2130,17 @@ export default function App() {
                 const plans = [
                   {
                     name: 'Standard',
-                    contents: ['英語コーチング'],
+                    contents: ['英語コーチングプログラム'],
                     price6m: '258,800円',
                   },
                   {
                     name: 'Premium',
-                    contents: ['英語コーチング', 'オンライン英会話'],
+                    contents: ['英語コーチングプログラム', 'オンライン英会話'],
                     price6m: '298,800円',
                   },
                   {
                     name: 'Luxuary',
-                    contents: ['英語コーチング', 'オンライン英会話', '追加のICT教材'],
+                    contents: ['英語コーチングプログラム', 'オンライン英会話', '追加の最新ICT教材'],
                     price6m: '348,800円',
                   },
                 ] as const;
