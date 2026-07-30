@@ -1963,7 +1963,7 @@ export default function App() {
                   label: "学習期間",
                   online: "無期限",
                   influencer: "不明",
-                  bigCoaching: "短期\n(約3ヶ月〜6ヶ月)",
+                  bigCoaching: "短~中長期\n(約3ヶ月〜6ヶ月)",
                   kepty: "中長期\n(約6ヶ月)",
                 },
                 {
