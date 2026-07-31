@@ -2156,7 +2156,7 @@ export default function App() {
                   'rounded-xl sm:rounded-2xl bg-white border border-[#DFEC9F] px-1.5 py-2 sm:p-2.5 flex items-center justify-center shadow-xs';
 
                 return (
-                  <div className="min-w-[636px] max-w-[860px] md:mx-auto flex gap-1.5 sm:gap-3 py-1">
+                  <div className="min-w-[700px] max-w-[900px] md:mx-auto flex gap-1.5 sm:gap-3 py-1">
                     {/* Sticky labels */}
                     <div className="sticky left-0 z-20 w-[108px] sm:w-[160px] shrink-0 flex flex-col gap-2.5 sm:gap-3 bg-white pr-1 sm:pr-3 border-r border-[#DFEC9F]">
                       <div className={`h-[58px] sm:h-[68px] ${headerCell}`} />
@@ -2165,7 +2165,7 @@ export default function App() {
                           提供内容
                         </span>
                       </div>
-                      <div className={`min-h-[88px] sm:min-h-[100px] ${labelCell}`}>
+                      <div className={`h-[72px] sm:h-[80px] ${labelCell}`}>
                         <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
                           価格（6ヶ月）
                         </span>
@@ -2174,7 +2174,7 @@ export default function App() {
 
                     {/* Plan columns */}
                     {plans.map((plan) => (
-                      <div key={plan.name} className="flex-1 w-[160px] sm:w-[200px] shrink-0 flex flex-col gap-2.5 sm:gap-3">
+                      <div key={plan.name} className="flex-1 w-[180px] sm:w-[220px] shrink-0 flex flex-col gap-2.5 sm:gap-3">
                         <div className={`h-[58px] sm:h-[68px] ${headerCell}`}>
                           <span className="text-[13px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
                             {plan.name}
@@ -2192,12 +2192,12 @@ export default function App() {
                             ))}
                           </ul>
                         </div>
-                        <div className={`min-h-[88px] sm:min-h-[100px] flex-col gap-1 ${valueCell}`}>
-                          <span className="text-[13px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans text-center">
+                        <div className={`h-[72px] sm:h-[80px] flex-col gap-1.5 ${valueCell}`}>
+                          <span className="text-[13px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans text-center leading-none">
                             {plan.price6m}
                           </span>
-                          <span className="text-[9px] sm:text-[11px] font-bold text-[#E55C29] font-sans text-center leading-tight px-0.5">
-                            ※支援制度を活用した場合、実質月額{plan.effectiveMonthly}
+                          <span className="text-[9px] sm:text-[11px] font-bold text-[#E55C29] font-sans text-center whitespace-nowrap tracking-tight leading-none">
+                            ※支援制度活用 → 実質月額{plan.effectiveMonthly}
                           </span>
                         </div>
                       </div>
