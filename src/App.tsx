@@ -2177,16 +2177,19 @@ export default function App() {
                     name: 'Standard',
                     contents: ['英語コーチング'],
                     price6m: '258,800円',
+                    effectiveMonthly: '9,800円',
                   },
                   {
                     name: 'Premium',
                     contents: ['英語コーチング', 'オンライン英会話'],
                     price6m: '298,800円',
+                    effectiveMonthly: '16,466円',
                   },
                   {
                     name: 'Luxuary',
                     contents: ['英語コーチング', 'オンライン英会話', '追加のICT教材'],
                     price6m: '348,800円',
+                    effectiveMonthly: '24,800円',
                   },
                 ] as const;
 
@@ -2207,7 +2210,7 @@ export default function App() {
                           提供内容
                         </span>
                       </div>
-                      <div className={`h-[58px] sm:h-[68px] ${labelCell}`}>
+                      <div className={`min-h-[88px] sm:min-h-[100px] ${labelCell}`}>
                         <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
                           価格（6ヶ月）
                         </span>
@@ -2234,9 +2237,12 @@ export default function App() {
                             ))}
                           </ul>
                         </div>
-                        <div className={`h-[58px] sm:h-[68px] ${valueCell}`}>
+                        <div className={`min-h-[88px] sm:min-h-[100px] flex-col gap-1 ${valueCell}`}>
                           <span className="text-[13px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans text-center">
                             {plan.price6m}
+                          </span>
+                          <span className="text-[9px] sm:text-[11px] font-bold text-[#E55C29] font-sans text-center leading-tight px-0.5">
+                            ※支援制度を活用した場合、実質月額{plan.effectiveMonthly}
                           </span>
                         </div>
                       </div>
