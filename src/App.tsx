@@ -472,7 +472,7 @@ export default function App() {
                 Kepty Co., Ltd.
               </p>
               <p className="text-[13px] font-bold text-white/80 font-sans tracking-wide leading-relaxed whitespace-nowrap">
-                
+                Founder & CEO：Tomohiro Kajiyama | 梶山 知裕
               </p>
               <div className="flex justify-end pt-2">
                 <img
