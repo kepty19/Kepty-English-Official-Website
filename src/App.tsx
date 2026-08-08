@@ -471,9 +471,6 @@ export default function App() {
               <p className="text-[15px] font-bold text-white/80 font-sans tracking-wide leading-relaxed">
                 Kepty Co., Ltd.
               </p>
-              <p className="text-[13px] font-bold text-white/80 font-sans tracking-wide leading-relaxed whitespace-nowrap">
-                Founder & CEO：Tomohiro Kajiyama | 梶山 知裕
-              </p>
               <div className="flex justify-end pt-2">
                 <img
                   src={ceoSignatureImg}
@@ -488,9 +485,6 @@ export default function App() {
               <div className="flex flex-col gap-1.5 min-w-0 shrink-0">
                 <p className="text-[15px] sm:text-[17px] font-bold text-white/80 font-sans tracking-wide leading-relaxed">
                   Kepty Co., Ltd.
-                </p>
-                <p className="text-[15px] sm:text-[17px] font-bold text-white/80 font-sans tracking-wide leading-relaxed">
-                  Founder & CEO：Tomohiro Kajiyama | 梶山 知裕
                 </p>
               </div>
               <img
