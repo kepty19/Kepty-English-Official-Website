@@ -466,18 +466,16 @@ export default function App() {
 
           {/* Signature Block with high-end typography */}
           <div className="mt-12 pt-8 border-t border-white/10 select-none text-left">
-            {/* Mobile: 2行テキストはそのまま、署名は名前の下（右寄せ） */}
-            <div className="md:hidden flex flex-col gap-1.5">
-              <p className="text-[15px] font-bold text-white/80 font-sans tracking-wide leading-relaxed">
+            {/* Mobile: 会社名を右寄せ、その真下にサイン */}
+            <div className="md:hidden flex flex-col items-end gap-1.5">
+              <p className="text-[15px] font-bold text-white/80 font-sans tracking-wide leading-relaxed text-right">
                 Kepty Co., Ltd.
               </p>
-              <div className="flex justify-end pt-2">
-                <img
-                  src={ceoSignatureImg}
-                  alt="Tomohiro Kajiyama signature"
-                  className="w-[120px] h-auto object-contain object-right pointer-events-none brightness-0 invert opacity-95"
-                />
-              </div>
+              <img
+                src={ceoSignatureImg}
+                alt="Tomohiro Kajiyama signature"
+                className="w-[120px] h-auto object-contain object-right pointer-events-none brightness-0 invert opacity-95"
+              />
             </div>
 
             {/* Desktop: unchanged side-by-side layout */}
