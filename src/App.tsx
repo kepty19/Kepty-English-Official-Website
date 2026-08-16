@@ -922,7 +922,7 @@ export default function App() {
               </span>
               <div className="flex-1">
                 <p className="text-[21px] sm:text-[25px] font-sans font-bold leading-relaxed text-neutral-900 tracking-wide text-left">
-                  英語コーチングは、英会話力の向上に重要な「3つの要素」を、最大化させるサービスです。
+                  英語コーチングは、英会話力の向上に重要な「3つの要素」を最大化させるサービスです。
                 </p>
               </div>
             </div>
@@ -998,7 +998,7 @@ export default function App() {
               </span>
               <div className="flex-1">
                 <p className="text-[19px] sm:text-[23px] font-sans font-bold leading-relaxed text-neutral-900 tracking-wide text-left">
-                  定期的なミーティングや日々の伴走サポートなどを通して、<br className="hidden sm:inline" />「英会話力を伸ばすための効率的な学習」を支援します。
+                  徹底的な日々の伴走サポートを通して、<br className="hidden sm:inline" />「科学的かつ効率的な学習」を支援します。
                 </p>
               </div>
             </div>
@@ -1032,7 +1032,8 @@ export default function App() {
                 </h4>
                 <div className="w-full border-t border-neutral-200 my-3"></div>
                 <ul className="text-xs sm:text-[13px] font-bold text-neutral-600 space-y-2 text-left list-disc pl-4 leading-relaxed">
-                  <li>個々の目標/課題に即した中長期プログラムの設計</li>
+                  <li>個々の目標/課題に即した学習プログラムの設計</li>
+                  <li>アプリやオンライン英会話などの学習環境の提供</li>
                 </ul>
                 <div className="w-8 h-1 bg-[#E55C29] rounded-full mt-auto pt-0.5"></div>
               </div>
@@ -1043,12 +1044,11 @@ export default function App() {
                   <PenTool className="w-6 h-6" />
                 </div>
                 <h4 className="text-[16px] sm:text-[17.5px] font-extrabold text-neutral-950 font-serif tracking-tight text-center leading-snug min-h-[44px] flex items-center justify-center">
-                  日々の課題添削/<br/>フィードバック
+                  課題添削/<br/>フィードバック
                 </h4>
                 <div className="w-full border-t border-neutral-200 my-3"></div>
                 <ul className="text-xs sm:text-[13px] font-bold text-neutral-600 space-y-2.5 text-left list-disc pl-4 leading-relaxed">
-                  <li>各課題の提供/提出/添削サイクルの実施</li>
-                  <li>個別の相談/質問/FB</li>
+                  <li>課題の提供や提出、添削の実施</li>
                 </ul>
                 <div className="w-8 h-1 bg-[#E55C29] rounded-full mt-auto pt-0.5"></div>
               </div>
@@ -1059,13 +1059,15 @@ export default function App() {
                   <HeartHandshake className="w-6 h-6" />
                 </div>
                 <h4 className="text-[16px] sm:text-[17.5px] font-extrabold text-neutral-950 font-serif tracking-tight text-center leading-snug min-h-[44px] flex items-center justify-center">
-                  一定期間の<br/>伴走サポート
+                  伴走サポート
                 </h4>
                 <div className="w-full border-t border-neutral-200 my-3"></div>
                 <ul className="text-xs sm:text-[13px] font-bold text-neutral-600 space-y-2.5 text-left list-disc pl-4 leading-relaxed">
-                  <li>目標達成に向けた日々の伴走支援</li>
-                  <li>期間：約6ヶ月</li>
+                  <li>パーソナルトレーナーによる2ヶ月間の徹底伴走</li>
                 </ul>
+                <p className="mt-2 text-[10px] sm:text-[11px] font-bold text-neutral-500 leading-relaxed text-left">
+                  ※3ヶ月目以降は、自学習で進められる形へ推移します。
+                </p>
                 <div className="w-8 h-1 bg-[#E55C29] rounded-full mt-auto pt-0.5"></div>
               </div>
 
