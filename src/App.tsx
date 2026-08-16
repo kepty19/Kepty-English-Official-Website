@@ -598,7 +598,7 @@ export default function App() {
               </span>
               <div className="flex-1">
                 <p className="text-[19px] sm:text-[23px] font-sans font-bold leading-relaxed text-neutral-900 tracking-wide text-left">
-                  第二言語習得論に基づき、「成人後の脳」に最適な科学的アプローチで、レベルに応じた最短の進化を実現できるからです。
+                  第二言語習得論に基づき、「成人後の脳」に最適な科学的アプローチで、レベルに応じた最短の進化を実現できるから。
                 </p>
               </div>
             </div>
