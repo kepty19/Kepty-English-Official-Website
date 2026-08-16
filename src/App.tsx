@@ -2097,7 +2097,7 @@ export default function App() {
                     name: 'リピートプラン',
                     period: '（3ヶ月目以降）',
                     learningStyle: '自分自身で学習を進める「自走学習」',
-                    price: '月額 16,466円',
+                    price: '月額 16,500円',
                     subsidyNote: null,
                   },
                 ] as const;
