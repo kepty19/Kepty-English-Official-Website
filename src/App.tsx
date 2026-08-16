@@ -25,7 +25,8 @@ import {
   Mic,
   Database,
   Ear,
-  Speech
+  Speech,
+  MessageSquare
 } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { HeroTechVisual, HeroTechVisualMobile } from './components/HeroTechVisual';
@@ -1115,7 +1116,7 @@ export default function App() {
                     </h4>
                   </div>
                   <p className="text-[14px] sm:text-[15.5px] font-bold text-neutral-600 leading-relaxed text-center">
-                    アプリによる手軽な学習により、「移動」や「治療」の時間をインプットの時間にできる。
+                    アプリによる手軽な学習により、「移動や治療の時間」を「良質なインプット時間」に転換できる。
                   </p>
                 </div>
               </div>
@@ -1132,7 +1133,7 @@ export default function App() {
                     </h4>
                   </div>
                   <p className="text-[14px] sm:text-[15.5px] font-bold text-neutral-600 leading-relaxed text-center">
-                    英語に堪能なフィリピン人講師との英会話により、「実践的なスキル」を獲得できる。
+                    英語に堪能なフィリピン人講師との英会話により、「実践的なアウトプットスキル」を獲得できる。
                   </p>
                 </div>
               </div>
@@ -1218,10 +1219,10 @@ export default function App() {
           </div>
 
           {/* Card 03 Block */}
-          <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-md border border-purple-100/30 max-w-[940px] w-full mx-auto mt-10 text-center">
+          <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-md border border-purple-100/30 max-w-[940px] w-full mx-auto mt-10">
             
             {/* 03 Title Header inside card */}
-            <div className="text-center mb-10">
+            <div className="text-center mb-12">
               <div className="flex items-center justify-center gap-4 mb-3">
                 <span className="text-5xl sm:text-6xl font-sans text-neutral-950 opacity-30 font-black tracking-tight leading-none select-none">
                   03
@@ -1230,12 +1231,80 @@ export default function App() {
                   学習理論に立脚した学習設計
                 </h4>
               </div>
-
-              <p className="text-[14px] sm:text-[16.5px] font-bold text-neutral-600 leading-relaxed max-w-[800px] mx-auto select-none mt-4">
-                <span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">英会話の5ステップ</span>という学習理論を元に、学習内容を設計します。<br />
-                <span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">より正確な課題特定</span>と<span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">個別最適なトレーニング</span>の提示を通して、効率的な学習を実現します。
-              </p>
             </div>
+
+            {/* Phase 1: 学習初期フェーズの選手 */}
+            <div className="mb-14">
+              <div className="flex items-center justify-center gap-3 mb-5">
+                <div className="w-1.5 h-6 bg-[#E55C29] rounded-full"></div>
+                <h5 className="text-[17px] sm:text-[20px] font-extrabold text-neutral-950 font-serif tracking-wide">
+                  学習初期フェーズの選手
+                </h5>
+              </div>
+              <p className="text-[14px] sm:text-[16.5px] font-bold text-neutral-600 leading-relaxed text-center max-w-[760px] mx-auto mb-10">
+                <span className="text-[#E55C29] text-[16px] sm:text-[19px] font-black">「学習初期に習得すべき重要な本質と基礎」</span>だけを厳選し、それを確実に体得します。
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+                {[
+                  {
+                    num: "01",
+                    icon: Volume2,
+                    title: "音の知覚・発音",
+                    body: "サッカーの「止めて、蹴る」と同様に、英語の音を正しく聞き取る、正しく発することは、英会話の最重要基礎。独学やアプリでは絶対に修正できない口・舌のフォームを、プロの耳で見極めて徹底補正します。",
+                  },
+                  {
+                    num: "02",
+                    icon: MessageSquare,
+                    title: "頻出のフレーズ",
+                    body: "ピッチ内、ピッチ外共に、実際の会話において使用・遭遇率が高い表現を絞り込み、優先的に脳にインストールします。",
+                  },
+                  {
+                    num: "03",
+                    icon: Speech,
+                    title: "アウトプットの経験",
+                    body: "リアルな英会話を通して、インプット内容を「実践で使えるスキル」へ。そして「英会話への慣れ・自信」へと昇華させます。",
+                  },
+                ].map((item) => {
+                  const ItemIcon = item.icon;
+                  return (
+                    <div
+                      key={item.num}
+                      className="relative bg-[#faf8ff] rounded-2xl p-5 sm:p-6 border border-purple-100/50 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-center text-center"
+                    >
+                      <div className="relative mb-4">
+                        <div className="w-[84px] h-[84px] rounded-full bg-neutral-900 text-white flex items-center justify-center shadow-lg">
+                          <ItemIcon className="w-9 h-9" />
+                        </div>
+                        <span className="absolute -top-1 -right-1 w-8 h-8 rounded-full bg-[#E55C29] text-white text-[12px] font-black flex items-center justify-center shadow-sm">
+                          {item.num}
+                        </span>
+                      </div>
+                      <h6 className="text-[15.5px] sm:text-[17px] font-extrabold text-neutral-950 font-serif tracking-wide mb-3">
+                        {item.title}
+                      </h6>
+                      <p className="text-[13px] sm:text-[14.5px] font-medium text-neutral-600 leading-relaxed text-left">
+                        {item.body}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="border-t border-neutral-200/80 my-4 mb-12"></div>
+
+            {/* Phase 2: 学習中上級フェーズの選手 */}
+            <div>
+              <div className="flex items-center justify-center gap-3 mb-5">
+                <div className="w-1.5 h-6 bg-[#E55C29] rounded-full"></div>
+                <h5 className="text-[17px] sm:text-[20px] font-extrabold text-neutral-950 font-serif tracking-wide">
+                  学習中上級フェーズの選手
+                </h5>
+              </div>
+              <p className="text-[14px] sm:text-[16.5px] font-bold text-neutral-600 leading-relaxed text-center max-w-[760px] mx-auto mb-8">
+                ピンポイントでの課題特定と打ち手の実施により、より効率的な学習を実現します。
+              </p>
 
             {/* Mobile-only horizontal scroll hint (top-left, not overlapping the figure) */}
             <div className="md:hidden flex justify-start -mb-1 mt-2 pl-1 pointer-events-none select-none">
@@ -1370,6 +1439,8 @@ export default function App() {
             </div>
 
           </div>
+
+            </div>
 
           </div>
 
