@@ -1915,13 +1915,6 @@ export default function App() {
                   kepty: "スキルを高める場",
                 },
                 {
-                  label: "学習内容",
-                  online: "スピーキング",
-                  influencer: "不明",
-                  bigCoaching: ["・日常会話", "・ビジネス英語"],
-                  kepty: ["・日常会話", "・サッカー英語"],
-                },
-                {
                   label: "メソッド",
                   online: "不明",
                   influencer: "不明",
@@ -1929,18 +1922,11 @@ export default function App() {
                   kepty: "科学的\n(第二言語習得論)",
                 },
                 {
-                  label: "学習期間",
-                  online: "無期限",
+                  label: "価格\n（3ヶ月換算）",
+                  online: "約3~6万円",
                   influencer: "不明",
-                  bigCoaching: "短~中長期\n(約3ヶ月〜6ヶ月)",
-                  kepty: "中長期\n(約6ヶ月)",
-                },
-                {
-                  label: "価格(6ヶ月)",
-                  online: "約6~12万円",
-                  influencer: "不明",
-                  bigCoaching: "約80~120万円",
-                  kepty: "約26~35万円",
+                  bigCoaching: "約50~60万円",
+                  kepty: "約24万円",
                 }
               ];
 
@@ -1975,7 +1961,7 @@ export default function App() {
                     
                     {comparisonRows.map((row, idx) => (
                       <div key={idx} className="h-[74px] sm:h-[84px] rounded-2xl bg-gradient-to-b from-[#FFA577] to-[#FF8149] p-2 text-center flex items-center justify-center shadow-xs">
-                        <span className="text-white font-black text-[11.5px] sm:text-[13px] tracking-wide font-sans">
+                        <span className="text-white font-black text-[11.5px] sm:text-[13px] tracking-wide font-sans whitespace-pre-line leading-tight">
                           {row.label}
                         </span>
                       </div>
