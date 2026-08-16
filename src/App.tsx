@@ -1682,26 +1682,29 @@ export default function App() {
             </div>
           </div>
 
-          {/* Section 06: 緻密な学習プログラム */}
+          {/* Section 06: 学習プログラムの作成 */}
           <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-md border border-purple-100/30 max-w-[940px] w-full mx-auto mt-10">
             
             {/* 06 Title Header inside card */}
-            <div className="text-center mb-10">
+            <div className="text-center mb-12">
               <div className="flex items-center justify-center gap-4 mb-3">
                 <span className="text-5xl sm:text-6xl font-sans text-neutral-950 opacity-30 font-black tracking-tight leading-none select-none">
                   06
                 </span>
                 <h4 className="text-[18px] sm:text-[22px] font-extrabold text-neutral-950 font-serif tracking-tight leading-tight">
-                  緻密な学習プログラム
+                  学習プログラムの作成
                 </h4>
               </div>
+            </div>
 
-              <div className="max-w-[760px] mx-auto select-none mt-4 text-center">
+            {/* Part 1: 緻密な学習プログラム */}
+            <div className="mb-14">
+              <PhaseSubtitle>緻密な学習プログラム</PhaseSubtitle>
+              <div className="max-w-[760px] mx-auto select-none mt-4 mb-10 text-center">
                 <p className="text-[14px] sm:text-[16.5px] font-bold text-neutral-600 leading-relaxed font-sans">
                   緻密な学習プログラムの作成により、<span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">今日、何をすべきか</span>が明確になり、<span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">迷いなく学習を進める</span>ことができる。
                 </p>
               </div>
-            </div>
 
             {/* Layout: Top horizontal Specs + Bottom Gantt Timeline */}
             <div className="flex flex-col gap-6 mt-10 select-none max-w-[940px] mx-auto w-full">
@@ -1874,6 +1877,118 @@ export default function App() {
                 </div>
               </div>
 
+            </div>
+
+            </div>
+
+            <div className="border-t border-neutral-200/80 my-4 mb-12"></div>
+
+            {/* Part 2: 伴走フェーズから自走フェーズへ遷移 */}
+            <div>
+              <PhaseSubtitle>伴走フェーズから自走フェーズへ遷移</PhaseSubtitle>
+              <p className="text-[14px] sm:text-[16.5px] font-bold text-neutral-600 leading-relaxed text-center max-w-[760px] mx-auto mb-10">
+                最初の2ヶ月は、他者の介在により<span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">「独学やアプリでは届かない本質」</span>を徹底体得。その後は、科学的アプローチを用いて、自ら学習を進められる状態を作ります。
+              </p>
+
+              {/* Transition visual */}
+              <div className="relative max-w-[820px] mx-auto mb-12">
+                <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 md:gap-3 items-stretch">
+                  {/* 伴走 */}
+                  <div className="relative bg-neutral-950 text-white rounded-3xl p-6 sm:p-8 overflow-hidden shadow-lg">
+                    <div className="absolute -right-6 -top-6 w-28 h-28 rounded-full bg-[#E55C29]/20" />
+                    <div className="relative z-10 flex flex-col items-center text-center">
+                      <span className="text-[11px] font-black tracking-[0.18em] text-[#E55C29] uppercase mb-3">Month 1 – 2</span>
+                      <div className="w-16 h-16 rounded-full bg-[#E55C29] flex items-center justify-center mb-4 shadow-md">
+                        <Users className="w-8 h-8 text-white" />
+                      </div>
+                      <h6 className="text-[18px] sm:text-[20px] font-extrabold font-serif tracking-wide mb-2">伴走フェーズ</h6>
+                      <p className="text-[13px] sm:text-[14.5px] font-bold text-white/80 leading-relaxed">
+                        パーソナルトレーナーと共に<br />正しい型と習慣を徹底体得
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Arrow */}
+                  <div className="flex items-center justify-center py-1 md:py-0">
+                    <div className="md:hidden text-[#E55C29] font-black text-2xl leading-none">↓</div>
+                    <div className="hidden md:flex gap-0.5 text-[#E55C29] font-extrabold text-2xl tracking-widest animate-pulse select-none">
+                      ≫≫
+                    </div>
+                  </div>
+
+                  {/* 自走 */}
+                  <div className="relative bg-[#faf8ff] rounded-3xl p-6 sm:p-8 overflow-hidden border border-purple-100/70 shadow-sm">
+                    <div className="absolute -left-6 -bottom-6 w-28 h-28 rounded-full bg-[#E55C29]/10" />
+                    <div className="relative z-10 flex flex-col items-center text-center">
+                      <span className="text-[11px] font-black tracking-[0.18em] text-[#E55C29] uppercase mb-3">Month 3 –</span>
+                      <div className="w-16 h-16 rounded-full bg-white border-2 border-neutral-900 flex items-center justify-center mb-4 shadow-sm">
+                        <User className="w-8 h-8 text-neutral-900" />
+                      </div>
+                      <h6 className="text-[18px] sm:text-[20px] font-extrabold font-serif tracking-wide text-neutral-950 mb-2">自走フェーズ</h6>
+                      <p className="text-[13px] sm:text-[14.5px] font-bold text-neutral-600 leading-relaxed">
+                        科学的アプローチを用い<br />自ら学習を進められる状態へ
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Month track */}
+                <div className="mt-8 flex items-center justify-center gap-1.5 sm:gap-2 select-none">
+                  {[1, 2, 3, 4, 5, 6].map((m) => (
+                    <div key={m} className="flex flex-col items-center gap-1.5">
+                      <div
+                        className={`w-9 h-9 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-[12px] sm:text-[13px] font-black ${
+                          m <= 2
+                            ? 'bg-[#E55C29] text-white shadow-sm'
+                            : 'bg-white text-neutral-400 border-2 border-neutral-200'
+                        }`}
+                      >
+                        {m}
+                      </div>
+                      <span className="text-[9px] sm:text-[10px] font-bold text-neutral-400">{m}ヶ月</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-3 flex justify-center gap-8 text-[11px] sm:text-[12px] font-extrabold tracking-wide">
+                  <span className="text-[#E55C29]">徹底伴走</span>
+                  <span className="text-neutral-400">自走へ移行</span>
+                </div>
+              </div>
+
+              {/* Why 2 months */}
+              <div className="bg-[#faf8ff] rounded-3xl p-6 sm:p-8 border border-purple-100/50">
+                <h6 className="text-center text-[16px] sm:text-[18px] font-extrabold text-neutral-950 font-serif tracking-wide mb-8">
+                  なぜ「2ヶ月」でフェーズを変えるのか？
+                </h6>
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <span className="shrink-0 w-8 h-8 rounded-full bg-[#E55C29] text-white text-[13px] font-black flex items-center justify-center mt-0.5">
+                      1
+                    </span>
+                    <div className="text-left">
+                      <p className="text-[14.5px] sm:text-[16px] font-extrabold text-neutral-950 leading-snug mb-2">
+                        迷宮入りを防ぐ「正しいフォーム」と「人の目が必要な本質」の凝縮
+                      </p>
+                      <p className="text-[13.5px] sm:text-[15px] font-medium text-neutral-600 leading-relaxed">
+                        自己流で何年も無駄にする迷宮入りを防ぐため、独学では不可能な「音の矯正」や「科学的学習法」など、他者の介入が効果的な領域だけを2ヶ月に凝縮しました。
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <span className="shrink-0 w-8 h-8 rounded-full bg-[#E55C29] text-white text-[13px] font-black flex items-center justify-center mt-0.5">
+                      2
+                    </span>
+                    <div className="text-left">
+                      <p className="text-[14.5px] sm:text-[16px] font-extrabold text-neutral-950 leading-snug mb-2">
+                        科学と行動心理が示す「超集中 ✕ 習慣化」の最適解
+                      </p>
+                      <p className="text-[13.5px] sm:text-[15px] font-medium text-neutral-600 leading-relaxed">
+                        試験・昇進など期限（緊急度）がないサッカー選手が中だるみせず最高強度で走れる限界（行動経済学）と、行動が定着する科学的期間「約66日（ロンドン大学研究）」から割り出した、最も効果的な期間が2ヶ月です。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
           </div>
