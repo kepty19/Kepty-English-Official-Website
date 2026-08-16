@@ -878,7 +878,7 @@ export default function App() {
                 ["すでに海外でプレーしているが、", "会話の伸び悩みや「壁」を感じている", "選手"],
                 ["外国人の監督や選手と", "深いコミュニケーションを取り、ピッチ上の信頼を得たい", "選手"],
                 ["これまで独学やアプリを試してきたが、", "本質的な効果を得られなかった", "選手"],
-                ["現役生活のなかで、", "引退後のキャリアにも生きる一生モノの語学力を養いたい", "選手"],
+                ["現役生活のなかで、", "引退後のキャリアにも活きる一生モノの語学力を養いたい", "選手"],
               ].map(([before, highlight, after], idx) => (
                 <div key={idx} className="flex items-start gap-4 sm:gap-5 group">
                   <div className="mt-[0.52em] sm:mt-[0.5em] w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 rounded-full bg-[#E55C29] border-2 border-[#E55C29]/30 shadow-sm flex-shrink-0 group-hover:scale-125 transition-transform duration-300" />
