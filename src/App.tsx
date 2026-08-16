@@ -874,17 +874,16 @@ export default function App() {
             {/* Bullet points mapping */}
             <div className="bg-white/90 border border-orange-100 rounded-3xl p-6 sm:p-12 shadow-sm space-y-6 sm:space-y-8">
               {[
-                "すでに海外でプレーされており、更なる英会話力向上に向き合う選手",
-                "将来の海外移籍を見据え、日本でゼロから英語学習を始める選手",
-                "外国人の監督や選手と密なコミュニケーションを取るために、英語力を高めたいと考える選手",
-                "これまでずっと独学で突き進んできたが、伸び悩みを感じている選手",
-                "数年間オンライン英会話を実施してきたが、あまり効果を得られなかった選手",
-                "引退後のキャリアを見据え、現役中に競技以外の語学スキルを高めたいと考える選手"
-              ].map((text, idx) => (
+                ["将来の海外移籍を見据え、", "日本でゼロから正しいやり方で英語を始めたい", "選手"],
+                ["すでに海外でプレーしているが、", "会話の伸び悩みや「壁」を感じている", "選手"],
+                ["外国人の監督や選手と", "深いコミュニケーションを取り、ピッチ上の信頼を得たい", "選手"],
+                ["これまで独学やアプリを試してきたが、", "本質的な効果を得られなかった", "選手"],
+                ["現役生活のなかで、", "引退後のキャリアにも生きる一生モノの語学力を養いたい", "選手"],
+              ].map(([before, highlight, after], idx) => (
                 <div key={idx} className="flex items-start gap-4 sm:gap-5 group">
                   <div className="mt-[0.52em] sm:mt-[0.5em] w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 rounded-full bg-[#E55C29] border-2 border-[#E55C29]/30 shadow-sm flex-shrink-0 group-hover:scale-125 transition-transform duration-300" />
                   <p className="text-[15px] sm:text-[18px] leading-[1.8] font-sans font-semibold text-neutral-800 tracking-wide text-left group-hover:text-black transition-colors">
-                    {text}
+                    {before}「<span className="font-extrabold text-neutral-950">{highlight}</span>」{after}
                   </p>
                 </div>
               ))}
