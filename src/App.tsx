@@ -1698,7 +1698,7 @@ export default function App() {
 
               <div className="max-w-[760px] mx-auto select-none mt-4 text-center">
                 <p className="text-[14px] sm:text-[16.5px] font-bold text-neutral-600 leading-relaxed font-sans">
-                  緻密な学習プログラムの作成により、<span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">「今日、何をすべきか」</span>が明確になり、<span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">「迷いなく学習を進める」</span>ことができる。
+                  緻密な学習プログラムの作成により、<span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">今日、何をすべきか</span>が明確になり、<span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">迷いなく学習を進める</span>ことができる。
                 </p>
               </div>
             </div>
