@@ -678,6 +678,9 @@ export default function App() {
                       サッカーのフェーズ別アプローチ
                     </h4>
                   </div>
+                  <p className="text-[14.5px] sm:text-[15.5px] leading-[1.8] text-neutral-700 font-medium text-left">
+                    ただ我流でボールを蹴るだけ、ただ試合に出続けるだけでは、真の上達は望めません。
+                  </p>
                   <div className="space-y-4">
                     <div>
                       <p className="text-[13.5px] sm:text-[14.5px] font-black text-neutral-950 mb-1">
@@ -696,7 +699,7 @@ export default function App() {
                       </p>
                     </div>
                   </div>
-                  <p className="text-[13.5px] sm:text-[14.5px] text-neutral-500 font-bold leading-relaxed text-left">
+                  <p className="text-[13.5px] sm:text-[14.5px] text-[#E55C29] font-bold leading-relaxed text-left">
                     ただ「なんとなくボールを蹴る」だけでは、高いレベルまで到達しません。
                   </p>
                 </div>
