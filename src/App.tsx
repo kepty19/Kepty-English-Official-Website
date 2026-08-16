@@ -671,10 +671,10 @@ export default function App() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
                 {/* Soccer column */}
-                <div className="space-y-5">
-                  <div className="flex items-center gap-2">
+                <div className="space-y-5 pb-8 border-b border-neutral-200/70 md:border-b-0 md:pb-0">
+                  <div className="flex flex-col items-start gap-2">
                     <span className="text-[11px] font-black bg-neutral-100 text-neutral-800 px-2 py-0.5 rounded uppercase tracking-wider">Football</span>
-                    <h4 className="text-[16px] sm:text-[18px] font-sans font-black text-neutral-950">
+                    <h4 className="text-[16px] sm:text-[18px] font-sans font-black text-neutral-950 leading-snug">
                       サッカーのフェーズ別アプローチ
                     </h4>
                   </div>
@@ -706,9 +706,9 @@ export default function App() {
 
                 {/* English column */}
                 <div className="space-y-5">
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-col items-start gap-2">
                     <span className="text-[11px] font-black bg-neutral-100 text-neutral-800 px-2 py-0.5 rounded uppercase tracking-wider">English</span>
-                    <h4 className="text-[16px] sm:text-[18px] font-sans font-black text-neutral-950">
+                    <h4 className="text-[16px] sm:text-[18px] font-sans font-black text-neutral-950 leading-snug">
                       英語のフェーズ別アプローチ
                     </h4>
                   </div>
