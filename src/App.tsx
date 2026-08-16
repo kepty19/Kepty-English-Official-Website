@@ -2112,7 +2112,7 @@ export default function App() {
                 return (
                   <div className="min-w-[560px] max-w-[800px] md:mx-auto flex gap-1.5 sm:gap-3 py-1">
                     {/* Sticky labels */}
-                    <div className="sticky left-0 z-20 w-[108px] sm:w-[160px] shrink-0 flex flex-col gap-2.5 sm:gap-3 bg-white pr-1 sm:pr-3 border-r border-[#DFEC9F]">
+                    <div className="sticky left-0 z-20 w-[76px] sm:w-[100px] shrink-0 flex flex-col gap-2.5 sm:gap-3 bg-white pr-1 sm:pr-2 border-r border-[#DFEC9F]">
                       <div className={`h-[68px] sm:h-[76px] ${headerCell}`} />
                       <div className={`min-h-[88px] sm:min-h-[100px] ${labelCell}`}>
                         <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
