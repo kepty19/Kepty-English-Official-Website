@@ -93,6 +93,48 @@ function StageFlowArrow() {
   );
 }
 
+/** Hand-drawn crayon/brush underline for phase subtitles */
+function PhaseSubtitle({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex items-center justify-center mb-5">
+      <h5 className="relative inline-block text-[17px] sm:text-[20px] font-extrabold text-neutral-950 font-serif tracking-wide px-0.5">
+        <span className="relative z-10">{children}</span>
+        <svg
+          className="absolute left-[-4%] bottom-[0.04em] w-[108%] h-[0.5em] z-0 pointer-events-none -rotate-[1.2deg] origin-left"
+          viewBox="0 0 280 16"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M5 10.2 C 42 6.2, 88 13.4, 138 8.6 C 186 4.4, 232 12.2, 275 7.8"
+            fill="none"
+            stroke="#E55C29"
+            strokeWidth="7.4"
+            strokeLinecap="round"
+            opacity="0.38"
+          />
+          <path
+            d="M7 9.1 C 50 12.6, 96 5.4, 148 10.4 C 194 14.2, 236 6.8, 273 9.4"
+            fill="none"
+            stroke="#E55C29"
+            strokeWidth="5.2"
+            strokeLinecap="round"
+            opacity="0.72"
+          />
+          <path
+            d="M9 10.8 C 58 7.6, 110 13, 162 9 C 208 5.6, 244 11.8, 271 8.4"
+            fill="none"
+            stroke="#F07845"
+            strokeWidth="2.6"
+            strokeLinecap="round"
+            opacity="0.55"
+          />
+        </svg>
+      </h5>
+    </div>
+  );
+}
+
 /** Set to true to show the 「応援している選手」 subsection again. */
 const SHOW_SUPPORTING_PLAYERS = false;
 
@@ -1235,12 +1277,7 @@ export default function App() {
 
             {/* Phase 1: 学習初期フェーズの選手 */}
             <div className="mb-14">
-              <div className="flex items-center justify-center gap-3 mb-5">
-                <div className="w-1.5 h-6 bg-[#E55C29] rounded-full"></div>
-                <h5 className="text-[17px] sm:text-[20px] font-extrabold text-neutral-950 font-serif tracking-wide">
-                  学習初期フェーズの選手
-                </h5>
-              </div>
+              <PhaseSubtitle>学習初期フェーズの選手</PhaseSubtitle>
               <p className="text-[14px] sm:text-[16.5px] font-bold text-neutral-600 leading-relaxed text-center max-w-[760px] mx-auto mb-10">
                 <span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">学習初期に習得すべき重要な本質と基礎</span>だけを厳選し、それを確実に体得します。
               </p>
@@ -1313,12 +1350,7 @@ export default function App() {
 
             {/* Phase 2: 学習中上級フェーズの選手 */}
             <div>
-              <div className="flex items-center justify-center gap-3 mb-5">
-                <div className="w-1.5 h-6 bg-[#E55C29] rounded-full"></div>
-                <h5 className="text-[17px] sm:text-[20px] font-extrabold text-neutral-950 font-serif tracking-wide">
-                  学習中上級フェーズの選手
-                </h5>
-              </div>
+              <PhaseSubtitle>学習中上級フェーズの選手</PhaseSubtitle>
               <p className="text-[14px] sm:text-[16.5px] font-bold text-neutral-600 leading-relaxed text-center max-w-[760px] mx-auto mb-8">
                 <span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">ピンポイントでの課題特定と打ち手の実施</span>により、より効率的な学習を実現します。
               </p>
