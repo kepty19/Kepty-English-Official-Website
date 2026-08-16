@@ -955,7 +955,7 @@ export default function App() {
                 <div className="col-start-1 row-start-2 mt-6 text-center">
                   <p className="text-[11px] sm:text-[16px] font-extrabold text-neutral-800 leading-snug">
                     <span className="block whitespace-nowrap">個々の課題に即した</span>
-                    <span className="block whitespace-nowrap">学習計画</span>
+                    <span className="block whitespace-nowrap">正しい学習</span>
                   </p>
                 </div>
                 <div className="col-start-3 row-start-2 mt-6 text-center">
@@ -980,13 +980,9 @@ export default function App() {
                   【学習量の目安】
                 </h5>
                 <ul className="text-[13px] sm:text-[15.5px] font-bold text-neutral-700 space-y-2.5 pl-4 sm:pl-8 list-disc">
-                  <li>毎日、2時間〜3時間の実施を推奨</li>
-                  <li>移動や治療、ストレッチの時間などを有効活用</li>
-                  <li>個々のスケジュールに応じて柔軟に設計</li>
+                  <li>毎日2時間の学習時間を推奨しております。</li>
+                  <li>移動や治療、ストレッチの時間などを有効活用できます。</li>
                 </ul>
-                <p className="mt-5 text-center text-[13px] sm:text-[15.5px] font-extrabold text-[#E55C29] tracking-wider bg-orange-50/50 py-1.5 rounded-lg">
-                  ※まずは1時間/日から開始し、徐々に時間を増やす形も可能です。
-                </p>
               </div>
 
             </div>
