@@ -1893,6 +1893,9 @@ export default function App() {
               他社サービスとの比較
             </h2>
             <div className="w-16 h-1.5 bg-[#E55C29] mx-auto rounded-full"></div>
+            <p className="text-center text-neutral-800 text-[14px] sm:text-[17px] font-bold tracking-wider leading-relaxed mt-10 font-serif max-w-[800px] mx-auto">
+              「一部の限られた選手だけでなく、全ての選手へ、プロフェッショナルな英語コーチングを。」<br />この思想を実現するために、我々は「高品質」かつ「相場よりも圧倒的に低価格」にこだわります。
+            </p>
           </div>
 
           {/* Mobile-only horizontal scroll hint (top-left, not overlapping the table) */}
@@ -2069,7 +2072,7 @@ export default function App() {
           <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-md border border-[#F1E8C9]/30 w-full select-none">
             {/* Lead quote */}
             <p className="text-center text-neutral-800 text-[14px] sm:text-[17px] font-bold tracking-wider leading-relaxed mb-10 font-serif">
-              「一部の限られた選手だけでなく、全ての選手へ、プロフェッショナルな英語コーチングを。」<br />この思想を実現するために、我々は「高品質」かつ「相場よりも圧倒的に低価格」でのサービス提供にこだわっております。
+              最初の2ヶ月は、パーソナルトレーナーと共に徹底強化する「伴走フェーズ」。正しい型と習慣を身につけた3ヶ月目以降は、自ら伸ばす「自走フェーズ」へ。
             </p>
 
             {/* Mobile-only horizontal scroll hint */}
