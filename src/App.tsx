@@ -1887,7 +1887,7 @@ export default function App() {
             <div>
               <PhaseSubtitle>伴走フェーズから自走フェーズへ遷移</PhaseSubtitle>
               <p className="text-[14px] sm:text-[16.5px] font-bold text-neutral-600 leading-relaxed text-center max-w-[760px] mx-auto mb-10">
-                最初の2ヶ月は、他者の介在により<span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">「独学やアプリでは届かない本質」</span>を徹底体得。その後は、科学的アプローチを用いて、自ら学習を進められる状態を作ります。
+                最初の2ヶ月は、他者の介在により<span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">独学やアプリでは届かない本質</span>を徹底体得。その後は、科学的アプローチを用いて、自ら学習を進められる状態を作ります。
               </p>
 
               {/* Transition visual */}
@@ -1951,7 +1951,7 @@ export default function App() {
                 </div>
                 <div className="mt-3 flex justify-center gap-8 text-[11px] sm:text-[12px] font-extrabold tracking-wide">
                   <span className="text-[#E55C29]">徹底伴走</span>
-                  <span className="text-neutral-400">自走へ移行</span>
+                  <span className="text-neutral-400">自走学習</span>
                 </div>
               </div>
 
