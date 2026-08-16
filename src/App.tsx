@@ -71,28 +71,6 @@ function ceoMessageForMobile(text: string) {
     .replace('それ以外の時間での学習の質が、\n理想', 'それ以外の時間での学習の質が、理想');
 }
 
-/** Mobile-only double-chevron (matches Section 02 flow indicator) */
-function StageFlowArrow() {
-  return (
-    <div className="md:hidden flex justify-center py-2 select-none" aria-hidden>
-      <div className="animate-bounce flex flex-col items-center justify-center">
-        <svg
-          className="w-14 h-14 text-[#E55C29]"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="3.2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M6 6l6 6 6-6" className="opacity-35" />
-          <path d="M6 13l6 6 6-6" />
-        </svg>
-      </div>
-    </div>
-  );
-}
-
 /** Hand-drawn crayon/brush underline for phase subtitles */
 function PhaseSubtitle({ children }: { children: React.ReactNode }) {
   return (
@@ -1493,142 +1471,7 @@ export default function App() {
 
           </div>
 
-          {/* Card 04 Block: 学習強度 */}
-          <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-md border border-purple-100/30 max-w-[940px] w-full mx-auto mt-10">
-            
-            {/* 04 Title Header inside card */}
-            <div className="text-center mb-10">
-              <div className="flex items-center justify-center gap-4 mb-3">
-                <span className="text-5xl sm:text-6xl font-sans text-neutral-950 opacity-30 font-black tracking-tight leading-none select-none">
-                  04
-                </span>
-                <h4 className="text-[18px] sm:text-[22px] font-extrabold text-neutral-950 font-serif tracking-tight leading-tight">
-                  段階的なトレーニング構造
-                </h4>
-              </div>
-
-              <p className="text-[14px] sm:text-[16.5px] font-bold text-neutral-600 leading-relaxed max-w-[800px] mx-auto select-none mt-4">
-                まずは、<span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">揺るぎない基礎</span>を構築し、それを<span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">使える武器</span>まで昇華させます。<br/>
-                その後、実践的な会話の強化へ比重をシフトしていきます。
-              </p>
-            </div>
-
-            {/* Stage Selector Grid */}
-            <div className="mt-8 relative">
-              
-              {/* Learning Intensity Icons matching standard circles of same size as user request */}
-              <div className="flex justify-end items-center gap-4 mb-4 pr-4">
-                <span className="text-xs font-black text-neutral-500 font-sans">学習強度：</span>
-                <div className="flex items-center gap-3">
-                  <div className="flex items-center gap-1">
-                    <span className="w-5 h-5 rounded-full bg-[#FFF6F2] border border-[#FFEBE0] flex items-center justify-center text-[9px] font-bold text-neutral-500">低</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <span className="w-5 h-5 rounded-full bg-[#FFE6DB] border border-[#FFD2C2] flex items-center justify-center text-[9px] font-bold text-neutral-800">中</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <span className="w-5 h-5 rounded-full bg-[#E55C29] border border-[#D04D1B] flex items-center justify-center text-[9px] font-bold text-white">高</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* 3 Stage columns */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
-                
-                {/* Early Stage 序盤 */}
-                <div className="flex flex-col items-center bg-neutral-50/50 rounded-2xl p-6 border border-neutral-100/70 hover:shadow-md transition-all">
-                  <div className="flex items-center gap-2 mb-2 w-full justify-center">
-                    <span className="text-[15px] sm:text-[16.5px] font-black text-neutral-950 tracking-wider">- 序盤 -</span>
-                  </div>
-                  <span className="text-[13.5px] sm:text-[14.5px] font-black text-[#E55C29] tracking-wider mb-6">強固な基礎固め</span>
-                  
-                  <div className="flex gap-2.5 justify-center h-[260px] items-stretch w-full max-w-[240px]">
-                    {/* Column 1 - High Intensity */}
-                    <div className="flex-1 rounded-2xl bg-[#E55C29] text-white font-black py-6 px-1 flex flex-col justify-around text-center border border-[#D04D1B] shadow-sm transition-transform hover:scale-[1.03]">
-                      <span className="text-xs sm:text-[13px] tracking-widest leading-none">発音</span>
-                      <span className="text-xs sm:text-[13px] tracking-widest leading-none">単語</span>
-                      <span className="text-xs sm:text-[13px] tracking-widest leading-none">文法</span>
-                    </div>
-                    {/* Column 2 - Medium Intensity */}
-                    <div className="flex-1 rounded-2xl bg-[#FFE6DB] text-neutral-850 font-black py-6 px-1 flex flex-col justify-around text-center border border-[#FFD2C2] shadow-xs transition-transform hover:scale-[1.03]">
-                      <span className="text-[11.5px] sm:text-[12px] tracking-normal leading-tight">英作文</span>
-                      <span className="text-[11px] sm:text-[11.5px] tracking-tighter leading-tight">シャドー<br />イング</span>
-                      <span className="text-[10px] sm:text-[10.5px] tracking-tighter leading-none opacity-80">フォーム<br />改善</span>
-                    </div>
-                    {/* Column 3 - Low Intensity */}
-                    <div className="flex-1 rounded-2xl bg-[#FFF6F2] text-neutral-400 font-extrabold py-6 px-1 flex flex-col justify-around text-center border border-[#FFEBE0]/60 shadow-2xs transition-transform hover:scale-[1.03]">
-                      <span className="text-[10px] sm:text-[11px] tracking-tighter leading-tight">トピック<br />トーク</span>
-                      <span className="text-[9.5px] sm:text-[10px] tracking-tighter leading-none opacity-70">オンライン<br />英会話</span>
-                    </div>
-                  </div>
-                </div>
-
-                <StageFlowArrow />
-
-                {/* Mid Stage 中盤 */}
-                <div className="flex flex-col items-center bg-neutral-50/50 rounded-2xl p-6 border border-neutral-100/70 hover:shadow-md transition-all">
-                  <div className="flex items-center gap-2 mb-2 w-full justify-center">
-                    <span className="text-[15px] sm:text-[16.5px] font-black text-neutral-950 tracking-wider">- 中盤 -</span>
-                  </div>
-                  <span className="text-[13.5px] sm:text-[14.5px] font-black text-[#E55C29] tracking-wider mb-6">武器の磨き込み</span>
-                  
-                  <div className="flex gap-2.5 justify-center h-[260px] items-stretch w-full max-w-[240px]">
-                    {/* Column 1 - Low Intensity */}
-                    <div className="flex-1 rounded-2xl bg-[#FFF6F2] text-neutral-400 font-extrabold py-6 px-1 flex flex-col justify-around text-center border border-[#FFEBE0]/60 shadow-2xs transition-transform hover:scale-[1.03]">
-                      <span className="text-xs sm:text-[13px] tracking-widest leading-none">発音</span>
-                      <span className="text-xs sm:text-[13px] tracking-widest leading-none">単語</span>
-                      <span className="text-xs sm:text-[13px] tracking-widest leading-none">文法</span>
-                    </div>
-                    {/* Column 2 - High Intensity */}
-                    <div className="flex-1 rounded-2xl bg-[#E55C29] text-white font-black py-6 px-1 flex flex-col justify-around text-center border border-[#D04D1B] shadow-sm transition-transform hover:scale-[1.03]">
-                      <span className="text-[11.5px] sm:text-[12.5px] tracking-normal leading-tight">英作文</span>
-                      <span className="text-[11.5px] sm:text-[12px] tracking-tighter leading-tight">シャドー<br />イング</span>
-                      <span className="text-[10.5px] sm:text-[11px] tracking-tighter leading-none opacity-90 font-black">フォーム<br />改善</span>
-                    </div>
-                    {/* Column 3 - Medium Intensity */}
-                    <div className="flex-1 rounded-2xl bg-[#FFE6DB] text-neutral-850 font-black py-6 px-1 flex flex-col justify-around text-center border border-[#FFD2C2] shadow-xs transition-transform hover:scale-[1.03]">
-                      <span className="text-[10px] sm:text-[11px] tracking-tighter leading-tight">トピック<br />トーク</span>
-                      <span className="text-[9.5px] sm:text-[10px] tracking-tighter leading-none opacity-80">オンライン<br />英会話</span>
-                    </div>
-                  </div>
-                </div>
-
-                <StageFlowArrow />
-
-                {/* Late Stage 終盤 */}
-                <div className="flex flex-col items-center bg-neutral-50/50 rounded-2xl p-6 border border-neutral-100/70 hover:shadow-md transition-all">
-                  <div className="flex items-center gap-2 mb-2 w-full justify-center">
-                    <span className="text-[15px] sm:text-[16.5px] font-black text-neutral-950 tracking-wider">- 終盤 -</span>
-                  </div>
-                  <span className="text-[13.5px] sm:text-[14.5px] font-black text-[#E55C29] tracking-wider mb-6">型の確立</span>
-                  
-                  <div className="flex gap-2.5 justify-center h-[260px] items-stretch w-full max-w-[240px]">
-                    {/* Column 1 - Low Intensity */}
-                    <div className="flex-1 rounded-2xl bg-[#FFF6F2] text-neutral-400 font-extrabold py-6 px-1 flex flex-col justify-around text-center border border-[#FFEBE0]/60 shadow-2xs transition-transform hover:scale-[1.03]">
-                      <span className="text-xs sm:text-[13px] tracking-widest leading-none">発音</span>
-                      <span className="text-xs sm:text-[13px] tracking-widest leading-none">単語</span>
-                      <span className="text-xs sm:text-[13px] tracking-widest leading-none">文法</span>
-                    </div>
-                    {/* Column 2 - Medium Intensity */}
-                    <div className="flex-1 rounded-2xl bg-[#FFE6DB] text-neutral-850 font-black py-6 px-1 flex flex-col justify-around text-center border border-[#FFD2C2] shadow-xs transition-transform hover:scale-[1.03]">
-                      <span className="text-[11.5px] sm:text-[12px] tracking-normal leading-tight">英作文</span>
-                      <span className="text-[11px] sm:text-[11.5px] tracking-tighter leading-tight">シャドー<br />イング</span>
-                      <span className="text-[10px] sm:text-[10.5px] tracking-tighter leading-none opacity-80">フォーム<br />改善</span>
-                    </div>
-                    {/* Column 3 - High Intensity */}
-                    <div className="flex-1 rounded-2xl bg-[#E55C29] text-white font-black py-6 px-1 flex flex-col justify-around text-center border border-[#D04D1B] shadow-sm transition-transform hover:scale-[1.03]">
-                      <span className="text-[10.5px] sm:text-[11px] tracking-tighter leading-tight font-black">トピック<br />トーク</span>
-                      <span className="text-[9.5px] sm:text-[10.5px] tracking-tighter leading-tight font-black">オンライン<br />英会話</span>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-
-          {/* Section 05: サッカー特化のコンテンツ */}
+          {/* Section 04: サッカー特化のコンテンツ */}
           <div className="bg-white rounded-3xl px-6 py-6 sm:px-10 sm:py-8 pb-0 sm:pb-0 shadow-md border border-purple-100/30 max-w-[940px] w-full mx-auto mt-10 transition-all duration-300 overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch">
               
@@ -1636,7 +1479,7 @@ export default function App() {
               <div className="flex flex-col justify-center text-left py-8 sm:py-10">
                 <div className="flex items-center gap-4 mb-4">
                   <span className="text-5xl sm:text-6xl font-sans text-neutral-950 opacity-30 font-black tracking-tight leading-none select-none">
-                    05
+                    04
                   </span>
                   <h4 className="text-[18px] sm:text-[22px] font-extrabold text-neutral-950 font-serif tracking-tight leading-tight">
                     サッカー特化のコンテンツ
@@ -1650,7 +1493,7 @@ export default function App() {
                 
                 <p className="text-[14px] sm:text-[16px] font-bold text-neutral-900 leading-relaxed font-sans mt-5 bg-neutral-50 px-4 py-3 rounded-xl text-center">
                   試合前後のインタビューなど、<br/>
-                  様々なサッカーシーンを想定した学習が可能です。
+                  様々なサッカーシーンを想定した学習も可能です。
                 </p>
               </div>
 
@@ -1728,7 +1571,7 @@ export default function App() {
             </div>
           </div>
 
-          {/* Section 06: AIによる自動添削 */}
+          {/* Section 05: AIによる自動添削 */}
           <div className="bg-white rounded-3xl px-6 py-6 sm:px-10 sm:py-8 pb-0 sm:pb-0 shadow-md border border-purple-100/30 max-w-[940px] w-full mx-auto mt-10 transition-all duration-300 overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch">
               
@@ -1736,7 +1579,7 @@ export default function App() {
               <div className="flex flex-col justify-center text-left py-8 sm:py-10">
                 <div className="flex items-center gap-4 mb-4">
                   <span className="text-5xl sm:text-6xl font-sans text-neutral-950 opacity-30 font-black tracking-tight leading-none select-none">
-                    06
+                    05
                   </span>
                   <h4 className="text-[18px] sm:text-[22px] font-extrabold text-neutral-950 font-serif tracking-tight leading-tight">
                     AIによる自動添削
@@ -1839,27 +1682,23 @@ export default function App() {
             </div>
           </div>
 
-          {/* Section 07: 中長期に渡るプログラム構成 */}
+          {/* Section 06: 緻密な学習プログラム */}
           <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-md border border-purple-100/30 max-w-[940px] w-full mx-auto mt-10">
             
-            {/* 07 Title Header inside card */}
+            {/* 06 Title Header inside card */}
             <div className="text-center mb-10">
               <div className="flex items-center justify-center gap-4 mb-3">
                 <span className="text-5xl sm:text-6xl font-sans text-neutral-950 opacity-30 font-black tracking-tight leading-none select-none">
-                  07
+                  06
                 </span>
                 <h4 className="text-[18px] sm:text-[22px] font-extrabold text-neutral-950 font-serif tracking-tight leading-tight">
-                  中長期に渡るプログラム構成
+                  緻密な学習プログラム
                 </h4>
               </div>
 
               <div className="max-w-[760px] mx-auto select-none mt-4 text-center">
-                <p className="text-[15px] sm:text-[17px] font-black text-[#1a1a1a] leading-[1.85] font-sans">
-                  「理論」や「基礎からの積み上げ」を軸にした<span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">本質的な能力向上</span>を実現するために、<br />
-                  我々のプログラム期間は、<span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">約6ヶ月</span>で構成されます。
-                </p>
-                <p className="mt-5 text-[13px] sm:text-[14.5px] font-bold text-neutral-500 leading-relaxed font-sans bg-neutral-50 px-5 py-3 rounded-2xl inline-block border border-neutral-100/40">
-                  ※短期での「詰め込み学習」や「小手先の技」は、提供しておりません。
+                <p className="text-[14px] sm:text-[16.5px] font-bold text-neutral-600 leading-relaxed font-sans">
+                  緻密な学習プログラムの作成により、<span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">「今日、何をすべきか」</span>が明確になり、<span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">「迷いなく学習を進める」</span>ことができる。
                 </p>
               </div>
             </div>
