@@ -770,21 +770,21 @@ export default function App() {
               {/* Card 1 L */}
               <div className="md:col-start-1 md:row-start-2 bg-white border border-neutral-200/80 p-6 rounded-2xl shadow-sm text-center flex items-center justify-center min-h-[120px] hover:shadow-md transition-shadow">
                 <p className="text-[15px] sm:text-[16px] font-bold text-neutral-700 leading-relaxed text-left sm:text-center">
-                  英語の重要性は理解しているが、何からどう手をつければ効率的か分からない
+                  英語の重要性は理解しているが、何からどう手をつければ効率的か分からない・・。
                 </p>
               </div>
 
               {/* Card 2 L */}
               <div className="md:col-start-1 md:row-start-3 bg-white border border-neutral-200/80 p-6 rounded-2xl shadow-sm text-center flex items-center justify-center min-h-[120px] hover:shadow-md transition-shadow">
                 <p className="text-[15px] sm:text-[16px] font-bold text-neutral-700 leading-relaxed text-left sm:text-center">
-                  独学やオンライン英会話を試してみたが、成長を実感できず伸び悩んでいる
+                  独学やオンライン英会話を試してみたが、成長を実感できず伸び悩んでいる・・。
                 </p>
               </div>
 
               {/* Card 3 L */}
               <div className="md:col-start-1 md:row-start-4 bg-white border border-neutral-200/80 p-6 rounded-2xl shadow-sm text-center flex items-center justify-center min-h-[120px] hover:shadow-md transition-shadow">
                 <p className="text-[15px] sm:text-[16px] font-bold text-neutral-700 leading-relaxed text-left sm:text-center">
-                  遠い将来のための学習だからこそ、日々の学習強度が落ちて挫折してしまう
+                  遠い将来のための学習だからこそ、日々の学習強度が落ちて挫折してしまう・・。
                 </p>
               </div>
 
@@ -803,21 +803,21 @@ export default function App() {
               {/* Card 1 R */}
               <div className="md:col-start-3 md:row-start-2 bg-white border border-[#E55C29]/25 p-6 rounded-2xl shadow-sm text-center flex items-center justify-center min-h-[120px] hover:shadow-md transition-shadow relative overflow-hidden group">
                 <p className="text-[15px] sm:text-[16px] font-bold text-neutral-800 leading-relaxed z-10 text-left sm:text-center">
-                  初級者には「一生モノの型」、中上級者には「的確な弱点特定」を提示。自分の現在地と「いま本当にやるべきこと」が明確になります。
+                  第二言語習得論に基づくことで、自分の現在地と「いま本当にやるべきこと」が明確になる！
                 </p>
               </div>
 
               {/* Card 2 R */}
               <div className="md:col-start-3 md:row-start-3 bg-white border border-[#E55C29]/25 p-6 rounded-2xl shadow-sm text-center flex items-center justify-center min-h-[120px] hover:shadow-md transition-shadow relative overflow-hidden group">
                 <p className="text-[15px] sm:text-[16px] font-bold text-neutral-800 leading-relaxed z-10 text-left sm:text-center">
-                  科学的根拠に基づいたステップアップにより、ただこなすだけの学習から脱却。「上達している実証と手応え」を獲得できます。
+                  科学的アプローチにより、ただこなすだけの学習から脱却。「上達している実証と手応え」を獲得できる！
                 </p>
               </div>
 
               {/* Card 3 R */}
               <div className="md:col-start-3 md:row-start-4 bg-white border border-[#E55C29]/25 p-6 rounded-2xl shadow-sm text-center flex items-center justify-center min-h-[120px] hover:shadow-md transition-shadow relative overflow-hidden group">
                 <p className="text-[15px] sm:text-[16px] font-bold text-neutral-800 leading-relaxed z-10 text-left sm:text-center">
-                  必要な要素だけに徹底的に絞り込み、「2ヶ月」という期限を区切って集中アプローチ。遠い将来の目標でも中だるみせず、高い強度のまま最後までやり切ることができます。
+                  期限を区切って集中アプローチ。学習の中だるみせず、高い強度のまま最後までやり切ることができる！
                 </p>
               </div>
 
