@@ -2130,8 +2130,11 @@ export default function App() {
                     {plans.map((plan) => (
                       <div key={plan.name} className="flex-1 w-[200px] sm:w-[260px] shrink-0 flex flex-col gap-2.5 sm:gap-3">
                         <div className={`h-[68px] sm:h-[76px] ${headerCell}`}>
-                          <span className="text-[13px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight whitespace-pre-line">
-                            {`${plan.name}\n${plan.period}`}
+                          <span className="text-[13px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
+                            {plan.name}
+                            <span className="block text-[11px] sm:text-[13.5px] font-extrabold mt-0.5">
+                              {plan.period}
+                            </span>
                           </span>
                         </div>
                         <div className={`min-h-[88px] sm:min-h-[100px] ${valueCell}`}>
