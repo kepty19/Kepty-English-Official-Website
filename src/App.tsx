@@ -1095,11 +1095,6 @@ export default function App() {
               Kepty Englishの特徴
             </h2>
             <div className="w-16 h-1.5 bg-[#E55C29] mx-auto rounded-full"></div>
-            
-            <p className="text-[19px] sm:text-[23px] font-sans font-bold leading-relaxed text-neutral-900 tracking-wide text-center mt-10">
-              一般的な英語コーチングの価値に加え、<br />
-              我々は、独自の価値および機能も持ち合わせております。
-            </p>
           </div>
 
           {/* 01 & 02 Cards alongside Laptop mockup */}
@@ -1116,12 +1111,11 @@ export default function App() {
                       01
                     </span>
                     <h4 className="text-[18px] sm:text-[21px] font-extrabold text-neutral-950 font-serif tracking-tight leading-tight">
-                      Webアプリでの学習
+                      Webアプリの利用
                     </h4>
                   </div>
                   <p className="text-[14px] sm:text-[15.5px] font-bold text-neutral-600 leading-relaxed text-center">
-                    「移動中の時間」や「治療/ケアの時間」を、<br />
-                    効率的な英語学習時間へ変化させます。
+                    アプリによる手軽な学習により、「移動」や「治療」の時間をインプットの時間にできる。
                   </p>
                 </div>
               </div>
@@ -1134,12 +1128,11 @@ export default function App() {
                       02
                     </span>
                     <h4 className="text-[18px] sm:text-[21px] font-extrabold text-neutral-950 font-serif tracking-tight leading-tight">
-                      テクノロジーの有効活用
+                      オンライン英会話の実施
                     </h4>
                   </div>
                   <p className="text-[14px] sm:text-[15.5px] font-bold text-neutral-600 leading-relaxed text-center">
-                    より速く、より正確なフィードバックと、<br />
-                    より心地よい学習体験を実現します。
+                    英語に堪能なフィリピン人講師との英会話により、「実践的なスキル」を獲得できる。
                   </p>
                 </div>
               </div>
