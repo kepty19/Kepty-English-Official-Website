@@ -2224,7 +2224,6 @@ export default function App() {
                       <circle cx="50" cy="50" r="48" fill="#1C1C1C" stroke="url(#grad-y)" strokeWidth="2.5" />
                       <circle cx="50" cy="40" r="16" fill="url(#grad-y)" />
                       <path d="M25 75C30 62 40 55 50 55C60 55 70 62 75 75" stroke="#E55C29" strokeWidth="3" strokeLinecap="round" />
-                      <line x1="35" y1="40" x2="65" y2="40" stroke="white" strokeWidth="1" strokeDasharray="3 3" opacity="0.4" />
                     </svg>
                   </div>
                   <span className="text-base font-extrabold text-white font-sans tracking-wide">Yさん</span>
