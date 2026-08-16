@@ -1075,7 +1075,7 @@ export default function App() {
 
             {/* Note below card grid */}
             <p className="mt-12 text-center text-xs sm:text-[14px] font-bold text-neutral-500 leading-relaxed font-sans max-w-[720px] mx-auto select-none">
-              ※日々の学習は、単語や文法、シャドーイング、瞬間英作文、AIスピーキングなど、複数のトレーニングが存在
+              ※日々の学習は、単語や文法、シャドーイング、瞬間英作文、AIスピーキング、フィリピン人講師とのオンライン英会話など、複数のトレーニングが存在
             </p>
 
           </div>
