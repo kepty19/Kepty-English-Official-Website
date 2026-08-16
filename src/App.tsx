@@ -1019,7 +1019,7 @@ export default function App() {
               </span>
               <div className="flex-1">
                 <p className="text-[19px] sm:text-[23px] font-sans font-bold leading-relaxed text-neutral-900 tracking-wide text-left">
-                  徹底的な日々の伴走サポートを通して、<br className="hidden sm:inline" />「科学的かつ効率的な学習」を支援します。
+                  徹底的な日々の伴走サポートを通して、「科学的かつ効率的な学習」を支援します。
                 </p>
               </div>
             </div>
