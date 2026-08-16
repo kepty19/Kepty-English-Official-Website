@@ -1242,7 +1242,7 @@ export default function App() {
                 </h5>
               </div>
               <p className="text-[14px] sm:text-[16.5px] font-bold text-neutral-600 leading-relaxed text-center max-w-[760px] mx-auto mb-10">
-                <span className="text-[#E55C29] text-[16px] sm:text-[19px] font-black">「学習初期に習得すべき重要な本質と基礎」</span>だけを厳選し、それを確実に体得します。
+                <span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">学習初期に習得すべき重要な本質と基礎</span>だけを厳選し、それを確実に体得します。
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
@@ -1251,19 +1251,36 @@ export default function App() {
                     num: "01",
                     icon: Volume2,
                     title: "音の知覚・発音",
-                    body: "サッカーの「止めて、蹴る」と同様に、英語の音を正しく聞き取る、正しく発することは、英会話の最重要基礎。独学やアプリでは絶対に修正できない口・舌のフォームを、プロの耳で見極めて徹底補正します。",
+                    body: (
+                      <>
+                        <span className="text-[#E55C29] font-extrabold">英語の音を正しく聞き取る、正しく発することは、英会話の最重要基礎</span>
+                        。独学やアプリでは絶対に修正できない口・舌のフォームを、プロの耳で見極めて徹底補正します。
+                      </>
+                    ),
                   },
                   {
                     num: "02",
                     icon: MessageSquare,
                     title: "頻出のフレーズ",
-                    body: "ピッチ内、ピッチ外共に、実際の会話において使用・遭遇率が高い表現を絞り込み、優先的に脳にインストールします。",
+                    body: (
+                      <>
+                        ピッチ内、ピッチ外共に、
+                        <span className="text-[#E55C29] font-extrabold">実際の会話において使用・遭遇率が高い表現を絞り込み</span>
+                        、優先的に脳にインストールします。
+                      </>
+                    ),
                   },
                   {
                     num: "03",
                     icon: Speech,
                     title: "アウトプットの経験",
-                    body: "リアルな英会話を通して、インプット内容を「実践で使えるスキル」へ。そして「英会話への慣れ・自信」へと昇華させます。",
+                    body: (
+                      <>
+                        リアルな英会話を通して、インプット内容を「実践で使えるスキル」へ。そして
+                        <span className="text-[#E55C29] font-extrabold">「英会話への慣れ・自信」へと昇華</span>
+                        させます。
+                      </>
+                    ),
                   },
                 ].map((item) => {
                   const ItemIcon = item.icon;
@@ -1303,7 +1320,7 @@ export default function App() {
                 </h5>
               </div>
               <p className="text-[14px] sm:text-[16.5px] font-bold text-neutral-600 leading-relaxed text-center max-w-[760px] mx-auto mb-8">
-                ピンポイントでの課題特定と打ち手の実施により、より効率的な学習を実現します。
+                <span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">ピンポイントでの課題特定と打ち手の実施</span>により、より効率的な学習を実現します。
               </p>
 
             {/* Mobile-only horizontal scroll hint (top-left, not overlapping the figure) */}
