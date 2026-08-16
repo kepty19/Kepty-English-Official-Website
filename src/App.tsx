@@ -750,7 +750,7 @@ export default function App() {
               </span>
               <div className="flex-1">
                 <p className="text-[19px] sm:text-[23px] font-sans font-bold leading-relaxed text-neutral-900 tracking-wide text-left">
-                  科学的なアプローチの実現により、より「効率的かつ体系的」な学習を確立できます。
+                  科学的なアプローチの活用により、学習の「迷い」「停滞」「挫折」を解消できるから。
                 </p>
               </div>
             </div>
@@ -759,34 +759,32 @@ export default function App() {
             <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] md:grid-rows-[auto_1fr_1fr_1fr] gap-6 items-stretch mt-12 relative">
               
               {/* === LEFT COLUMN CONTENT === */}
-              {/* Left Column Header (Self-Study 独学) */}
+              {/* Left Column Header */}
               <div className="md:col-start-1 md:row-start-1 flex items-center gap-3 justify-center py-2.5 select-none">
-                <BookOpen className="w-5 h-5 sm:w-6 sm:h-6 text-neutral-500" />
-                <h3 className="text-lg sm:text-xl font-bold font-serif text-neutral-700 tracking-wider">
-                  独学の場合
+                <BookOpen className="w-5 h-5 sm:w-6 sm:h-6 text-neutral-500 shrink-0" />
+                <h3 className="text-lg sm:text-xl font-bold font-serif text-neutral-700 tracking-wider text-center leading-snug">
+                  多くの方が陥る「英語学習の壁」
                 </h3>
               </div>
 
               {/* Card 1 L */}
               <div className="md:col-start-1 md:row-start-2 bg-white border border-neutral-200/80 p-6 rounded-2xl shadow-sm text-center flex items-center justify-center min-h-[120px] hover:shadow-md transition-shadow">
                 <p className="text-[15px] sm:text-[16px] font-bold text-neutral-700 leading-relaxed text-left sm:text-center">
-                  自分の課題は「何」か、課題に対する<br />
-                  最適な学習は「何」か、わからない・・
+                  英語の重要性は理解しているが、何からどう手をつければ効率的か分からない
                 </p>
               </div>
 
               {/* Card 2 L */}
               <div className="md:col-start-1 md:row-start-3 bg-white border border-neutral-200/80 p-6 rounded-2xl shadow-sm text-center flex items-center justify-center min-h-[120px] hover:shadow-md transition-shadow">
                 <p className="text-[15px] sm:text-[16px] font-bold text-neutral-700 leading-relaxed text-left sm:text-center">
-                  英語学習の教材が多すぎて、「どのように」学習すると効率的なのか、わからない・・
+                  独学やオンライン英会話を試してみたが、成長を実感できず伸び悩んでいる
                 </p>
               </div>
 
               {/* Card 3 L */}
               <div className="md:col-start-1 md:row-start-4 bg-white border border-neutral-200/80 p-6 rounded-2xl shadow-sm text-center flex items-center justify-center min-h-[120px] hover:shadow-md transition-shadow">
                 <p className="text-[15px] sm:text-[16px] font-bold text-neutral-700 leading-relaxed text-left sm:text-center">
-                  頑張ると決めたのに、気がつくと、<br />
-                  「学習の強度」が落ちている・・
+                  遠い将来のための学習だからこそ、日々の学習強度が落ちて挫折してしまう
                 </p>
               </div>
 
@@ -794,32 +792,32 @@ export default function App() {
               <div className="md:hidden h-px bg-neutral-200/70 my-3" />
 
               {/* === RIGHT COLUMN CONTENT === */}
-              {/* Right Column Header (Coaching 英語コーチング) */}
+              {/* Right Column Header */}
               <div className="md:col-start-3 md:row-start-1 flex items-center gap-3 justify-center py-2.5 select-none">
-                <Users className="w-5 h-5 sm:w-6 sm:h-6 text-[#E55C29] animate-pulse" />
-                <h3 className="text-lg sm:text-xl font-black font-serif text-[#E55C29] tracking-wider">
-                  英語コーチングの場合
+                <Users className="w-5 h-5 sm:w-6 sm:h-6 text-[#E55C29] animate-pulse shrink-0" />
+                <h3 className="text-lg sm:text-xl font-black font-serif text-[#E55C29] tracking-wider text-center leading-snug">
+                  英語コーチングがもたらす変化
                 </h3>
               </div>
 
               {/* Card 1 R */}
               <div className="md:col-start-3 md:row-start-2 bg-white border border-[#E55C29]/25 p-6 rounded-2xl shadow-sm text-center flex items-center justify-center min-h-[120px] hover:shadow-md transition-shadow relative overflow-hidden group">
                 <p className="text-[15px] sm:text-[16px] font-bold text-neutral-800 leading-relaxed z-10 text-left sm:text-center">
-                  学習理論の活用により、「自分の課題は何か」「今、何をすべきか」がわかる！
+                  初級者には「一生モノの型」、中上級者には「的確な弱点特定」を提示。自分の現在地と「いま本当にやるべきこと」が明確になります。
                 </p>
               </div>
 
               {/* Card 2 R */}
               <div className="md:col-start-3 md:row-start-3 bg-white border border-[#E55C29]/25 p-6 rounded-2xl shadow-sm text-center flex items-center justify-center min-h-[120px] hover:shadow-md transition-shadow relative overflow-hidden group">
                 <p className="text-[15px] sm:text-[16px] font-bold text-neutral-800 leading-relaxed z-10 text-left sm:text-center">
-                  中長期プログラムの構築により、「順序立てた学習を迷いなく」進められる！
+                  科学的根拠に基づいたステップアップにより、ただこなすだけの学習から脱却。「上達している実証と手応え」を獲得できます。
                 </p>
               </div>
 
               {/* Card 3 R */}
               <div className="md:col-start-3 md:row-start-4 bg-white border border-[#E55C29]/25 p-6 rounded-2xl shadow-sm text-center flex items-center justify-center min-h-[120px] hover:shadow-md transition-shadow relative overflow-hidden group">
                 <p className="text-[15px] sm:text-[16px] font-bold text-neutral-800 leading-relaxed z-10 text-left sm:text-center">
-                  緻密なサービス設計により、「根性に頼らない継続」を実施できる！
+                  必要な要素だけに徹底的に絞り込み、「2ヶ月」という期限を区切って集中アプローチ。遠い将来の目標でも中だるみせず、高い強度のまま最後までやり切ることができます。
                 </p>
               </div>
 
