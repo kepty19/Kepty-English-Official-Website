@@ -1894,7 +1894,7 @@ export default function App() {
             </h2>
             <div className="w-16 h-1.5 bg-[#E55C29] mx-auto rounded-full"></div>
             <p className="text-center text-neutral-800 text-[14px] sm:text-[17px] font-bold tracking-wider leading-relaxed mt-10 font-serif max-w-[800px] mx-auto">
-              「一部の限られた選手だけでなく、全ての選手へ、プロフェッショナルな英語コーチングを。」<br />この思想を実現するために、我々は「高品質」かつ「相場よりも圧倒的に低価格」にこだわります。
+              「一部の限られた選手だけでなく、全ての選手へ、プロフェッショナルな英語コーチングを。」<br />この思想を実現するために、我々は「高品質」かつ「相場よりも低価格」にこだわります。
             </p>
           </div>
 
@@ -2087,22 +2087,18 @@ export default function App() {
               {(() => {
                 const plans = [
                   {
-                    name: 'Standard',
-                    contents: ['英語コーチングプログラム'],
-                    price6m: '258,800円',
-                    effectiveMonthly: '9,800円',
+                    name: 'スタンダードプラン',
+                    period: '（最初の2ヶ月間）',
+                    learningStyle: 'パーソナルトレーナーと共に進める「伴走学習」',
+                    price: '2ヶ月合計 219,660円',
+                    subsidyNote: '※支援制度活用 → 実質月額9,800円',
                   },
                   {
-                    name: 'Premium',
-                    contents: ['英語コーチングプログラム', 'オンライン英会話'],
-                    price6m: '298,800円',
-                    effectiveMonthly: '16,466円',
-                  },
-                  {
-                    name: 'Luxuary',
-                    contents: ['英語コーチングプログラム', 'オンライン英会話', '追加の最新ICT教材'],
-                    price6m: '348,800円',
-                    effectiveMonthly: '24,800円',
+                    name: 'リピートプラン',
+                    period: '（3ヶ月目以降）',
+                    learningStyle: '自分自身で学習を進める「自走学習」',
+                    price: '月額 16,466円',
+                    subsidyNote: null,
                   },
                 ] as const;
 
@@ -2114,49 +2110,44 @@ export default function App() {
                   'rounded-xl sm:rounded-2xl bg-white border border-[#DFEC9F] px-1.5 py-2 sm:p-2.5 flex items-center justify-center shadow-xs';
 
                 return (
-                  <div className="min-w-[700px] max-w-[900px] md:mx-auto flex gap-1.5 sm:gap-3 py-1">
+                  <div className="min-w-[560px] max-w-[800px] md:mx-auto flex gap-1.5 sm:gap-3 py-1">
                     {/* Sticky labels */}
                     <div className="sticky left-0 z-20 w-[108px] sm:w-[160px] shrink-0 flex flex-col gap-2.5 sm:gap-3 bg-white pr-1 sm:pr-3 border-r border-[#DFEC9F]">
-                      <div className={`h-[58px] sm:h-[68px] ${headerCell}`} />
-                      <div className={`min-h-[100px] sm:min-h-[112px] ${labelCell}`}>
+                      <div className={`h-[68px] sm:h-[76px] ${headerCell}`} />
+                      <div className={`min-h-[88px] sm:min-h-[100px] ${labelCell}`}>
                         <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
-                          提供内容
+                          学習形態
                         </span>
                       </div>
                       <div className={`h-[72px] sm:h-[80px] ${labelCell}`}>
                         <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
-                          価格（6ヶ月）
+                          価格
                         </span>
                       </div>
                     </div>
 
                     {/* Plan columns */}
                     {plans.map((plan) => (
-                      <div key={plan.name} className="flex-1 w-[180px] sm:w-[220px] shrink-0 flex flex-col gap-2.5 sm:gap-3">
-                        <div className={`h-[58px] sm:h-[68px] ${headerCell}`}>
-                          <span className="text-[13px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
-                            {plan.name}
+                      <div key={plan.name} className="flex-1 w-[200px] sm:w-[260px] shrink-0 flex flex-col gap-2.5 sm:gap-3">
+                        <div className={`h-[68px] sm:h-[76px] ${headerCell}`}>
+                          <span className="text-[13px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight whitespace-pre-line">
+                            {`${plan.name}\n${plan.period}`}
                           </span>
                         </div>
-                        <div className={`min-h-[100px] sm:min-h-[112px] ${valueCell}`}>
-                          <ul className="flex flex-col items-start justify-center gap-0.5 w-full text-left px-1">
-                            {plan.contents.map((item) => (
-                              <li
-                                key={item}
-                                className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans leading-snug"
-                              >
-                                ・{item}
-                              </li>
-                            ))}
-                          </ul>
+                        <div className={`min-h-[88px] sm:min-h-[100px] ${valueCell}`}>
+                          <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-snug px-1">
+                            {plan.learningStyle}
+                          </span>
                         </div>
                         <div className={`h-[72px] sm:h-[80px] flex-col gap-1.5 ${valueCell}`}>
                           <span className="text-[13px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans text-center leading-none">
-                            {plan.price6m}
+                            {plan.price}
                           </span>
-                          <span className="text-[9px] sm:text-[11px] font-bold text-[#E55C29] font-sans text-center whitespace-nowrap tracking-tight leading-none">
-                            ※支援制度活用 → 実質月額{plan.effectiveMonthly}
-                          </span>
+                          {plan.subsidyNote && (
+                            <span className="text-[9px] sm:text-[11px] font-bold text-[#E55C29] font-sans text-center whitespace-nowrap tracking-tight leading-none">
+                              {plan.subsidyNote}
+                            </span>
+                          )}
                         </div>
                       </div>
                     ))}
