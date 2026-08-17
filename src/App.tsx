@@ -26,7 +26,8 @@ import {
   Database,
   Ear,
   Speech,
-  MessageSquare
+  MessageSquare,
+  ArrowRight
 } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { HeroTechVisual, HeroTechVisualMobile } from './components/HeroTechVisual';
@@ -1302,7 +1303,7 @@ export default function App() {
                   return (
                     <div
                       key={item.num}
-                      className="relative bg-[#faf8ff] rounded-2xl p-5 sm:p-6 border border-purple-100/50 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-center text-center"
+                      className="relative bg-[#fbf8f3] rounded-2xl p-5 sm:p-6 border border-[#eee6d9] shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-center text-center"
                     >
                       <div className="relative mb-4">
                         <div className="w-[84px] h-[84px] rounded-full bg-neutral-900 text-white flex items-center justify-center shadow-lg">
@@ -1466,6 +1467,68 @@ export default function App() {
             </div>
 
           </div>
+
+              {/* Challenge → Training protocol map */}
+              <div className="mt-10 max-w-[720px] mx-auto">
+                <div className="rounded-2xl border border-[#eee6d9] bg-[#fbf8f3] overflow-hidden shadow-sm">
+                  <div className="grid grid-cols-[minmax(0,1fr)_28px_minmax(0,1.2fr)] sm:grid-cols-[minmax(0,1fr)_48px_minmax(0,1.25fr)] bg-neutral-950 text-white">
+                    <div className="px-3 sm:px-5 py-3.5 text-center">
+                      <span className="block text-[8.5px] sm:text-[9.5px] font-black tracking-[0.22em] uppercase text-white/35 mb-1">Challenge</span>
+                      <span className="text-[12.5px] sm:text-[14.5px] font-extrabold font-serif tracking-tight">どの課題に対して</span>
+                    </div>
+                    <div aria-hidden />
+                    <div className="px-3 sm:px-5 py-3.5 text-center">
+                      <span className="block text-[8.5px] sm:text-[9.5px] font-black tracking-[0.22em] uppercase text-[#E55C29] mb-1">Training</span>
+                      <span className="text-[12.5px] sm:text-[14.5px] font-extrabold font-serif tracking-tight">なんのトレーニングをするか</span>
+                    </div>
+                  </div>
+
+                  {[
+                    { step: "01", icon: Headphones, challenge: "音声知覚", trainings: ["シャドーイング"] },
+                    { step: "02", icon: BookOpen, challenge: "意味理解", trainings: ["リーディング"] },
+                    { step: "03", icon: Brain, challenge: "概念化", trainings: ["トピックトーク"] },
+                    { step: "04", icon: FileText, challenge: "文章化", trainings: ["スピーキングフォーム", "瞬間英作文"] },
+                    { step: "05", icon: Mic, challenge: "音声化", trainings: ["発音"] },
+                  ].map((row, i, arr) => {
+                    const RowIcon = row.icon;
+                    return (
+                      <div
+                        key={row.step}
+                        className={`grid grid-cols-[minmax(0,1fr)_28px_minmax(0,1.2fr)] sm:grid-cols-[minmax(0,1fr)_48px_minmax(0,1.25fr)] items-center ${
+                          i < arr.length - 1 ? "border-b border-[#eee6d9]" : ""
+                        } ${i % 2 === 1 ? "bg-white/70" : ""}`}
+                      >
+                        <div className="flex items-center gap-2 sm:gap-3 px-3 sm:px-5 py-3.5 sm:py-4 min-w-0">
+                          <span className="shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-neutral-950 text-white text-[10px] sm:text-[11px] font-black font-mono flex items-center justify-center">
+                            {row.step}
+                          </span>
+                          <div className="hidden sm:flex w-10 h-10 rounded-xl bg-white border border-[#eee6d9] shadow-sm items-center justify-center text-neutral-950 shrink-0">
+                            <RowIcon className="w-5 h-5" />
+                          </div>
+                          <span className="text-[13px] sm:text-[15.5px] font-extrabold text-neutral-950 font-serif tracking-wide truncate">
+                            {row.challenge}
+                          </span>
+                        </div>
+
+                        <div className="flex items-center justify-center">
+                          <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-[#E55C29]" strokeWidth={2.75} />
+                        </div>
+
+                        <div className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-1.5 sm:gap-2 px-2.5 sm:px-5 py-3.5 sm:py-4">
+                          {row.trainings.map((name) => (
+                            <span
+                              key={name}
+                              className="inline-flex items-center bg-white text-neutral-900 text-[11.5px] sm:text-[13.5px] font-extrabold tracking-wide px-2 sm:px-3 py-1.5 rounded-lg border border-[#eee6d9] shadow-sm"
+                            >
+                              {name}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
 
             </div>
 
