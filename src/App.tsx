@@ -1337,24 +1337,30 @@ export default function App() {
                       <h6 className="text-[15.5px] sm:text-[17px] font-extrabold text-neutral-950 font-serif tracking-wide mb-4">
                         {item.title}
                       </h6>
-                      <div className="w-full flex flex-col gap-4 text-left">
-                        <div className="flex flex-col gap-1.5">
-                          <div className="flex items-center gap-2">
-                            <span className="text-[11px] font-extrabold font-sans tracking-wide text-[#E55C29] shrink-0">
+                      <div className="w-full flex flex-col gap-5 text-left">
+                        <div className="flex flex-col gap-2">
+                          <div className="flex items-end gap-2.5 pb-2 border-b border-neutral-200/80">
+                            <span className="w-[3px] h-4 rounded-full bg-[#E55C29] shrink-0 mb-[3px]" aria-hidden />
+                            <span className="text-[13.5px] sm:text-[14.5px] font-black text-neutral-950 font-serif tracking-wide leading-none">
                               取り組み
                             </span>
-                            <span className="h-[1px] flex-1 bg-[#f0ece6]"></span>
+                            <span className="text-[9.5px] font-mono font-bold tracking-[0.22em] text-neutral-400 uppercase leading-none pb-[1px]">
+                              Approach
+                            </span>
                           </div>
                           <p className="text-[13px] sm:text-[14px] font-medium text-neutral-600 leading-relaxed">
                             {item.approach}
                           </p>
                         </div>
-                        <div className="flex flex-col gap-1.5">
-                          <div className="flex items-center gap-2">
-                            <span className="text-[11px] font-extrabold font-sans tracking-wide text-[#E55C29] shrink-0">
+                        <div className="flex flex-col gap-2">
+                          <div className="flex items-end gap-2.5 pb-2 border-b border-neutral-200/80">
+                            <span className="w-[3px] h-4 rounded-full bg-[#E55C29] shrink-0 mb-[3px]" aria-hidden />
+                            <span className="text-[13.5px] sm:text-[14.5px] font-black text-neutral-950 font-serif tracking-wide leading-none">
                               得られる効能
                             </span>
-                            <span className="h-[1px] flex-1 bg-[#f0ece6]"></span>
+                            <span className="text-[9.5px] font-mono font-bold tracking-[0.22em] text-neutral-400 uppercase leading-none pb-[1px]">
+                              Effect
+                            </span>
                           </div>
                           <p className="text-[13px] sm:text-[14px] font-medium text-neutral-600 leading-relaxed">
                             {item.effect}
@@ -1511,51 +1517,55 @@ export default function App() {
           </div>
 
               {/* Challenge → Training protocol map */}
-              <div className="mt-10 max-w-[720px] mx-auto">
-                <div className="rounded-2xl border border-[#f0ece6] bg-[#fefdfb] overflow-hidden shadow-sm">
-                  <div className="grid grid-cols-[minmax(0,1fr)_28px_minmax(0,1.2fr)] sm:grid-cols-[minmax(0,1fr)_48px_minmax(0,1.25fr)] bg-neutral-800 text-white">
-                    <div className="px-3 sm:px-5 py-3.5 text-center">
-                      <span className="text-[12.5px] sm:text-[14.5px] font-extrabold font-serif tracking-tight">課題</span>
-                    </div>
-                    <div aria-hidden />
-                    <div className="px-3 sm:px-5 py-3.5 text-center">
-                      <span className="text-[12.5px] sm:text-[14.5px] font-extrabold font-serif tracking-tight">トレーニング</span>
-                    </div>
+              <div className="mt-10 max-w-[760px] mx-auto">
+                <div className="grid grid-cols-[minmax(0,1fr)_40px_minmax(0,1.15fr)] sm:grid-cols-[minmax(0,1fr)_48px_minmax(0,1.2fr)] items-end px-1 sm:px-2 mb-3">
+                  <div className="flex items-end gap-2 pb-2 border-b border-neutral-200/80">
+                    <span className="w-[3px] h-3.5 rounded-full bg-[#E55C29] shrink-0 mb-[2px]" aria-hidden />
+                    <span className="text-[13px] sm:text-[14px] font-black text-neutral-950 font-serif tracking-wide leading-none">課題</span>
+                    <span className="hidden sm:inline text-[9.5px] font-mono font-bold tracking-[0.22em] text-neutral-400 uppercase leading-none pb-[1px]">Challenge</span>
                   </div>
+                  <div aria-hidden />
+                  <div className="flex items-end gap-2 pb-2 border-b border-neutral-200/80">
+                    <span className="w-[3px] h-3.5 rounded-full bg-[#E55C29] shrink-0 mb-[2px]" aria-hidden />
+                    <span className="text-[13px] sm:text-[14px] font-black text-neutral-950 font-serif tracking-wide leading-none">トレーニング</span>
+                    <span className="hidden sm:inline text-[9.5px] font-mono font-bold tracking-[0.22em] text-neutral-400 uppercase leading-none pb-[1px]">Training</span>
+                  </div>
+                </div>
 
+                <div className="space-y-2.5">
                   {[
                     { step: "01", icon: Headphones, challenge: "音声知覚", training: "シャドーイング" },
                     { step: "02", icon: BookOpen, challenge: "意味理解", training: "リーディング" },
                     { step: "03", icon: Brain, challenge: "概念化", training: "トピックトーク" },
                     { step: "04", icon: FileText, challenge: "文章化", training: "瞬間英作文" },
                     { step: "05", icon: Mic, challenge: "音声化", training: "発音" },
-                  ].map((row, i, arr) => {
+                  ].map((row) => {
                     const RowIcon = row.icon;
                     return (
                       <div
                         key={row.step}
-                        className={`grid grid-cols-[minmax(0,1fr)_28px_minmax(0,1.2fr)] sm:grid-cols-[minmax(0,1fr)_48px_minmax(0,1.25fr)] items-center ${
-                          i < arr.length - 1 ? "border-b border-[#f0ece6]" : ""
-                        } ${i % 2 === 1 ? "bg-white/70" : ""}`}
+                        className="group grid grid-cols-[minmax(0,1fr)_40px_minmax(0,1.15fr)] sm:grid-cols-[minmax(0,1fr)_48px_minmax(0,1.2fr)] items-center rounded-2xl bg-[#fefdfb] border border-[#f0ece6] shadow-sm hover:shadow-md hover:border-[#E55C29]/25 transition-all duration-300 px-3 sm:px-4 py-3 sm:py-3.5"
                       >
-                        <div className="flex items-center gap-2 sm:gap-3 px-3 sm:px-5 py-3.5 sm:py-4 min-w-0">
+                        <div className="flex items-center gap-2 sm:gap-3 min-w-0">
                           <span className="shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-neutral-950 text-white text-[10px] sm:text-[11px] font-black font-mono flex items-center justify-center">
                             {row.step}
                           </span>
-                          <div className="hidden sm:flex w-10 h-10 rounded-xl bg-white border border-[#f0ece6] shadow-sm items-center justify-center text-neutral-950 shrink-0">
+                          <div className="hidden sm:flex w-10 h-10 rounded-xl bg-white border border-[#f0ece6] shadow-sm items-center justify-center text-neutral-950 shrink-0 group-hover:text-[#E55C29] group-hover:border-[#E55C29]/40 transition-colors">
                             <RowIcon className="w-5 h-5" />
                           </div>
-                          <span className="text-[13px] sm:text-[15.5px] font-extrabold text-neutral-950 font-serif tracking-wide truncate">
+                          <span className="text-[13.5px] sm:text-[15.5px] font-extrabold text-neutral-950 font-serif tracking-wide truncate">
                             {row.challenge}
                           </span>
                         </div>
 
                         <div className="flex items-center justify-center">
-                          <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-[#E55C29]" strokeWidth={2.75} />
+                          <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white border border-[#f0ece6] shadow-sm flex items-center justify-center group-hover:border-[#E55C29]/30 transition-colors">
+                            <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#E55C29]" strokeWidth={2.75} />
+                          </div>
                         </div>
 
-                        <div className="px-2.5 sm:px-5 py-3.5 sm:py-4">
-                          <span className="text-[13px] sm:text-[15.5px] font-extrabold text-neutral-950 font-serif tracking-wide">
+                        <div className="min-w-0">
+                          <span className="inline-flex w-full items-center rounded-xl bg-white border border-[#f0ece6] shadow-sm px-3 sm:px-4 py-2 text-[13.5px] sm:text-[15.5px] font-extrabold text-neutral-950 font-serif tracking-wide">
                             {row.training}
                           </span>
                         </div>
