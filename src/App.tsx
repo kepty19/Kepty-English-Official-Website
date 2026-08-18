@@ -1303,7 +1303,7 @@ export default function App() {
                   {
                     num: "03",
                     icon: Speech,
-                    title: "アウトプットの経験",
+                    title: "実践的な英会話",
                     approach: (
                       <>
                         リアルな相手との英会話を通して、知識を
@@ -1553,7 +1553,7 @@ export default function App() {
                         </div>
 
                         <div className="min-w-0">
-                          <span className="inline-flex w-full items-center rounded-xl bg-white border border-[#f0ece6] shadow-sm px-3 sm:px-4 py-2 text-[13.5px] sm:text-[15.5px] font-extrabold text-neutral-950 font-serif tracking-wide">
+                          <span className="text-[13.5px] sm:text-[15.5px] font-extrabold text-neutral-950 font-serif tracking-wide">
                             {row.training}
                           </span>
                         </div>
