@@ -1303,7 +1303,7 @@ export default function App() {
                   return (
                     <div
                       key={item.num}
-                      className="relative bg-[#fbf8f3] rounded-2xl p-5 sm:p-6 border border-[#eee6d9] shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-center text-center"
+                      className="relative bg-[#fefdfb] rounded-2xl p-5 sm:p-6 border border-[#f0ece6] shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-center text-center"
                     >
                       <div className="relative mb-4">
                         <div className="w-[84px] h-[84px] rounded-full bg-neutral-900 text-white flex items-center justify-center shadow-lg">
@@ -1470,16 +1470,14 @@ export default function App() {
 
               {/* Challenge → Training protocol map */}
               <div className="mt-10 max-w-[720px] mx-auto">
-                <div className="rounded-2xl border border-[#eee6d9] bg-[#fbf8f3] overflow-hidden shadow-sm">
+                <div className="rounded-2xl border border-[#f0ece6] bg-[#fefdfb] overflow-hidden shadow-sm">
                   <div className="grid grid-cols-[minmax(0,1fr)_28px_minmax(0,1.2fr)] sm:grid-cols-[minmax(0,1fr)_48px_minmax(0,1.25fr)] bg-neutral-950 text-white">
                     <div className="px-3 sm:px-5 py-3.5 text-center">
-                      <span className="block text-[8.5px] sm:text-[9.5px] font-black tracking-[0.22em] uppercase text-white/35 mb-1">Challenge</span>
                       <span className="text-[12.5px] sm:text-[14.5px] font-extrabold font-serif tracking-tight">どの課題に対して</span>
                     </div>
                     <div aria-hidden />
                     <div className="px-3 sm:px-5 py-3.5 text-center">
-                      <span className="block text-[8.5px] sm:text-[9.5px] font-black tracking-[0.22em] uppercase text-[#E55C29] mb-1">Training</span>
-                      <span className="text-[12.5px] sm:text-[14.5px] font-extrabold font-serif tracking-tight">なんのトレーニングをするか</span>
+                      <span className="text-[12.5px] sm:text-[14.5px] font-extrabold font-serif tracking-tight">どのトレーニングを実施するか</span>
                     </div>
                   </div>
 
@@ -1495,14 +1493,14 @@ export default function App() {
                       <div
                         key={row.step}
                         className={`grid grid-cols-[minmax(0,1fr)_28px_minmax(0,1.2fr)] sm:grid-cols-[minmax(0,1fr)_48px_minmax(0,1.25fr)] items-center ${
-                          i < arr.length - 1 ? "border-b border-[#eee6d9]" : ""
+                          i < arr.length - 1 ? "border-b border-[#f0ece6]" : ""
                         } ${i % 2 === 1 ? "bg-white/70" : ""}`}
                       >
                         <div className="flex items-center gap-2 sm:gap-3 px-3 sm:px-5 py-3.5 sm:py-4 min-w-0">
                           <span className="shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-neutral-950 text-white text-[10px] sm:text-[11px] font-black font-mono flex items-center justify-center">
                             {row.step}
                           </span>
-                          <div className="hidden sm:flex w-10 h-10 rounded-xl bg-white border border-[#eee6d9] shadow-sm items-center justify-center text-neutral-950 shrink-0">
+                          <div className="hidden sm:flex w-10 h-10 rounded-xl bg-white border border-[#f0ece6] shadow-sm items-center justify-center text-neutral-950 shrink-0">
                             <RowIcon className="w-5 h-5" />
                           </div>
                           <span className="text-[13px] sm:text-[15.5px] font-extrabold text-neutral-950 font-serif tracking-wide truncate">
@@ -1518,7 +1516,7 @@ export default function App() {
                           {row.trainings.map((name) => (
                             <span
                               key={name}
-                              className="inline-flex items-center bg-white text-neutral-900 text-[11.5px] sm:text-[13.5px] font-extrabold tracking-wide px-2 sm:px-3 py-1.5 rounded-lg border border-[#eee6d9] shadow-sm"
+                              className="inline-flex items-center bg-white text-neutral-900 text-[11.5px] sm:text-[13.5px] font-extrabold tracking-wide px-2 sm:px-3 py-1.5 rounded-lg border border-[#f0ece6] shadow-sm"
                             >
                               {name}
                             </span>
