@@ -751,7 +751,7 @@ export default function App() {
                         中上級フェーズ（課題克服）
                       </p>
                       <p className="text-[14.5px] sm:text-[15.5px] leading-[1.8] text-neutral-700 font-medium text-left">
-                        実践（英会話）で見えた課題を科学的に特定し、弱点に対してピンポイントで外科手術的に補強する。
+                        現状の課題を的確に特定し、弱点に対してピンポイントで打ち手のトレーニングを実施する。
                       </p>
                     </div>
                   </div>
@@ -839,7 +839,7 @@ export default function App() {
               {/* Card 3 R */}
               <div className="md:col-start-3 md:row-start-4 bg-white border border-[#E55C29]/25 p-6 rounded-2xl shadow-sm text-center flex items-center justify-center min-h-[120px] hover:shadow-md transition-shadow relative overflow-hidden group">
                 <p className="text-[15px] sm:text-[16px] font-bold text-neutral-800 leading-relaxed z-10 text-left sm:text-center">
-                  期限を区切って集中アプローチ。学習の中だるみせず、高い強度のまま最後までやり切ることができる！
+                  期限を区切って集中アプローチ。学習の中だるみを防ぎ、高い強度のまま最後までやり切ることができる！
                 </p>
               </div>
 
@@ -2261,6 +2261,15 @@ export default function App() {
                     name: 'スタンダードプラン',
                     period: '（最初の2ヶ月間）',
                     learningStyle: 'パーソナルトレーナーと共に進める「伴走学習」',
+                    contents: [
+                      '学習計画プログラム',
+                      '学習用Webアプリ',
+                      'オンライン英会話',
+                      '日々の課題添削とフィードバック',
+                      'チャットサポート',
+                      '徹底的なパーソナル伴走サポート',
+                      '週次/隔週の定例',
+                    ],
                     price: '2ヶ月合計 219,660円',
                     subsidyNote: '※支援制度活用 → 実質月額9,800円',
                   },
@@ -2268,6 +2277,13 @@ export default function App() {
                     name: 'リピートプラン',
                     period: '（3ヶ月目以降）',
                     learningStyle: '自分自身で学習を進める「自走学習」',
+                    contents: [
+                      '学習計画プログラム',
+                      '学習用Webアプリ',
+                      'オンライン英会話',
+                      '日々の課題添削とフィードバック',
+                      'チャットサポート',
+                    ],
                     price: '月額 16,500円',
                     subsidyNote: null,
                   },
@@ -2279,6 +2295,8 @@ export default function App() {
                   'rounded-xl sm:rounded-2xl bg-gradient-to-b from-[#EFF7CE] to-[#DFEC9F] border border-[#CDDF85] px-1.5 py-1.5 sm:p-2 flex items-center justify-center shadow-xs';
                 const valueCell =
                   'rounded-xl sm:rounded-2xl bg-white border border-[#DFEC9F] px-1.5 py-2 sm:p-2.5 flex items-center justify-center shadow-xs';
+                const contentsValueCell =
+                  'rounded-xl sm:rounded-2xl bg-white border border-[#DFEC9F] px-1.5 py-2.5 sm:p-3 flex items-start justify-start shadow-xs';
 
                 return (
                   <div className="min-w-[560px] max-w-[800px] md:mx-auto flex gap-1.5 sm:gap-3 py-1">
@@ -2288,6 +2306,11 @@ export default function App() {
                       <div className={`min-h-[88px] sm:min-h-[100px] ${labelCell}`}>
                         <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
                           学習形態
+                        </span>
+                      </div>
+                      <div className={`min-h-[196px] sm:min-h-[220px] ${labelCell}`}>
+                        <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
+                          提供内容
                         </span>
                       </div>
                       <div className={`h-[72px] sm:h-[80px] ${labelCell}`}>
@@ -2312,6 +2335,19 @@ export default function App() {
                           <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-snug px-1">
                             {plan.learningStyle}
                           </span>
+                        </div>
+                        <div className={`min-h-[196px] sm:min-h-[220px] ${contentsValueCell}`}>
+                          <ul className="w-full text-left space-y-1 px-1.5 sm:px-2.5 py-1">
+                            {plan.contents.map((item) => (
+                              <li
+                                key={item}
+                                className="text-[10.5px] sm:text-[12.5px] font-extrabold text-[#1a1a1a] font-sans leading-snug flex gap-1"
+                              >
+                                <span className="shrink-0">・</span>
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
                         </div>
                         <div className={`h-[72px] sm:h-[80px] flex-col gap-1.5 ${valueCell}`}>
                           <span className="text-[13px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans text-center leading-none">
