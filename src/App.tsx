@@ -2296,7 +2296,7 @@ export default function App() {
                 const valueCell =
                   'rounded-xl sm:rounded-2xl bg-white border border-[#DFEC9F] px-1.5 py-2 sm:p-2.5 flex items-center justify-center shadow-xs';
                 const contentsValueCell =
-                  'rounded-xl sm:rounded-2xl bg-white border border-[#DFEC9F] px-1.5 py-2.5 sm:p-3 flex items-start justify-start shadow-xs';
+                  'rounded-xl sm:rounded-2xl bg-white border border-[#DFEC9F] px-1.5 py-2.5 sm:p-3 flex items-center shadow-xs';
 
                 return (
                   <div className="min-w-[560px] max-w-[800px] md:mx-auto flex gap-1.5 sm:gap-3 py-1">
