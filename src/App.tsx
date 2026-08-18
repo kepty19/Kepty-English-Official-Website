@@ -1471,22 +1471,22 @@ export default function App() {
               {/* Challenge → Training protocol map */}
               <div className="mt-10 max-w-[720px] mx-auto">
                 <div className="rounded-2xl border border-[#f0ece6] bg-[#fefdfb] overflow-hidden shadow-sm">
-                  <div className="grid grid-cols-[minmax(0,1fr)_28px_minmax(0,1.2fr)] sm:grid-cols-[minmax(0,1fr)_48px_minmax(0,1.25fr)] bg-neutral-950 text-white">
+                  <div className="grid grid-cols-[minmax(0,1fr)_28px_minmax(0,1.2fr)] sm:grid-cols-[minmax(0,1fr)_48px_minmax(0,1.25fr)] bg-neutral-800 text-white">
                     <div className="px-3 sm:px-5 py-3.5 text-center">
-                      <span className="text-[12.5px] sm:text-[14.5px] font-extrabold font-serif tracking-tight">どの課題に対して</span>
+                      <span className="text-[12.5px] sm:text-[14.5px] font-extrabold font-serif tracking-tight">課題</span>
                     </div>
                     <div aria-hidden />
                     <div className="px-3 sm:px-5 py-3.5 text-center">
-                      <span className="text-[12.5px] sm:text-[14.5px] font-extrabold font-serif tracking-tight">どのトレーニングを実施するか</span>
+                      <span className="text-[12.5px] sm:text-[14.5px] font-extrabold font-serif tracking-tight">トレーニング</span>
                     </div>
                   </div>
 
                   {[
-                    { step: "01", icon: Headphones, challenge: "音声知覚", trainings: ["シャドーイング"] },
-                    { step: "02", icon: BookOpen, challenge: "意味理解", trainings: ["リーディング"] },
-                    { step: "03", icon: Brain, challenge: "概念化", trainings: ["トピックトーク"] },
-                    { step: "04", icon: FileText, challenge: "文章化", trainings: ["スピーキングフォーム", "瞬間英作文"] },
-                    { step: "05", icon: Mic, challenge: "音声化", trainings: ["発音"] },
+                    { step: "01", icon: Headphones, challenge: "音声知覚", training: "シャドーイング" },
+                    { step: "02", icon: BookOpen, challenge: "意味理解", training: "リーディング" },
+                    { step: "03", icon: Brain, challenge: "概念化", training: "トピックトーク" },
+                    { step: "04", icon: FileText, challenge: "文章化", training: "瞬間英作文" },
+                    { step: "05", icon: Mic, challenge: "音声化", training: "発音" },
                   ].map((row, i, arr) => {
                     const RowIcon = row.icon;
                     return (
@@ -1512,15 +1512,10 @@ export default function App() {
                           <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-[#E55C29]" strokeWidth={2.75} />
                         </div>
 
-                        <div className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-1.5 sm:gap-2 px-2.5 sm:px-5 py-3.5 sm:py-4">
-                          {row.trainings.map((name) => (
-                            <span
-                              key={name}
-                              className="inline-flex items-center bg-white text-neutral-900 text-[11.5px] sm:text-[13.5px] font-extrabold tracking-wide px-2 sm:px-3 py-1.5 rounded-lg border border-[#f0ece6] shadow-sm"
-                            >
-                              {name}
-                            </span>
-                          ))}
+                        <div className="px-2.5 sm:px-5 py-3.5 sm:py-4">
+                          <span className="text-[13px] sm:text-[15.5px] font-extrabold text-neutral-950 font-serif tracking-wide">
+                            {row.training}
+                          </span>
                         </div>
                       </div>
                     );
@@ -2017,7 +2012,7 @@ export default function App() {
               </div>
 
               {/* Why 2 months */}
-              <div className="bg-[#faf8ff] rounded-3xl p-6 sm:p-8 border border-purple-100/50">
+              <div className="bg-[#fefdfb] rounded-3xl p-6 sm:p-8 border border-[#f0ece6]">
                 <h6 className="text-center text-[16px] sm:text-[18px] font-extrabold text-neutral-950 font-serif tracking-wide mb-8">
                   なぜ「2ヶ月」でフェーズを変えるのか？
                 </h6>
