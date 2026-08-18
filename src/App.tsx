@@ -1267,10 +1267,17 @@ export default function App() {
                     num: "01",
                     icon: Volume2,
                     title: "音の知覚・発音",
-                    body: (
+                    approach: (
                       <>
                         <span className="text-[#E55C29] font-extrabold">英語の音を正しく聞き取る、正しく発することは、英会話の最重要基礎</span>
-                        。独学やアプリでは絶対に修正できない口・舌のフォームを、プロの耳で見極めて徹底補正します。
+                        。独学やアプリ学習のみでは困難な口・舌・喉の使い方を徹底補正します。
+                      </>
+                    ),
+                    effect: (
+                      <>
+                        「正しい発音」を体得することで、リスニング・スピーキングは最短で上達していきます。ここを曖昧にしたまま学習を積み上げても、将来必ず行き詰まり、
+                        <span className="text-[#E55C29] font-extrabold">結局振り出しに戻って矯正し直す無駄が発生します</span>
+                        。
                       </>
                     ),
                   },
@@ -1278,11 +1285,18 @@ export default function App() {
                     num: "02",
                     icon: MessageSquare,
                     title: "頻出のフレーズ",
-                    body: (
+                    approach: (
                       <>
-                        ピッチ内、ピッチ外共に、
-                        <span className="text-[#E55C29] font-extrabold">実際の会話において使用・遭遇率が高い表現を絞り込み</span>
-                        、優先的に脳にインストールします。
+                        ピッチ内外において
+                        <span className="text-[#E55C29] font-extrabold">遭遇率・使用率が高い表現だけに絞り込み</span>
+                        、優先的に脳へインストールします。
+                      </>
+                    ),
+                    effect: (
+                      <>
+                        守破離でいう「守（基本の型）」が早期に出来上がり、実戦で「使えた！」という成功体験を最速で獲得できます。
+                        <span className="text-[#E55C29] font-extrabold">確固たる型（軸足）があるからこそ</span>
+                        、その後の応用や表現の派生にも迷わず進むことができます。
                       </>
                     ),
                   },
@@ -1290,11 +1304,18 @@ export default function App() {
                     num: "03",
                     icon: Speech,
                     title: "アウトプットの経験",
-                    body: (
+                    approach: (
                       <>
-                        リアルな英会話を通して、インプット内容を「実践で使えるスキル」へ。そして
-                        <span className="text-[#E55C29] font-extrabold">「英会話への慣れ・自信」へと昇華</span>
+                        リアルな相手との英会話を通して、知識を
+                        <span className="text-[#E55C29] font-extrabold">「実戦で使えるスキル」へと昇華</span>
                         させます。
+                      </>
+                    ),
+                    effect: (
+                      <>
+                        AI相手の練習では得られない相手のリアルな反応や表情を体感し、無意識にかかる
+                        <span className="text-[#E55C29] font-extrabold">「英語を話す恐怖心や心理的ブロック」を打破</span>
+                        します。実戦の場で堂々と話せる、本物の慣れと自信が手に入ります。
                       </>
                     ),
                   },
@@ -1313,12 +1334,33 @@ export default function App() {
                           {item.num}
                         </span>
                       </div>
-                      <h6 className="text-[15.5px] sm:text-[17px] font-extrabold text-neutral-950 font-serif tracking-wide mb-3">
+                      <h6 className="text-[15.5px] sm:text-[17px] font-extrabold text-neutral-950 font-serif tracking-wide mb-4">
                         {item.title}
                       </h6>
-                      <p className="text-[13px] sm:text-[14.5px] font-medium text-neutral-600 leading-relaxed text-left">
-                        {item.body}
-                      </p>
+                      <div className="w-full flex flex-col gap-4 text-left">
+                        <div className="flex flex-col gap-1.5">
+                          <div className="flex items-center gap-2">
+                            <span className="text-[11px] font-extrabold font-sans tracking-wide text-[#E55C29] shrink-0">
+                              取り組み
+                            </span>
+                            <span className="h-[1px] flex-1 bg-[#f0ece6]"></span>
+                          </div>
+                          <p className="text-[13px] sm:text-[14px] font-medium text-neutral-600 leading-relaxed">
+                            {item.approach}
+                          </p>
+                        </div>
+                        <div className="flex flex-col gap-1.5">
+                          <div className="flex items-center gap-2">
+                            <span className="text-[11px] font-extrabold font-sans tracking-wide text-[#E55C29] shrink-0">
+                              得られる効能
+                            </span>
+                            <span className="h-[1px] flex-1 bg-[#f0ece6]"></span>
+                          </div>
+                          <p className="text-[13px] sm:text-[14px] font-medium text-neutral-600 leading-relaxed">
+                            {item.effect}
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   );
                 })}
