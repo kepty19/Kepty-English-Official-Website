@@ -2324,7 +2324,7 @@ export default function App() {
                       '日々の課題添削とフィードバック',
                       'チャットサポート',
                     ],
-                    price: '月額 16,500円',
+                    price: '月額 9,800円',
                     subsidyNote: null,
                   },
                 ] as const;
