@@ -1339,13 +1339,9 @@ export default function App() {
                       </h6>
                       <div className="w-full flex flex-col gap-5 text-left">
                         <div className="flex flex-col gap-2">
-                          <div className="flex items-end gap-2.5 pb-2 border-b border-neutral-200/80">
-                            <span className="w-[3px] h-4 rounded-full bg-[#E55C29] shrink-0 mb-[3px]" aria-hidden />
+                          <div className="pb-2 border-b border-neutral-200/80">
                             <span className="text-[13.5px] sm:text-[14.5px] font-black text-neutral-950 font-serif tracking-wide leading-none">
                               取り組み
-                            </span>
-                            <span className="text-[9.5px] font-mono font-bold tracking-[0.22em] text-neutral-400 uppercase leading-none pb-[1px]">
-                              Approach
                             </span>
                           </div>
                           <p className="text-[13px] sm:text-[14px] font-medium text-neutral-600 leading-relaxed">
@@ -1353,13 +1349,9 @@ export default function App() {
                           </p>
                         </div>
                         <div className="flex flex-col gap-2">
-                          <div className="flex items-end gap-2.5 pb-2 border-b border-neutral-200/80">
-                            <span className="w-[3px] h-4 rounded-full bg-[#E55C29] shrink-0 mb-[3px]" aria-hidden />
+                          <div className="pb-2 border-b border-neutral-200/80">
                             <span className="text-[13.5px] sm:text-[14.5px] font-black text-neutral-950 font-serif tracking-wide leading-none">
                               得られる効能
-                            </span>
-                            <span className="text-[9.5px] font-mono font-bold tracking-[0.22em] text-neutral-400 uppercase leading-none pb-[1px]">
-                              Effect
                             </span>
                           </div>
                           <p className="text-[13px] sm:text-[14px] font-medium text-neutral-600 leading-relaxed">
@@ -1519,16 +1511,12 @@ export default function App() {
               {/* Challenge → Training protocol map */}
               <div className="mt-10 max-w-[760px] mx-auto">
                 <div className="grid grid-cols-[minmax(0,1fr)_40px_minmax(0,1.15fr)] sm:grid-cols-[minmax(0,1fr)_48px_minmax(0,1.2fr)] items-end px-1 sm:px-2 mb-3">
-                  <div className="flex items-end gap-2 pb-2 border-b border-neutral-200/80">
-                    <span className="w-[3px] h-3.5 rounded-full bg-[#E55C29] shrink-0 mb-[2px]" aria-hidden />
+                  <div className="pb-2 border-b border-neutral-200/80">
                     <span className="text-[13px] sm:text-[14px] font-black text-neutral-950 font-serif tracking-wide leading-none">課題</span>
-                    <span className="hidden sm:inline text-[9.5px] font-mono font-bold tracking-[0.22em] text-neutral-400 uppercase leading-none pb-[1px]">Challenge</span>
                   </div>
                   <div aria-hidden />
-                  <div className="flex items-end gap-2 pb-2 border-b border-neutral-200/80">
-                    <span className="w-[3px] h-3.5 rounded-full bg-[#E55C29] shrink-0 mb-[2px]" aria-hidden />
+                  <div className="pb-2 border-b border-neutral-200/80">
                     <span className="text-[13px] sm:text-[14px] font-black text-neutral-950 font-serif tracking-wide leading-none">トレーニング</span>
-                    <span className="hidden sm:inline text-[9.5px] font-mono font-bold tracking-[0.22em] text-neutral-400 uppercase leading-none pb-[1px]">Training</span>
                   </div>
                 </div>
 
