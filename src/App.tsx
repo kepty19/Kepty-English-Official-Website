@@ -2300,9 +2300,9 @@ export default function App() {
                   { text: '学習計画プログラム', inRepeat: true },
                   { text: '学習用Webアプリ', inRepeat: true },
                   { text: 'オンライン英会話', inRepeat: true },
-                  { text: '日々の課題添削とフィードバック', inRepeat: true },
+                  { text: '毎日の課題添削', inRepeat: true },
                   { text: 'チャットサポート', inRepeat: true },
-                  { text: '徹底的なパーソナル伴走サポート', inRepeat: false },
+                  { text: '毎日の伴走サポート', inRepeat: false },
                   { text: '週次/隔週の定例', inRepeat: false },
                 ] as const;
 
@@ -2316,13 +2316,13 @@ export default function App() {
                   'rounded-xl sm:rounded-2xl bg-white border border-[#DFEC9F] px-1.5 py-2.5 sm:p-3 flex items-center shadow-xs';
 
                 const renderContents = (showStrikethrough: boolean) => (
-                  <ul className="w-full text-left space-y-1 px-1.5 sm:px-2.5 py-1">
+                  <ul className="w-full text-left space-y-1 px-1 sm:px-2 py-1">
                     {contentItems.map((item) => {
                       const struck = showStrikethrough && !item.inRepeat;
                       return (
                         <li
                           key={item.text}
-                          className={`text-[10.5px] sm:text-[12.5px] font-extrabold font-sans leading-snug flex gap-1 ${
+                          className={`text-[10.5px] sm:text-[12.5px] font-extrabold font-sans leading-none flex gap-1 whitespace-nowrap ${
                             struck ? 'text-neutral-400' : 'text-[#1a1a1a]'
                           }`}
                         >
@@ -2336,64 +2336,45 @@ export default function App() {
                   </ul>
                 );
 
+                const learningStyleCell = (period: string, style: string) => (
+                  <div className={`${valueCell} min-h-[72px] sm:min-h-[84px] flex-col gap-1`}>
+                    <span className="text-[10px] sm:text-[12px] font-extrabold text-neutral-500 font-sans text-center leading-none whitespace-nowrap">
+                      {period}
+                    </span>
+                    <span className="text-[13px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans text-center leading-none whitespace-nowrap">
+                      {style}
+                    </span>
+                  </div>
+                );
+
                 return (
-                  <div className="min-w-[640px] max-w-[860px] md:mx-auto grid grid-cols-[76px_1fr_1fr_1fr] sm:grid-cols-[100px_1fr_1fr_1fr] gap-1.5 sm:gap-3 py-1">
+                  <div className="w-fit max-w-full mx-auto grid grid-cols-[72px_148px_148px_148px] sm:grid-cols-[84px_168px_168px_168px] gap-1.5 sm:gap-2.5 py-1">
                     {/* Row 1: plan names */}
-                    <div className={`${headerCell} min-h-[52px] sm:min-h-[60px] bg-white border-[#DFEC9F] sticky left-0 z-20`} />
-                    <div className={`${headerCell} col-span-2 min-h-[52px] sm:min-h-[60px]`}>
-                      <span className="text-[13px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
+                    <div className={`${headerCell} min-h-[44px] sm:min-h-[52px] bg-white border-[#DFEC9F] sticky left-0 z-20`} />
+                    <div className={`${headerCell} col-span-2 min-h-[44px] sm:min-h-[52px]`}>
+                      <span className="text-[13px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans text-center leading-none whitespace-nowrap">
                         スタンダードプラン
                       </span>
                     </div>
-                    <div className={`${headerCell} min-h-[52px] sm:min-h-[60px]`}>
-                      <span className="text-[13px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
+                    <div className={`${headerCell} min-h-[44px] sm:min-h-[52px]`}>
+                      <span className="text-[13px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans text-center leading-none whitespace-nowrap">
                         リピートプラン
                       </span>
                     </div>
 
-                    {/* Row 2: periods */}
-                    <div className="sticky left-0 z-20 bg-white" />
-                    <div className={`${valueCell} min-h-[44px] sm:min-h-[52px]`}>
-                      <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
-                        最初の2ヶ月
-                      </span>
-                    </div>
-                    <div className={`${valueCell} min-h-[44px] sm:min-h-[52px]`}>
-                      <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
-                        3ヶ月目
-                      </span>
-                    </div>
-                    <div className={`${valueCell} min-h-[44px] sm:min-h-[52px]`}>
-                      <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
-                        4ヶ月目以降
-                      </span>
-                    </div>
-
-                    {/* Row 3: 学習形態 */}
+                    {/* Row 2: 学習形態（期間をセル内へ） */}
                     <div className={`${labelCell} min-h-[72px] sm:min-h-[84px]`}>
-                      <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
+                      <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight whitespace-nowrap">
                         学習形態
                       </span>
                     </div>
-                    <div className={`${valueCell} min-h-[72px] sm:min-h-[84px]`}>
-                      <span className="text-[12px] sm:text-[15px] font-extrabold text-[#1a1a1a] font-sans text-center leading-snug">
-                        伴走学習
-                      </span>
-                    </div>
-                    <div className={`${valueCell} min-h-[72px] sm:min-h-[84px]`}>
-                      <span className="text-[12px] sm:text-[15px] font-extrabold text-[#1a1a1a] font-sans text-center leading-snug">
-                        自走学習
-                      </span>
-                    </div>
-                    <div className={`${valueCell} min-h-[72px] sm:min-h-[84px]`}>
-                      <span className="text-[12px] sm:text-[15px] font-extrabold text-[#1a1a1a] font-sans text-center leading-snug">
-                        自走学習
-                      </span>
-                    </div>
+                    {learningStyleCell('最初の2ヶ月', '伴走学習')}
+                    {learningStyleCell('3ヶ月目', '自走学習')}
+                    {learningStyleCell('4ヶ月目以降', '自走学習')}
 
-                    {/* Row 4: 提供内容 */}
+                    {/* Row 3: 提供内容 */}
                     <div className={`${labelCell}`}>
-                      <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
+                      <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight whitespace-nowrap">
                         提供内容
                       </span>
                     </div>
@@ -2404,22 +2385,22 @@ export default function App() {
                       {renderContents(true)}
                     </div>
 
-                    {/* Row 5: 価格 */}
-                    <div className={`${labelCell} min-h-[72px] sm:min-h-[80px]`}>
-                      <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight">
+                    {/* Row 4: 価格 */}
+                    <div className={`${labelCell} min-h-[64px] sm:min-h-[72px]`}>
+                      <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight whitespace-nowrap">
                         価格
                       </span>
                     </div>
-                    <div className={`${valueCell} col-span-2 min-h-[72px] sm:min-h-[80px] flex-col gap-1.5`}>
-                      <span className="text-[13px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans text-center leading-none">
+                    <div className={`${valueCell} col-span-2 min-h-[64px] sm:min-h-[72px] flex-col gap-1.5`}>
+                      <span className="text-[13px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans text-center leading-none whitespace-nowrap">
                         3ヶ月 229,400円
                       </span>
                       <span className="text-[9px] sm:text-[11px] font-bold text-[#E55C29] font-sans text-center whitespace-nowrap tracking-tight leading-none">
                         ※支援制度活用 → 実質月額9,800円
                       </span>
                     </div>
-                    <div className={`${valueCell} min-h-[72px] sm:min-h-[80px]`}>
-                      <span className="text-[13px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans text-center leading-none">
+                    <div className={`${valueCell} min-h-[64px] sm:min-h-[72px]`}>
+                      <span className="text-[13px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans text-center leading-none whitespace-nowrap">
                         月額9,800円
                       </span>
                     </div>
