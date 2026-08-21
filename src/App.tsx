@@ -2313,10 +2313,10 @@ export default function App() {
                 const valueCell =
                   'rounded-xl sm:rounded-2xl bg-white border border-[#DFEC9F] px-1.5 py-2 sm:p-2.5 flex items-center justify-center shadow-xs';
                 const contentsValueCell =
-                  'rounded-xl sm:rounded-2xl bg-white border border-[#DFEC9F] px-1.5 py-2.5 sm:p-3 flex items-center shadow-xs';
+                  'rounded-xl sm:rounded-2xl bg-white border border-[#DFEC9F] px-1.5 py-5 sm:px-2.5 sm:py-6 flex items-center shadow-xs';
 
                 const renderContents = (showStrikethrough: boolean) => (
-                  <ul className="w-full text-left space-y-1 px-1 sm:px-2 py-1">
+                  <ul className="w-full text-left space-y-1.5 px-1 sm:px-2">
                     {contentItems.map((item) => {
                       const struck = showStrikethrough && !item.inRepeat;
                       return (
@@ -2337,7 +2337,7 @@ export default function App() {
                 );
 
                 const learningStyleCell = (period: string, style: string) => (
-                  <div className={`${valueCell} min-h-[88px] sm:min-h-[100px] flex-col gap-4 sm:gap-5`}>
+                  <div className={`${valueCell} min-h-[76px] sm:min-h-[88px] flex-col gap-2`}>
                     <span className="text-[10px] sm:text-[12px] font-extrabold text-neutral-500 font-sans text-center leading-none whitespace-nowrap">
                       {period}
                     </span>
