@@ -535,7 +535,7 @@ export default function App() {
 
           <p className="text-center text-[17px] sm:text-[20px] leading-relaxed font-semibold max-w-[720px] mx-auto mb-16 font-sans text-neutral-700">
             「英語の言語特性」や「プロサッカー選手の傾向」を踏まえると、<br className="hidden sm:inline" />
-            <span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">成人後</span>に英語力を飛躍的に伸ばすためには、膨大な努力が必要です。
+            <span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">成人後</span>に英語力を飛躍的に伸ばすためには、一定量の努力が必要です。
           </p>
 
           {/* Grid Layout for the 4 Cards */}
@@ -1154,7 +1154,7 @@ export default function App() {
                     </h4>
                   </div>
                   <p className="text-[14px] sm:text-[15.5px] font-bold text-neutral-600 leading-relaxed text-center">
-                    英語に堪能なフィリピン人講師との英会話により、「実践的なアウトプットスキル」を獲得できる。
+                    オンライン英会話の実施により、「実践的なアウトプットスキル」を獲得できる。
                   </p>
                 </div>
               </div>
@@ -1249,14 +1249,14 @@ export default function App() {
                   03
                 </span>
                 <h4 className="text-[18px] sm:text-[22px] font-extrabold text-neutral-950 font-serif tracking-tight leading-tight">
-                  学習理論に立脚した学習設計
+                  学習理論に立脚した2つのコース
                 </h4>
               </div>
             </div>
 
             {/* Phase 1: 学習初期フェーズの選手 */}
             <div className="mb-14">
-              <PhaseSubtitle>学習初期フェーズの選手</PhaseSubtitle>
+              <PhaseSubtitle>基礎徹底コース</PhaseSubtitle>
               <p className="text-[14px] sm:text-[16.5px] font-bold text-neutral-600 leading-relaxed text-center max-w-[760px] mx-auto mb-10">
                 <span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">学習初期に習得すべき重要な本質と基礎</span>だけを厳選し、それを確実に体得します。
               </p>
@@ -1369,7 +1369,7 @@ export default function App() {
 
             {/* Phase 2: 学習中上級フェーズの選手 */}
             <div>
-              <PhaseSubtitle>学習中上級フェーズの選手</PhaseSubtitle>
+              <PhaseSubtitle>スキル強化コース</PhaseSubtitle>
               <p className="text-[14px] sm:text-[16.5px] font-bold text-neutral-600 leading-relaxed text-center max-w-[760px] mx-auto mb-8">
                 <span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">ピンポイントでの課題特定と打ち手の実施</span>により、より効率的な学習を実現します。
               </p>
@@ -1788,7 +1788,7 @@ export default function App() {
                   06
                 </span>
                 <h4 className="text-[18px] sm:text-[22px] font-extrabold text-neutral-950 font-serif tracking-tight leading-tight">
-                  学習プログラムの作成
+                  自走学習状態の確立
                 </h4>
               </div>
             </div>
@@ -1981,9 +1981,9 @@ export default function App() {
 
             {/* Part 2: 伴走フェーズから自走フェーズへ遷移 */}
             <div>
-              <PhaseSubtitle>伴走フェーズから自走フェーズへ遷移</PhaseSubtitle>
+              <PhaseSubtitle>伴走フェーズから自走フェーズへ</PhaseSubtitle>
               <p className="text-[14px] sm:text-[16.5px] font-bold text-neutral-600 leading-relaxed text-center max-w-[760px] mx-auto mb-10">
-                最初の2ヶ月は、他者の介在により<span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">独学やアプリでは届かない本質</span>を徹底体得。その後は、科学的アプローチを用いて、自ら学習を進められる状態を作ります。
+                最初の2ヶ月は、他者の介在により<span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">独学やアプリでは届かない本質</span>を徹底体得。その後は、科学的アプローチを用いて、<span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">自ら学習を進められる状態</span>を作ります。
               </p>
 
               {/* Transition visual */}
@@ -2140,7 +2140,7 @@ export default function App() {
                   online: "約3~6万円",
                   influencer: "不明",
                   bigCoaching: "約50~60万円",
-                  kepty: "約24万円",
+                  kepty: "約23万円",
                 }
               ];
 
