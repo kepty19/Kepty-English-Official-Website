@@ -2337,7 +2337,7 @@ export default function App() {
                 );
 
                 const learningStyleCell = (period: string, style: string) => (
-                  <div className={`${valueCell} min-h-[72px] sm:min-h-[84px] flex-col gap-1`}>
+                  <div className={`${valueCell} min-h-[88px] sm:min-h-[100px] flex-col gap-4 sm:gap-5`}>
                     <span className="text-[10px] sm:text-[12px] font-extrabold text-neutral-500 font-sans text-center leading-none whitespace-nowrap">
                       {period}
                     </span>
