@@ -2336,8 +2336,10 @@ export default function App() {
                   </ul>
                 );
 
+                const rowH = 'min-h-[64px] sm:min-h-[72px]';
+
                 const learningStyleCell = (period: string, style: string) => (
-                  <div className={`${valueCell} min-h-[76px] sm:min-h-[88px] flex-col gap-2`}>
+                  <div className={`${valueCell} ${rowH} flex-col gap-2`}>
                     <span className="text-[10px] sm:text-[12px] font-extrabold text-neutral-500 font-sans text-center leading-none whitespace-nowrap">
                       {period}
                     </span>
@@ -2363,7 +2365,7 @@ export default function App() {
                     </div>
 
                     {/* Row 2: 学習形態（期間をセル内へ） */}
-                    <div className={`${labelCell} min-h-[72px] sm:min-h-[84px]`}>
+                    <div className={`${labelCell} ${rowH}`}>
                       <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight whitespace-nowrap">
                         学習形態
                       </span>
@@ -2386,12 +2388,12 @@ export default function App() {
                     </div>
 
                     {/* Row 4: 価格 */}
-                    <div className={`${labelCell} min-h-[64px] sm:min-h-[72px]`}>
+                    <div className={`${labelCell} ${rowH}`}>
                       <span className="text-[11px] sm:text-[13.5px] font-extrabold text-[#1a1a1a] font-sans text-center leading-tight whitespace-nowrap">
                         価格
                       </span>
                     </div>
-                    <div className={`${valueCell} col-span-2 min-h-[64px] sm:min-h-[72px] flex-col gap-1.5`}>
+                    <div className={`${valueCell} col-span-2 ${rowH} flex-col gap-1.5`}>
                       <span className="text-[13px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans text-center leading-none whitespace-nowrap">
                         3ヶ月 229,400円
                       </span>
@@ -2399,7 +2401,7 @@ export default function App() {
                         ※支援制度活用 → 実質月額9,800円
                       </span>
                     </div>
-                    <div className={`${valueCell} min-h-[64px] sm:min-h-[72px]`}>
+                    <div className={`${valueCell} ${rowH}`}>
                       <span className="text-[13px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans text-center leading-none whitespace-nowrap">
                         月額9,800円
                       </span>
