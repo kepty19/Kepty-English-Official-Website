@@ -1270,14 +1270,16 @@ export default function App() {
                     approach: (
                       <>
                         <span className="text-[#E55C29] font-extrabold">英語の音を正しく聞き取る、正しく発することは、英会話の最重要基礎</span>
-                        。独学やアプリ学習のみでは困難な口・舌・喉の使い方を徹底補正します。
+                        。独学やアプリ学習のみでは困難な喉・口・舌の使い方を徹底補正します。
                       </>
                     ),
                     effect: (
                       <>
-                        「正しい発音」を体得することで、リスニング・スピーキングは最短で上達していきます。ここを曖昧にしたまま学習を積み上げても、将来必ず行き詰まり、
-                        <span className="text-[#E55C29] font-extrabold">結局振り出しに戻って矯正し直す無駄が発生します</span>
-                        。
+                        「正しい発音」を体得することで、
+                        <span className="text-[#E55C29] font-extrabold">カタカナ英語からの脱却</span>
+                        と
+                        <span className="text-[#E55C29] font-extrabold">ネイティブ特有の音声変化や日本語にない音を識別</span>
+                        できるようになります。
                       </>
                     ),
                   },
