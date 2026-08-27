@@ -2357,12 +2357,12 @@ export default function App() {
                     <div className={`${headerCell} min-h-[44px] sm:min-h-[52px] bg-white border-[#DFEC9F] sticky left-0 z-20`} />
                     <div className={`${headerCell} col-span-2 min-h-[44px] sm:min-h-[52px]`}>
                       <span className="text-[13px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans text-center leading-none whitespace-nowrap">
-                        スタンダードプラン
+                        Kepty Englishプログラム
                       </span>
                     </div>
                     <div className={`${headerCell} min-h-[44px] sm:min-h-[52px]`}>
                       <span className="text-[13px] sm:text-[16px] font-extrabold text-[#1a1a1a] font-sans text-center leading-none whitespace-nowrap">
-                        リピートプラン
+                        継続利用
                       </span>
                     </div>
 
@@ -2372,9 +2372,9 @@ export default function App() {
                         学習形態
                       </span>
                     </div>
-                    {learningStyleCell('最初の2ヶ月', '伴走学習')}
-                    {learningStyleCell('3ヶ月目', '自走学習')}
-                    {learningStyleCell('4ヶ月目以降', '自走学習')}
+                    {learningStyleCell('最初の2ヶ月', '徹底伴走')}
+                    {learningStyleCell('3ヶ月目', 'プレ自走')}
+                    {learningStyleCell('4ヶ月目以降', '完全自走')}
 
                     {/* Row 3: 提供内容 */}
                     <div className={`${labelCell}`}>
