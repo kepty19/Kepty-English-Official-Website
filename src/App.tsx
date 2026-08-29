@@ -34,7 +34,6 @@ import { HeroTechVisual, HeroTechVisualMobile } from './components/HeroTechVisua
 import { SiteNavigation } from './components/SiteNavigation';
 import { GrainOverlay } from './components/GrainOverlay';
 import bgDarkSpace from './image_dark_space.jpg';
-import ceoProfileImg from './ceo-profile.png';
 import ceoSignatureImg from './ceo-signature.png';
 
 /** CEO MESSAGE body — PC版は意図的な改行あり（段落区切り `\n\n` は維持） */
@@ -2711,133 +2710,42 @@ export default function App() {
       {/* SECTION: FOUNDER & CEO PROFILE */}
       <section 
         id="ceo-profile-section" 
-        style={{
-          background: 'radial-gradient(ellipse at center, #E55C29 0%, #C44315 55%, #922704 100%)'
-        }}
-        className="py-20 px-4 sm:px-6 text-white relative z-40 border-t border-white/10"
+        className="relative bg-[#fff8f3] text-neutral-900 z-40 border-t border-orange-100 py-20 sm:py-28 px-4 sm:px-8"
       >
-        <div className="max-w-[840px] mx-auto w-full">
-          {/* Header */}
-          <h2 className="text-5xl sm:text-7xl lg:text-8xl font-serif text-white tracking-wide mb-10 sm:mb-16 select-none font-bold">
-            Founder & CEO
-          </h2>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-10 items-stretch">
-            {/* Left side: CEO Name & Transparent Cut-out Photo */}
-            <div className="lg:col-span-4 flex flex-col justify-between h-full">
-              <div className="select-text">
-                <p className="text-2xl sm:text-3xl font-serif text-white/80 tracking-wide font-medium">
-                  Tomohiro Kajiyama
-                </p>
-                <h3 className="text-3xl sm:text-4xl font-serif font-black text-white/80 tracking-wider mt-2 mb-8">
-                  梶山 知裕
-                </h3>
-              </div>
-              <div className="relative w-[105%] max-w-[420px] md:max-w-[520px] lg:w-[145%] lg:max-w-none mx-auto lg:mx-0 mt-4 lg:-mt-[55px] lg:-ml-14 xl:-ml-20 select-none animate-fade-in">
-                {/* Circular backdrop — mobile only (PC: photo on section gradient, no circle) */}
-                <div
-                  className="md:hidden absolute left-1/2 top-[46%] -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] sm:w-[400px] sm:h-[400px] rounded-full bg-black/20 backdrop-blur-md border border-white/10 z-0"
-                  aria-hidden
-                />
-                <img 
-                  src={ceoProfileImg} 
-                  alt="Tomohiro Kajiyama" 
-                  className="relative z-10 w-full h-auto object-contain select-none pointer-events-none"
-                />
-              </div>
+        <div className="max-w-[920px] mx-auto w-full">
+          <div className="flex flex-col md:flex-row md:items-stretch gap-8 md:gap-0">
+            {/* Left: label, title, name */}
+            <div className="md:w-[34%] md:pr-10 lg:pr-12 shrink-0 select-text">
+              <p className="flex items-center gap-2 text-[13px] sm:text-[14px] font-bold tracking-wider text-[#E55C29] mb-4">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#E55C29] shrink-0" aria-hidden />
+                代表プロフィール
+              </p>
+              <p className="text-[15px] sm:text-[16.5px] font-bold text-neutral-600 tracking-wide mb-3">
+                株式会社Kepty 代表取締役
+              </p>
+              <h2 className="text-[30px] sm:text-[38px] lg:text-[42px] font-serif font-black text-neutral-950 tracking-wider leading-tight">
+                梶山 知裕
+              </h2>
+              <p className="mt-2 text-[15px] sm:text-[16.5px] font-serif font-medium text-neutral-500 tracking-wide">
+                Tomohiro Kajiyama
+              </p>
             </div>
 
-            {/* Right side: Elegant detailed profile card */}
-            <div className="lg:col-span-8 bg-white rounded-[2.2rem] p-6 sm:p-8 lg:px-7 lg:py-8 shadow-2xl border border-black/5 text-neutral-950 flex flex-col justify-center h-full">
-              <ul className="space-y-4 text-[14px] sm:text-[16.5px] text-neutral-900 font-serif tracking-wider leading-snug list-none">
-                
-                {/* 1.出身 */}
-                <li className="flex items-start gap-4">
-                  <span className="mt-2 shrink-0 block w-1.5 h-1.5 rounded-full bg-neutral-950" />
-                  <div className="font-serif font-bold text-neutral-950">
-                    兵庫県神戸市出身
-                  </div>
-                </li>
+            {/* Divider: horizontal on mobile, vertical on desktop */}
+            <div className="md:hidden h-px w-full bg-[#E55C29]/35" aria-hidden />
+            <div className="hidden md:block w-px bg-[#E55C29]/45 self-stretch" aria-hidden />
 
-                {/* 2.ユース */}
-                <li className="flex items-start gap-4">
-                  <span className="mt-2 shrink-0 block w-1.5 h-1.5 rounded-full bg-neutral-950" />
-                  <div className="font-serif font-bold text-neutral-950">
-                    センアーノ神戸ユースU-18
-                  </div>
-                </li>
-
-                {/* 3.大学サッカー */}
-                <li className="flex items-start gap-4">
-                  <span className="mt-2 shrink-0 block w-1.5 h-1.5 rounded-full bg-neutral-950" />
-                  <div className="font-serif font-bold text-neutral-950">
-                    関西大学体育会サッカー部
-                  </div>
-                </li>
-
-                {/* 4.オーストラリアクラブ */}
-                <li className="flex flex-col gap-1.5">
-                  <div className="flex items-start gap-4">
-                    <span className="mt-2 shrink-0 block w-1.5 h-1.5 rounded-full bg-neutral-950" />
-                    <div className="font-serif font-bold text-neutral-950">
-                      Sutherland Sharks Football Club
-                    </div>
-                  </div>
-                  <div className="pl-8 flex items-start gap-3">
-                    <span className="mt-1.5 shrink-0 block w-2 h-2 rounded-full border border-neutral-950 bg-transparent" />
-                    <span className="font-serif font-bold text-neutral-800">
-                      オーストラリア NSW州1部リーグ
-                    </span>
-                  </div>
-                </li>
-
-                {/* 5.リクルート */}
-                <li className="flex flex-col gap-1.5">
-                  <div className="flex items-start gap-4">
-                    <span className="mt-2 shrink-0 block w-1.5 h-1.5 rounded-full bg-neutral-950" />
-                    <div className="font-serif font-bold text-neutral-950">
-                      株式会社リクルート
-                    </div>
-                  </div>
-                  <div className="pl-8 flex items-start gap-3">
-                    <span className="mt-1.5 shrink-0 block w-2 h-2 rounded-full border border-neutral-950 bg-transparent" />
-                    <span className="font-serif font-bold text-neutral-800">
-                      国内事業の戦略/企画、海外子会社の統括/戦略
-                    </span>
-                  </div>
-                </li>
-
-                {/* 6.Kepty */}
-                <li className="flex flex-col gap-2">
-                  <div className="flex items-start gap-4">
-                    <span className="mt-2 shrink-0 block w-1.5 h-1.5 rounded-full bg-neutral-950" />
-                    <div className="font-serif font-bold text-neutral-950">
-                      株式会社Kepty
-                    </div>
-                  </div>
-                  <div className="pl-8 space-y-2">
-                    <div className="flex items-start gap-3">
-                      <span className="mt-1.5 shrink-0 block w-2 h-2 rounded-full border border-neutral-950 bg-transparent" />
-                      <span className="font-serif font-bold text-neutral-800">
-                        創業（2023年）
-                      </span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <span className="mt-1.5 shrink-0 block w-2 h-2 rounded-full border border-neutral-950 bg-transparent" />
-                      <span className="font-serif font-bold text-neutral-800">
-                        他社の英語コーチング事業に携わる（2025年）
-                      </span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <span className="mt-1.5 shrink-0 block w-2 h-2 rounded-full border border-neutral-950 bg-transparent" />
-                      <span className="font-serif font-bold text-neutral-800 lg:whitespace-nowrap">
-                        プロサッカー選手向け英語コーチング事業開始（2026年）
-                      </span>
-                    </div>
-                  </div>
-                </li>
-
-              </ul>
+            {/* Right: biography */}
+            <div className="md:flex-1 md:pl-10 lg:pl-14 flex flex-col space-y-6 sm:space-y-7 select-text">
+              <p className="text-[15px] sm:text-[16.5px] leading-[1.95] font-serif font-medium text-neutral-800 tracking-wider">
+                兵庫県神戸市出身。センアーノ神戸ユースU-18、関西大学体育会サッカー部を経て、オーストラリアNSW州1部リーグのSutherland Sharks Football Clubでプレー。
+              </p>
+              <p className="text-[15px] sm:text-[16.5px] leading-[1.95] font-serif font-medium text-neutral-800 tracking-wider">
+                現役引退後、株式会社リクルートに入社。国内事業の戦略・企画、ならびに海外子会社の統括・戦略に従事。
+              </p>
+              <p className="text-[15px] sm:text-[16.5px] leading-[1.95] font-serif font-medium text-neutral-800 tracking-wider">
+                2023年、株式会社Keptyを設立。2025年より他社の英語コーチング事業に携わり、2026年よりプロサッカー選手向け英語コーチングサービス『Kepty English』を本格始動。
+              </p>
             </div>
           </div>
         </div>
@@ -2849,7 +2757,7 @@ export default function App() {
         style={{
           background: 'radial-gradient(ellipse at center, #E55C29 0%, #C44315 55%, #922704 100%)'
         }}
-        className="pb-0 pt-10 px-4 sm:px-6 text-white relative z-40"
+        className="pb-0 pt-20 sm:pt-24 px-4 sm:px-6 text-white relative z-40 border-t border-white/10"
       >
         <div className="max-w-[840px] mx-auto w-full">
           {/* Header */}
