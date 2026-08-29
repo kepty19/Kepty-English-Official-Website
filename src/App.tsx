@@ -2710,41 +2710,44 @@ export default function App() {
       {/* SECTION: FOUNDER & CEO PROFILE */}
       <section 
         id="ceo-profile-section" 
-        className="relative bg-[#fff8f3] text-neutral-900 z-40 border-t border-orange-100 py-20 sm:py-28 px-4 sm:px-8"
+        style={{
+          background: 'radial-gradient(ellipse at center, #E55C29 0%, #C44315 55%, #922704 100%)'
+        }}
+        className="py-20 px-4 sm:px-6 text-white relative z-40 border-t border-white/10"
       >
-        <div className="max-w-[920px] mx-auto w-full">
+        <div className="max-w-[840px] mx-auto w-full">
+          <h2 className="text-5xl sm:text-7xl lg:text-8xl font-serif text-white tracking-wide mb-10 sm:mb-16 select-none font-bold">
+            Founder & CEO
+          </h2>
+
           <div className="flex flex-col md:flex-row md:items-stretch gap-8 md:gap-0">
-            {/* Left: label, title, name */}
+            {/* Left: company, title, name */}
             <div className="md:w-[34%] md:pr-10 lg:pr-12 shrink-0 select-text">
-              <p className="flex items-center gap-2 text-[13px] sm:text-[14px] font-bold tracking-wider text-[#E55C29] mb-4">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#E55C29] shrink-0" aria-hidden />
-                代表プロフィール
+              <p className="text-[15px] sm:text-[16.5px] font-bold text-white/80 tracking-wide">
+                株式会社Kepty
               </p>
-              <p className="text-[15px] sm:text-[16.5px] font-bold text-neutral-600 tracking-wide mb-3">
-                株式会社Kepty 代表取締役
+              <p className="text-[15px] sm:text-[16.5px] font-bold text-white/80 tracking-wide mt-1.5 mb-3">
+                代表取締役
               </p>
-              <h2 className="text-[30px] sm:text-[38px] lg:text-[42px] font-serif font-black text-neutral-950 tracking-wider leading-tight">
+              <h3 className="text-[30px] sm:text-[38px] lg:text-[42px] font-serif font-black text-white tracking-wider leading-tight">
                 梶山 知裕
-              </h2>
-              <p className="mt-2 text-[15px] sm:text-[16.5px] font-serif font-medium text-neutral-500 tracking-wide">
-                Tomohiro Kajiyama
-              </p>
+              </h3>
             </div>
 
             {/* Divider: horizontal on mobile, vertical on desktop */}
-            <div className="md:hidden h-px w-full bg-[#E55C29]/35" aria-hidden />
-            <div className="hidden md:block w-px bg-[#E55C29]/45 self-stretch" aria-hidden />
+            <div className="md:hidden h-px w-full bg-white" aria-hidden />
+            <div className="hidden md:block w-px bg-white self-stretch" aria-hidden />
 
             {/* Right: biography */}
             <div className="md:flex-1 md:pl-10 lg:pl-14 flex flex-col space-y-6 sm:space-y-7 select-text">
-              <p className="text-[15px] sm:text-[16.5px] leading-[1.95] font-serif font-medium text-neutral-800 tracking-wider">
-                兵庫県神戸市出身。センアーノ神戸ユースU-18、関西大学体育会サッカー部を経て、オーストラリアNSW州1部リーグのSutherland Sharks Football Clubでプレー。
+              <p className="text-[15px] sm:text-[16.5px] leading-[1.95] font-serif font-medium text-white tracking-wider">
+                センアーノ神戸ユースU-18、関西大学を経て、2016年よりオーストラリアNSW州1部リーグで2シーズンプレー。2017年には同リーグにおいて日本人初となる年間得点王を獲得。
               </p>
-              <p className="text-[15px] sm:text-[16.5px] leading-[1.95] font-serif font-medium text-neutral-800 tracking-wider">
-                現役引退後、株式会社リクルートに入社。国内事業の戦略・企画、ならびに海外子会社の統括・戦略に従事。
+              <p className="text-[15px] sm:text-[16.5px] leading-[1.95] font-serif font-medium text-white tracking-wider">
+                現役引退後、株式会社リクルートに入社。国内最大級の教育プロダクト「スタディサプリ」や、東南アジア（フィリピン・インドネシア）向けのグローバル教育事業「Quipper」にて事業戦略・企画に従事。
               </p>
-              <p className="text-[15px] sm:text-[16.5px] leading-[1.95] font-serif font-medium text-neutral-800 tracking-wider">
-                2023年、株式会社Keptyを設立。2025年より他社の英語コーチング事業に携わり、2026年よりプロサッカー選手向け英語コーチングサービス『Kepty English』を本格始動。
+              <p className="text-[15px] sm:text-[16.5px] leading-[1.95] font-serif font-medium text-white tracking-wider">
+                その後、株式会社Keptyを設立。外部の英語コーチング事業に参画し、第二言語習得論に基づく科学的な指導ノウハウを習得。教育プロダクトの知見、英語コーチングの実践ノウハウを結集し、2026年よりプロサッカー選手特化型英語コーチングサービス『Kepty English』を本格始動。
               </p>
             </div>
           </div>
@@ -2757,7 +2760,7 @@ export default function App() {
         style={{
           background: 'radial-gradient(ellipse at center, #E55C29 0%, #C44315 55%, #922704 100%)'
         }}
-        className="pb-0 pt-20 sm:pt-24 px-4 sm:px-6 text-white relative z-40 border-t border-white/10"
+        className="pb-0 pt-10 px-4 sm:px-6 text-white relative z-40"
       >
         <div className="max-w-[840px] mx-auto w-full">
           {/* Header */}
