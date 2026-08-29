@@ -1001,7 +1001,7 @@ export default function App() {
                   【学習量の目安】
                 </h5>
                 <ul className="text-[13px] sm:text-[15.5px] font-bold text-neutral-700 space-y-2.5 pl-4 sm:pl-8 list-disc">
-                  <li>毎日2時間の学習時間を推奨してます。</li>
+                  <li>毎日90分~120分の学習時間を推奨してます。</li>
                   <li>移動や治療、ストレッチの時間などを有効活用できます。</li>
                 </ul>
               </div>
@@ -1285,11 +1285,11 @@ export default function App() {
                   {
                     num: "02",
                     icon: MessageSquare,
-                    title: "頻出のフレーズ",
+                    title: "頻出のフレーズ・型",
                     approach: (
                       <>
-                        ピッチ内外において
-                        <span className="text-[#E55C29] font-extrabold">遭遇率・使用率が高い表現だけに絞り込み</span>
+                        日々の生活で
+                        <span className="text-[#E55C29] font-extrabold">遭遇率が高い表現や文章の型だけに絞り込み</span>
                         、優先的に脳へインストールします。
                       </>
                     ),
