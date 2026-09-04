@@ -111,10 +111,7 @@ const SOLUTION_PILLARS = [
     ),
     paragraphs: [
       <>
-        サッカーと同じで、自己流のフォーム（間違った基礎）で走り出すと、どれだけ努力しても途中で限界が訪れます。
-      </>,
-      <>
-        だからこそ最初の
+        サッカーと同じで、自己流のフォーム（間違った基礎）で走り出すと、どれだけ努力しても途中で限界が訪れます。だからこそ最初の
         <span className="text-[#E55C29] font-extrabold">「初動」</span>
         がすべて。将来にわたって英語力を伸ばし続けるために必要な
         <span className="text-[#E55C29] font-extrabold">「最重要な型と正しい学習法」</span>
@@ -164,10 +161,8 @@ const SOLUTION_PILLARS = [
     title: (
       <>
         <span className="text-[#E55C29]">「正しい学習法」</span>
-        の体得により、プログラム終了後の
+        の体得により、英語学習における
         <span className="text-[#E55C29]">「迷い」</span>
-        や
-        <span className="text-[#E55C29]">「停滞」</span>
         をゼロに
       </>
     ),
@@ -705,12 +700,14 @@ export default function App() {
                   key={item.num}
                   className="relative rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-sm px-5 py-7 sm:px-10 sm:py-10 overflow-hidden"
                 >
-                  <span
+                  <div
                     aria-hidden="true"
-                    className="absolute -right-2 -top-4 sm:-right-1 sm:-top-8 text-[120px] sm:text-[160px] font-black leading-none text-white/[0.06] select-none"
-                  >
-                    {item.num}
-                  </span>
+                    className="pointer-events-none absolute -top-14 -right-14 h-[168px] w-[168px] sm:-top-16 sm:-right-16 sm:h-[200px] sm:w-[200px] rounded-full"
+                    style={{
+                      background:
+                        'radial-gradient(circle at 38% 36%, #8a5530 0%, #5c341c 48%, #2a1810 100%)',
+                    }}
+                  />
                   <div className="relative flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-8">
                     <span className="text-4xl sm:text-6xl font-black font-sans text-[#E55C29] leading-none shrink-0 tracking-tight">
                       {item.num}
