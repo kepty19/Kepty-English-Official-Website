@@ -14,9 +14,7 @@ import {
   Youtube,
   ExternalLink,
   BookOpen,
-  PenTool,
   Calendar,
-  HeartHandshake,
   Volume2,
   Headphones,
   Brain,
@@ -908,18 +906,9 @@ export default function App() {
             <div className="w-16 h-1.5 bg-[#E55C29] mx-auto rounded-full"></div>
           </div>
 
-          {/* 01 Section */}
-          <div className="mb-20">
-            <div className="flex items-start gap-3.5 sm:gap-6 mb-10">
-              <span className="text-[26px] sm:text-5xl font-black font-sans text-[#E55C29] leading-none shrink-0 pt-0.5 tracking-tight">
-                01
-              </span>
-              <div className="flex-1 min-w-0">
-                <p className="text-[17px] sm:text-[25px] font-sans font-bold leading-relaxed text-neutral-900 tracking-wide text-left">
-                  英語コーチングは、英会話力の向上に重要な「3つの要素」を最大化させるサービスです。
-                </p>
-              </div>
-            </div>
+          {/* Three elements */}
+          <div>
+            <PhaseSubtitle>英会話力の向上に重要な「3つの要素」を最大化</PhaseSubtitle>
 
             {/* Quality x Quantity x Consistency diagram */}
             <div className="flex flex-col items-center justify-center my-10 sm:my-12 bg-white/40 px-4 py-8 sm:p-10 rounded-3xl border border-yellow-100/40 w-full max-w-[720px] mx-auto">
@@ -979,98 +968,6 @@ export default function App() {
               </div>
 
             </div>
-          </div>
-
-          <div className="border-t border-orange-200/50 my-16"></div>
-
-          {/* 02 Section */}
-          <div className="mb-12">
-            <div className="flex items-start gap-3.5 sm:gap-6 mb-10">
-              <span className="text-[26px] sm:text-5xl font-black font-sans text-[#E55C29] leading-none shrink-0 pt-0.5 tracking-tight">
-                02
-              </span>
-              <div className="flex-1 min-w-0">
-                <p className="text-[17px] sm:text-[23px] font-sans font-bold leading-relaxed text-neutral-900 tracking-wide text-left">
-                  徹底的な日々の伴走サポートを通して、「科学的かつ効率的な学習」を支援します。
-                </p>
-              </div>
-            </div>
-
-            {/* Grid of 4 support cards — mobile: 2×2, lg: 4 columns */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-stretch mt-12">
-              
-              {/* Card 1 - 1on1 */}
-              <div className="rounded-2xl p-4 sm:p-6 flex flex-col items-center bg-white shadow-md hover:shadow-lg transition-all duration-300 group relative min-h-[260px] sm:min-h-[300px] border border-orange-100/30">
-                <div className="w-12 h-12 rounded-full bg-neutral-100 flex items-center justify-center mb-3 text-neutral-900 group-hover:scale-110 transition-transform select-none">
-                  <Users className="w-6 h-6" />
-                </div>
-                <h4 className="text-[16px] sm:text-[17.5px] font-extrabold text-neutral-950 font-serif tracking-tight text-center leading-snug min-h-[44px] flex items-center justify-center">
-                  1on1の定例<br/>ミーティング
-                </h4>
-                <div className="w-full border-t border-neutral-200 my-3"></div>
-                <ul className="text-xs sm:text-[13px] font-bold text-neutral-600 space-y-2 text-left list-disc pl-4 leading-relaxed">
-                  <li>2週間に一度、日々の進捗確認や計画の修正を実施</li>
-                </ul>
-                {/* Thick accent line at the bottom */}
-                <div className="w-8 h-1 bg-[#E55C29] rounded-full mt-auto pt-0.5"></div>
-              </div>
-
-              {/* Card 2 - Program design */}
-              <div className="rounded-2xl p-4 sm:p-6 flex flex-col items-center bg-white shadow-md hover:shadow-lg transition-all duration-300 group relative min-h-[260px] sm:min-h-[300px] border border-orange-100/30">
-                <div className="w-12 h-12 rounded-full bg-neutral-100 flex items-center justify-center mb-3 text-neutral-900 group-hover:scale-110 transition-transform select-none">
-                  <BookOpen className="w-6 h-6" />
-                </div>
-                <h4 className="text-[16px] sm:text-[17.5px] font-extrabold text-neutral-950 font-serif tracking-tight text-center leading-snug min-h-[44px] flex items-center justify-center">
-                  学習プログラム/<br/>教材の設計
-                </h4>
-                <div className="w-full border-t border-neutral-200 my-3"></div>
-                <ul className="text-xs sm:text-[13px] font-bold text-neutral-600 space-y-2 text-left list-disc pl-4 leading-relaxed">
-                  <li>個々の目標/課題に即した学習プログラムの設計</li>
-                  <li>アプリやオンライン英会話などの学習環境の提供</li>
-                </ul>
-                <div className="w-8 h-1 bg-[#E55C29] rounded-full mt-auto pt-0.5"></div>
-              </div>
-
-              {/* Card 3 - Daily correction */}
-              <div className="rounded-2xl p-4 sm:p-6 flex flex-col items-center bg-white shadow-md hover:shadow-lg transition-all duration-300 group relative min-h-[260px] sm:min-h-[300px] border border-orange-100/30">
-                <div className="w-12 h-12 rounded-full bg-neutral-100 flex items-center justify-center mb-3 text-neutral-900 group-hover:scale-110 transition-transform select-none">
-                  <PenTool className="w-6 h-6" />
-                </div>
-                <h4 className="text-[16px] sm:text-[17.5px] font-extrabold text-neutral-950 font-serif tracking-tight text-center leading-snug min-h-[44px] flex items-center justify-center">
-                  課題添削/<br/>フィードバック
-                </h4>
-                <div className="w-full border-t border-neutral-200 my-3"></div>
-                <ul className="text-xs sm:text-[13px] font-bold text-neutral-600 space-y-2.5 text-left list-disc pl-4 leading-relaxed">
-                  <li>課題の提供や提出、添削の実施</li>
-                </ul>
-                <div className="w-8 h-1 bg-[#E55C29] rounded-full mt-auto pt-0.5"></div>
-              </div>
-
-              {/* Card 4 - Support */}
-              <div className="rounded-2xl p-4 sm:p-6 flex flex-col items-center bg-white shadow-md hover:shadow-lg transition-all duration-300 group relative min-h-[260px] sm:min-h-[300px] border border-orange-100/30">
-                <div className="w-12 h-12 rounded-full bg-neutral-100 flex items-center justify-center mb-3 text-neutral-900 group-hover:scale-110 transition-transform select-none">
-                  <HeartHandshake className="w-6 h-6" />
-                </div>
-                <h4 className="text-[16px] sm:text-[17.5px] font-extrabold text-neutral-950 font-serif tracking-tight text-center leading-snug min-h-[44px] flex items-center justify-center">
-                  伴走サポート
-                </h4>
-                <div className="w-full border-t border-neutral-200 my-3"></div>
-                <ul className="text-xs sm:text-[13px] font-bold text-neutral-600 space-y-2.5 text-left list-disc pl-4 leading-relaxed">
-                  <li>パーソナルトレーナーによる2ヶ月間の徹底伴走</li>
-                </ul>
-                <p className="mt-2 text-[10px] sm:text-[11px] font-bold text-neutral-500 leading-relaxed text-left">
-                  ※3ヶ月目以降は、自学習で進められる形へ推移します。
-                </p>
-                <div className="w-8 h-1 bg-[#E55C29] rounded-full mt-auto pt-0.5"></div>
-              </div>
-
-            </div>
-
-            {/* Note below card grid */}
-            <p className="mt-12 text-center text-xs sm:text-[14px] font-bold text-neutral-500 leading-relaxed font-sans max-w-[720px] mx-auto select-none">
-              ※日々の学習は、単語や文法、シャドーイング、瞬間英作文、AIスピーキング、フィリピン人講師とのオンライン英会話など、複数のトレーニングが存在
-            </p>
-
           </div>
 
         </div>
