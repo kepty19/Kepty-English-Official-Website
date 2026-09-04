@@ -721,7 +721,7 @@ export default function App() {
                 </p>
                 <p>
                   だからこそKepty Englishでは、無駄な遠回りを一切排除。2ヶ月の徹底伴走を通して、
-                  <span className="text-[#E55C29] font-black">一生モノの武器となる3つの変化</span>
+                  <span className="text-[#E55C29] font-black">一生モノの武器となる4つの変化</span>
                   を提供します。
                 </p>
               </div>
@@ -1251,7 +1251,7 @@ export default function App() {
             <div className="relative flex items-center gap-2 mb-3">
               <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#E55C29] shrink-0" aria-hidden="true" />
               <span className="text-[14px] sm:text-[16px] font-extrabold text-neutral-950 font-serif tracking-wide">
-                課題特定
+                課題のピンポイント特定
               </span>
               <div className="md:hidden absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none select-none">
                 <span className="inline-flex items-center gap-2 text-[12px] font-black tracking-[0.22em] text-[#E55C29] drop-shadow-[0_2px_10px_rgba(229,92,41,0.35)]">
@@ -1392,7 +1392,7 @@ export default function App() {
                 <div className="flex items-center gap-2 mb-4">
                   <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#E55C29] shrink-0" aria-hidden="true" />
                   <span className="text-[14px] sm:text-[16px] font-extrabold text-neutral-950 font-serif tracking-wide">
-                    打ち手トレーニング選定
+                    改善トレーニングの選定
                   </span>
                 </div>
 
