@@ -1321,27 +1321,24 @@ export default function App() {
                 <span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">ピンポイントでの課題特定と打ち手の実施</span>により、より効率的な学習を実現します。
               </p>
 
+            <div className="w-full max-w-[800px] mx-auto">
             {/* Upper figure: 課題特定 */}
-            <div className="max-w-[760px] mx-auto">
-              <div className="flex items-center justify-between gap-3 mb-3 px-1">
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#E55C29] shrink-0" aria-hidden="true" />
-                  <span className="text-[14px] sm:text-[16px] font-extrabold text-neutral-950 font-serif tracking-wide">
-                    課題特定
-                  </span>
-                </div>
-                <div className="md:hidden flex justify-end pointer-events-none select-none">
-                  <span className="inline-flex items-center gap-2 text-[12px] font-black tracking-[0.22em] text-[#E55C29] drop-shadow-[0_2px_10px_rgba(229,92,41,0.35)]">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#E55C29] animate-pulse" />
-                    scroll→
-                  </span>
-                </div>
+            <div className="relative flex items-center gap-2 mb-3">
+              <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#E55C29] shrink-0" aria-hidden="true" />
+              <span className="text-[14px] sm:text-[16px] font-extrabold text-neutral-950 font-serif tracking-wide">
+                課題特定
+              </span>
+              <div className="md:hidden absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none select-none">
+                <span className="inline-flex items-center gap-2 text-[12px] font-black tracking-[0.22em] text-[#E55C29] drop-shadow-[0_2px_10px_rgba(229,92,41,0.35)]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#E55C29] animate-pulse" />
+                  scroll→
+                </span>
               </div>
             </div>
 
             {/* Steps Timeline Visual */}
             <div className="relative w-full overflow-x-auto overflow-y-hidden pb-6 pt-4 select-none">
-              <div className="min-w-[800px] w-[800px] mx-auto relative px-4">
+              <div className="min-w-[800px] w-[800px] relative">
                 
                 {/* Category Overlays listening / speaking */}
               <div className="relative w-full h-8 mb-6">
@@ -1466,8 +1463,8 @@ export default function App() {
           </div>
 
               {/* Challenge → Training protocol map */}
-              <div className="mt-10 max-w-[760px] mx-auto">
-                <div className="flex items-center gap-2 mb-4 px-1">
+              <div className="mt-10">
+                <div className="flex items-center gap-2 mb-4">
                   <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#E55C29] shrink-0" aria-hidden="true" />
                   <span className="text-[14px] sm:text-[16px] font-extrabold text-neutral-950 font-serif tracking-wide">
                     打ち手トレーニング選定
@@ -1516,6 +1513,7 @@ export default function App() {
                   })}
                 </div>
               </div>
+            </div>
 
             </div>
 
