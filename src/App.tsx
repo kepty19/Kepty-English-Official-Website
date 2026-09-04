@@ -71,6 +71,76 @@ function ceoMessageForMobile(text: string) {
     .replace('それ以外の時間での学習の質が、\n理想', 'それ以外の時間での学習の質が、理想');
 }
 
+const ENGLISH_LEARNING_STRUGGLES = [
+  {
+    num: '01',
+    tag: '質',
+    title: '何から、どう学べばよいかわからない',
+    body: '過去に真剣に学習したことがないため、まずは何から、どう学習していけばよいかわからない',
+  },
+  {
+    num: '02',
+    tag: '質',
+    title: '同じ単語やフレーズで伸び悩んでいる',
+    body: '英会話を続けているが、いつも同じ単語やフレーズ、パターンで完結してしまい、そこからの伸び悩みを感じている',
+  },
+  {
+    num: '03',
+    title: '独学やAIだけでは、実践で活きるか不安',
+    body: '独学やAIアプリのみだと、実践的な人間相手のコミュニケーションで活かせるかわからない',
+  },
+  {
+    num: '04',
+    tag: '量・継続',
+    title: '継続できる学習プロセスを設計できない',
+    body: 'サッカーのように中長期的な目標や中間マイルストーン、日々の細かなトレーニング、という一連のプロセスを設計できないため、なかなか継続ができない',
+  },
+  {
+    num: '05',
+    title: 'サッカーに支障のない日程で着実に進めたい',
+    body: 'サッカーのパフォーマンスに影響のないように、学習日程や時間を柔軟に調整しながら着実に学習を進めていきたい',
+  },
+] as const;
+
+const THREE_MONTH_OUTCOMES = [
+  {
+    num: '01',
+    icon: Volume2,
+    title: '音の知覚・発音の変化',
+    body: (
+      <>
+        <span className="text-[#E55C29] font-extrabold">「カタカナ英語からの脱却」</span>
+        と
+        <span className="text-[#E55C29] font-extrabold">「ネイティブ特有の音声変化や日本語に存在しない音を識別」</span>
+        できるようになります。
+      </>
+    ),
+  },
+  {
+    num: '02',
+    icon: MessageSquare,
+    title: '頻出のフレーズ・型の習得',
+    body: (
+      <>
+        日々の生活で遭遇率が高い表現や文章を
+        <span className="text-[#E55C29] font-extrabold">「会話の型として習得」</span>
+        します。その後の応用や表現の派生にも迷わず進むことができます。
+      </>
+    ),
+  },
+  {
+    num: '03',
+    icon: Speech,
+    title: '実践的な英会話への慣れ・自信の創出',
+    body: (
+      <>
+        <span className="text-[#E55C29] font-extrabold">「英語使って会話する恐怖心や心理的ブロックを打破」</span>
+        します。実戦の場で堂々と話せる、本物の慣れと自信が手に入ります。
+      </>
+    ),
+  },
+] as const;
+
 /** Hand-drawn crayon/brush underline for phase subtitles */
 function PhaseSubtitle({ children }: { children: React.ReactNode }) {
   return (
@@ -532,66 +602,83 @@ export default function App() {
             <div className="w-16 h-1.5 bg-[#E55C29] mx-auto rounded-full"></div>
           </div>
 
-          <p className="text-center text-[17px] sm:text-[20px] leading-relaxed font-semibold max-w-[720px] mx-auto mb-16 font-sans text-neutral-700">
+          <p className="text-center text-[17px] sm:text-[20px] leading-relaxed font-semibold max-w-[720px] mx-auto mb-16 sm:mb-20 font-sans text-neutral-700">
             「英語の言語特性」や「プロサッカー選手の傾向」を踏まえると、<br className="hidden sm:inline" />
             <span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">成人後</span>に英語力を飛躍的に伸ばすためには、一定量の努力が必要です。
           </p>
 
-          {/* Grid Layout for the 4 Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch my-10">
-            {/* Card 01 */}
-            <div className="bg-white rounded-3xl border border-neutral-200/70 p-6 sm:p-8 hover:shadow-md transition-shadow duration-300 flex flex-col justify-center text-center min-h-[140px]">
-              <div className="flex items-center justify-center gap-3.5 mb-2.5">
-                <span className="text-2xl sm:text-3xl font-extrabold font-sans text-[#E55C29]">01</span>
-                <h4 className="text-[19px] sm:text-[21px] font-extrabold text-neutral-950 font-serif tracking-wide">
-                  英語と日本語の相違
-                </h4>
-              </div>
-              <p className="text-sm sm:text-[15px] font-semibold text-neutral-600 leading-relaxed font-sans px-4">
-                英語と日本語は、文法・発音共に、<br />
-                全く異なる(対極に位置する)言語
-              </p>
+          {/* 課題 */}
+          <div className="mb-20 sm:mb-28">
+            <h3 className="text-center text-[22px] sm:text-[30px] font-extrabold font-serif text-neutral-950 tracking-wide leading-tight mb-3">
+              このような悩み、持っていませんか？
+            </h3>
+            <p className="text-center text-[14px] sm:text-[16px] font-semibold text-neutral-600 mb-10 max-w-[560px] mx-auto leading-relaxed">
+              才能の問題ではありません。学び方と続け方が、まだ設計されていないだけです。
+            </p>
+            <div className="flex flex-col gap-4">
+              {ENGLISH_LEARNING_STRUGGLES.map((item) => (
+                <div
+                  key={item.num}
+                  className="bg-white rounded-2xl border border-neutral-200/70 px-5 py-5 sm:px-8 sm:py-6 hover:shadow-md transition-shadow duration-300"
+                >
+                  <div className="flex items-start gap-4 sm:gap-5">
+                    <span className="text-2xl sm:text-[28px] font-extrabold font-sans text-[#E55C29] leading-none pt-0.5 shrink-0">
+                      {item.num}
+                    </span>
+                    <div className="min-w-0 flex-1 text-left">
+                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 mb-2">
+                        <h4 className="text-[16px] sm:text-[19px] font-extrabold text-neutral-950 font-serif tracking-wide leading-snug">
+                          {item.title}
+                        </h4>
+                        {'tag' in item && item.tag ? (
+                          <span className="text-[10px] sm:text-[11px] font-black tracking-wide text-[#E55C29] bg-[#E55C29]/10 border border-[#E55C29]/15 px-2 py-0.5 rounded-full">
+                            {item.tag}
+                          </span>
+                        ) : null}
+                      </div>
+                      <p className="text-[13.5px] sm:text-[15px] font-semibold text-neutral-600 leading-relaxed">
+                        {item.body}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
+          </div>
 
-            {/* Card 02 */}
-            <div className="bg-white rounded-3xl border border-neutral-200/70 p-6 sm:p-8 hover:shadow-md transition-shadow duration-300 flex flex-col justify-center text-center min-h-[140px]">
-              <div className="flex items-center justify-center gap-3.5 mb-2.5">
-                <span className="text-2xl sm:text-3xl font-extrabold font-sans text-[#E55C29]">02</span>
-                <h4 className="text-[19px] sm:text-[21px] font-extrabold text-neutral-950 font-serif tracking-wide">
-                  日本人に必要な学習時間
-                </h4>
-              </div>
-              <p className="text-sm sm:text-[15px] font-semibold text-neutral-600 leading-relaxed font-sans px-4">
-                日本人が英語を習得するために必要な学習時間は、約2,300時間（※一般論）
-              </p>
-            </div>
-
-            {/* Card 03 */}
-            <div className="bg-white rounded-3xl border border-neutral-200/70 p-6 sm:p-8 hover:shadow-md transition-shadow duration-300 flex flex-col justify-center text-center min-h-[140px]">
-              <div className="flex items-center justify-center gap-3.5 mb-2.5">
-                <span className="text-2xl sm:text-3xl font-extrabold font-sans text-[#E55C29]">03</span>
-                <h4 className="text-[19px] sm:text-[21px] font-extrabold text-neutral-950 font-serif tracking-wide">
-                  学生時代の英語学習
-                </h4>
-              </div>
-              <p className="text-sm sm:text-[15px] font-semibold text-neutral-600 leading-relaxed font-sans px-4">
-                真剣な学習は実施してきておらず、<br />
-                英語の“基礎体力”や“過去の貯蓄”が欠如
-              </p>
-            </div>
-
-            {/* Card 04 */}
-            <div className="bg-white rounded-3xl border border-neutral-200/70 p-6 sm:p-8 hover:shadow-md transition-shadow duration-300 flex flex-col justify-center text-center min-h-[140px]">
-              <div className="flex items-center justify-center gap-3.5 mb-2.5">
-                <span className="text-2xl sm:text-3xl font-extrabold font-sans text-[#E55C29]">04</span>
-                <h4 className="text-[19px] sm:text-[21px] font-extrabold text-neutral-950 font-serif tracking-wide">
-                  英語接点/活用量の希薄
-                </h4>
-              </div>
-              <p className="text-sm sm:text-[15px] font-semibold text-neutral-600 leading-relaxed font-sans px-4">
-                日常生活だけでは、第二言語習得に必要な<br />
-                言語接点量/活用量の担保が困難
-              </p>
+          {/* 3ヶ月後の変化 */}
+          <div>
+            <h3 className="text-center text-[22px] sm:text-[30px] font-extrabold font-serif text-neutral-950 tracking-wide leading-tight mb-3">
+              3ヶ月後、あなたはこうなっています
+            </h3>
+            <p className="text-center text-[14px] sm:text-[16px] font-semibold text-neutral-600 mb-10 max-w-[620px] mx-auto leading-relaxed">
+              「3ヶ月でペラペラ」ではありません。正しい努力を積んだ先の、確かな変化です。
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 items-stretch">
+              {THREE_MONTH_OUTCOMES.map((item) => {
+                const ItemIcon = item.icon;
+                return (
+                  <div
+                    key={item.num}
+                    className="bg-white rounded-3xl border border-neutral-200/70 p-6 sm:p-7 hover:shadow-md transition-shadow duration-300 flex flex-col items-center text-center"
+                  >
+                    <div className="relative mb-5">
+                      <div className="w-[72px] h-[72px] rounded-full bg-neutral-900 text-white flex items-center justify-center shadow-lg">
+                        <ItemIcon className="w-8 h-8" />
+                      </div>
+                      <span className="absolute -top-1 -right-1 w-8 h-8 rounded-full bg-[#E55C29] text-white text-[12px] font-black flex items-center justify-center shadow-sm">
+                        {item.num}
+                      </span>
+                    </div>
+                    <h4 className="text-[16px] sm:text-[17.5px] font-extrabold text-neutral-950 font-serif tracking-wide leading-snug mb-4">
+                      {item.title}
+                    </h4>
+                    <p className="text-[13.5px] sm:text-[14.5px] font-medium text-neutral-600 leading-relaxed text-left">
+                      {item.body}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
