@@ -777,8 +777,8 @@ export default function App() {
           <div className="mb-16 sm:mb-20">
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="text-3xl sm:text-5xl font-extrabold tracking-wide text-neutral-950 font-serif mb-5 leading-[1.25]">
-                <span className="block">従って、このような選手を</span>
-                <span className="block">中心にご利用頂いております。</span>
+                <span className="block">我々は、このような選手と</span>
+                <span className="block">共に歩んでいます。</span>
               </h2>
               <div className="w-16 h-1.5 bg-[#E55C29] mx-auto rounded-full"></div>
             </div>
@@ -790,9 +790,10 @@ export default function App() {
                   className="bg-white rounded-2xl border border-neutral-200/70 px-5 py-5 sm:px-8 sm:py-6 hover:shadow-md transition-shadow duration-300"
                 >
                   <div className="flex items-start gap-4 sm:gap-5">
-                    <span className="text-2xl sm:text-[28px] font-extrabold font-sans text-[#E55C29] leading-none pt-0.5 shrink-0">
-                      {item.num}
-                    </span>
+                    <span
+                      className="mt-[0.55em] w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#E55C29] shrink-0"
+                      aria-hidden="true"
+                    />
                     <p className="text-[15px] sm:text-[18px] leading-[1.85] font-semibold text-neutral-700 tracking-wide text-left">
                       {item.before}
                       <span className="text-neutral-950 font-extrabold">{item.highlight}</span>
