@@ -678,9 +678,10 @@ export default function App() {
                   className="bg-white rounded-2xl border border-neutral-200/70 px-5 py-5 sm:px-8 sm:py-6 hover:shadow-md transition-shadow duration-300"
                 >
                   <div className="flex items-start gap-4 sm:gap-5">
-                    <span className="text-2xl sm:text-[28px] font-extrabold font-sans text-[#E55C29] leading-none pt-0.5 shrink-0">
-                      {item.num}
-                    </span>
+                    <span
+                      className="mt-[0.55em] w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#E55C29] shrink-0"
+                      aria-hidden="true"
+                    />
                     <div className="min-w-0 flex-1 text-left">
                       <h3 className="text-[16px] sm:text-[19px] font-extrabold text-neutral-950 font-serif tracking-wide leading-snug mb-2">
                         {item.title}
