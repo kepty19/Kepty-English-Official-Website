@@ -71,28 +71,28 @@ function ceoMessageForMobile(text: string) {
 const ENGLISH_LEARNING_STRUGGLES = [
   {
     num: '01',
-    title: '何から、どう学べばよいかわからない・・',
-    body: '過去に真剣に学習したことがないため、まずは何から、どう学習していけばよいかわからない。',
+    title: '何から、どう学べば良いかわからない・・',
+    body: '過去に真剣に学習した経験がないため、効率的な正しい学習方法がわからない。',
   },
   {
     num: '02',
-    title: '同じ単語やフレーズばかり使ってしまう・・',
-    body: '英会話を続けているが、いつも同じ単語やフレーズ、パターンで完結してしまい、そこからの伸び悩みを感じている。',
+    title: 'いつも同じ単語やフレーズばかり使ってしまう・・',
+    body: '英会話を続けているが、いつも同じパターンで完結してしまい、そこからの伸び悩みを感じている。',
   },
   {
     num: '03',
-    title: '独学やAIだけでは、実践で活きるか不安・・',
-    body: '独学やAIアプリのみだと、実践的な人間相手のコミュニケーションで活かせるかわからない。',
+    title: '独学やAI学習だけでは、実践で通用するかがわからない・・',
+    body: '独学やアプリのAI学習のみだと、実践的な人間相手のコミュニケーションで活かせるかわからない。',
   },
   {
     num: '04',
-    title: 'なかなか継続できない・・',
-    body: 'やる気はあるものの、日々の練習や試合の疲労で後回しになり、気づけば学習強度が落ちてしまっている。',
+    title: '気がつくと、学習強度が落ちている・・',
+    body: 'やる気はあるものの、日々の練習や試合の疲労で後回しになり、気づけば中途半端になっている。',
   },
   {
     num: '05',
-    title: 'サッカーに支障のない日程で着実に進めたい・・',
-    body: 'サッカーのパフォーマンスに影響のないように、学習日程や時間を柔軟に調整しながら着実に学習を進めていきたい。',
+    title: 'サッカーに支障のない状態で学習を進めていきたい・・',
+    body: 'パフォーマンスに悪影響がありそうで、他社の英語コーチングの利用を躊躇している。',
   },
 ] as const;
 
@@ -910,7 +910,7 @@ export default function App() {
 
           {/* Three elements */}
           <div>
-            <PhaseSubtitle gentleTilt>英会話力の向上に重要な「3つの要素」を最大化</PhaseSubtitle>
+            <PhaseSubtitle gentleTilt>英会話力向上に重要な3つの要素を最大化</PhaseSubtitle>
 
             {/* Quality x Quantity x Consistency diagram */}
             <div className="flex flex-col items-center justify-center mt-8 sm:mt-10 bg-white/40 px-4 py-8 sm:p-10 rounded-3xl border border-yellow-100/40 w-full max-w-[720px] mx-auto">
