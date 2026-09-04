@@ -24,7 +24,8 @@ import {
   Ear,
   Speech,
   MessageSquare,
-  ArrowRight
+  ArrowRight,
+  Smartphone
 } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { HeroTechVisual, HeroTechVisualMobile } from './components/HeroTechVisual';
@@ -128,6 +129,80 @@ const TARGET_PLAYERS = [
     after: '選手',
   },
 ] as const;
+
+const DAILY_LEARNING_CYCLE = [
+  {
+    num: '01',
+    label: 'プロセス設計',
+    title: '学習プログラムの設計',
+    body: '毎日の学習内容を明確にした学習カリキュラムを作成。迷いなく学習を進めていきます。',
+    icon: FileText,
+  },
+  {
+    num: '02',
+    label: 'インプット強化',
+    title: 'アプリを使った学習',
+    body: '移動時間や隙間時間を有効活用することで、効率的な学習を実現できます。',
+    icon: Smartphone,
+  },
+  {
+    num: '03',
+    label: 'アウトプット強化',
+    title: 'オンライン英会話',
+    body: '弊社専属のフィリピン人講師との英会話を通して、実践で使える力まで引き上げます。',
+    icon: MessageSquare,
+  },
+  {
+    num: '04',
+    label: 'モチベーション喚起',
+    title: '専属メンターとのミーティング',
+    body: '隔週に一度の専属メンターとのミーティングを通して、継続的に学習エンジンを着火させます。',
+    icon: Users,
+  },
+] as const;
+
+function LearningCycleCard({ item }: { item: (typeof DAILY_LEARNING_CYCLE)[number] }) {
+  const Icon = item.icon;
+  return (
+    <article className="relative z-10 h-full bg-white rounded-2xl shadow-[0_8px_28px_rgba(40,24,16,0.07)] border border-white px-5 py-5 sm:px-6 sm:py-6 text-left">
+      <div className="flex items-start justify-between gap-3 mb-6">
+        <div className="w-9 h-9 rounded-[6px] bg-[#E55C29] flex items-center justify-center shrink-0">
+          <Icon className="w-4 h-4 text-white" strokeWidth={2.2} />
+        </div>
+        <span className="text-[11px] sm:text-[12px] font-extrabold text-[#E55C29] tracking-wide border-b border-[#E55C29]/50 pb-0.5 mt-1">
+          {item.label}
+        </span>
+      </div>
+      <p className="text-[12px] sm:text-[13px] font-black text-[#E55C29] tracking-wide mb-1">
+        {item.num}
+      </p>
+      <h3 className="text-[16px] sm:text-[19px] font-extrabold text-neutral-950 font-serif tracking-wide leading-snug mb-2">
+        {item.title}
+      </h3>
+      <p className="text-[13.5px] sm:text-[15px] font-semibold text-neutral-600 leading-relaxed">
+        {item.body}
+      </p>
+    </article>
+  );
+}
+
+function LearningCycleHub() {
+  return (
+    <div
+      className="w-[132px] h-[132px] sm:w-[168px] sm:h-[168px] rounded-full flex items-center justify-center text-center shadow-[0_0_56px_rgba(229,92,41,0.16)] ring-1 ring-[#E55C29]/10"
+      style={{
+        background:
+          'radial-gradient(circle at 50% 42%, #ffffff 0%, #fff6f1 48%, #f4d4c2 100%)',
+      }}
+    >
+      <p className="text-[15px] sm:text-[17px] font-extrabold text-neutral-800 font-serif tracking-wide leading-[1.25] px-3">
+        Kepty
+        <br />
+        English
+      </p>
+    </div>
+  );
+}
 
 const SOLUTION_PILLARS = [
   {
@@ -1968,6 +2043,48 @@ export default function App() {
 
           </div>
 
+        </div>
+      </section>
+
+      {/* 日々の学習サイクル */}
+      <section
+        id="daily-learning-cycle-section"
+        className="relative bg-[#fff8f3] text-neutral-900 z-40 border-t border-orange-100 px-4 py-20 sm:py-28"
+      >
+        <div className="max-w-[940px] mx-auto w-full">
+          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-wide text-neutral-950 font-serif mb-12 sm:mb-16 leading-[1.25] text-left">
+            日々の学習サイクル
+          </h2>
+
+          {/* Desktop: 2×2 cards around the hub */}
+          <div className="relative hidden md:grid grid-cols-[1fr_10.5rem_1fr] grid-rows-[auto_auto_auto] gap-x-5 gap-y-5 items-stretch">
+            <div className="pointer-events-none absolute inset-[14%] z-0">
+              <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 border-t border-dotted border-[#E55C29]/50" />
+              <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 border-l border-dotted border-[#E55C29]/50" />
+            </div>
+            <LearningCycleCard item={DAILY_LEARNING_CYCLE[0]} />
+            <div aria-hidden className="self-stretch" />
+            <LearningCycleCard item={DAILY_LEARNING_CYCLE[1]} />
+            <div aria-hidden />
+            <div className="relative z-20 flex items-center justify-center py-2">
+              <LearningCycleHub />
+            </div>
+            <div aria-hidden />
+            <LearningCycleCard item={DAILY_LEARNING_CYCLE[3]} />
+            <div aria-hidden />
+            <LearningCycleCard item={DAILY_LEARNING_CYCLE[2]} />
+          </div>
+
+          {/* Mobile: stacked cycle */}
+          <div className="md:hidden flex flex-col gap-4">
+            <LearningCycleCard item={DAILY_LEARNING_CYCLE[0]} />
+            <LearningCycleCard item={DAILY_LEARNING_CYCLE[1]} />
+            <div className="flex justify-center py-3">
+              <LearningCycleHub />
+            </div>
+            <LearningCycleCard item={DAILY_LEARNING_CYCLE[2]} />
+            <LearningCycleCard item={DAILY_LEARNING_CYCLE[3]} />
+          </div>
         </div>
       </section>
 
