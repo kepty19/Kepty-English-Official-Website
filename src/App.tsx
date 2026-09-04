@@ -741,25 +741,16 @@ export default function App() {
         className="relative bg-[#faf9f6] text-neutral-900 z-40 border-t border-b border-orange-100/40 px-4 py-20 sm:py-28"
       >
         <div className="max-w-[840px] mx-auto w-full">
-          {/* Main Title */}
-          <div className="text-center mb-16 sm:mb-20">
-            <h2 className="text-3xl sm:text-5xl font-extrabold tracking-wide text-neutral-950 font-serif mb-4 leading-tight">
-              <span className="block sm:inline">なぜ、"英語コーチング"</span>
-              <span className="block sm:inline">が有効か？</span>
-            </h2>
-            <div className="w-16 h-1.5 bg-[#E55C29] mx-auto rounded-full"></div>
-          </div>
-
           {/* Target players */}
           <div className="mb-16 sm:mb-20">
-            <h3 className="text-2xl sm:text-3xl font-extrabold tracking-wider text-black font-serif mb-10 leading-relaxed text-left">
+            <h2 className="text-2xl sm:text-3xl font-extrabold tracking-wider text-black font-serif mb-10 leading-relaxed text-left">
               従って、このような選手を中心にご利用頂いております。
-            </h3>
+            </h2>
 
-            <div className="bg-white/90 border border-orange-100 rounded-3xl p-6 sm:p-12 shadow-sm space-y-6 sm:space-y-8">
+            <div className="space-y-6 sm:space-y-8">
               {[
                 ["将来の海外移籍を見据え、", "日本でゼロから正しいやり方で英語を始めたい", "選手"],
-                ["すでに海外でプレーしているが、", "会話の伸び悩みや「壁」を感じている", "選手"],
+                ["すでに海外でプレーしているが、", "会話の伸び悩みや壁を感じている", "選手"],
                 ["外国人の監督や選手と", "深いコミュニケーションを取り、ピッチ上の信頼を得たい", "選手"],
                 ["これまで独学やアプリを試してきたが、", "本質的な効果を得られなかった", "選手"],
                 ["現役中に、", "引退後のキャリアにも活きる一生モノの語学力を養いたい", "選手"],
@@ -767,7 +758,7 @@ export default function App() {
                 <div key={idx} className="flex items-start gap-4 sm:gap-5 group">
                   <div className="mt-[0.52em] sm:mt-[0.5em] w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 rounded-full bg-[#E55C29] border-2 border-[#E55C29]/30 shadow-sm flex-shrink-0 group-hover:scale-125 transition-transform duration-300" />
                   <p className="text-[15px] sm:text-[18px] leading-[1.8] font-sans font-semibold text-neutral-800 tracking-wide text-left group-hover:text-black transition-colors">
-                    {before}「<span className="font-extrabold text-neutral-950">{highlight}</span>」{after}
+                    {before}<span className="font-extrabold text-neutral-950">{highlight}</span>{after}
                   </p>
                 </div>
               ))}
@@ -777,6 +768,84 @@ export default function App() {
                 <p className="text-[14px] sm:text-[16px] font-semibold text-neutral-500 tracking-widest pl-1">
                   etc.
                 </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Analogy: soccer = English */}
+          <div className="bg-white rounded-3xl shadow-md border border-neutral-200/50 p-6 sm:p-10 select-text mb-16 sm:mb-20">
+            <div className="flex items-center gap-3 mb-6 border-b border-[#E55C29]/15 pb-4">
+              <div className="w-1.5 h-6 bg-[#E55C29] rounded-full"></div>
+              <h3 className="text-xl sm:text-2xl font-sans font-extrabold text-neutral-950 tracking-wide text-left">
+                サッカーも英語も、上達へのアプローチは全く同じ。
+              </h3>
+            </div>
+
+            <p className="text-[14.5px] sm:text-[16px] leading-[1.9] text-neutral-700 font-medium text-left mb-8">
+              成人後の脳に最適な『第二言語習得論』の科学的アプローチにおいて、英語習得とサッカーのレベルアップ構造は驚くほど類似しています。
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+              {/* Soccer column */}
+              <div className="space-y-5 pb-8 border-b border-neutral-200/70 md:border-b-0 md:pb-0">
+                <div className="flex flex-col items-start gap-2">
+                  <span className="text-[11px] font-black bg-neutral-100 text-neutral-800 px-2 py-0.5 rounded uppercase tracking-wider">Football</span>
+                  <h4 className="text-[16px] sm:text-[18px] font-sans font-black text-neutral-950 leading-snug">
+                    サッカーのフェーズ別アプローチ
+                  </h4>
+                </div>
+                <p className="text-[14.5px] sm:text-[15.5px] leading-[1.8] text-neutral-700 font-medium text-left">
+                  ただ我流でボールを蹴るだけ、ただ試合に出続けるだけでは、真の上達は望めません。
+                </p>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-[13.5px] sm:text-[14.5px] font-black text-neutral-950 mb-1">
+                      基礎強化フェーズ
+                    </p>
+                    <p className="text-[14.5px] sm:text-[15.5px] leading-[1.8] text-neutral-700 font-medium text-left">
+                      「止めて、蹴る」の正確な基礎技術がなければ、どれだけ練習しても上達に限界が来る。
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-[13.5px] sm:text-[14.5px] font-black text-neutral-950 mb-1">
+                      スキル強化フェーズ
+                    </p>
+                    <p className="text-[14.5px] sm:text-[15.5px] leading-[1.8] text-neutral-700 font-medium text-left">
+                      試合で浮き彫りになった自分の課題（判断力、キック精度など）を細分化し、ピンポイントでトレーニングしないと伸び悩む。
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* English column */}
+              <div className="space-y-5">
+                <div className="flex flex-col items-start gap-2">
+                  <span className="text-[11px] font-black bg-neutral-100 text-neutral-800 px-2 py-0.5 rounded uppercase tracking-wider">English</span>
+                  <h4 className="text-[16px] sm:text-[18px] font-sans font-black text-neutral-950 leading-snug">
+                    英語のフェーズ別アプローチ
+                  </h4>
+                </div>
+                <p className="text-[14.5px] sm:text-[15.5px] leading-[1.8] text-neutral-700 font-medium text-left">
+                  ただ英会話レッスンを受けるだけ、ただ英語圏で生活するだけでは、効率的な上達は望めません。
+                </p>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-[13.5px] sm:text-[14.5px] font-black text-neutral-950 mb-1">
+                      基礎強化フェーズ
+                    </p>
+                    <p className="text-[14.5px] sm:text-[15.5px] leading-[1.8] text-neutral-700 font-medium text-left">
+                      独学を通して変な癖がつく前に、正しい「音の出し方・学習方法」などの基礎を身体に叩き込む。
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-[13.5px] sm:text-[14.5px] font-black text-neutral-950 mb-1">
+                      スキル強化フェーズ
+                    </p>
+                    <p className="text-[14.5px] sm:text-[15.5px] leading-[1.8] text-neutral-700 font-medium text-left">
+                      実際の会話を通して見えた課題や弱点に対して、ピンポイントで打ち手の改善トレーニングを実施する。
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -848,86 +917,6 @@ export default function App() {
                 </div>
               </div>
 
-            </div>
-
-            {/* Analogy & Typic Problem block */}
-            <div className="bg-white rounded-3xl shadow-md border border-neutral-200/50 p-6 sm:p-10 select-text">
-              <div className="flex items-center gap-3 mb-8 border-b border-[#E55C29]/15 pb-4">
-                <div className="w-1.5 h-6 bg-[#E55C29] rounded-full"></div>
-                <h3 className="text-xl sm:text-2xl font-sans font-extrabold text-neutral-950 tracking-wide text-left">
-                  サッカーも英語も、上達へのアプローチは全く同じ。
-                </h3>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
-                {/* Soccer column */}
-                <div className="space-y-5 pb-8 border-b border-neutral-200/70 md:border-b-0 md:pb-0">
-                  <div className="flex flex-col items-start gap-2">
-                    <span className="text-[11px] font-black bg-neutral-100 text-neutral-800 px-2 py-0.5 rounded uppercase tracking-wider">Football</span>
-                    <h4 className="text-[16px] sm:text-[18px] font-sans font-black text-neutral-950 leading-snug">
-                      サッカーのフェーズ別アプローチ
-                    </h4>
-                  </div>
-                  <p className="text-[14.5px] sm:text-[15.5px] leading-[1.8] text-neutral-700 font-medium text-left">
-                    ただ我流でボールを蹴るだけ、ただ試合に出続けるだけでは、真の上達は望めません。
-                  </p>
-                  <div className="space-y-4">
-                    <div>
-                      <p className="text-[13.5px] sm:text-[14.5px] font-black text-neutral-950 mb-1">
-                        初級フェーズ（土台作り）
-                      </p>
-                      <p className="text-[14.5px] sm:text-[15.5px] leading-[1.8] text-neutral-700 font-medium text-left">
-                        「止めて、蹴る」の正確な基礎技術がなければ、どれだけ練習しても上達に限界が来る。
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-[13.5px] sm:text-[14.5px] font-black text-neutral-950 mb-1">
-                        中上級フェーズ（課題克服）
-                      </p>
-                      <p className="text-[14.5px] sm:text-[15.5px] leading-[1.8] text-neutral-700 font-medium text-left">
-                        試合で浮き彫りになった自分の課題（判断力、キック精度など）を細分化し、ピンポイントでトレーニングしないと伸び悩む。
-                      </p>
-                    </div>
-                  </div>
-                  <p className="text-[13.5px] sm:text-[14.5px] text-[#E55C29] font-bold leading-relaxed text-left">
-                    ただ「なんとなくボールを蹴る」だけでは、高いレベルまで到達しません。
-                  </p>
-                </div>
-
-                {/* English column */}
-                <div className="space-y-5">
-                  <div className="flex flex-col items-start gap-2">
-                    <span className="text-[11px] font-black bg-neutral-100 text-neutral-800 px-2 py-0.5 rounded uppercase tracking-wider">English</span>
-                    <h4 className="text-[16px] sm:text-[18px] font-sans font-black text-neutral-950 leading-snug">
-                      英語のフェーズ別アプローチ
-                    </h4>
-                  </div>
-                  <p className="text-[14.5px] sm:text-[15.5px] leading-[1.8] text-neutral-700 font-medium text-left">
-                    ただ英会話レッスンを受けるだけ、ただ英語圏で生活するだけでは、効率的な上達は望めません。
-                  </p>
-                  <div className="space-y-4">
-                    <div>
-                      <p className="text-[13.5px] sm:text-[14.5px] font-black text-neutral-950 mb-1">
-                        初級フェーズ（土台作り）
-                      </p>
-                      <p className="text-[14.5px] sm:text-[15.5px] leading-[1.8] text-neutral-700 font-medium text-left">
-                        独学を通して変な癖がつく前に、正しい「音の出し方・学習方法」などの基礎を身体に叩き込む。
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-[13.5px] sm:text-[14.5px] font-black text-neutral-950 mb-1">
-                        中上級フェーズ（課題克服）
-                      </p>
-                      <p className="text-[14.5px] sm:text-[15.5px] leading-[1.8] text-neutral-700 font-medium text-left">
-                        現状の課題を的確に特定し、弱点に対してピンポイントで打ち手のトレーニングを実施する。
-                      </p>
-                    </div>
-                  </div>
-                  <p className="text-[13.5px] sm:text-[14.5px] text-[#E55C29] font-bold leading-relaxed text-left">
-                    自分の現在地に応じた「科学的アプローチ」を行うからこそ、最短でブレイクスルーできます。
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
 
