@@ -2048,7 +2048,7 @@ export default function App() {
                 <p>弊社専属のフィリピン人講師との英会話を通して、実践で使える力まで引き上げます。</p>
               </article>
               <article className="cycle-card cycle-card-bl">
-                <span className="cycle-corner">モチベーション喚起</span>
+                <span className="cycle-corner">現状確認・計画修正</span>
                 <span className="cycle-icon" aria-hidden="true">
                   <svg viewBox="0 0 32 32" fill="none">
                     <circle cx="12" cy="11" r="3.2" stroke="currentColor" strokeWidth="1.8" />
@@ -2058,8 +2058,8 @@ export default function App() {
                   </svg>
                 </span>
                 <span className="cycle-step">04</span>
-                <h3>専属メンターとのミーティング</h3>
-                <p>隔週に一度の専属メンターとのミーティングを通して、継続的に学習エンジンを着火させます。</p>
+                <h3>専属トレーナーとのミーティング</h3>
+                <p>隔週に一度の専属トレーナーとのミーティングを通して、日々の学習内容をチューニングします。</p>
               </article>
             </div>
           </div>
