@@ -98,6 +98,39 @@ const ENGLISH_LEARNING_STRUGGLES = [
   },
 ] as const;
 
+const TARGET_PLAYERS = [
+  {
+    num: '01',
+    before: '将来の海外移籍を見据え、',
+    highlight: '日本でゼロから正しいやり方で英語を始めたい',
+    after: '選手',
+  },
+  {
+    num: '02',
+    before: 'すでに海外でプレーしているが、',
+    highlight: '会話の伸び悩みや壁を感じている',
+    after: '選手',
+  },
+  {
+    num: '03',
+    before: '外国人の監督や選手と',
+    highlight: '深いコミュニケーションを取り、ピッチ上の信頼を得たい',
+    after: '選手',
+  },
+  {
+    num: '04',
+    before: 'これまで独学やアプリを試してきたが、',
+    highlight: '本質的な効果を得られなかった',
+    after: '選手',
+  },
+  {
+    num: '05',
+    before: '現役中に、',
+    highlight: '引退後のキャリアにも活きる一生モノの語学力を養いたい',
+    after: '選手',
+  },
+] as const;
+
 const SOLUTION_PILLARS = [
   {
     num: '01',
@@ -739,36 +772,40 @@ export default function App() {
         id="why-coaching-effective-section" 
         className="relative bg-[#faf9f6] text-neutral-900 z-40 border-t border-b border-orange-100/40 px-4 py-20 sm:py-28"
       >
-        <div className="max-w-[840px] mx-auto w-full">
+        <div className="max-w-[920px] mx-auto w-full">
           {/* Target players */}
           <div className="mb-16 sm:mb-20">
-            <h2 className="text-2xl sm:text-3xl font-extrabold tracking-wider text-black font-serif mb-10 leading-relaxed text-left">
-              従って、このような選手を中心にご利用頂いております。
-            </h2>
+            <div className="text-center mb-12 sm:mb-16">
+              <h2 className="text-3xl sm:text-5xl font-extrabold tracking-wide text-neutral-950 font-serif mb-5 leading-[1.25]">
+                <span className="block">従って、このような選手を</span>
+                <span className="block">中心にご利用頂いております。</span>
+              </h2>
+              <div className="w-16 h-1.5 bg-[#E55C29] mx-auto rounded-full"></div>
+            </div>
 
-            <div className="space-y-6 sm:space-y-8">
-              {[
-                ["将来の海外移籍を見据え、", "日本でゼロから正しいやり方で英語を始めたい", "選手"],
-                ["すでに海外でプレーしているが、", "会話の伸び悩みや壁を感じている", "選手"],
-                ["外国人の監督や選手と", "深いコミュニケーションを取り、ピッチ上の信頼を得たい", "選手"],
-                ["これまで独学やアプリを試してきたが、", "本質的な効果を得られなかった", "選手"],
-                ["現役中に、", "引退後のキャリアにも活きる一生モノの語学力を養いたい", "選手"],
-              ].map(([before, highlight, after], idx) => (
-                <div key={idx} className="flex items-start gap-4 sm:gap-5 group">
-                  <div className="mt-[0.52em] sm:mt-[0.5em] w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 rounded-full bg-[#E55C29] border-2 border-[#E55C29]/30 shadow-sm flex-shrink-0 group-hover:scale-125 transition-transform duration-300" />
-                  <p className="text-[15px] sm:text-[18px] leading-[1.8] font-sans font-semibold text-neutral-800 tracking-wide text-left group-hover:text-black transition-colors">
-                    {before}<span className="font-extrabold text-neutral-950">{highlight}</span>{after}
-                  </p>
+            <div className="flex flex-col gap-4">
+              {TARGET_PLAYERS.map((item) => (
+                <div
+                  key={item.num}
+                  className="bg-white rounded-2xl border border-neutral-200/70 px-5 py-5 sm:px-8 sm:py-6 hover:shadow-md transition-shadow duration-300"
+                >
+                  <div className="flex items-start gap-4 sm:gap-5">
+                    <span className="text-2xl sm:text-[28px] font-extrabold font-sans text-[#E55C29] leading-none pt-0.5 shrink-0">
+                      {item.num}
+                    </span>
+                    <p className="text-[15px] sm:text-[18px] leading-[1.85] font-semibold text-neutral-700 tracking-wide text-left">
+                      {item.before}
+                      <span className="text-neutral-950 font-extrabold">{item.highlight}</span>
+                      {item.after}
+                    </p>
+                  </div>
                 </div>
               ))}
-
-              <div className="flex items-center gap-4 sm:gap-5 pt-2">
-                <div className="w-3.5 h-3.5"></div>
-                <p className="text-[14px] sm:text-[16px] font-semibold text-neutral-500 tracking-widest pl-1">
-                  etc.
-                </p>
-              </div>
             </div>
+
+            <p className="mt-6 text-center text-[13px] sm:text-[14px] font-semibold tracking-[0.35em] text-neutral-400">
+              etc.
+            </p>
           </div>
 
           {/* Analogy: soccer = English */}
