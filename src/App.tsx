@@ -749,6 +749,38 @@ export default function App() {
             </h2>
             <div className="w-16 h-1.5 bg-[#E55C29] mx-auto rounded-full"></div>
           </div>
+
+          {/* Target players */}
+          <div className="mb-16 sm:mb-20">
+            <h3 className="text-2xl sm:text-3xl font-extrabold tracking-wider text-black font-serif mb-10 leading-relaxed text-left">
+              従って、このような選手を中心にご利用頂いております。
+            </h3>
+
+            <div className="bg-white/90 border border-orange-100 rounded-3xl p-6 sm:p-12 shadow-sm space-y-6 sm:space-y-8">
+              {[
+                ["将来の海外移籍を見据え、", "日本でゼロから正しいやり方で英語を始めたい", "選手"],
+                ["すでに海外でプレーしているが、", "会話の伸び悩みや「壁」を感じている", "選手"],
+                ["外国人の監督や選手と", "深いコミュニケーションを取り、ピッチ上の信頼を得たい", "選手"],
+                ["これまで独学やアプリを試してきたが、", "本質的な効果を得られなかった", "選手"],
+                ["現役中に、", "引退後のキャリアにも活きる一生モノの語学力を養いたい", "選手"],
+              ].map(([before, highlight, after], idx) => (
+                <div key={idx} className="flex items-start gap-4 sm:gap-5 group">
+                  <div className="mt-[0.52em] sm:mt-[0.5em] w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 rounded-full bg-[#E55C29] border-2 border-[#E55C29]/30 shadow-sm flex-shrink-0 group-hover:scale-125 transition-transform duration-300" />
+                  <p className="text-[15px] sm:text-[18px] leading-[1.8] font-sans font-semibold text-neutral-800 tracking-wide text-left group-hover:text-black transition-colors">
+                    {before}「<span className="font-extrabold text-neutral-950">{highlight}</span>」{after}
+                  </p>
+                </div>
+              ))}
+
+              <div className="flex items-center gap-4 sm:gap-5 pt-2">
+                <div className="w-3.5 h-3.5"></div>
+                <p className="text-[14px] sm:text-[16px] font-semibold text-neutral-500 tracking-widest pl-1">
+                  etc.
+                </p>
+              </div>
+            </div>
+          </div>
+
           <div className="mb-16">
             <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10 mb-10">
               <span className="text-8xl sm:text-9xl font-sans text-[#E55C29] opacity-30 font-black tracking-tight leading-none select-none">
@@ -1003,56 +1035,6 @@ export default function App() {
 
             </div>
 
-            {/* Bouncing giant orange indicator arrow below Section 2 */}
-            <div className="flex flex-col items-center justify-center mt-20 select-none">
-              <div className="animate-bounce flex flex-col items-center justify-center">
-                <svg 
-                  className="w-16 h-16 text-[#E55C29]" 
-                  viewBox="0 0 24 24" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  strokeWidth="3.2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round"
-                >
-                  <path d="M6 6l6 6 6-6" className="opacity-35" />
-                  <path d="M6 13l6 6 6-6" />
-                </svg>
-              </div>
-            </div>
-
-          </div>
-
-          {/* Section 03: Profile target list ("そのため、現在このような選手を...") */}
-          <div className="mt-6">
-            <h3 className="text-2xl sm:text-3xl font-extrabold tracking-wider text-black font-serif mb-10 leading-relaxed text-left">
-              従って、このような選手を中心にご利用頂いております。
-            </h3>
-
-            {/* Bullet points mapping */}
-            <div className="bg-white/90 border border-orange-100 rounded-3xl p-6 sm:p-12 shadow-sm space-y-6 sm:space-y-8">
-              {[
-                ["将来の海外移籍を見据え、", "日本でゼロから正しいやり方で英語を始めたい", "選手"],
-                ["すでに海外でプレーしているが、", "会話の伸び悩みや「壁」を感じている", "選手"],
-                ["外国人の監督や選手と", "深いコミュニケーションを取り、ピッチ上の信頼を得たい", "選手"],
-                ["これまで独学やアプリを試してきたが、", "本質的な効果を得られなかった", "選手"],
-                ["現役生活のなかで、", "引退後のキャリアにも活きる一生モノの語学力を養いたい", "選手"],
-              ].map(([before, highlight, after], idx) => (
-                <div key={idx} className="flex items-start gap-4 sm:gap-5 group">
-                  <div className="mt-[0.52em] sm:mt-[0.5em] w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 rounded-full bg-[#E55C29] border-2 border-[#E55C29]/30 shadow-sm flex-shrink-0 group-hover:scale-125 transition-transform duration-300" />
-                  <p className="text-[15px] sm:text-[18px] leading-[1.8] font-sans font-semibold text-neutral-800 tracking-wide text-left group-hover:text-black transition-colors">
-                    {before}「<span className="font-extrabold text-neutral-950">{highlight}</span>」{after}
-                  </p>
-                </div>
-              ))}
-              
-              <div className="flex items-center gap-4 sm:gap-5 pt-2">
-                <div className="w-3.5 h-3.5"></div>
-                <p className="text-[14px] sm:text-[16px] font-semibold text-neutral-500 tracking-widest pl-1">
-                  etc.
-                </p>
-              </div>
-            </div>
           </div>
 
         </div>
