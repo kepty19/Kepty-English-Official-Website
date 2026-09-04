@@ -209,13 +209,15 @@ const SOLUTION_PILLARS = [
 ] as const;
 
 /** Hand-drawn crayon/brush underline for phase subtitles */
-function PhaseSubtitle({ children }: { children: React.ReactNode }) {
+function PhaseSubtitle({ children, gentleTilt = false }: { children: React.ReactNode; gentleTilt?: boolean }) {
   return (
     <div className="flex items-center justify-center mb-5">
       <h5 className="relative inline-block text-[17px] sm:text-[20px] font-extrabold text-neutral-950 font-serif tracking-wide px-0.5">
         <span className="relative z-10">{children}</span>
         <svg
-          className="absolute left-[-4%] bottom-[0.04em] w-[108%] h-[0.5em] z-0 pointer-events-none -rotate-[1.2deg] origin-left"
+          className={`absolute left-[-4%] bottom-[0.04em] w-[108%] h-[0.5em] z-0 pointer-events-none origin-left ${
+            gentleTilt ? '-rotate-[0.45deg]' : '-rotate-[1.2deg]'
+          }`}
           viewBox="0 0 280 16"
           preserveAspectRatio="none"
           aria-hidden="true"
@@ -895,7 +897,7 @@ export default function App() {
       {/* 🚀 NEW SECTION: OVERVIEW OF ENGLISH COACHING (英語コーチングの概要) */}
       <section 
         id="coaching-overview-section" 
-        className="relative bg-[#fafaf2] text-neutral-900 z-40 border-t border-b border-yellow-100/50 px-4 py-20 sm:py-28"
+        className="relative bg-[#fafaf2] text-neutral-900 z-40 border-t border-b border-yellow-100/50 px-4 pt-20 sm:pt-28 pb-12 sm:pb-16"
       >
         <div className="max-w-[940px] mx-auto w-full">
           {/* Main Title */}
@@ -908,10 +910,10 @@ export default function App() {
 
           {/* Three elements */}
           <div>
-            <PhaseSubtitle>英会話力の向上に重要な「3つの要素」を最大化</PhaseSubtitle>
+            <PhaseSubtitle gentleTilt>英会話力の向上に重要な「3つの要素」を最大化</PhaseSubtitle>
 
             {/* Quality x Quantity x Consistency diagram */}
-            <div className="flex flex-col items-center justify-center my-10 sm:my-12 bg-white/40 px-4 py-8 sm:p-10 rounded-3xl border border-yellow-100/40 w-full max-w-[720px] mx-auto">
+            <div className="flex flex-col items-center justify-center mt-8 sm:mt-10 bg-white/40 px-4 py-8 sm:p-10 rounded-3xl border border-yellow-100/40 w-full max-w-[720px] mx-auto">
               
               {/* Circles + labels share one grid so mobile text aligns under each circle */}
               <div className="grid grid-cols-[92px_auto_92px_auto_92px] sm:grid-cols-[130px_auto_130px_auto_130px] gap-x-2 sm:gap-x-5 w-full max-w-[560px] justify-center select-none">
