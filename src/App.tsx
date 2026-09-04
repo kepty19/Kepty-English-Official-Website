@@ -90,7 +90,7 @@ const ENGLISH_LEARNING_STRUGGLES = [
   {
     num: '04',
     title: 'なかなか継続できない・・',
-    body: '頑張ると心に決めたのに、気がつくと学習の強度が落ちていて、中途半端になってしまっている。',
+    body: 'やる気はあるものの、日々の練習や試合の疲労で後回しになり、気づけば学習強度が落ちてしまっている。',
   },
   {
     num: '05',
@@ -104,25 +104,21 @@ const SOLUTION_PILLARS = [
     num: '01',
     title: (
       <>
-        英語学習の
-        <span className="text-[#E55C29]">「初期段階に習得すべき本質と基礎」</span>
-        を体得することができる。
+        間違った自己流を脱却し、一生モノの
+        <span className="text-[#E55C29]">「型と基礎」</span>
+        が身につく
       </>
     ),
     paragraphs: [
       <>
-        サッカーと同じで
-        <span className="text-[#E55C29] font-extrabold">「間違った基礎」</span>
-        且つ
-        <span className="text-[#E55C29] font-extrabold">「自己流の学習法」</span>
-        で走り出すと、途中で伸び悩み、どれだけ努力しても成果が出なくなりがちです。
+        サッカーと同じで、自己流のフォーム（間違った基礎）で走り出すと、どれだけ努力しても途中で限界が訪れます。
       </>,
       <>
-        だからこそ、最初の
+        だからこそ最初の
         <span className="text-[#E55C29] font-extrabold">「初動」</span>
-        が非常に重要。私たちは、英語学習における長旅を勝ち抜くために
-        <span className="text-[#E55C29] font-extrabold">「最初に習得すべき本質と基礎」</span>
-        を体得できるよう徹底的に伴走します。
+        がすべて。将来にわたって英語力を伸ばし続けるために必要な
+        <span className="text-[#E55C29] font-extrabold">「最重要な型と正しい学習法」</span>
+        を徹底的に脳へ叩き込みます。
       </>,
     ],
   },
@@ -130,16 +126,16 @@ const SOLUTION_PILLARS = [
     num: '02',
     title: (
       <>
-        <span className="text-[#E55C29]">「伸び悩みのブレイクスルー」</span>
-        を実現できる。
+        科学的アプローチで、学習の
+        <span className="text-[#E55C29]">「伸び悩み」</span>
+        をピンポイント突破
       </>
     ),
     paragraphs: [
       <>
-        <span className="text-[#E55C29] font-extrabold">「第二言語習得論に基づいた科学的アプローチ」</span>
-        の活用により、何が課題で、何のトレーニングを実施すべきか、を
-        <span className="text-[#E55C29] font-extrabold">「ピンポイントに特定」</span>
-        し、より効率的な学習と伸び悩みのブレイクスルーを実現できます。
+        感覚論ではなく
+        <span className="text-[#E55C29] font-extrabold">「第二言語習得論（SLA）」</span>
+        に基づき、あなたの今の課題と必要なトレーニングを科学的に特定。無駄な遠回りを一切排除し、最短ルートで成長の限界をこじ開けることで、伸び悩みのブレイクスルーを実現します。
       </>,
     ],
   },
@@ -147,24 +143,41 @@ const SOLUTION_PILLARS = [
     num: '03',
     title: (
       <>
-        英語学習における
-        <span className="text-[#E55C29]">「継続性」</span>
-        と実践的な英会話の場での
-        <span className="text-[#E55C29]">「慣れ・自信」</span>
-        が手に入る。
+        <span className="text-[#E55C29]">「毎日の継続習慣」</span>
+        と
+        <span className="text-[#E55C29]">「実戦で物怖じしない圧倒的な自信」</span>
+        を獲得
       </>
     ),
     paragraphs: [
       <>
-        弊社専用の
-        <span className="text-[#E55C29] font-extrabold">「学習プログラム」</span>
-        や専属のトレーナー、フィリピン人講師との
-        <span className="text-[#E55C29] font-extrabold">「伴走」</span>
-        を通して、英語学習者の多くの方々が躓く
-        <span className="text-[#E55C29] font-extrabold">「毎日継続すること」</span>
+        英語学習で最も難しい
+        <span className="text-[#E55C29] font-extrabold">「継続」</span>
+        を専属トレーナーが強固に仕組み化。さらに実践的な対話（フィリピン人講師）の場を設けることで、
+        <span className="text-[#E55C29] font-extrabold">「話すことへの恐怖」</span>
+        をなくし、実戦で堂々と自分を表現できる慣れと自信を醸成します。
+      </>,
+    ],
+  },
+  {
+    num: '04',
+    title: (
+      <>
+        <span className="text-[#E55C29]">「正しい学習法」</span>
+        の体得により、プログラム終了後の
+        <span className="text-[#E55C29]">「迷い」</span>
         や
-        <span className="text-[#E55C29] font-extrabold">「英語を活用して会話することへの慣れ・自信」</span>
-        を自然と作り上げることができます。
+        <span className="text-[#E55C29]">「停滞」</span>
+        をゼロに
+      </>
+    ),
+    paragraphs: [
+      <>
+        一度
+        <span className="text-[#E55C29] font-extrabold">「正しい学習の型」</span>
+        を体得してしまえば、プログラム終了後に一人になっても学習ルートで迷うことはありません。英語という長旅の中で起こりがちな挫折や停滞を根本から防ぎ、一生自力で伸ばし続けられる
+        <span className="text-[#E55C29] font-extrabold">「確固たる自走力」</span>
+        を構築します。
       </>,
     ],
   },
@@ -626,9 +639,10 @@ export default function App() {
         <div className="px-4 py-20 sm:py-28">
           <div className="max-w-[920px] mx-auto w-full">
             <div className="text-center mb-12 sm:mb-16">
-              <h2 className="text-[22px] sm:text-[30px] font-extrabold font-serif text-neutral-950 tracking-wide leading-tight">
+              <h2 className="text-3xl sm:text-5xl font-extrabold tracking-wide text-neutral-950 font-serif mb-5 leading-[1.25]">
                 プロ選手が直面する典型的な課題
               </h2>
+              <div className="w-16 h-1.5 bg-[#E55C29] mx-auto rounded-full"></div>
             </div>
             <div className="flex flex-col gap-4">
               {ENGLISH_LEARNING_STRUGGLES.map((item) => (
@@ -677,7 +691,11 @@ export default function App() {
                   <span className="text-[#E55C29] font-black">成人後</span>
                   に英語力を飛躍的に伸ばすためには、一定量の努力が必要です。
                 </p>
-                <p>ただ、我々の3ヶ月のプログラムを通して、下記の変化・成長が得られます。</p>
+                <p>
+                  だからこそKepty Englishでは、無駄な遠回りを一切排除。2ヶ月の徹底伴走を通して、
+                  <span className="text-[#E55C29] font-black">一生モノの武器となる3つの変化</span>
+                  を提供します。
+                </p>
               </div>
             </div>
 
