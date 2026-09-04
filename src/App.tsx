@@ -705,7 +705,7 @@ export default function App() {
                     className="pointer-events-none absolute -top-14 -right-14 h-[168px] w-[168px] sm:-top-16 sm:-right-16 sm:h-[200px] sm:w-[200px] rounded-full"
                     style={{
                       background:
-                        'radial-gradient(circle at 38% 36%, #8a5530 0%, #5c341c 48%, #2a1810 100%)',
+                        'radial-gradient(circle at 38% 36%, #c08a5c 0%, #a06a42 48%, #7a4e2e 100%)',
                     }}
                   />
                   <div className="relative flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-8">
