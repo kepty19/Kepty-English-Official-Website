@@ -810,7 +810,7 @@ export default function App() {
 
           {/* Analogy: soccer = English */}
           <div className="bg-white rounded-3xl shadow-md border border-neutral-200/50 p-6 sm:p-10 select-text">
-            <div className="mb-6 border-b border-[#E55C29]/15 pb-4">
+            <div className="mb-6 border-b border-[#E55C29]/45 pb-4">
               <h3 className="text-xl sm:text-2xl font-sans font-extrabold text-neutral-950 tracking-wide text-left">
                 サッカーも英語も、上達へのアプローチは全く同じ。
               </h3>
@@ -1244,12 +1244,20 @@ export default function App() {
                 <span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">ピンポイントでの課題特定と打ち手の実施</span>により、より効率的な学習を実現します。
               </p>
 
-            {/* Mobile-only horizontal scroll hint (top-left, not overlapping the figure) */}
-            <div className="md:hidden flex justify-start -mb-1 mt-2 pl-1 pointer-events-none select-none">
-              <span className="inline-flex items-center gap-2 text-[12px] font-black tracking-[0.22em] text-[#E55C29] drop-shadow-[0_2px_10px_rgba(229,92,41,0.35)]">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#E55C29] animate-pulse" />
-                scroll→
-              </span>
+            {/* Upper figure: 課題特定 */}
+            <div className="flex items-center justify-between gap-3 mb-3 px-1">
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#E55C29] shrink-0" aria-hidden="true" />
+                <span className="text-[14px] sm:text-[16px] font-extrabold text-neutral-950 font-serif tracking-wide">
+                  課題特定
+                </span>
+              </div>
+              <div className="md:hidden flex justify-end pointer-events-none select-none">
+                <span className="inline-flex items-center gap-2 text-[12px] font-black tracking-[0.22em] text-[#E55C29] drop-shadow-[0_2px_10px_rgba(229,92,41,0.35)]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#E55C29] animate-pulse" />
+                  scroll→
+                </span>
+              </div>
             </div>
 
             {/* Steps Timeline Visual */}
@@ -1380,14 +1388,11 @@ export default function App() {
 
               {/* Challenge → Training protocol map */}
               <div className="mt-10 max-w-[760px] mx-auto">
-                <div className="grid grid-cols-[minmax(0,1fr)_40px_minmax(0,1.15fr)] sm:grid-cols-[minmax(0,1fr)_48px_minmax(0,1.2fr)] items-end px-1 sm:px-2 mb-3">
-                  <div className="pb-2 border-b border-neutral-200/80">
-                    <span className="text-[13px] sm:text-[14px] font-black text-neutral-950 font-serif tracking-wide leading-none">課題</span>
-                  </div>
-                  <div aria-hidden />
-                  <div className="pb-2 border-b border-neutral-200/80">
-                    <span className="text-[13px] sm:text-[14px] font-black text-neutral-950 font-serif tracking-wide leading-none">トレーニング</span>
-                  </div>
+                <div className="flex items-center gap-2 mb-4 px-1">
+                  <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#E55C29] shrink-0" aria-hidden="true" />
+                  <span className="text-[14px] sm:text-[16px] font-extrabold text-neutral-950 font-serif tracking-wide">
+                    打ち手トレーニング選定
+                  </span>
                 </div>
 
                 <div className="space-y-2.5">
