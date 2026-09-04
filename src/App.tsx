@@ -11,7 +11,6 @@ import {
   Activity,
   Heart,
   ChevronDown,
-  RefreshCw,
   Youtube,
   ExternalLink,
   BookOpen,
@@ -705,7 +704,7 @@ export default function App() {
                     className="pointer-events-none absolute -top-14 -right-14 h-[168px] w-[168px] sm:-top-16 sm:-right-16 sm:h-[200px] sm:w-[200px] rounded-full"
                     style={{
                       background:
-                        'radial-gradient(circle at 38% 36%, #c08a5c 0%, #a06a42 48%, #7a4e2e 100%)',
+                        'radial-gradient(circle at 38% 36%, rgba(210, 168, 128, 0.38) 0%, rgba(196, 148, 108, 0.22) 48%, rgba(180, 130, 90, 0.08) 100%)',
                     }}
                   />
                   <div className="relative flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-8">
@@ -773,7 +772,7 @@ export default function App() {
           </div>
 
           {/* Analogy: soccer = English */}
-          <div className="bg-white rounded-3xl shadow-md border border-neutral-200/50 p-6 sm:p-10 select-text mb-16 sm:mb-20">
+          <div className="bg-white rounded-3xl shadow-md border border-neutral-200/50 p-6 sm:p-10 select-text">
             <div className="flex items-center gap-3 mb-6 border-b border-[#E55C29]/15 pb-4">
               <div className="w-1.5 h-6 bg-[#E55C29] rounded-full"></div>
               <h3 className="text-xl sm:text-2xl font-sans font-extrabold text-neutral-950 tracking-wide text-left">
@@ -799,7 +798,8 @@ export default function App() {
                 </p>
                 <div className="space-y-4">
                   <div>
-                    <p className="text-[13.5px] sm:text-[14.5px] font-black text-neutral-950 mb-1">
+                    <p className="flex items-center gap-2 text-[13.5px] sm:text-[14.5px] font-black text-neutral-950 mb-1">
+                      <span className="w-2 h-2 rounded-full bg-[#E55C29] shrink-0" aria-hidden="true" />
                       基礎強化フェーズ
                     </p>
                     <p className="text-[14.5px] sm:text-[15.5px] leading-[1.8] text-neutral-700 font-medium text-left">
@@ -807,7 +807,8 @@ export default function App() {
                     </p>
                   </div>
                   <div>
-                    <p className="text-[13.5px] sm:text-[14.5px] font-black text-neutral-950 mb-1">
+                    <p className="flex items-center gap-2 text-[13.5px] sm:text-[14.5px] font-black text-neutral-950 mb-1">
+                      <span className="w-2 h-2 rounded-full bg-[#E55C29] shrink-0" aria-hidden="true" />
                       スキル強化フェーズ
                     </p>
                     <p className="text-[14.5px] sm:text-[15.5px] leading-[1.8] text-neutral-700 font-medium text-left">
@@ -830,7 +831,8 @@ export default function App() {
                 </p>
                 <div className="space-y-4">
                   <div>
-                    <p className="text-[13.5px] sm:text-[14.5px] font-black text-neutral-950 mb-1">
+                    <p className="flex items-center gap-2 text-[13.5px] sm:text-[14.5px] font-black text-neutral-950 mb-1">
+                      <span className="w-2 h-2 rounded-full bg-[#E55C29] shrink-0" aria-hidden="true" />
                       基礎強化フェーズ
                     </p>
                     <p className="text-[14.5px] sm:text-[15.5px] leading-[1.8] text-neutral-700 font-medium text-left">
@@ -838,7 +840,8 @@ export default function App() {
                     </p>
                   </div>
                   <div>
-                    <p className="text-[13.5px] sm:text-[14.5px] font-black text-neutral-950 mb-1">
+                    <p className="flex items-center gap-2 text-[13.5px] sm:text-[14.5px] font-black text-neutral-950 mb-1">
+                      <span className="w-2 h-2 rounded-full bg-[#E55C29] shrink-0" aria-hidden="true" />
                       スキル強化フェーズ
                     </p>
                     <p className="text-[14.5px] sm:text-[15.5px] leading-[1.8] text-neutral-700 font-medium text-left">
@@ -848,182 +851,6 @@ export default function App() {
                 </div>
               </div>
             </div>
-          </div>
-
-          <div className="mb-16">
-            <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10 mb-10">
-              <span className="text-8xl sm:text-9xl font-sans text-[#E55C29] opacity-30 font-black tracking-tight leading-none select-none">
-                01
-              </span>
-              <div className="flex-1">
-                <p className="text-[19px] sm:text-[23px] font-sans font-bold leading-relaxed text-neutral-900 tracking-wide text-left">
-                  第二言語習得論に基づき、「成人後の脳」に最適な科学的アプローチで、レベルに応じた最短の進化を実現できるから。
-                </p>
-              </div>
-            </div>
-
-            {/* Accent statement */}
-            <div className="text-center text-neutral-900 font-sans font-extrabold text-[16px] sm:text-[19px] tracking-wide leading-relaxed mb-10 py-2">
-              「インプット中心のスキル強化」と「英会話中心のアウトプット」の両方が重要です。
-            </div>
-
-            {/* Loop diagram with two columns/circles */}
-            <div className="flex flex-row items-start justify-between gap-3 sm:gap-6 my-10 relative">
-              
-              {/* Left Circle - Training */}
-              <div className="flex flex-col items-center text-center">
-                <div className="w-[150px] h-[150px] sm:w-[230px] sm:h-[230px] rounded-full bg-white border-2 border-white p-4 sm:p-8 flex flex-col justify-start items-center shadow-md relative group hover:scale-[1.02] transition-transform duration-300 pt-6 sm:pt-10">
-                  <div className="h-12 sm:h-14 flex flex-col justify-center items-center mb-3 sm:mb-4 border-b border-[#E55C29]/35 pb-2 w-full select-none">
-                    <h4 className="text-[16px] sm:text-xl font-black text-neutral-950 tracking-wide">
-                      スキル別学習
-                    </h4>
-                    <span className="text-[11.5px] sm:text-[14.3px] text-neutral-800 font-bold mt-0.5">
-                      (*毎日の練習)
-                    </span>
-                  </div>
-                  <div className="h-16 sm:h-20 flex flex-col justify-start">
-                    <ul className="text-[10.5px] sm:text-[14.5px] font-extrabold text-[#111111] space-y-1 text-left list-disc list-inside">
-                      <li>スキルAの強化</li>
-                      <li>スキルBの強化</li>
-                      <li>スキルCの強化</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              {/* Feed-back Loop arrow in between - Minimal rotating arrow only */}
-              {/* Align arrow to circle centers (not captions) */}
-              <div className="flex flex-col items-center select-none relative z-10 mt-[57px] sm:mt-[89px]">
-                <RefreshCw className="w-[36px] h-[36px] sm:w-[52px] sm:h-[52px] text-[#E55C29] animate-spin" style={{ animationDuration: '6s' }} />
-              </div>
-
-              {/* Right Circle - Matches */}
-              <div className="flex flex-col items-center text-center">
-                <div className="w-[150px] h-[150px] sm:w-[230px] sm:h-[230px] rounded-full bg-white border-2 border-white p-4 sm:p-8 flex flex-col justify-start items-center shadow-md relative group hover:scale-[1.02] transition-transform duration-300 pt-6 sm:pt-10">
-                  <div className="h-12 sm:h-14 flex flex-col justify-center items-center mb-3 sm:mb-4 border-b border-[#E55C29]/35 pb-2 w-full select-none">
-                    <h4 className="text-[16px] sm:text-xl font-black text-neutral-950 tracking-wide">
-                      英会話
-                    </h4>
-                    <span className="text-[11.5px] sm:text-[14.3px] text-neutral-800 font-bold mt-0.5">
-                      (*試合)
-                    </span>
-                  </div>
-                  <div className="h-16 sm:h-20 flex flex-col justify-start">
-                    <ul className="text-[10.5px] sm:text-[14.5px] font-extrabold text-[#111111] space-y-1.5 sm:space-y-2 text-left list-disc list-inside">
-                      <li>磨いたスキルの活用</li>
-                      <li>伸ばすスキルの発見</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <div className="border-t border-orange-200/50 my-16"></div>
-          {/* Core Benefit Block 02 */}
-          <div className="mb-12">
-            <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10 mb-10">
-              <span className="text-8xl sm:text-9xl font-sans text-[#E55C29]/35 font-black tracking-tight leading-none select-none">
-                02
-              </span>
-              <div className="flex-1">
-                <p className="text-[19px] sm:text-[23px] font-sans font-bold leading-relaxed text-neutral-900 tracking-wide text-left">
-                  科学的なアプローチの活用により、学習の「迷い」「停滞」「挫折」を解消できるから。
-                </p>
-              </div>
-            </div>
-
-            {/* Comparison structure */}
-            <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] md:grid-rows-[auto_1fr_1fr_1fr] gap-6 items-stretch mt-12 relative">
-              
-              {/* === LEFT COLUMN CONTENT === */}
-              {/* Left Column Header */}
-              <div className="md:col-start-1 md:row-start-1 flex items-center gap-3 justify-center py-2.5 select-none">
-                <BookOpen className="w-5 h-5 sm:w-6 sm:h-6 text-neutral-500 shrink-0" />
-                <h3 className="text-lg sm:text-xl font-bold font-serif text-neutral-700 tracking-wider text-center leading-snug">
-                  多くの方が陥る「英語学習の壁」
-                </h3>
-              </div>
-
-              {/* Card 1 L */}
-              <div className="md:col-start-1 md:row-start-2 bg-white border border-neutral-200/80 p-6 rounded-2xl shadow-sm text-center flex items-center justify-center min-h-[120px] hover:shadow-md transition-shadow">
-                <p className="text-[15px] sm:text-[16px] font-bold text-neutral-700 leading-relaxed text-left sm:text-center">
-                  英語の重要性は理解しているが、何からどう手をつければ効率的か分からない・・。
-                </p>
-              </div>
-
-              {/* Card 2 L */}
-              <div className="md:col-start-1 md:row-start-3 bg-white border border-neutral-200/80 p-6 rounded-2xl shadow-sm text-center flex items-center justify-center min-h-[120px] hover:shadow-md transition-shadow">
-                <p className="text-[15px] sm:text-[16px] font-bold text-neutral-700 leading-relaxed text-left sm:text-center">
-                  独学やオンライン英会話を試してみたが、成長を実感できず伸び悩んでいる・・。
-                </p>
-              </div>
-
-              {/* Card 3 L */}
-              <div className="md:col-start-1 md:row-start-4 bg-white border border-neutral-200/80 p-6 rounded-2xl shadow-sm text-center flex items-center justify-center min-h-[120px] hover:shadow-md transition-shadow">
-                <p className="text-[15px] sm:text-[16px] font-bold text-neutral-700 leading-relaxed text-left sm:text-center">
-                  遠い将来のための学習だからこそ、日々の学習強度が落ちて挫折してしまう・・。
-                </p>
-              </div>
-
-              {/* Mobile-only divider: separate Self-Study and Coaching */}
-              <div className="md:hidden h-px bg-neutral-200/70 my-3" />
-
-              {/* === RIGHT COLUMN CONTENT === */}
-              {/* Right Column Header */}
-              <div className="md:col-start-3 md:row-start-1 flex items-center gap-3 justify-center py-2.5 select-none">
-                <Users className="w-5 h-5 sm:w-6 sm:h-6 text-[#E55C29] animate-pulse shrink-0" />
-                <h3 className="text-lg sm:text-xl font-black font-serif text-[#E55C29] tracking-wider text-center leading-snug">
-                  英語コーチングがもたらす変化
-                </h3>
-              </div>
-
-              {/* Card 1 R */}
-              <div className="md:col-start-3 md:row-start-2 bg-white border border-[#E55C29]/25 p-6 rounded-2xl shadow-sm text-center flex items-center justify-center min-h-[120px] hover:shadow-md transition-shadow relative overflow-hidden group">
-                <p className="text-[15px] sm:text-[16px] font-bold text-neutral-800 leading-relaxed z-10 text-left sm:text-center">
-                  第二言語習得論に基づくことで、自分の現在地と「いま本当にやるべきこと」が明確になる！
-                </p>
-              </div>
-
-              {/* Card 2 R */}
-              <div className="md:col-start-3 md:row-start-3 bg-white border border-[#E55C29]/25 p-6 rounded-2xl shadow-sm text-center flex items-center justify-center min-h-[120px] hover:shadow-md transition-shadow relative overflow-hidden group">
-                <p className="text-[15px] sm:text-[16px] font-bold text-neutral-800 leading-relaxed z-10 text-left sm:text-center">
-                  科学的アプローチにより、ただこなすだけの学習から脱却。「上達している実証と手応え」を獲得できる！
-                </p>
-              </div>
-
-              {/* Card 3 R */}
-              <div className="md:col-start-3 md:row-start-4 bg-white border border-[#E55C29]/25 p-6 rounded-2xl shadow-sm text-center flex items-center justify-center min-h-[120px] hover:shadow-md transition-shadow relative overflow-hidden group">
-                <p className="text-[15px] sm:text-[16px] font-bold text-neutral-800 leading-relaxed z-10 text-left sm:text-center">
-                  期限を区切って集中アプローチ。学習の中だるみを防ぎ、高い強度のまま最後までやり切ることができる！
-                </p>
-              </div>
-
-              {/* === ROW-LEVEL CENTRAL ARROWS (DESKTOP GRID COORDS) === */}
-              {/* Arrow 1 */}
-              <div className="hidden md:flex md:col-start-2 md:row-start-2 items-center justify-center px-4 self-stretch">
-                <div className="flex gap-1 text-[#E55C29] font-extrabold text-2xl tracking-widest animate-pulse select-none">
-                  ≫≫
-                </div>
-              </div>
-
-              {/* Arrow 2 */}
-              <div className="hidden md:flex md:col-start-2 md:row-start-3 items-center justify-center px-4 self-stretch">
-                <div className="flex gap-1 text-[#E55C29] font-extrabold text-2xl tracking-widest animate-pulse select-none">
-                  ≫≫
-                </div>
-              </div>
-
-              {/* Arrow 3 */}
-              <div className="hidden md:flex md:col-start-2 md:row-start-4 items-center justify-center px-4 self-stretch">
-                <div className="flex gap-1 text-[#E55C29] font-extrabold text-2xl tracking-widest animate-pulse select-none">
-                  ≫≫
-                </div>
-              </div>
-
-            </div>
-
           </div>
 
         </div>
