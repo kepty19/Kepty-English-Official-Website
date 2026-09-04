@@ -812,7 +812,7 @@ export default function App() {
 
           {/* Analogy: soccer = English */}
           <div className="bg-white rounded-3xl shadow-md border border-neutral-200/50 p-6 sm:p-10 select-text">
-            <div className="mb-6 border-b border-[#E55C29]/45 pb-4">
+            <div className="mb-6 border-b border-[#E55C29] pb-4">
               <h3 className="text-xl sm:text-2xl font-sans font-extrabold text-neutral-950 tracking-wide text-left">
                 サッカーも英語も、上達へのアプローチは全く同じ。
               </h3>
