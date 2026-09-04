@@ -812,8 +812,7 @@ export default function App() {
 
           {/* Analogy: soccer = English */}
           <div className="bg-white rounded-3xl shadow-md border border-neutral-200/50 p-6 sm:p-10 select-text">
-            <div className="flex items-center gap-3 mb-6 border-b border-[#E55C29]/15 pb-4">
-              <div className="w-1.5 h-6 bg-[#E55C29] rounded-full"></div>
+            <div className="mb-6 border-b border-[#E55C29]/15 pb-4">
               <h3 className="text-xl sm:text-2xl font-sans font-extrabold text-neutral-950 tracking-wide text-left">
                 サッカーも英語も、上達へのアプローチは全く同じ。
               </h3>
@@ -911,35 +910,35 @@ export default function App() {
 
           {/* 01 Section */}
           <div className="mb-20">
-            <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10 mb-10">
-              <span className="text-8xl sm:text-9xl font-sans text-neutral-950 opacity-30 font-black tracking-tight leading-none select-none">
+            <div className="flex items-start gap-3.5 sm:gap-6 mb-10">
+              <span className="text-[26px] sm:text-5xl font-black font-sans text-[#E55C29] leading-none shrink-0 pt-0.5 tracking-tight">
                 01
               </span>
-              <div className="flex-1">
-                <p className="text-[21px] sm:text-[25px] font-sans font-bold leading-relaxed text-neutral-900 tracking-wide text-left">
+              <div className="flex-1 min-w-0">
+                <p className="text-[17px] sm:text-[25px] font-sans font-bold leading-relaxed text-neutral-900 tracking-wide text-left">
                   英語コーチングは、英会話力の向上に重要な「3つの要素」を最大化させるサービスです。
                 </p>
               </div>
             </div>
 
             {/* Quality x Quantity x Consistency diagram */}
-            <div className="flex flex-col items-center justify-center my-12 bg-white/40 p-6 sm:p-10 rounded-3xl border border-yellow-100/40 w-full max-w-[860px] mx-auto">
+            <div className="flex flex-col items-center justify-center my-10 sm:my-12 bg-white/40 px-4 py-8 sm:p-10 rounded-3xl border border-yellow-100/40 w-full max-w-[720px] mx-auto">
               
               {/* Circles + labels share one grid so mobile text aligns under each circle */}
-              <div className="grid grid-cols-[92px_auto_92px_auto_92px] sm:grid-cols-[130px_auto_130px_auto_130px] gap-x-1.5 sm:gap-x-4 w-full justify-center select-none">
+              <div className="grid grid-cols-[92px_auto_92px_auto_92px] sm:grid-cols-[130px_auto_130px_auto_130px] gap-x-2 sm:gap-x-5 w-full max-w-[560px] justify-center select-none">
                 {/* Row 1: circles */}
                 <div className="col-start-1 row-start-1 flex justify-center">
                   <div className="w-[92px] h-[92px] sm:w-[130px] sm:h-[130px] rounded-full bg-neutral-800 text-white flex items-center justify-center shadow-md hover:scale-105 transition-transform duration-300 shrink-0">
                     <span className="text-3xl sm:text-4xl font-extrabold font-serif">質</span>
                   </div>
                 </div>
-                <span className="col-start-2 row-start-1 self-center text-[22px] sm:text-4xl leading-none text-neutral-400 font-extrabold font-sans">×</span>
+                <span className="col-start-2 row-start-1 self-center text-[20px] sm:text-4xl leading-none text-neutral-400 font-extrabold font-sans">×</span>
                 <div className="col-start-3 row-start-1 flex justify-center">
                   <div className="w-[92px] h-[92px] sm:w-[130px] sm:h-[130px] rounded-full bg-neutral-800 text-white flex items-center justify-center shadow-md hover:scale-105 transition-transform duration-300 shrink-0">
                     <span className="text-3xl sm:text-4xl font-extrabold font-serif">量</span>
                   </div>
                 </div>
-                <span className="col-start-4 row-start-1 self-center text-[22px] sm:text-4xl leading-none text-neutral-400 font-extrabold font-sans">×</span>
+                <span className="col-start-4 row-start-1 self-center text-[20px] sm:text-4xl leading-none text-neutral-400 font-extrabold font-sans">×</span>
                 <div className="col-start-5 row-start-1 flex justify-center">
                   <div className="w-[92px] h-[92px] sm:w-[130px] sm:h-[130px] rounded-full bg-neutral-800 text-white flex items-center justify-center shadow-md hover:scale-105 transition-transform duration-300 shrink-0">
                     <span className="text-3xl sm:text-4xl font-extrabold font-serif">継続</span>
@@ -955,7 +954,7 @@ export default function App() {
                 </div>
                 <div className="col-start-3 row-start-2 mt-6 text-center">
                   <p className="text-[11px] sm:text-[16px] font-extrabold text-[#111111] leading-snug">
-                    <span className="block whitespace-nowrap">膨大なインプット/</span>
+                    <span className="block whitespace-nowrap">適切なインプット/</span>
                     <span className="block whitespace-nowrap">アウトプット</span>
                   </p>
                 </div>
@@ -967,17 +966,16 @@ export default function App() {
               </div>
 
               {/* Extra spacing */}
-              <div className="h-8"></div>
+              <div className="h-7 sm:h-8"></div>
 
-              {/* Guidance card inside (Removed dotted arrow) */}
-              <div className="bg-[#fffdfb] rounded-2xl border border-orange-100 p-6 sm:p-8 max-w-[600px] w-full text-left shadow-sm">
-                <h5 className="text-center font-black text-[14px] sm:text-[17px] font-serif text-neutral-800 mb-4 tracking-wide">
+              <div className="bg-[#fffdfb] rounded-2xl border border-orange-100 px-5 py-5 sm:px-7 sm:py-6 max-w-[400px] w-full text-center shadow-sm">
+                <h5 className="font-black text-[13px] sm:text-[16px] font-serif text-neutral-800 mb-3 tracking-wide">
                   【学習量の目安】
                 </h5>
-                <ul className="text-[13px] sm:text-[15.5px] font-bold text-neutral-700 space-y-2.5 pl-4 sm:pl-8 list-disc">
-                  <li>毎日90分~120分の学習時間を推奨してます。</li>
-                  <li>移動や治療、ストレッチの時間などを有効活用できます。</li>
-                </ul>
+                <div className="text-[12.5px] sm:text-[14.5px] font-bold text-neutral-700 space-y-2 leading-relaxed">
+                  <p>毎日90分~120分の学習時間を推奨</p>
+                  <p>移動や治療、ストレッチの時間などを活用可能</p>
+                </div>
               </div>
 
             </div>
@@ -987,12 +985,12 @@ export default function App() {
 
           {/* 02 Section */}
           <div className="mb-12">
-            <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10 mb-10">
-              <span className="text-8xl sm:text-9xl font-sans text-neutral-950 opacity-30 font-black tracking-tight leading-none select-none">
+            <div className="flex items-start gap-3.5 sm:gap-6 mb-10">
+              <span className="text-[26px] sm:text-5xl font-black font-sans text-[#E55C29] leading-none shrink-0 pt-0.5 tracking-tight">
                 02
               </span>
-              <div className="flex-1">
-                <p className="text-[19px] sm:text-[23px] font-sans font-bold leading-relaxed text-neutral-900 tracking-wide text-left">
+              <div className="flex-1 min-w-0">
+                <p className="text-[17px] sm:text-[23px] font-sans font-bold leading-relaxed text-neutral-900 tracking-wide text-left">
                   徹底的な日々の伴走サポートを通して、「科学的かつ効率的な学習」を支援します。
                 </p>
               </div>
