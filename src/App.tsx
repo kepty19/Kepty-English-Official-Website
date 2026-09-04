@@ -24,8 +24,7 @@ import {
   Ear,
   Speech,
   MessageSquare,
-  ArrowRight,
-  Smartphone
+  ArrowRight
 } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { HeroTechVisual, HeroTechVisualMobile } from './components/HeroTechVisual';
@@ -129,80 +128,6 @@ const TARGET_PLAYERS = [
     after: '選手',
   },
 ] as const;
-
-const DAILY_LEARNING_CYCLE = [
-  {
-    num: '01',
-    label: 'プロセス設計',
-    title: '学習プログラムの設計',
-    body: '毎日の学習内容を明確にした学習カリキュラムを作成。迷いなく学習を進めていきます。',
-    icon: FileText,
-  },
-  {
-    num: '02',
-    label: 'インプット強化',
-    title: 'アプリを使った学習',
-    body: '移動時間や隙間時間を有効活用することで、効率的な学習を実現できます。',
-    icon: Smartphone,
-  },
-  {
-    num: '03',
-    label: 'アウトプット強化',
-    title: 'オンライン英会話',
-    body: '弊社専属のフィリピン人講師との英会話を通して、実践で使える力まで引き上げます。',
-    icon: MessageSquare,
-  },
-  {
-    num: '04',
-    label: 'モチベーション喚起',
-    title: '専属メンターとのミーティング',
-    body: '隔週に一度の専属メンターとのミーティングを通して、継続的に学習エンジンを着火させます。',
-    icon: Users,
-  },
-] as const;
-
-function LearningCycleCard({ item }: { item: (typeof DAILY_LEARNING_CYCLE)[number] }) {
-  const Icon = item.icon;
-  return (
-    <article className="relative z-10 h-full bg-white rounded-2xl shadow-[0_8px_28px_rgba(40,24,16,0.07)] border border-white px-5 py-5 sm:px-6 sm:py-6 text-left">
-      <div className="flex items-start justify-between gap-3 mb-6">
-        <div className="w-9 h-9 rounded-[6px] bg-[#E55C29] flex items-center justify-center shrink-0">
-          <Icon className="w-4 h-4 text-white" strokeWidth={2.2} />
-        </div>
-        <span className="text-[11px] sm:text-[12px] font-extrabold text-[#E55C29] tracking-wide border-b border-[#E55C29]/50 pb-0.5 mt-1">
-          {item.label}
-        </span>
-      </div>
-      <p className="text-[12px] sm:text-[13px] font-black text-[#E55C29] tracking-wide mb-1">
-        {item.num}
-      </p>
-      <h3 className="text-[16px] sm:text-[19px] font-extrabold text-neutral-950 font-serif tracking-wide leading-snug mb-2">
-        {item.title}
-      </h3>
-      <p className="text-[13.5px] sm:text-[15px] font-semibold text-neutral-600 leading-relaxed">
-        {item.body}
-      </p>
-    </article>
-  );
-}
-
-function LearningCycleHub() {
-  return (
-    <div
-      className="w-[132px] h-[132px] sm:w-[168px] sm:h-[168px] rounded-full flex items-center justify-center text-center shadow-[0_0_56px_rgba(229,92,41,0.16)] ring-1 ring-[#E55C29]/10"
-      style={{
-        background:
-          'radial-gradient(circle at 50% 42%, #ffffff 0%, #fff6f1 48%, #f4d4c2 100%)',
-      }}
-    >
-      <p className="text-[15px] sm:text-[17px] font-extrabold text-neutral-800 font-serif tracking-wide leading-[1.25] px-3">
-        Kepty
-        <br />
-        English
-      </p>
-    </div>
-  );
-}
 
 const SOLUTION_PILLARS = [
   {
@@ -2047,41 +1972,96 @@ export default function App() {
       {/* 日々の学習サイクル */}
       <section
         id="daily-learning-cycle-section"
-        className="relative bg-[#fff8f3] text-neutral-900 z-40 border-t border-orange-100 px-4 py-20 sm:py-28"
+        className="relative text-neutral-900 z-40 border-t border-orange-100 px-4 py-20 sm:py-28"
+        style={{
+          background:
+            'radial-gradient(ellipse 80% 45% at 50% 8%, rgba(255, 255, 255, 0.95), transparent 68%), linear-gradient(180deg, #fff8f3 0%, #fffdfb 48%, #faf6f2 100%)',
+        }}
       >
         <div className="max-w-[940px] mx-auto w-full">
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-wide text-neutral-950 font-serif mb-12 sm:mb-16 leading-[1.25] text-left">
-            日々の学習サイクル
-          </h2>
-
-          {/* Desktop: 2×2 cards around the hub */}
-          <div className="relative hidden md:grid grid-cols-[1fr_10.5rem_1fr] grid-rows-[auto_auto_auto] gap-x-5 gap-y-5 items-stretch">
-            <div className="pointer-events-none absolute inset-[14%] z-0">
-              <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 border-t border-dotted border-[#E55C29]/50" />
-              <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 border-l border-dotted border-[#E55C29]/50" />
-            </div>
-            <LearningCycleCard item={DAILY_LEARNING_CYCLE[0]} />
-            <div aria-hidden className="self-stretch" />
-            <LearningCycleCard item={DAILY_LEARNING_CYCLE[1]} />
-            <div aria-hidden />
-            <div className="relative z-20 flex items-center justify-center py-2">
-              <LearningCycleHub />
-            </div>
-            <div aria-hidden />
-            <LearningCycleCard item={DAILY_LEARNING_CYCLE[3]} />
-            <div aria-hidden />
-            <LearningCycleCard item={DAILY_LEARNING_CYCLE[2]} />
+          <div className="text-center mb-16 sm:mb-20">
+            <h2 className="text-3xl sm:text-5xl font-extrabold tracking-wide text-neutral-950 font-serif mb-4 leading-tight">
+              日々の学習サイクル
+            </h2>
+            <div className="w-16 h-1.5 bg-[#E55C29] mx-auto rounded-full"></div>
           </div>
 
-          {/* Mobile: stacked cycle */}
-          <div className="md:hidden flex flex-col gap-4">
-            <LearningCycleCard item={DAILY_LEARNING_CYCLE[0]} />
-            <LearningCycleCard item={DAILY_LEARNING_CYCLE[1]} />
-            <div className="flex justify-center py-3">
-              <LearningCycleHub />
+          <div className="cycle-diagram" aria-label="日々の学習サイクル">
+            <svg className="cycle-loop" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+              <rect className="cycle-loop-track" x="3" y="3" width="94" height="94" rx="16" />
+              <rect className="cycle-loop-flow" x="3" y="3" width="94" height="94" rx="16" />
+              <circle className="cycle-loop-dot" r="2.2" fill="#c2471a" stroke="#fff" strokeWidth="0.7">
+                <animateMotion
+                  dur="5.5s"
+                  repeatCount="indefinite"
+                  path="M 19,3 H 81 A 16,16 0 0 1 97,19 V 81 A 16,16 0 0 1 81,97 H 19 A 16,16 0 0 1 3,81 V 19 A 16,16 0 0 1 19,3"
+                />
+              </circle>
+            </svg>
+
+            <div className="cycle-spine" aria-hidden="true">
+              <span className="cycle-spine-track" />
+              <span className="cycle-spine-dot" />
             </div>
-            <LearningCycleCard item={DAILY_LEARNING_CYCLE[2]} />
-            <LearningCycleCard item={DAILY_LEARNING_CYCLE[3]} />
+
+            <div className="cycle-hub">
+              <span>Kepty English</span>
+            </div>
+
+            <div className="cycle-board">
+              <article className="cycle-card cycle-card-tl">
+                <span className="cycle-corner">プロセス設計</span>
+                <span className="cycle-icon" aria-hidden="true">
+                  <svg viewBox="0 0 32 32" fill="none">
+                    <rect x="7" y="6" width="18" height="20" rx="3" stroke="currentColor" strokeWidth="1.8" />
+                    <path d="M11 12h10M11 16h10M11 20h6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                  </svg>
+                </span>
+                <span className="cycle-step">01</span>
+                <h3>学習プログラムの設計</h3>
+                <p>毎日の学習内容を明確にした学習カリキュラムを作成。迷いなく学習を進めていきます。</p>
+              </article>
+              <article className="cycle-card cycle-card-tr">
+                <span className="cycle-corner">インプット強化</span>
+                <span className="cycle-icon" aria-hidden="true">
+                  <svg viewBox="0 0 32 32" fill="none">
+                    <rect x="10" y="5" width="12" height="22" rx="3" stroke="currentColor" strokeWidth="1.8" />
+                    <circle cx="16" cy="23" r="1.1" fill="currentColor" />
+                    <path d="M13 9h6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                  </svg>
+                </span>
+                <span className="cycle-step">02</span>
+                <h3>アプリを使った学習</h3>
+                <p>移動時間や隙間時間を有効活用することで、効率的な学習を実現できます。</p>
+              </article>
+              <article className="cycle-card cycle-card-br">
+                <span className="cycle-corner">アウトプット強化</span>
+                <span className="cycle-icon" aria-hidden="true">
+                  <svg viewBox="0 0 32 32" fill="none">
+                    <path d="M8 12c0-4 3.6-7 8-7s8 3 8 7c0 5.5-8 11-8 11S8 17.5 8 12Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+                    <circle cx="14" cy="12" r="1.1" fill="currentColor" />
+                    <circle cx="18" cy="12" r="1.1" fill="currentColor" />
+                  </svg>
+                </span>
+                <span className="cycle-step">03</span>
+                <h3>オンライン英会話</h3>
+                <p>弊社専属のフィリピン人講師との英会話を通して、実践で使える力まで引き上げます。</p>
+              </article>
+              <article className="cycle-card cycle-card-bl">
+                <span className="cycle-corner">モチベーション喚起</span>
+                <span className="cycle-icon" aria-hidden="true">
+                  <svg viewBox="0 0 32 32" fill="none">
+                    <circle cx="12" cy="11" r="3.2" stroke="currentColor" strokeWidth="1.8" />
+                    <circle cx="20.5" cy="12.2" r="2.6" stroke="currentColor" strokeWidth="1.8" />
+                    <path d="M6.8 22.5c.6-3.2 3.2-5 5.8-5s5.2 1.8 5.8 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                    <path d="M17.2 21.6c.7-2.2 2.5-3.5 4.4-3.5 1.7 0 3.3 1 4 2.8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                  </svg>
+                </span>
+                <span className="cycle-step">04</span>
+                <h3>専属メンターとのミーティング</h3>
+                <p>隔週に一度の専属メンターとのミーティングを通して、継続的に学習エンジンを着火させます。</p>
+              </article>
+            </div>
           </div>
         </div>
       </section>

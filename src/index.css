@@ -46,3 +46,227 @@ body {
   width: 100%;
   min-height: 100vh;
 }
+
+/* Daily learning cycle — same structure as Kepty English U-18 */
+.cycle-diagram {
+  position: relative;
+  margin-top: 0;
+}
+
+.cycle-board {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.cycle-loop {
+  display: none;
+}
+
+.cycle-spine {
+  display: block;
+  position: absolute;
+  left: calc(1.2rem + 1.35rem);
+  top: 2.45rem;
+  bottom: 2.45rem;
+  width: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.cycle-spine-track {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  border-left: 2px dashed rgba(229, 92, 41, 0.42);
+  transform: translateX(-1px);
+}
+
+.cycle-spine-dot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #c2471a;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px rgba(229, 92, 41, 0.25);
+  transform: translate(-50%, -50%);
+  animation: cycle-spine-dot 5.5s linear infinite;
+}
+
+@keyframes cycle-spine-dot {
+  from { top: 0; }
+  to { top: 100%; }
+}
+
+.cycle-hub {
+  display: none;
+}
+
+.cycle-loop-track {
+  fill: none;
+  stroke: rgba(229, 92, 41, 0.2);
+  stroke-width: 2;
+  stroke-dasharray: 7 6;
+  vector-effect: non-scaling-stroke;
+}
+
+.cycle-loop-flow {
+  fill: none;
+  stroke: #E55C29;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 48 200;
+  animation: cycle-flow 5.5s linear infinite;
+  vector-effect: non-scaling-stroke;
+}
+
+.cycle-card {
+  position: relative;
+  z-index: 1;
+  padding: 1.2rem 1.15rem 1.25rem;
+  background: #fff;
+  border: 1px solid rgba(229, 92, 41, 0.14);
+  border-radius: 1.25rem;
+  box-shadow:
+    0 1px 2px rgba(89, 48, 24, 0.04),
+    0 12px 28px rgba(89, 48, 24, 0.07);
+}
+
+.cycle-icon {
+  width: 2.7rem;
+  height: 2.7rem;
+  margin-bottom: 0.7rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #fff6ee, #f4dccb);
+  color: #c2471a;
+}
+
+.cycle-icon svg {
+  width: 1.45rem;
+  height: 1.45rem;
+  display: block;
+}
+
+.cycle-corner {
+  position: absolute;
+  top: 1.05rem;
+  right: 1.15rem;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  color: #c2471a;
+  padding-bottom: 0.18rem;
+  border-bottom: 1px solid #E55C29;
+  white-space: nowrap;
+}
+
+.cycle-step {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: #E55C29;
+  margin-bottom: 0.35rem;
+}
+
+.cycle-card h3 {
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.45;
+  margin-bottom: 0.5rem;
+  color: #0a0a0a;
+  letter-spacing: 0.04em;
+}
+
+.cycle-card p {
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.75;
+  color: #525252;
+}
+
+@media (min-width: 640px) {
+  .cycle-corner { font-size: 12px; }
+  .cycle-step { font-size: 13px; }
+  .cycle-card h3 { font-size: 19px; }
+  .cycle-card p { font-size: 15px; }
+}
+
+@media (min-width: 900px) {
+  .cycle-diagram {
+    max-width: 920px;
+    margin: 0 auto;
+  }
+
+  .cycle-board {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 5.2rem 6rem;
+    align-items: stretch;
+  }
+
+  .cycle-card {
+    height: 100%;
+  }
+
+  .cycle-spine {
+    display: none;
+  }
+
+  .cycle-loop {
+    display: block;
+    position: absolute;
+    left: 18%;
+    top: 16%;
+    width: 64%;
+    height: 68%;
+    z-index: 0;
+    overflow: visible;
+    pointer-events: none;
+    aspect-ratio: unset;
+  }
+
+  .cycle-hub {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 10.8rem;
+    height: 10.8rem;
+    margin: 0;
+    z-index: 2;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 32% 28%, #fff, #f8ece3 58%, #f0d8c6 100%);
+    border: 3px solid rgba(229, 92, 41, 0.28);
+    box-shadow:
+      0 8px 24px rgba(229, 92, 41, 0.12),
+      0 0 0 10px rgba(255, 255, 255, 0.55);
+    color: #c2471a;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    line-height: 1.25;
+  }
+
+  .cycle-card-tl { grid-column: 1; grid-row: 1; }
+  .cycle-card-tr { grid-column: 2; grid-row: 1; }
+  .cycle-card-br { grid-column: 2; grid-row: 2; }
+  .cycle-card-bl { grid-column: 1; grid-row: 2; }
+}
+
+@keyframes cycle-flow {
+  to {
+    stroke-dashoffset: -248;
+  }
+}
