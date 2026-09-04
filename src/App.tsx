@@ -74,70 +74,99 @@ function ceoMessageForMobile(text: string) {
 const ENGLISH_LEARNING_STRUGGLES = [
   {
     num: '01',
-    tag: '質',
-    title: '何から、どう学べばよいかわからない',
-    body: '過去に真剣に学習したことがないため、まずは何から、どう学習していけばよいかわからない',
+    title: '何から、どう学べばよいかわからない・・',
+    body: '過去に真剣に学習したことがないため、まずは何から、どう学習していけばよいかわからない。',
   },
   {
     num: '02',
-    tag: '質',
-    title: '同じ単語やフレーズで伸び悩んでいる',
-    body: '英会話を続けているが、いつも同じ単語やフレーズ、パターンで完結してしまい、そこからの伸び悩みを感じている',
+    title: '同じ単語やフレーズばかり使ってしまう・・',
+    body: '英会話を続けているが、いつも同じ単語やフレーズ、パターンで完結してしまい、そこからの伸び悩みを感じている。',
   },
   {
     num: '03',
-    title: '独学やAIだけでは、実践で活きるか不安',
-    body: '独学やAIアプリのみだと、実践的な人間相手のコミュニケーションで活かせるかわからない',
+    title: '独学やAIだけでは、実践で活きるか不安・・',
+    body: '独学やAIアプリのみだと、実践的な人間相手のコミュニケーションで活かせるかわからない。',
   },
   {
     num: '04',
-    tag: '量・継続',
-    title: '継続できる学習プロセスを設計できない',
-    body: 'サッカーのように中長期的な目標や中間マイルストーン、日々の細かなトレーニング、という一連のプロセスを設計できないため、なかなか継続ができない',
+    title: 'なかなか継続できない・・',
+    body: '頑張ると心に決めたのに、気がつくと学習の強度が落ちていて、中途半端になってしまっている。',
   },
   {
     num: '05',
-    title: 'サッカーに支障のない日程で着実に進めたい',
-    body: 'サッカーのパフォーマンスに影響のないように、学習日程や時間を柔軟に調整しながら着実に学習を進めていきたい',
+    title: 'サッカーに支障のない日程で着実に進めたい・・',
+    body: 'サッカーのパフォーマンスに影響のないように、学習日程や時間を柔軟に調整しながら着実に学習を進めていきたい。',
   },
 ] as const;
 
-const THREE_MONTH_OUTCOMES = [
+const SOLUTION_PILLARS = [
   {
     num: '01',
-    icon: Volume2,
-    title: '音の知覚・発音の変化',
-    body: (
+    title: (
       <>
-        <span className="text-[#E55C29] font-extrabold">「カタカナ英語からの脱却」</span>
-        と
-        <span className="text-[#E55C29] font-extrabold">「ネイティブ特有の音声変化や日本語に存在しない音を識別」</span>
-        できるようになります。
+        英語学習の
+        <span className="text-[#E55C29]">「初期段階に習得すべき本質と基礎」</span>
+        を体得することができる。
       </>
     ),
+    paragraphs: [
+      <>
+        サッカーと同じで
+        <span className="text-[#E55C29] font-extrabold">「間違った基礎」</span>
+        且つ
+        <span className="text-[#E55C29] font-extrabold">「自己流の学習法」</span>
+        で走り出すと、途中で伸び悩み、どれだけ努力しても成果が出なくなりがちです。
+      </>,
+      <>
+        だからこそ、最初の
+        <span className="text-[#E55C29] font-extrabold">「初動」</span>
+        が非常に重要。私たちは、英語学習における長旅を勝ち抜くために
+        <span className="text-[#E55C29] font-extrabold">「最初に習得すべき本質と基礎」</span>
+        を体得できるよう徹底的に伴走します。
+      </>,
+    ],
   },
   {
     num: '02',
-    icon: MessageSquare,
-    title: '頻出のフレーズ・型の習得',
-    body: (
+    title: (
       <>
-        日々の生活で遭遇率が高い表現や文章を
-        <span className="text-[#E55C29] font-extrabold">「会話の型として習得」</span>
-        します。その後の応用や表現の派生にも迷わず進むことができます。
+        <span className="text-[#E55C29]">「伸び悩みのブレイクスルー」</span>
+        を実現できる。
       </>
     ),
+    paragraphs: [
+      <>
+        <span className="text-[#E55C29] font-extrabold">「第二言語習得論に基づいた科学的アプローチ」</span>
+        の活用により、何が課題で、何のトレーニングを実施すべきか、を
+        <span className="text-[#E55C29] font-extrabold">「ピンポイントに特定」</span>
+        し、より効率的な学習と伸び悩みのブレイクスルーを実現できます。
+      </>,
+    ],
   },
   {
     num: '03',
-    icon: Speech,
-    title: '実践的な英会話への慣れ・自信の創出',
-    body: (
+    title: (
       <>
-        <span className="text-[#E55C29] font-extrabold">「英語使って会話する恐怖心や心理的ブロックを打破」</span>
-        します。実戦の場で堂々と話せる、本物の慣れと自信が手に入ります。
+        英語学習における
+        <span className="text-[#E55C29]">「継続性」</span>
+        と実践的な英会話の場での
+        <span className="text-[#E55C29]">「慣れ・自信」</span>
+        が手に入る。
       </>
     ),
+    paragraphs: [
+      <>
+        弊社専用の
+        <span className="text-[#E55C29] font-extrabold">「学習プログラム」</span>
+        や専属のトレーナー、フィリピン人講師との
+        <span className="text-[#E55C29] font-extrabold">「伴走」</span>
+        を通して、英語学習者の多くの方々が躓く
+        <span className="text-[#E55C29] font-extrabold">「毎日継続すること」</span>
+        や
+        <span className="text-[#E55C29] font-extrabold">「英語を活用して会話することへの慣れ・自信」</span>
+        を自然と作り上げることができます。
+      </>,
+    ],
   },
 ] as const;
 
@@ -588,33 +617,19 @@ export default function App() {
         </div>
       </section>
 
-      {/* 🚀 NEW SECTION: WHY IS EFFORT NECESSARY FOR ENGLISH ACQUISITION? */}
+      {/* SERVICE: typical challenges → invitation to solve them */}
       <section
-        id="why-effort-necessary-section" 
-        className="relative bg-[#fff8f3] text-neutral-900 z-40 border-t border-orange-100 px-4 py-20 sm:py-28"
+        id="why-effort-necessary-section"
+        className="relative bg-[#fff8f3] text-neutral-900 z-40 border-t border-orange-100"
       >
-        <div className="max-w-[920px] mx-auto w-full">
-          {/* Main Title */}
-          <div className="text-center mb-16 sm:mb-20">
-            <h2 className="text-3xl sm:text-5xl font-extrabold tracking-wide text-neutral-950 font-serif mb-4 leading-tight">
-              なぜ、英語習得に“努力”が必要か
-            </h2>
-            <div className="w-16 h-1.5 bg-[#E55C29] mx-auto rounded-full"></div>
-          </div>
-
-          <p className="text-center text-[17px] sm:text-[20px] leading-relaxed font-semibold max-w-[720px] mx-auto mb-16 sm:mb-20 font-sans text-neutral-700">
-            「英語の言語特性」や「プロサッカー選手の傾向」を踏まえると、<br className="hidden sm:inline" />
-            <span className="text-[#E55C29] text-[18px] sm:text-[21px] font-black">成人後</span>に英語力を飛躍的に伸ばすためには、一定量の努力が必要です。
-          </p>
-
-          {/* 課題 */}
-          <div className="mb-20 sm:mb-28">
-            <h3 className="text-center text-[22px] sm:text-[30px] font-extrabold font-serif text-neutral-950 tracking-wide leading-tight mb-3">
-              このような悩み、持っていませんか？
-            </h3>
-            <p className="text-center text-[14px] sm:text-[16px] font-semibold text-neutral-600 mb-10 max-w-[560px] mx-auto leading-relaxed">
-              才能の問題ではありません。学び方と続け方が、まだ設計されていないだけです。
-            </p>
+        {/* 課題 */}
+        <div className="px-4 py-20 sm:py-28">
+          <div className="max-w-[920px] mx-auto w-full">
+            <div className="text-center mb-12 sm:mb-16">
+              <h2 className="text-[22px] sm:text-[30px] font-extrabold font-serif text-neutral-950 tracking-wide leading-tight">
+                プロ選手が直面する典型的な課題
+              </h2>
+            </div>
             <div className="flex flex-col gap-4">
               {ENGLISH_LEARNING_STRUGGLES.map((item) => (
                 <div
@@ -626,16 +641,9 @@ export default function App() {
                       {item.num}
                     </span>
                     <div className="min-w-0 flex-1 text-left">
-                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 mb-2">
-                        <h4 className="text-[16px] sm:text-[19px] font-extrabold text-neutral-950 font-serif tracking-wide leading-snug">
-                          {item.title}
-                        </h4>
-                        {'tag' in item && item.tag ? (
-                          <span className="text-[10px] sm:text-[11px] font-black tracking-wide text-[#E55C29] bg-[#E55C29]/10 border border-[#E55C29]/15 px-2 py-0.5 rounded-full">
-                            {item.tag}
-                          </span>
-                        ) : null}
-                      </div>
+                      <h3 className="text-[16px] sm:text-[19px] font-extrabold text-neutral-950 font-serif tracking-wide leading-snug mb-2">
+                        {item.title}
+                      </h3>
                       <p className="text-[13.5px] sm:text-[15px] font-semibold text-neutral-600 leading-relaxed">
                         {item.body}
                       </p>
@@ -645,43 +653,70 @@ export default function App() {
               ))}
             </div>
           </div>
+        </div>
 
-          {/* 3ヶ月後の変化 */}
-          <div>
-            <h3 className="text-center text-[22px] sm:text-[30px] font-extrabold font-serif text-neutral-950 tracking-wide leading-tight mb-3">
-              3ヶ月後、あなたはこうなっています
-            </h3>
-            <p className="text-center text-[14px] sm:text-[16px] font-semibold text-neutral-600 mb-10 max-w-[620px] mx-auto leading-relaxed">
-              「3ヶ月でペラペラ」ではありません。正しい努力を積んだ先の、確かな変化です。
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 items-stretch">
-              {THREE_MONTH_OUTCOMES.map((item) => {
-                const ItemIcon = item.icon;
-                return (
-                  <div
-                    key={item.num}
-                    className="bg-white rounded-3xl border border-neutral-200/70 p-6 sm:p-7 hover:shadow-md transition-shadow duration-300 flex flex-col items-center text-center"
+        {/* 解決の招待 */}
+        <div className="relative bg-neutral-950 text-white px-4 py-20 sm:py-28 overflow-hidden">
+          <div
+            className="pointer-events-none absolute inset-0 opacity-[0.18]"
+            style={{
+              background:
+                'radial-gradient(ellipse at 20% 0%, rgba(229,92,41,0.55) 0%, transparent 52%), radial-gradient(ellipse at 90% 100%, rgba(229,92,41,0.28) 0%, transparent 48%)',
+            }}
+          />
+          <div className="max-w-[920px] mx-auto w-full relative z-10">
+            <div className="text-center mb-12 sm:mb-16">
+              <h2 className="text-3xl sm:text-5xl font-extrabold tracking-wide text-white font-serif mb-5 leading-[1.25]">
+                <span className="block">その課題、</span>
+                <span className="block">我々と共に最速で解決しませんか？</span>
+              </h2>
+              <div className="w-16 h-1.5 bg-[#E55C29] mx-auto rounded-full mb-8"></div>
+              <div className="text-[15px] sm:text-[18px] leading-relaxed font-semibold max-w-[740px] mx-auto text-white/80 space-y-3">
+                <p>
+                  「英語の言語特性」や「プロサッカー選手の傾向」を踏まえると、
+                  <span className="text-[#E55C29] font-black">成人後</span>
+                  に英語力を飛躍的に伸ばすためには、一定量の努力が必要です。
+                </p>
+                <p>ただ、我々の3ヶ月のプログラムを通して、下記の変化・成長が得られます。</p>
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-5 sm:gap-6">
+              {SOLUTION_PILLARS.map((item) => (
+                <article
+                  key={item.num}
+                  className="relative rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-sm px-5 py-7 sm:px-10 sm:py-10 overflow-hidden"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="absolute -right-2 -top-4 sm:-right-1 sm:-top-8 text-[120px] sm:text-[160px] font-black leading-none text-white/[0.06] select-none"
                   >
-                    <div className="relative mb-5">
-                      <div className="w-[72px] h-[72px] rounded-full bg-neutral-900 text-white flex items-center justify-center shadow-lg">
-                        <ItemIcon className="w-8 h-8" />
+                    {item.num}
+                  </span>
+                  <div className="relative flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-8">
+                    <span className="text-4xl sm:text-6xl font-black font-sans text-[#E55C29] leading-none shrink-0 tracking-tight">
+                      {item.num}
+                    </span>
+                    <div className="min-w-0 flex-1 text-left">
+                      <h3 className="text-[17px] sm:text-[22px] font-extrabold font-serif tracking-wide leading-snug text-white mb-5">
+                        {item.title}
+                      </h3>
+                      <div className="flex flex-col gap-4">
+                        {item.paragraphs.map((paragraph, index) => (
+                          <p
+                            key={index}
+                            className="text-[14px] sm:text-[16px] font-medium text-white/75 leading-[1.9]"
+                          >
+                            {paragraph}
+                          </p>
+                        ))}
                       </div>
-                      <span className="absolute -top-1 -right-1 w-8 h-8 rounded-full bg-[#E55C29] text-white text-[12px] font-black flex items-center justify-center shadow-sm">
-                        {item.num}
-                      </span>
                     </div>
-                    <h4 className="text-[16px] sm:text-[17.5px] font-extrabold text-neutral-950 font-serif tracking-wide leading-snug mb-4">
-                      {item.title}
-                    </h4>
-                    <p className="text-[13.5px] sm:text-[14.5px] font-medium text-neutral-600 leading-relaxed text-left">
-                      {item.body}
-                    </p>
                   </div>
-                );
-              })}
+                </article>
+              ))}
             </div>
           </div>
-
         </div>
       </section>
 
