@@ -963,10 +963,16 @@ export default function App() {
                 <h5 className="font-black text-[13px] sm:text-[16px] font-serif text-neutral-800 mb-3 tracking-wide">
                   【学習量の目安】
                 </h5>
-                <div className="text-[12.5px] sm:text-[14.5px] font-bold text-neutral-700 space-y-2 leading-relaxed">
-                  <p>毎日90分~120分の学習時間を推奨</p>
-                  <p>移動や治療、ストレッチの時間などを活用可能</p>
-                </div>
+                <ul className="mx-auto w-fit text-left text-[12.5px] sm:text-[14.5px] font-bold text-neutral-700 space-y-2 leading-relaxed">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-[0.55em] h-[5px] w-[5px] shrink-0 rounded-full bg-current" aria-hidden />
+                    <span>毎日60分~120分の学習時間を推奨</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-[0.55em] h-[5px] w-[5px] shrink-0 rounded-full bg-current" aria-hidden />
+                    <span>移動や治療、ストレッチの時間などを活用可能</span>
+                  </li>
+                </ul>
               </div>
 
             </div>
