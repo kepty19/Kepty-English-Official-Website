@@ -92,7 +92,7 @@ const ENGLISH_LEARNING_STRUGGLES = [
   {
     num: '05',
     title: 'サッカーに支障のない状態で学習を進めていきたい・・',
-    body: 'パフォーマンスに悪影響がありそうで、他社の英語コーチングの利用を躊躇している。',
+    body: 'サッカーのパフォーマンスに悪影響がありそうで、英語学習サービスの利用を躊躇している。',
   },
 ] as const;
 
@@ -135,7 +135,7 @@ const SOLUTION_PILLARS = [
     title: (
       <>
         間違った自己流を脱却し、一生モノの
-        <span className="text-[#E55C29]">「型と基礎」</span>
+        <span className="text-[#E55C29]">「基礎土台」</span>
         が身につく
       </>
     ),
@@ -144,8 +144,8 @@ const SOLUTION_PILLARS = [
         サッカーと同じで、自己流のフォーム（間違った基礎）で走り出すと、どれだけ努力しても途中で限界が訪れます。だからこそ最初の
         <span className="text-[#E55C29] font-extrabold">「初動」</span>
         がすべて。将来にわたって英語力を伸ばし続けるために必要な
-        <span className="text-[#E55C29] font-extrabold">「最重要な型と正しい学習法」</span>
-        を徹底的に脳へ叩き込みます。
+        <span className="text-[#E55C29] font-extrabold">「正しい基礎土台」</span>
+        を構築します。
       </>,
     ],
   },
@@ -155,12 +155,12 @@ const SOLUTION_PILLARS = [
       <>
         科学的アプローチで、学習の
         <span className="text-[#E55C29]">「伸び悩み」</span>
-        をピンポイント突破
+        をピンポイント突破できる
       </>
     ),
     paragraphs: [
       <>
-        感覚論ではなく
+        感覚論ではない
         <span className="text-[#E55C29] font-extrabold">「第二言語習得論（SLA）」</span>
         に基づき、あなたの今の課題と必要なトレーニングを科学的に特定。無駄な遠回りを一切排除し、最短ルートで成長の限界をこじ開けることで、伸び悩みのブレイクスルーを実現します。
       </>,
@@ -170,19 +170,19 @@ const SOLUTION_PILLARS = [
     num: '03',
     title: (
       <>
-        <span className="text-[#E55C29]">「毎日の継続習慣」</span>
-        と
-        <span className="text-[#E55C29]">「実戦で物怖じしない圧倒的な自信」</span>
-        を獲得
+        <span className="text-[#E55C29]">「継続」</span>
+        ×
+        <span className="text-[#E55C29]">「対人会話力」</span>
+        。無駄のない2ヶ月集中プログラム
       </>
     ),
     paragraphs: [
       <>
         英語学習で最も難しい
         <span className="text-[#E55C29] font-extrabold">「継続」</span>
-        を専属トレーナーが強固に仕組み化。さらに実践的な対話（フィリピン人講師）の場を設けることで、
-        <span className="text-[#E55C29] font-extrabold">「話すことへの恐怖」</span>
-        をなくし、実戦で堂々と自分を表現できる慣れと自信を醸成します。
+        を仕組み化。また、独学やAIでは不可能な
+        <span className="text-[#E55C29] font-extrabold">「人」</span>
+        とのリアルな会話で本質的な対話スキルを獲得します。要点に絞った2ヶ月間でダラダラせず、実戦で堂々と自分を表現できる慣れと圧倒的な自信を醸成します。
       </>,
     ],
   },
@@ -720,8 +720,8 @@ export default function App() {
                   に英語力を飛躍的に伸ばすためには、一定量の努力が必要です。
                 </p>
                 <p>
-                  だからこそKepty Englishでは、無駄な遠回りを一切排除。2ヶ月の徹底伴走を通して、
-                  <span className="text-[#E55C29] font-black">一生モノの武器となる4つの変化</span>
+                  だからこそKepty Englishでは、無駄な遠回りを一切排除。2ヶ月間の徹底伴走を通して、
+                  <span className="text-[#E55C29] font-black">一生モノの武器となる4つの価値</span>
                   を提供します。
                 </p>
               </div>
@@ -733,14 +733,6 @@ export default function App() {
                   key={item.num}
                   className="relative rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-sm px-5 py-7 sm:px-10 sm:py-10 overflow-hidden"
                 >
-                  <div
-                    aria-hidden="true"
-                    className="pointer-events-none absolute -top-14 -right-14 h-[168px] w-[168px] sm:-top-16 sm:-right-16 sm:h-[200px] sm:w-[200px] rounded-full"
-                    style={{
-                      background:
-                        'radial-gradient(circle at 38% 36%, rgba(210, 168, 128, 0.38) 0%, rgba(196, 148, 108, 0.22) 48%, rgba(180, 130, 90, 0.08) 100%)',
-                    }}
-                  />
                   <div className="relative flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-8">
                     <span className="text-4xl sm:text-6xl font-black font-sans text-[#E55C29] leading-none shrink-0 tracking-tight">
                       {item.num}
