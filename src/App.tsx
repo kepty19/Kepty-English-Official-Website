@@ -2269,7 +2269,7 @@ export default function App() {
             <div className="relative w-full overflow-x-auto pb-2 scrollbar-thin max-md:-mx-3 max-md:w-[calc(100%+1.5rem)]">
               {(() => {
                 const contentItems = [
-                  { text: '学習計画プログラム', inRepeat: true },
+                  { text: '学習計画プログラム', inRepeat: false },
                   { text: '学習用Webアプリ', inRepeat: true },
                   { text: 'オンライン英会話', inRepeat: true },
                   { text: '毎日の課題添削', inRepeat: true },
