@@ -2278,7 +2278,7 @@ export default function App() {
                 {
                   step: '01',
                   name: '計画',
-                  summary: '何を、どの順番で、\nどのように取り組むか',
+                  summary: '何を、どの順番で\n取り組むかを決める',
                   features: [{ key: 'program', label: '学習プログラム' }],
                 },
                 {
@@ -2382,16 +2382,16 @@ export default function App() {
                             <th
                               key={group.name}
                               colSpan={group.features.length}
-                              className={`border-b border-b-[#efe0cf] bg-[#faf8f3] px-2 pb-2 pt-3.5 ${groupDivider(groupIndex)}`}
+                              className={`border-b border-b-[#efe0cf] bg-[#faf8f3] px-2 pb-2 pt-3.5 align-top ${groupDivider(groupIndex)}`}
                             >
-                              <div className="flex flex-col items-center gap-1.5">
-                                <div className="inline-flex items-center gap-2">
+                              <div className="flex flex-col items-center">
+                                <div className="inline-flex h-6 items-center gap-2">
                                   <StepMark step={group.step} />
-                                  <span className="font-serif text-[16px] font-extrabold tracking-wide text-neutral-950">
+                                  <span className="font-serif text-[16px] font-extrabold leading-none tracking-wide text-neutral-950">
                                     {group.name}
                                   </span>
                                 </div>
-                                <p className="text-[11px] font-bold leading-snug text-neutral-500">
+                                <p className="mt-1.5 text-[11px] font-bold leading-snug text-neutral-500">
                                   {group.summary.split('\n').map((line) => (
                                     <span key={line} className="block">{line}</span>
                                   ))}
@@ -2465,17 +2465,17 @@ export default function App() {
                                     {group.name}
                                   </span>
                                 </div>
-                                <p className="mt-1 pl-8 text-[11.5px] font-bold leading-relaxed text-neutral-500">
-                                  {group.summary.split('\n').map((line) => (
-                                    <span key={line} className="block">{line}</span>
-                                  ))}
+                                <p className="mt-1 whitespace-nowrap text-[10px] font-bold leading-none text-neutral-500 min-[380px]:text-[11.5px]">
+                                  {group.summary.replace('\n', '')}
                                 </p>
                               </div>
                               <ul className="divide-y divide-[#f3eee6]">
                                 {group.features.map((feature) => (
-                                  <li key={feature.key} className="flex items-center justify-between gap-3 px-4 py-3">
-                                    <span className="text-[13.5px] font-bold text-neutral-700">{feature.label}</span>
-                                    <Availability {...plan.cells[feature.key]} />
+                                  <li key={feature.key} className="flex items-center gap-3 px-4 py-3">
+                                    <span className="min-w-0 flex-1 text-left text-[13.5px] font-bold text-neutral-700">{feature.label}</span>
+                                    <span className="flex w-[4.75rem] shrink-0 flex-col items-center">
+                                      <Availability {...plan.cells[feature.key]} />
+                                    </span>
                                   </li>
                                 ))}
                               </ul>
