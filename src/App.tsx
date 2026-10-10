@@ -2263,7 +2263,7 @@ export default function App() {
               <div className="flex-1 max-w-[300px] rounded-2xl bg-neutral-950 text-white px-3 py-4 sm:px-5 sm:py-5 text-center shadow-sm">
                 <p className="text-[10px] sm:text-[11px] font-black tracking-[0.16em] text-[#E55C29]">最初の2ヶ月</p>
                 <p className="mt-1.5 text-[17px] sm:text-[20px] font-extrabold font-serif tracking-wide">徹底伴走</p>
-                <p className="mt-2 text-[9px] font-bold leading-snug text-white/70 sm:text-[11.5px]">
+                <p className="mt-2 text-[10px] font-bold leading-snug text-white/70 min-[375px]:text-[11px] sm:text-[13px]">
                   （価格：コース別。<br className="sm:hidden" />以下の表に記載）
                 </p>
               </div>
@@ -2273,7 +2273,7 @@ export default function App() {
               <div className="flex-1 max-w-[300px] rounded-2xl bg-[#faf8ff] border border-purple-100 px-3 py-4 sm:px-5 sm:py-5 text-center">
                 <p className="text-[10px] sm:text-[11px] font-black tracking-[0.16em] text-[#E55C29]">3ヶ月目以降</p>
                 <p className="mt-1.5 text-[17px] sm:text-[20px] font-extrabold font-serif tracking-wide text-neutral-950">自走学習</p>
-                <p className="mt-2 text-[9px] font-bold leading-snug text-neutral-500 sm:text-[11.5px]">
+                <p className="mt-2 text-[10px] font-bold leading-snug text-neutral-500 min-[375px]:text-[11px] sm:text-[13px]">
                   （価格：一律。<br className="sm:hidden" />月額7,800円）
                 </p>
               </div>
