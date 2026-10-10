@@ -2260,16 +2260,22 @@ export default function App() {
             </p>
 
             <div className="flex items-stretch justify-center gap-2 sm:gap-3 mb-10 sm:mb-12">
-              <div className="flex-1 max-w-[260px] rounded-2xl bg-neutral-950 text-white px-3 py-4 sm:px-5 sm:py-5 text-center shadow-sm">
+              <div className="flex-1 max-w-[300px] rounded-2xl bg-neutral-950 text-white px-3 py-4 sm:px-5 sm:py-5 text-center shadow-sm">
                 <p className="text-[10px] sm:text-[11px] font-black tracking-[0.16em] text-[#E55C29]">最初の2ヶ月</p>
                 <p className="mt-1.5 text-[17px] sm:text-[20px] font-extrabold font-serif tracking-wide">徹底伴走</p>
+                <p className="mt-2 text-[9px] font-bold leading-snug text-white/70 sm:text-[11.5px]">
+                  （価格：コース別。<br className="sm:hidden" />以下の表に記載）
+                </p>
               </div>
               <div className="flex items-center text-[#E55C29] font-black text-xl sm:text-2xl select-none" aria-hidden="true">
                 →
               </div>
-              <div className="flex-1 max-w-[260px] rounded-2xl bg-[#faf8ff] border border-purple-100 px-3 py-4 sm:px-5 sm:py-5 text-center">
+              <div className="flex-1 max-w-[300px] rounded-2xl bg-[#faf8ff] border border-purple-100 px-3 py-4 sm:px-5 sm:py-5 text-center">
                 <p className="text-[10px] sm:text-[11px] font-black tracking-[0.16em] text-[#E55C29]">3ヶ月目以降</p>
                 <p className="mt-1.5 text-[17px] sm:text-[20px] font-extrabold font-serif tracking-wide text-neutral-950">自走学習</p>
+                <p className="mt-2 text-[9px] font-bold leading-snug text-neutral-500 sm:text-[11.5px]">
+                  （価格：一律。<br className="sm:hidden" />月額7,800円）
+                </p>
               </div>
             </div>
 
@@ -2391,7 +2397,7 @@ export default function App() {
                                     {group.name}
                                   </span>
                                 </div>
-                                <p className="mt-1.5 text-[11px] font-bold leading-snug text-neutral-500">
+                                <p className="mt-3 text-[11px] font-bold leading-snug text-neutral-500">
                                   {group.summary.split('\n').map((line) => (
                                     <span key={line} className="block">{line}</span>
                                   ))}
@@ -2458,14 +2464,14 @@ export default function App() {
                         <div className="space-y-3 p-3">
                           {groups.map((group) => (
                             <section key={group.name} className="overflow-hidden rounded-2xl border border-[#efe6d4]">
-                              <div className="border-b border-b-[#efe6d4] bg-[#faf8f3] px-4 py-3">
+                              <div className="border-b border-b-[#efe6d4] bg-[#faf8f3] px-4 pb-3.5 pt-3">
                                 <div className="flex items-center gap-2">
                                   <StepMark step={group.step} />
                                   <span className="font-serif text-[15px] font-extrabold tracking-wide text-neutral-950">
                                     {group.name}
                                   </span>
                                 </div>
-                                <p className="mt-1 whitespace-nowrap text-[10px] font-bold leading-none text-neutral-500 min-[380px]:text-[11.5px]">
+                                <p className="mt-2.5 whitespace-nowrap text-[10px] font-bold leading-none text-neutral-500 min-[380px]:text-[11.5px]">
                                   {group.summary.replace('\n', '')}
                                 </p>
                               </div>
