@@ -2360,6 +2360,9 @@ export default function App() {
               const groupDivider = (groupIndex: number, featureIndex = 0) =>
                 groupIndex > 0 && featureIndex === 0 ? 'border-l-2 border-l-[#e4d9c8]' : '';
 
+              const innerDivider = (featureIndex: number) =>
+                featureIndex > 0 ? 'border-l border-l-[#efe6d4] [border-left-style:dashed]' : '';
+
               const StepMark = ({ step }: { step: string }) => (
                 <span className="relative inline-block h-6 w-6 shrink-0 rounded-full bg-[#E55C29]">
                   <span className="absolute inset-0 flex items-center justify-center text-center text-[10px] font-bold tabular-nums leading-none text-white">
@@ -2411,7 +2414,7 @@ export default function App() {
                             group.features.map((feature, featureIndex) => (
                               <th
                                 key={feature.key}
-                                className={`border-b border-[#e4d9c8] bg-[#faf8f3] px-2 pb-3 pt-1.5 text-[12.5px] font-extrabold leading-snug text-neutral-800 ${groupDivider(groupIndex, featureIndex)}`}
+                                className={`border-b border-[#e4d9c8] bg-[#faf8f3] px-2 pb-3 pt-1.5 text-[12.5px] font-extrabold leading-snug text-neutral-800 ${groupDivider(groupIndex, featureIndex)} ${innerDivider(featureIndex)}`}
                               >
                                 {feature.label}
                               </th>
@@ -2435,7 +2438,7 @@ export default function App() {
                               group.features.map((feature, featureIndex) => (
                                 <td
                                   key={feature.key}
-                                  className={`border-t border-[#f3eee6] px-2 py-5 align-middle ${groupDivider(groupIndex, featureIndex)}`}
+                                  className={`border-t border-[#f3eee6] px-2 py-5 align-middle ${groupDivider(groupIndex, featureIndex)} ${innerDivider(featureIndex)}`}
                                 >
                                   <Availability {...plan.cells[feature.key]} />
                                 </td>
