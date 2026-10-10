@@ -2310,8 +2310,8 @@ export default function App() {
                 cells: Record<FeatureKey, { state: 'yes' | 'no'; note?: string }>;
               }[] = [
                 {
-                  id: 'light',
-                  name: 'Light',
+                  id: 'basic',
+                  name: 'Basicプラン',
                   price: '27,800',
                   cells: {
                     program: { state: 'yes', note: '全員一律' },
@@ -2322,8 +2322,8 @@ export default function App() {
                   },
                 },
                 {
-                  id: 'heavy',
-                  name: 'Heavy',
+                  id: 'advanced',
+                  name: 'Advancedプラン',
                   price: '39,800',
                   cells: {
                     program: { state: 'yes', note: '個別最適' },
@@ -2357,6 +2357,14 @@ export default function App() {
               const groupDivider = (groupIndex: number, featureIndex = 0) =>
                 groupIndex > 0 && featureIndex === 0 ? 'border-l-2 border-l-[#e4d9c8]' : '';
 
+              const StepMark = ({ step }: { step: string }) => (
+                <span className="relative inline-block h-6 w-6 shrink-0 rounded-full bg-[#E55C29]">
+                  <span className="absolute inset-0 flex items-center justify-center text-center text-[10px] font-bold tabular-nums leading-none text-white">
+                    {step}
+                  </span>
+                </span>
+              );
+
               return (
                 <>
                   <div className="hidden md:block overflow-hidden rounded-3xl border border-[#efe6d4] bg-white shadow-sm">
@@ -2373,13 +2381,11 @@ export default function App() {
                             <th
                               key={group.name}
                               colSpan={group.features.length}
-                              className={`border-b border-b-[#efe0cf] border-t-[3px] border-t-[#E55C29] bg-[#faf8f3] px-2 pb-2 pt-3.5 ${groupDivider(groupIndex)}`}
+                              className={`border-b border-b-[#efe0cf] bg-[#faf8f3] px-2 pb-2 pt-3.5 ${groupDivider(groupIndex)}`}
                             >
                               <div className="flex flex-col items-center gap-1.5">
                                 <div className="inline-flex items-center gap-2">
-                                  <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#E55C29] text-[10px] font-black leading-none text-white">
-                                    {group.step}
-                                  </span>
+                                  <StepMark step={group.step} />
                                   <span className="font-serif text-[16px] font-extrabold tracking-wide text-neutral-950">
                                     {group.name}
                                   </span>
@@ -2406,7 +2412,7 @@ export default function App() {
                         {plans.map((plan) => (
                           <tr key={plan.id} className="bg-white">
                             <th className="border-r border-t border-[#f3eee6] px-4 py-5 text-left align-middle">
-                              <div className="font-serif text-[16px] font-extrabold tracking-wide text-neutral-950">
+                              <div className="font-serif text-[15px] font-extrabold leading-snug tracking-wide text-neutral-950">
                                 {plan.name}
                               </div>
                               <div className="mt-1 text-[13px] font-extrabold text-neutral-500">
@@ -2436,22 +2442,20 @@ export default function App() {
                         key={plan.id}
                         className="overflow-hidden rounded-3xl border border-[#efe6d4] bg-white shadow-sm"
                       >
-                        <header className="flex items-end justify-between gap-3 bg-[#faf8f3] px-5 py-4 text-neutral-950">
-                          <p className="font-serif text-[20px] font-extrabold leading-none tracking-wide">{plan.name}</p>
-                          <p className="text-right leading-none text-neutral-950">
-                            <span className="mb-1 block text-[10px] font-black tracking-[0.14em] text-[#E55C29]">月額</span>
-                            <span className="font-serif text-[22px] font-extrabold">{plan.price}</span>
-                            <span className="ml-0.5 text-[12px] font-bold">円</span>
+                        <header className="flex items-center justify-between gap-3 bg-[#faf8f3] px-5 py-4">
+                          <p className="font-serif text-[18px] font-extrabold leading-none tracking-wide text-neutral-950">{plan.name}</p>
+                          <p className="text-right leading-none">
+                            <span className="mb-1 block text-[10px] font-bold tracking-[0.18em] text-neutral-400">月額</span>
+                            <span className="font-serif text-[22px] font-extrabold tracking-tight text-neutral-700">{plan.price}</span>
+                            <span className="ml-0.5 text-[12px] font-bold text-neutral-400">円</span>
                           </p>
                         </header>
                         <div className="space-y-3 p-3">
                           {groups.map((group) => (
                             <section key={group.name} className="overflow-hidden rounded-2xl border border-[#efe6d4]">
-                              <div className="border-b border-b-[#efe6d4] border-t-[3px] border-t-[#E55C29] bg-[#faf8f3] px-4 py-3">
+                              <div className="border-b border-b-[#efe6d4] bg-[#faf8f3] px-4 py-3">
                                 <div className="flex items-center gap-2">
-                                  <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#E55C29] text-[10px] font-black leading-none text-white">
-                                    {group.step}
-                                  </span>
+                                  <StepMark step={group.step} />
                                   <span className="font-serif text-[15px] font-extrabold tracking-wide text-neutral-950">
                                     {group.name}
                                   </span>
@@ -2480,7 +2484,7 @@ export default function App() {
               <p>※Jリーグ所属選手は、選手会の就学支援金制度の活用を推奨</p>
               <p>※その他のリーグ所属選手は、選手会の就学支援金制度が存在しないため、最大で月額3万円を弊社負担で支援可能</p>
               <p>※オンライン英会話は、日々の学習内容と連動した内容で、弊社専属のフィリピン人講師が実施</p>
-              <p>※プロサッカー選手以外の一般の方にも提供可能（支援金の活用は不可）</p>
+              <p>※プロサッカー選手以外の一般の方にも提供可能</p>
             </div>
 
           </div>
