@@ -2278,13 +2278,13 @@ export default function App() {
                 {
                   step: '01',
                   name: '計画',
-                  summary: '何を学ぶかを決める',
+                  summary: '何を、どの順番で、\nどのように取り組むか',
                   features: [{ key: 'program', label: '学習プログラム' }],
                 },
                 {
                   step: '02',
                   name: '実行',
-                  summary: '決めた内容を毎日進める',
+                  summary: '毎日少しずつ学習を進める',
                   features: [
                     { key: 'app', label: '学習用Webアプリ' },
                     { key: 'lesson', label: 'オンライン英会話' },
@@ -2293,7 +2293,7 @@ export default function App() {
                 {
                   step: '03',
                   name: '修正',
-                  summary: '進み方を見直して直す',
+                  summary: '実態を踏まえて修正を加える',
                   features: [
                     { key: 'review', label: '課題添削' },
                     { key: 'meeting', label: '隔週定例' },
@@ -2311,24 +2311,24 @@ export default function App() {
               }[] = [
                 {
                   id: 'basic',
-                  name: 'Basicプラン',
+                  name: '基礎徹底コース',
                   price: '27,800',
                   cells: {
                     program: { state: 'yes', note: '全員一律' },
                     app: { state: 'yes' },
-                    lesson: { state: 'yes', note: '週2回まで' },
+                    lesson: { state: 'yes', note: '1日1回まで' },
                     review: { state: 'yes' },
                     meeting: { state: 'yes' },
                   },
                 },
                 {
                   id: 'advanced',
-                  name: 'Advancedプラン',
+                  name: 'スキル強化コース',
                   price: '39,800',
                   cells: {
                     program: { state: 'yes', note: '個別最適' },
                     app: { state: 'yes' },
-                    lesson: { state: 'yes', note: '週4回まで' },
+                    lesson: { state: 'yes', note: '無制限' },
                     review: { state: 'yes' },
                     meeting: { state: 'yes' },
                   },
@@ -2342,13 +2342,10 @@ export default function App() {
                   );
                 }
                 return (
-                  <span className="inline-flex flex-col items-center gap-0.5">
-                    <span className="inline-flex items-center gap-1 text-[12.5px] sm:text-[13.5px] font-extrabold text-neutral-950">
-                      <Check className="w-3.5 h-3.5 text-[#E55C29] shrink-0" strokeWidth={3} />
-                      あり
-                    </span>
+                  <span className="inline-flex flex-col items-center gap-1">
+                    <Check className="h-4 w-4 text-[#E55C29]" strokeWidth={3} />
                     {note ? (
-                      <span className="text-[10.5px] sm:text-[11.5px] font-bold text-neutral-500 leading-none">{note}</span>
+                      <span className="text-[10.5px] font-bold leading-none text-neutral-500 sm:text-[11.5px]">{note}</span>
                     ) : null}
                   </span>
                 );
@@ -2368,15 +2365,19 @@ export default function App() {
               return (
                 <>
                   <div className="hidden md:block overflow-hidden rounded-3xl border border-[#efe6d4] bg-white shadow-sm">
-                    <table className="w-full border-separate border-spacing-0 text-center">
+                    <table className="w-full table-fixed border-separate border-spacing-0 text-center">
+                      <colgroup>
+                        <col className="w-[156px]" />
+                        {groups.flatMap((group) => group.features.map((feature) => (
+                          <col key={feature.key} />
+                        )))}
+                      </colgroup>
                       <thead>
                         <tr>
                           <th
                             rowSpan={2}
-                            className="w-[20%] border-b border-r border-[#efe6d4] bg-white px-4 pb-3 text-left align-bottom"
-                          >
-                            <span className="text-[11px] font-black tracking-[0.18em] text-neutral-400">プラン</span>
-                          </th>
+                            className="border-b border-r border-[#efe6d4] bg-white"
+                          />
                           {groups.map((group, groupIndex) => (
                             <th
                               key={group.name}
@@ -2390,7 +2391,11 @@ export default function App() {
                                     {group.name}
                                   </span>
                                 </div>
-                                <p className="text-[11px] font-bold leading-snug text-neutral-500">{group.summary}</p>
+                                <p className="text-[11px] font-bold leading-snug text-neutral-500">
+                                  {group.summary.split('\n').map((line) => (
+                                    <span key={line} className="block">{line}</span>
+                                  ))}
+                                </p>
                               </div>
                             </th>
                           ))}
@@ -2460,7 +2465,11 @@ export default function App() {
                                     {group.name}
                                   </span>
                                 </div>
-                                <p className="mt-1 pl-8 text-[11.5px] font-bold text-neutral-500">{group.summary}</p>
+                                <p className="mt-1 pl-8 text-[11.5px] font-bold leading-relaxed text-neutral-500">
+                                  {group.summary.split('\n').map((line) => (
+                                    <span key={line} className="block">{line}</span>
+                                  ))}
+                                </p>
                               </div>
                               <ul className="divide-y divide-[#f3eee6]">
                                 {group.features.map((feature) => (
