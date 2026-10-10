@@ -2276,18 +2276,24 @@ export default function App() {
             {(() => {
               const groups = [
                 {
+                  step: '01',
                   name: '計画',
+                  summary: '何を学ぶかを決める',
                   features: [{ key: 'program', label: '学習プログラム' }],
                 },
                 {
+                  step: '02',
                   name: '実行',
+                  summary: '決めた内容を毎日進める',
                   features: [
                     { key: 'app', label: '学習用Webアプリ' },
                     { key: 'lesson', label: 'オンライン英会話' },
                   ],
                 },
                 {
+                  step: '03',
                   name: '修正',
+                  summary: '進み方を見直して直す',
                   features: [
                     { key: 'review', label: '課題添削' },
                     { key: 'meeting', label: '隔週定例' },
@@ -2300,22 +2306,9 @@ export default function App() {
               const plans: {
                 id: string;
                 name: string;
-                price: string | null;
-                featured?: boolean;
+                price: string;
                 cells: Record<FeatureKey, { state: 'yes' | 'no'; note?: string }>;
               }[] = [
-                {
-                  id: 'free',
-                  name: 'Free',
-                  price: null,
-                  cells: {
-                    program: { state: 'no' },
-                    app: { state: 'yes' },
-                    lesson: { state: 'no' },
-                    review: { state: 'no' },
-                    meeting: { state: 'no' },
-                  },
-                },
                 {
                   id: 'light',
                   name: 'Light',
@@ -2332,7 +2325,6 @@ export default function App() {
                   id: 'heavy',
                   name: 'Heavy',
                   price: '39,800',
-                  featured: true,
                   cells: {
                     program: { state: 'yes', note: '個別最適' },
                     app: { state: 'yes' },
@@ -2362,32 +2354,47 @@ export default function App() {
                 );
               };
 
+              const groupDivider = (groupIndex: number, featureIndex = 0) =>
+                groupIndex > 0 && featureIndex === 0 ? 'border-l-2 border-l-[#e4d9c8]' : '';
+
               return (
                 <>
-                  <div className="hidden md:block overflow-hidden rounded-3xl border border-[#efe6d4] shadow-sm">
-                    <table className="w-full border-collapse text-center">
+                  <div className="hidden md:block overflow-hidden rounded-3xl border border-[#efe6d4] bg-white shadow-sm">
+                    <table className="w-full border-separate border-spacing-0 text-center">
                       <thead>
-                        <tr className="bg-[#faf8f3]">
-                          <th className="w-[18%] border-b border-[#efe6d4]" />
-                          {groups.map((group) => (
+                        <tr>
+                          <th
+                            rowSpan={2}
+                            className="w-[20%] border-b border-r border-[#efe6d4] bg-white px-4 pb-3 text-left align-bottom"
+                          >
+                            <span className="text-[11px] font-black tracking-[0.18em] text-neutral-400">プラン</span>
+                          </th>
+                          {groups.map((group, groupIndex) => (
                             <th
                               key={group.name}
                               colSpan={group.features.length}
-                              className="px-2 pt-4 pb-1 border-b border-[#efe6d4] text-[11px] font-black tracking-[0.22em] text-[#E55C29]"
+                              className={`border-b border-b-[#efe0cf] border-t-[3px] border-t-[#E55C29] bg-[#faf8f3] px-2 pb-2 pt-3.5 ${groupDivider(groupIndex)}`}
                             >
-                              {group.name}
+                              <div className="flex flex-col items-center gap-1.5">
+                                <div className="inline-flex items-center gap-2">
+                                  <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#E55C29] text-[10px] font-black leading-none text-white">
+                                    {group.step}
+                                  </span>
+                                  <span className="font-serif text-[16px] font-extrabold tracking-wide text-neutral-950">
+                                    {group.name}
+                                  </span>
+                                </div>
+                                <p className="text-[11px] font-bold leading-snug text-neutral-500">{group.summary}</p>
+                              </div>
                             </th>
                           ))}
                         </tr>
-                        <tr className="bg-[#faf8f3]">
-                          <th className="border-b border-[#efe6d4] px-3 py-3 text-left">
-                            <span className="text-[11px] font-black tracking-[0.18em] text-neutral-400">プラン</span>
-                          </th>
-                          {groups.flatMap((group) =>
-                            group.features.map((feature) => (
+                        <tr>
+                          {groups.flatMap((group, groupIndex) =>
+                            group.features.map((feature, featureIndex) => (
                               <th
                                 key={feature.key}
-                                className="border-b border-[#efe6d4] px-2 py-3 text-[12.5px] font-extrabold text-neutral-800 leading-snug"
+                                className={`border-b border-[#e4d9c8] bg-[#faf8f3] px-2 pb-3 pt-1.5 text-[12.5px] font-extrabold leading-snug text-neutral-800 ${groupDivider(groupIndex, featureIndex)}`}
                               >
                                 {feature.label}
                               </th>
@@ -2397,25 +2404,22 @@ export default function App() {
                       </thead>
                       <tbody>
                         {plans.map((plan) => (
-                          <tr key={plan.id} className={plan.featured ? 'bg-[#fff8f3]' : 'bg-white'}>
-                            <th className="border-t border-[#f3eee6] px-4 py-5 text-left align-middle">
-                              <div className="text-[16px] font-extrabold font-serif tracking-wide text-neutral-950">
+                          <tr key={plan.id} className="bg-white">
+                            <th className="border-r border-t border-[#f3eee6] px-4 py-5 text-left align-middle">
+                              <div className="font-serif text-[16px] font-extrabold tracking-wide text-neutral-950">
                                 {plan.name}
                               </div>
-                              <div className={`mt-1 text-[13px] font-extrabold ${plan.featured ? 'text-[#E55C29]' : 'text-neutral-500'}`}>
-                                {plan.price ? (
-                                  <>
-                                    月額 {plan.price}
-                                    <span className="text-[11px] font-bold">円</span>
-                                  </>
-                                ) : (
-                                  '無料'
-                                )}
+                              <div className="mt-1 text-[13px] font-extrabold text-neutral-500">
+                                月額 {plan.price}
+                                <span className="text-[11px] font-bold">円</span>
                               </div>
                             </th>
-                            {groups.flatMap((group) =>
-                              group.features.map((feature) => (
-                                <td key={feature.key} className="border-t border-[#f3eee6] px-2 py-5 align-middle">
+                            {groups.flatMap((group, groupIndex) =>
+                              group.features.map((feature, featureIndex) => (
+                                <td
+                                  key={feature.key}
+                                  className={`border-t border-[#f3eee6] px-2 py-5 align-middle ${groupDivider(groupIndex, featureIndex)}`}
+                                >
                                   <Availability {...plan.cells[feature.key]} />
                                 </td>
                               ))
@@ -2426,45 +2430,43 @@ export default function App() {
                     </table>
                   </div>
 
-                  <div className="md:hidden space-y-4">
+                  <div className="space-y-4 md:hidden">
                     {plans.map((plan) => (
                       <article
                         key={plan.id}
-                        className={`overflow-hidden rounded-3xl border bg-white ${
-                          plan.featured ? 'border-[#E55C29]/70 shadow-md' : 'border-[#efe6d4] shadow-sm'
-                        }`}
+                        className="overflow-hidden rounded-3xl border border-[#efe6d4] bg-white shadow-sm"
                       >
-                        <header
-                          className={`flex items-end justify-between gap-3 px-5 py-4 ${
-                            plan.featured ? 'bg-neutral-950 text-white' : 'bg-[#faf8f3] text-neutral-950'
-                          }`}
-                        >
-                          <p className="text-[20px] font-extrabold font-serif tracking-wide leading-none">{plan.name}</p>
-                          <p className={`text-right leading-none ${plan.featured ? 'text-white' : 'text-neutral-950'}`}>
-                            {plan.price ? (
-                              <>
-                                <span className="block text-[10px] font-black tracking-[0.14em] text-[#E55C29] mb-1">月額</span>
-                                <span className="text-[22px] font-extrabold font-serif">{plan.price}</span>
-                                <span className="text-[12px] font-bold ml-0.5">円</span>
-                              </>
-                            ) : (
-                              <span className="text-[18px] font-extrabold font-serif">無料</span>
-                            )}
+                        <header className="flex items-end justify-between gap-3 bg-[#faf8f3] px-5 py-4 text-neutral-950">
+                          <p className="font-serif text-[20px] font-extrabold leading-none tracking-wide">{plan.name}</p>
+                          <p className="text-right leading-none text-neutral-950">
+                            <span className="mb-1 block text-[10px] font-black tracking-[0.14em] text-[#E55C29]">月額</span>
+                            <span className="font-serif text-[22px] font-extrabold">{plan.price}</span>
+                            <span className="ml-0.5 text-[12px] font-bold">円</span>
                           </p>
                         </header>
-                        <div>
+                        <div className="space-y-3 p-3">
                           {groups.map((group) => (
-                            <div key={group.name} className="px-5 py-3.5 border-t border-[#f3eee6]">
-                              <p className="text-[10px] font-black tracking-[0.22em] text-[#E55C29] mb-2.5">{group.name}</p>
-                              <ul className="space-y-2.5">
+                            <section key={group.name} className="overflow-hidden rounded-2xl border border-[#efe6d4]">
+                              <div className="border-b border-b-[#efe6d4] border-t-[3px] border-t-[#E55C29] bg-[#faf8f3] px-4 py-3">
+                                <div className="flex items-center gap-2">
+                                  <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#E55C29] text-[10px] font-black leading-none text-white">
+                                    {group.step}
+                                  </span>
+                                  <span className="font-serif text-[15px] font-extrabold tracking-wide text-neutral-950">
+                                    {group.name}
+                                  </span>
+                                </div>
+                                <p className="mt-1 pl-8 text-[11.5px] font-bold text-neutral-500">{group.summary}</p>
+                              </div>
+                              <ul className="divide-y divide-[#f3eee6]">
                                 {group.features.map((feature) => (
-                                  <li key={feature.key} className="flex items-center justify-between gap-3">
+                                  <li key={feature.key} className="flex items-center justify-between gap-3 px-4 py-3">
                                     <span className="text-[13.5px] font-bold text-neutral-700">{feature.label}</span>
                                     <Availability {...plan.cells[feature.key]} />
                                   </li>
                                 ))}
                               </ul>
-                            </div>
+                            </section>
                           ))}
                         </div>
                       </article>
@@ -2476,7 +2478,7 @@ export default function App() {
 
             <div className="mt-4 text-left text-[11px] sm:text-[12.5px] font-bold text-neutral-500 leading-relaxed font-sans select-none space-y-1">
               <p>※Jリーグ所属選手は、選手会の就学支援金制度の活用を推奨</p>
-              <p>※その他のリーグ所属選手は、選手会の就学支援金制度が存在しないため、最大20万円を弊社負担で支援可能</p>
+              <p>※その他のリーグ所属選手は、選手会の就学支援金制度が存在しないため、最大で月額3万円を弊社負担で支援可能</p>
               <p>※オンライン英会話は、日々の学習内容と連動した内容で、弊社専属のフィリピン人講師が実施</p>
               <p>※プロサッカー選手以外の一般の方にも提供可能（支援金の活用は不可）</p>
             </div>
