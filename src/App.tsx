@@ -502,7 +502,7 @@ export default function App() {
         {/* Hero: 3D tech visual — behind ghost text (z-2 vs z-4) */}
         <HeroTechVisual />
 
-        {/* —— Mobile HOME stack: title → tagline → photo → badge —— */}
+        {/* —— Mobile HOME stack: title → tagline → photo —— */}
         <div className="md:hidden relative z-10 flex flex-col flex-1 min-h-0 pt-[7rem] px-4 pb-24">
           <h1
             className="font-anton text-white font-black leading-[0.95] mb-6"
@@ -523,17 +523,6 @@ export default function App() {
 
           <div className="flex-1 flex items-end justify-center min-h-0 mt-8 translate-y-12">
             <HeroTechVisualMobile />
-          </div>
-
-          <div className="mt-3 mb-2">
-            <div className="inline-flex items-center gap-2.5 bg-black/35 backdrop-blur-md px-4 py-2.5 rounded-full border border-white/10 shadow-lg">
-              <span className="relative flex h-[10px] w-[10px] font-sans">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF6331] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-full w-full bg-[#FF6331]"></span>
-              </span>
-              <span className="text-[13px] font-sans tracking-wide text-white font-bold">Total Users</span>
-              <span className="text-[13px] text-white font-mono font-black">9</span>
-            </div>
           </div>
         </div>
 
@@ -563,24 +552,11 @@ export default function App() {
           className="hidden md:block absolute bottom-36 left-24 max-w-[720px] select-none text-white z-60"
         >
           <div className="transition-all duration-300">
-            <p className="font-sans font-bold uppercase tracking-widest mb-5 text-[33px] opacity-95">
+            <p className="font-sans font-bold uppercase tracking-widest text-[33px] opacity-95">
               プロサッカー選手の人生に、
               <br />
               もう一つの確固たる武器を。
             </p>
-          </div>
-
-          <div className="inline-flex items-center gap-3.5 bg-black/35 backdrop-blur-md px-5 py-3 rounded-full border border-white/10 shadow-lg">
-            <span className="relative flex h-[11px] w-[11px] font-sans">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF6331] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-[11px] w-[11px] bg-[#FF6331]"></span>
-            </span>
-            <span className="text-[16px] font-sans tracking-wide text-white font-bold">
-              Total Users
-            </span>
-            <span className="text-[16px] text-white font-mono font-black">
-              9
-            </span>
           </div>
         </div>
 
